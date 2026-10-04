@@ -9,6 +9,15 @@ import Reel from '../components/Reel.astro';
 import { url } from '../lib/url';
 import { brand, funnel } from '../data/site';
 
+// Floating device shots around the hero (xl+). Natural aspect ratios, so devices are never cropped.
+const floaters = [
+  { src: '/work/tokni.webp', pos: 'left-[2%] top-[6%] w-[min(15vw,250px)] -rotate-6', d: '0s' },
+  { src: '/placeholder/phone-hands.webp', pos: 'left-[9%] top-[40%] w-[min(10vw,170px)] rotate-3', d: '-2s' },
+  { src: '/work/1red.webp', pos: 'left-[3%] top-[68%] w-[min(14vw,240px)] -rotate-2', d: '-4s' },
+  { src: '/work/perfect-body.webp', pos: 'right-[2%] top-[5%] w-[min(15vw,250px)] rotate-6', d: '-1s' },
+  { src: '/placeholder/tablet-method.webp', pos: 'right-[9%] top-[38%] w-[min(11vw,190px)] -rotate-3', d: '-3s' },
+  { src: '/placeholder/laptop-typing.webp', pos: 'right-[3%] top-[64%] w-[min(10vw,175px)] rotate-2', d: '-5s' },
+];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
@@ -55,6 +64,14 @@ const faq = [
 
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
   <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-[100px] sm:pt-[120px]">
+    <div class="relative flex flex-1 flex-col">
+    <div class="pointer-events-none absolute inset-0 hidden xl:block" aria-hidden="true">
+      {floaters.map((f) => (
+        <div class:list={['floater absolute', f.pos]} style={`animation-delay:${f.d}`}>
+          <img src={url(f.src)} alt="" class="h-auto w-full rounded-[18px] shadow-[0_30px_60px_-20px_rgba(0,0,0,.9)]" />
+        </div>
+      ))}
+    </div>
     <div class="wrap relative flex flex-1 flex-col items-center justify-center text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
@@ -62,8 +79,8 @@ const faq = [
         <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
       </div>
 
-      <form id="funnel" class="mt-14 w-full max-w-4xl" novalidate>
-        <p id="q" class="label mb-8 text-paper/45">01 / 06 · Your budget</p>
+      <form id="funnel" class="mt-12 w-full max-w-4xl" novalidate>
+        <p id="q" class="label mb-2 text-paper/45">01 / 06 · Your budget</p>
 
         <!-- 1 budget -->
         <div class="step" data-step="1">
@@ -123,12 +140,14 @@ const faq = [
         <p class="mx-auto grid size-14 place-items-center rounded-full bg-spark text-[24px] text-ink">✓</p>
         <h2 class="display mt-8 t-h2">Got it. <span class="accent text-paper/60">We’re on it.</span></h2>
         <p class="mt-5 text-[17px] text-paper/65">You’ll hear from a person (not a bot) within 24 hours with what we can build for your budget.</p>
-        <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] border border-white/10 p-6 text-left"></div>
+        <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] bg-white/[0.03] p-6 text-left"></div>
       </div>
 
       <a href={brand.parentUrl} class="mt-10 inline-flex items-center gap-2 text-white/80">
         <span class="text-[14px] text-paper/45">A productized website studio by</span><ParentLogo class="h-[13px]" />
       </a>
+    </div>
+
     </div>
 
     <Reel class="mt-14 pb-10 sm:mt-16" />
@@ -148,7 +167,7 @@ const faq = [
       </div>
       <div class="mt-12 space-y-6">
         {cases.map((c, i) => (
-          <article class="grid overflow-hidden rounded-[40px] border border-white/10 lg:grid-cols-[1.4fr_1fr]">
+          <article class="grid overflow-hidden rounded-[40px] bg-white/[0.03] lg:grid-cols-[1.4fr_1fr]">
             <div class:list={['bg-pine-800', i % 2 === 1 && 'lg:order-2']}><img src={url(c.img)} alt={`${c.title} website`} loading="lazy" class="aspect-[16/10] size-full object-cover" /></div>
             <div class="flex flex-col justify-between gap-10 p-8 sm:p-12">
               <div>
@@ -178,7 +197,7 @@ const faq = [
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {why.map(([t, b], i) => (
-          <article class="rounded-[32px] border border-white/10 p-8">
+          <article class="rounded-[32px] bg-white/[0.03] p-8">
             <p class="font-mono text-[13px] text-spark">0{i + 1}</p>
             <h3 class="mt-8 text-[22px] font-medium tracking-tight">{t}</h3>
             <p class="mt-3 text-[15px] leading-relaxed text-paper/60">{b}</p>
@@ -186,7 +205,7 @@ const faq = [
         ))}
       </div>
       <div class="mt-5 grid gap-5 md:grid-cols-2">
-        <div class="rounded-[32px] border border-white/10 p-8 sm:p-10">
+        <div class="rounded-[32px] bg-white/[0.03] p-8 sm:p-10">
           <p class="label text-paper/45">A typical agency</p>
           <p class="display mt-4 text-[44px] text-paper/50 sm:text-[56px]">$15–30k</p>
           <p class="mt-2 text-[16px] text-paper/45">8–12 weeks, proposals, status meetings and a separate dev invoice.</p>
@@ -226,7 +245,7 @@ const faq = [
           </ul>
           <a href="#top" class="btn-ink btn-wide mt-10 h-14 self-start px-8 text-[16px] lg:mt-auto">Name your budget</a>
         </article>
-        <article class="flex flex-col rounded-[40px] border border-white/15 p-8 sm:p-12">
+        <article class="flex flex-col rounded-[40px] bg-white/[0.03] p-8 sm:p-12">
           <p class="label text-paper/50">The flexible lane</p>
           <h3 class="display mt-4 text-[40px] sm:text-[52px]">Monthly</h3>
           <p class="mt-3 max-w-md text-[17px] text-paper/65">Spread the budget over months: site first, then pages, campaigns and design as you grow.</p>
@@ -254,9 +273,9 @@ const faq = [
         </div>
         <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">A rough guide. Your proposal is shaped around your business, not a price list.</p>
       </div>
-      <div class="mt-12 grid gap-px overflow-hidden rounded-[32px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {tiers.map((t) => (
-          <article class="flex flex-col bg-pine-950 p-8">
+          <article class="flex flex-col rounded-[32px] bg-white/[0.03] p-8">
             <p class="display text-[34px] text-spark">{t.budget}</p>
             <h3 class="mt-3 text-[20px] font-medium tracking-tight">{t.title}</h3>
             <p class="mt-2 text-[15px] leading-relaxed text-paper/60">{t.body}</p>
@@ -276,7 +295,7 @@ const faq = [
       </div>
       <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {process.map((p) => (
-          <li class="rounded-[32px] border border-white/10 p-8">
+          <li class="rounded-[32px] bg-white/[0.03] p-8">
             <p class="font-mono text-[13px] text-spark">{p.n}</p>
             <h3 class="mt-8 text-[24px] font-medium tracking-tight">{p.title}</h3>
             <p class="mt-3 text-[15px] leading-relaxed text-paper/60">{p.body}</p>
@@ -298,7 +317,7 @@ const faq = [
         <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">Two minutes, from first brief to launch day: how we scope, design and build, and what you see along the way.</p>
       </div>
       <!-- Replace with the real video: <video src=…> or a YouTube/Vimeo embed -->
-      <div class="relative mt-12 aspect-video overflow-hidden rounded-[32px] border border-white/10 bg-pine-800">
+      <div class="relative mt-12 aspect-video overflow-hidden rounded-[32px] bg-pine-800">
         <img src={url('/work/1red-wide.webp')} alt="" class="absolute inset-0 size-full object-cover opacity-40" />
         <div class="absolute inset-0 grid place-items-center">
           <span class="grid size-20 place-items-center rounded-full bg-spark text-ink sm:size-24"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
@@ -315,9 +334,9 @@ const faq = [
         <p class="label text-spark">What we build</p>
         <h2 class="display mt-4 t-h2">Your website isn’t a billboard. <span class="accent text-spark">It’s a growth engine.</span></h2>
       </div>
-      <div class="mt-12 grid gap-px overflow-hidden rounded-[32px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {services.map(([t, b], i) => (
-          <article class="bg-pine-950 p-8">
+          <article class="rounded-[32px] bg-white/[0.03] p-8">
             <p class="font-mono text-[13px] text-spark">0{i + 1}</p>
             <h3 class="mt-6 text-[22px] font-medium tracking-tight">{t}</h3>
             <p class="mt-2 text-[15px] leading-relaxed text-paper/60">{b}</p>
@@ -360,10 +379,13 @@ const faq = [
 <style is:global>
   .site-header:not([data-scrolled]) { background: #000; border-color: transparent; }
   .funnel .big-input { font-size: var(--fit, clamp(48px, 9vw, 128px)); padding-block: 0.08em; font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
+  /* slow loose orbit for the floating sites */
+  .funnel .floater { animation: orbit 14s ease-in-out infinite; }
+  @keyframes orbit { 0%,100% { translate: 0 0; } 25% { translate: 8px -12px; } 50% { translate: 0 -20px; } 75% { translate: -8px -10px; } }
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
   @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
   .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
-  @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .funnel .step, .funnel .floater { animation: none; } }
 </style>
 
 <script define:vars={{ endpoint: funnel.endpoint, email: brand.email, products: funnel.products }}>

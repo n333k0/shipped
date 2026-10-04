@@ -21,13 +21,13 @@ import { buildWeeks, nextWeek, openSlotsThisMonth, monthName } from '../data/sit
             return (
               <li>
                 {full ? (
-                  <div class="h-full rounded-[20px] border border-white/5 bg-white/[0.02] p-5 opacity-60">
+                  <div class="h-full rounded-[20px] bg-white/[0.02] p-5 opacity-60">
                     <p class="label text-paper/40">Week of</p>
                     <p class="mt-1 text-[26px] font-medium tracking-tight text-paper/50 line-through decoration-white/30">{w.label}</p>
                     <p class="label mt-6 flex items-center gap-2 text-booked"><span class="dot-booked"></span>Booked</p>
                   </div>
                 ) : (
-                  <a href={url(`/start/?week=${w.start}`)} class:list={['group block h-full rounded-[20px] border p-5 transition hover:-translate-y-0.5', w === nextWeek ? 'border-spark bg-spark/10' : 'border-white/15 hover:border-spark/60']}>
+                  <a href={url(`/start/?week=${w.start}`)} class:list={['group block h-full rounded-[20px] p-5 transition hover:-translate-y-0.5', w === nextWeek ? 'bg-spark/10' : 'bg-white/[0.03] hover:bg-white/[0.06]']}>
                     <p class="label text-paper/50">Week of</p>
                     <p class="mt-1 text-[26px] font-medium tracking-tight">{w.label}</p>
                     <p class="label mt-6 flex items-center gap-2 text-spark"><span class="dot"></span>{left === 1 ? '1 slot left' : 'Available'}</p>

@@ -26,7 +26,7 @@ const [lead, ...rest] = testimonials;
 
     <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {rest.map((t) => (
-        <figure class="flex flex-col rounded-[24px] border border-white/10 bg-white/[0.03] p-6" data-reveal>
+        <figure class="flex flex-col rounded-[24px] bg-white/[0.03] p-6" data-reveal>
           <p class="label text-spark">{t.meta}</p>
           <blockquote class="mt-5 text-[18px] leading-snug">“{t.quote}”</blockquote>
           <figcaption class="mt-auto pt-6 text-[14px]">
