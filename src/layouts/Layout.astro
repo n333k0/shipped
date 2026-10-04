@@ -19,7 +19,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={brand.theme}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,14 +28,24 @@ const {
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="theme-color" content="#0a211f" />
+    <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : '#0d0d0d'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script is:inline>document.documentElement.classList.add('js');</script>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      // ?theme=green|black previews a colour scheme; it sticks for the browser session.
+      try {
+        const t = new URLSearchParams(location.search).get('theme') || sessionStorage.getItem('theme');
+        if (t === 'green' || t === 'black') {
+          document.documentElement.dataset.theme = t;
+          sessionStorage.setItem('theme', t);
+        }
+      } catch {}
+    </script>
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] btn-primary">Skip to content</a>

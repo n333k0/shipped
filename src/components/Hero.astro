@@ -21,8 +21,6 @@ const from = packages[0].priceLabel;
 ---
 
 <section class="relative overflow-hidden pt-[132px] sm:pt-[160px]">
-  <!-- soft glow -->
-  <div class="pointer-events-none absolute left-1/2 top-24 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-spark/10 blur-[120px]" aria-hidden="true"></div>
 
   <div class="wrap relative text-center">
     {nextWeek && (
@@ -58,9 +56,9 @@ const from = packages[0].priceLabel;
       <li>From {from}</li>
     </ul>
 
-    <a href={brand.parentUrl} class="mt-7 inline-flex items-center gap-2.5 text-white/90 transition hover:text-white" aria-label={`A ${brand.parent} product`}>
-      <span class="font-mono text-[9px] uppercase leading-none tracking-[0.2em] text-paper/45">by</span>
-      <ParentLogo class="h-[15px]" />
+    <a href={brand.parentUrl} class="mt-7 inline-flex items-center gap-2 text-white/90 transition hover:text-white" aria-label={`${brand.parentLine} ${brand.parent}`}>
+      <span class="font-sans text-[14px] leading-none text-paper/55">{brand.parentLine}</span>
+      <ParentLogo class="h-[14px]" />
     </a>
   </div>
 
