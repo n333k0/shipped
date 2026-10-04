@@ -13,6 +13,24 @@ export const brand = {
   callLink: '#book-a-call', // replace with your Cal.com / Calendly link
 };
 
+// RemotoLabs product family (cross-links on every site).
+export const family = [
+  { key: 'shipped', name: 'shipped.', line: 'Websites, fixed price', url: 'https://n333k0.github.io/shipped/' },
+  { key: 'queued', name: 'queued.', line: 'Design on subscription', url: 'https://n333k0.github.io/queued/' },
+  { key: 'handled', name: 'handled.', line: 'AI systems for your business', url: 'https://n333k0.github.io/handled/' },
+];
+
+// "Name your budget" funnel (/budget/). Paste a form endpoint (Formspree, Make, a Vercel
+// function…) to receive leads as JSON; empty = the lead opens in the visitor's mail app.
+export const funnel = {
+  endpoint: '',
+  products: {
+    shipped: { name: 'shipped.', line: 'Fixed-price websites, live in 5–20 business days.', url: 'https://n333k0.github.io/shipped/#packages' },
+    queued: { name: 'queued.', line: 'Senior design on subscription. Pause anytime.', url: 'https://n333k0.github.io/queued/' },
+    handled: { name: 'handled.', line: 'AI systems that take the busywork off your team.', url: 'https://n333k0.github.io/handled/' },
+  },
+};
+
 // Show the orange "Placeholder" tags on stand-in imagery. Off = clean preview.
 export const showPlaceholderTags = false;
 

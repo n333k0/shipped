@@ -84,5 +84,15 @@ import { packages, compareRows, sectionExplainer } from '../data/site';
       Not sure which one? Pick the closest and tell us in the brief. If it’s the wrong fit, we’ll say so before you pay the rest.{' '}
       <a class="underline underline-offset-4 hover:text-ink" href={url('/#faq')}>Read the FAQ</a>
     </p>
+
+    <!-- Second offer: custom scope on a budget -->
+    <a href={url('/budget/')} class="group mt-12 flex flex-col items-start justify-between gap-6 rounded-[8px] bg-ink p-8 text-paper sm:flex-row sm:items-center sm:p-10" data-reveal>
+      <span>
+        <span class="label text-paper/45">shipped. custom</span>
+        <span class="display mt-3 block text-[32px] sm:text-[40px]">Bigger idea? <span class="accent text-spark">Name your budget.</span></span>
+        <span class="mt-2 block max-w-xl text-[16px] text-paper/60">High-end sites on friendly budgets. Tell us what you want and what you can spend; we’ll show you what we can build for it, free.</span>
+      </span>
+      <span class="btn-primary shrink-0">Name your budget →</span>
+    </a>
   </div>
 </section>

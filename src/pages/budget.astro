@@ -1,0 +1,212 @@
+---
+// "Name your budget": high-end work on a budget, and the front door for anyone
+// unsure which RemotoLabs product fits. Campaigns link here (UTM params are kept).
+// Inspired by the REMOTO lead funnel (3_Coding/2_Promtp Packs/Lead Funnel).
+import Layout from '../layouts/Layout.astro';
+import ParentLogo from '../components/ParentLogo.astro';
+import { url } from '../lib/url';
+import { brand, funnel } from '../data/site';
+
+const reel = ['/placeholder/tablet-method.webp', '/work/tokni.webp', '/work/1red.webp', '/work/perfect-body.webp', '/placeholder/phone-hands.webp', '/placeholder/tablet-founder.webp', '/placeholder/laptop-typing.webp', '/placeholder/laptop-ladder.webp'];
+const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
+const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
+---
+
+<Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
+  <section class="funnel relative min-h-[100svh] overflow-hidden bg-black">
+    <!-- slow reel of work, dimmed, behind everything -->
+    <div class="reel pointer-events-none absolute inset-x-0 bottom-[7vh] opacity-[0.22]" aria-hidden="true">
+      <div class="flex w-max gap-4 animate-marquee">
+        {[...reel, ...reel].map((src) => <img src={url(src)} alt="" class="h-[15vh] w-auto rounded-[10px] object-cover" />)}
+      </div>
+    </div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#000_75%)]" aria-hidden="true"></div>
+
+    <div class="wrap relative flex min-h-[100svh] flex-col items-center justify-center pb-[24vh] pt-[100px] text-center">
+      <div id="intro">
+        <p class="label text-paper/45">shipped. custom</p>
+        <h1 class="display mt-6 t-hero">High-end sites. <span class="accent text-paper/60">Friendly budgets.</span></h1>
+        <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
+      </div>
+
+      <form id="funnel" class="mt-12 w-full max-w-3xl" novalidate>
+        <p id="q" class="label text-paper/45">01 / 06 · Your budget</p>
+
+        <!-- 1 budget -->
+        <div class="step" data-step="1">
+          <label class="flex items-baseline justify-center gap-2">
+            <span class="display text-[clamp(56px,10vw,140px)] text-paper/40">$</span>
+            <input name="budget" inputmode="numeric" autocomplete="off" placeholder="your budget" class="big-input w-full max-w-[9ch] bg-transparent text-left placeholder:text-paper/25" />
+          </label>
+          <p class="mt-4 text-[14px] text-paper/40">Most projects land between $3,000 and $15,000. Minimum $1,000.</p>
+        </div>
+
+        <!-- 2 need -->
+        <div class="step hidden" data-step="2">
+          <div class="flex flex-wrap justify-center gap-3">
+            {needs.map((n) => (
+              <label class="cursor-pointer">
+                <input type="radio" name="need" value={n} class="peer sr-only" />
+                <span class="block rounded-full border border-white/20 px-6 py-3 text-[18px] transition hover:border-white/50 peer-checked:border-spark peer-checked:bg-spark peer-checked:text-ink">{n}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- 3 email -->
+        <div class="step hidden" data-step="3">
+          <input name="email" type="email" autocomplete="email" placeholder="your email" class="big-input w-full bg-transparent text-center placeholder:text-paper/25" />
+        </div>
+
+        <!-- 4 website -->
+        <div class="step hidden" data-step="4">
+          <input name="website" type="text" autocomplete="url" placeholder="current website" class="big-input w-full bg-transparent text-center placeholder:text-paper/25" />
+        </div>
+
+        <!-- 5 timeline -->
+        <div class="step hidden" data-step="5">
+          <div class="flex flex-wrap justify-center gap-3">
+            {timelines.map((t) => (
+              <label class="cursor-pointer">
+                <input type="radio" name="timeline" value={t} class="peer sr-only" />
+                <span class="block rounded-full border border-white/20 px-6 py-3 text-[18px] transition hover:border-white/50 peer-checked:border-spark peer-checked:bg-spark peer-checked:text-ink">{t}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- 6 notes -->
+        <div class="step hidden" data-step="6">
+          <textarea name="notes" rows="3" placeholder="anything else? links, references, deadlines" class="w-full resize-none bg-transparent text-center text-[clamp(24px,3.4vw,40px)] font-medium tracking-tight outline-none placeholder:text-paper/25"></textarea>
+        </div>
+
+        <div class="mt-10 flex items-center justify-center gap-3">
+          <button type="button" id="back" class="btn-ghost hidden h-12 px-6">Back</button>
+          <button type="submit" id="next" class="btn-primary h-12 px-8" disabled>Okay, next</button>
+        </div>
+        <p id="err" class="mt-4 min-h-[20px] text-[14px] text-booked" role="alert"></p>
+        <div class="mx-auto mt-2 h-1 w-40 overflow-hidden rounded-full bg-white/10"><div id="bar" class="h-full w-[16%] rounded-full bg-spark transition-all duration-500"></div></div>
+      </form>
+
+      <!-- done -->
+      <div id="done" class="hidden max-w-2xl" tabindex="-1">
+        <p class="mx-auto grid size-14 place-items-center rounded-full bg-spark text-[24px] text-ink">✓</p>
+        <h2 class="display mt-8 t-h2">Got it. <span class="accent text-paper/60">We’re on it.</span></h2>
+        <p class="mt-5 text-[17px] text-paper/65">You’ll hear from a person (not a bot) within 24 hours with what we can build for your budget.</p>
+        <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[8px] border border-white/10 p-6 text-left"></div>
+      </div>
+
+      <a href={brand.parentUrl} class="absolute bottom-6 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 text-white/80">
+        <span class="text-[14px] text-paper/45">A productized website studio by</span><ParentLogo class="h-[13px]" />
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .funnel .big-input { font-size: clamp(56px, 10vw, 140px); font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
+  .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
+  @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+  .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } .funnel .reel > div { animation: none; } }
+</style>
+
+<script define:vars={{ endpoint: funnel.endpoint, email: brand.email, products: funnel.products }}>
+  const form = document.getElementById('funnel');
+  const steps = [...form.querySelectorAll('.step')];
+  const labels = ['Your budget', 'What do you need?', 'Your email', 'Current website (optional)', 'When do you need it?', 'Anything else? (optional)'];
+  const next = document.getElementById('next');
+  const back = document.getElementById('back');
+  const q = document.getElementById('q');
+  const bar = document.getElementById('bar');
+  const err = document.getElementById('err');
+  const intro = document.getElementById('intro');
+  const budget = form.elements.namedItem('budget');
+  let i = 0;
+
+  // Keep campaign attribution (utm_*, ref) with the lead.
+  const attribution = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k]) => k.startsWith('utm_') || k === 'ref'));
+
+  budget.addEventListener('input', () => {
+    const digits = budget.value.replace(/[^0-9]/g, '').slice(0, 7);
+    budget.value = digits ? Number(digits).toLocaleString('en-US') : '';
+    validate();
+  });
+
+  const value = (name) => (form.elements.namedItem(name)?.value ?? '').trim();
+  const radio = (name) => form.querySelector(`input[name="${name}"]:checked`)?.value ?? '';
+
+  function valid() {
+    if (i === 0) return Number(value('budget').replace(/,/g, '')) >= 1000;
+    if (i === 1) return !!radio('need');
+    if (i === 2) return /^\S+@\S+\.\S+$/.test(value('email'));
+    if (i === 4) return !!radio('timeline');
+    return true;
+  }
+  function validate() {
+    next.disabled = !valid();
+    if (i === 3) next.textContent = value('website') ? 'Next' : 'Skip';
+    else if (i === 5) next.textContent = value('notes') ? 'Send' : 'Skip & send';
+    else next.textContent = i === 0 ? 'Okay, next' : 'Next';
+  }
+  function show(n) {
+    steps.forEach((s, k) => s.classList.toggle('hidden', k !== n));
+    i = n;
+    q.textContent = `0${n + 1} / 06 · ${labels[n]}`;
+    bar.style.width = `${((n + 1) / steps.length) * 100}%`;
+    back.classList.toggle('hidden', n === 0);
+    intro.classList.toggle('hidden', n > 0 && innerHeight < 820);
+    err.textContent = '';
+    validate();
+    steps[n].querySelector('input:not([type=radio]),textarea')?.focus();
+  }
+
+  form.addEventListener('input', validate);
+  form.addEventListener('change', () => {
+    validate();
+    // Chips advance on their own after a beat.
+    if ((i === 1 || i === 4) && valid()) setTimeout(() => show(i + 1), 260);
+  });
+  back.addEventListener('click', () => show(Math.max(0, i - 1)));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!valid()) {
+      err.textContent = i === 0 ? 'Add a budget of at least $1,000.' : i === 2 ? 'That email doesn’t look right.' : 'Pick one to continue.';
+      return;
+    }
+    if (i < steps.length - 1) return show(i + 1);
+
+    const lead = {
+      budget: value('budget'), need: radio('need'), email: value('email'), website: value('website'),
+      timeline: radio('timeline'), notes: value('notes'), source: 'shipped/budget', ...attribution,
+    };
+    next.disabled = true;
+    next.textContent = 'Sending…';
+    let sent = false;
+    if (endpoint) {
+      try {
+        const r = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(lead) });
+        sent = r.ok;
+      } catch {}
+    }
+    if (!sent) {
+      // No endpoint configured yet: hand the lead to the visitor's mail app.
+      const body = Object.entries(lead).map(([k, v]) => `${k}: ${v || '-'}`).join('\n');
+      location.href = `mailto:${email}?subject=${encodeURIComponent(`Budget request: $${lead.budget}`)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Suggest the right RemotoLabs product while they wait.
+    const n = Number(lead.budget.replace(/,/g, ''));
+    const pick = lead.need === 'Design every month' ? products.queued : lead.need === 'AI systems' ? products.handled : products.shipped;
+    document.getElementById('suggest').innerHTML =
+      `<p class="label text-paper/45">While you wait</p><p class="mt-3 text-[20px] font-medium">${pick.name}</p><p class="mt-1 text-[15px] text-paper/60">${pick.line}${n >= 10000 ? ' At your budget we’ll also propose a custom scope.' : ''}</p><a href="${pick.url}" class="mt-4 inline-block text-[15px] text-spark underline underline-offset-4">Take a look →</a>`;
+    form.classList.add('hidden');
+    intro.classList.add('hidden');
+    const done = document.getElementById('done');
+    done.classList.remove('hidden');
+    done.focus();
+  });
+
+  show(0);
+</script>

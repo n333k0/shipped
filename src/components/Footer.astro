@@ -2,7 +2,7 @@
 import { url } from '../lib/url';
 import Logo from './Logo.astro';
 import ParentLogo from './ParentLogo.astro';
-import { brand, packages, showPlaceholderTags } from '../data/site';
+import { brand, packages, showPlaceholderTags, family } from '../data/site';
 const year = new Date().getFullYear();
 ---
 
@@ -14,7 +14,6 @@ const year = new Date().getFullYear();
         <p class="mt-4 max-w-xs text-[15px] text-paper/60">Custom websites. Fixed price. Known launch date.</p>
         <p class="label mt-6 text-paper/40">Async by default · Built in Framer</p>
         <p class="mt-8 flex items-center gap-2 text-paper/70"><span class="label text-paper/40">A product by</span><ParentLogo class="h-[16px]" /></p>
-        <a href="https://n333k0.github.io/queued/" class="mt-4 inline-block text-[14px] text-paper/55 hover:text-spark">Need design every month? <span class="text-paper">queued.</span> →</a>
       </div>
       <div>
         <p class="label text-paper/40">Packages</p>
@@ -23,7 +22,12 @@ const year = new Date().getFullYear();
         </ul>
       </div>
       <div>
-        <p class="label text-paper/40">Studio</p>
+        <p class="label text-paper/40">RemotoLabs products</p>
+        <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
+          {family.map((f) => <li><a class="hover:text-spark" href={f.url}>{f.name}</a> <span class="text-paper/45">{f.line}</span></li>)}
+          <li><a class="hover:text-spark" href={url('/budget/')}>Name your budget →</a></li>
+        </ul>
+        <p class="label mt-8 text-paper/40">Studio</p>
         <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
           <li><a class="hover:text-spark" href={url('/#work')}>Work</a></li>
           <li><a class="hover:text-spark" href={url('/#process')}>Process</a></li>
