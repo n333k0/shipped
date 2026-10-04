@@ -2,7 +2,7 @@
 import { url } from '../lib/url';
 import Logo from './Logo.astro';
 import ParentLogo from './ParentLogo.astro';
-import { brand, packages } from '../data/site';
+import { brand, packages, showPlaceholderTags } from '../data/site';
 const year = new Date().getFullYear();
 ---
 
@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
 
     <div class="mt-6 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-paper/40 sm:flex-row">
       <p>© {year} {brand.parent}. {brand.name} is a {brand.parent} product. You own your website; we just build it.</p>
-      <p class="label">Imagery: placeholders, to be replaced with our work</p>
+      {showPlaceholderTags && <p class="label">Imagery: placeholders, to be replaced with our work</p>}
     </div>
   </div>
 </footer>

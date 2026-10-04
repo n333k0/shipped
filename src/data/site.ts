@@ -13,6 +13,9 @@ export const brand = {
   callLink: '#book-a-call', // replace with your Cal.com / Calendly link
 };
 
+// Show the orange "Placeholder" tags on stand-in imagery. Off = clean preview.
+export const showPlaceholderTags = false;
+
 // ---------------------------------------------------------------------------
 // Packages
 // ---------------------------------------------------------------------------

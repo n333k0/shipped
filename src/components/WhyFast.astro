@@ -1,5 +1,6 @@
 ---
 import { url } from '../lib/url';
+import { showPlaceholderTags } from '../data/site';
 const removed = ['Proposals', 'Status meetings', 'Pitch presentations', 'Design-to-dev handoffs', 'Account-manager relays', 'Repetitive setup', 'Manual research', 'Feedback by email chain'];
 const kept = [
   { t: 'Senior creative direction', d: 'Every site is directed and signed off by a senior designer. Not reviewed. Directed.' },
@@ -25,7 +26,7 @@ const notThis = ['Templates', '$500 websites', 'Generic AI sites', 'Cookie-cutte
 
       <div class="relative overflow-hidden rounded-[28px] bg-pine-800" data-reveal>
         <img src={url('/placeholder/team-laptops.webp')} alt="Team working on laptops (placeholder image)" loading="lazy" class="h-full min-h-[340px] w-full object-cover opacity-90" />
-        <span class="placeholder-tag absolute left-4 top-4">Placeholder</span>
+        {showPlaceholderTags && <span class="placeholder-tag absolute left-4 top-4">Placeholder</span>}
         <div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-pine-900/85 p-5 backdrop-blur-md">
           <p class="label text-paper/45">Removed from the process</p>
           <ul class="mt-3 flex flex-wrap gap-2">
