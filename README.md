@@ -1,4 +1,4 @@
-# Shipped by REMOTO: productized website studio
+# Shipped by RemotoLabs: productized website studio
 
 Marketing site + checkout demo, built with Astro 7 and Tailwind 4.
 
@@ -20,7 +20,8 @@ npm run preview   # serve the build
 | Strategy (positioning, economics, onboarding, risks, MVP) | `strategy.md` |
 | Visual direction | `design.md` |
 | Original brief | `prompt.md` |
-| Concept site mockups (source) | `mockups/sites.html`, render with `./scripts/render-mockups.sh` |
+| RemotoLabs logo (mask PNG) | `public/brand/remotolabs.png`, used by `ParentLogo.astro` |
+| Concept site mockups (currently unused) | `mockups/sites.html`, render with `./scripts/render-mockups.sh`, show with `Mockup.astro` |
 
 Live: https://n333k0.github.io/shipped/ (deploys on every push to `main` via `.github/workflows/deploy.yml`).
 
@@ -28,7 +29,7 @@ Weekly upkeep: update `booked` in `buildWeeks` (`src/data/site.ts`). The header,
 
 ## Before going live
 
-- [ ] Swap concept sites for real client work as it ships (`work` in `site.ts`, mockups in `mockups/sites.html`).
+- [ ] Swap the placeholder device shots in `public/placeholder/` (from superside.com, layout only) for your own work: hero tiles in `Hero.astro`, projects in `work` (`site.ts`), plus `WhyFast.astro` and `FinalCta.astro`.
 - [ ] Replace the placeholder testimonials in `site.ts` with real quotes.
 - [ ] Set the real brand name, email and call link in `brand`.
 - [ ] Wire "Reserve & pay" in `start.astro` to Stripe (Payment Links or a Checkout Session endpoint).

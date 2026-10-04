@@ -1,22 +1,18 @@
 ---
-import Mockup from './Mockup.astro';
 import { nextWeek, openSlotsThisMonth, monthName, packages } from '../data/site';
 import { url } from '../lib/url';
 
-// Concept websites (see mockups/sites.html). Mix of desktop and phone views.
-const tiles: { site: string; device: 'browser' | 'phone' }[] = [
-  { site: 'ledgerly', device: 'browser' },
-  { site: 'bloom', device: 'phone' },
-  { site: 'nord', device: 'browser' },
-  { site: 'solace', device: 'browser' },
-  { site: 'lume', device: 'phone' },
-  { site: 'kinetic', device: 'browser' },
-  { site: 'mira', device: 'browser' },
-  { site: 'solace', device: 'phone' },
-  { site: 'fieldwork', device: 'browser' },
-  { site: 'halcyon', device: 'browser' },
-  { site: 'ledgerly', device: 'phone' },
-  { site: 'bloom', device: 'browser' },
+// Placeholder device shots (web work on laptops, tablets, phones). Replace with your own.
+const tiles = [
+  { src: 'laptop-typing', w: 'w-[240px] sm:w-[300px]', h: 'h-[300px] sm:h-[380px]' },
+  { src: 'phone-hands', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
+  { src: 'tablet-method', w: 'w-[260px] sm:w-[340px]', h: 'h-[300px] sm:h-[400px]' },
+  { src: 'imac-desk', w: 'w-[340px] sm:w-[460px]', h: 'h-[220px] sm:h-[280px]' },
+  { src: 'tablet-founder', w: 'w-[220px] sm:w-[280px]', h: 'h-[260px] sm:h-[340px]' },
+  { src: 'phone-red', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
+  { src: 'tablet-desk', w: 'w-[240px] sm:w-[320px]', h: 'h-[300px] sm:h-[380px]' },
+  { src: 'tablet-pharmacy', w: 'w-[240px] sm:w-[300px]', h: 'h-[260px] sm:h-[320px]' },
+  { src: 'laptop-ladder', w: 'w-[220px] sm:w-[280px]', h: 'h-[280px] sm:h-[360px]' },
 ];
 const loop = [...tiles, ...tiles];
 const from = packages[0].priceLabel;
@@ -61,11 +57,11 @@ const from = packages[0].priceLabel;
     </ul>
   </div>
 
-  <div class="relative mt-16 sm:mt-20" aria-label="Concept websites">
-    <div class="flex w-max items-center gap-5 py-6 animate-marquee hover:[animation-play-state:paused]">
+  <div class="relative mt-16 sm:mt-20" aria-label="Recent work (placeholder imagery)">
+    <div class="flex w-max items-end gap-4 animate-marquee hover:[animation-play-state:paused]">
       {loop.map((t, i) => (
-        <div class:list={['shrink-0', t.device === 'phone' ? 'w-[150px] sm:w-[190px]' : 'w-[360px] sm:w-[560px]', i % 2 ? 'translate-y-4' : '-translate-y-4']} aria-hidden={i >= tiles.length ? 'true' : undefined}>
-          <Mockup site={t.site} device={t.device} eager={i < 4} />
+        <div class:list={['shrink-0 overflow-hidden rounded-[22px] bg-pine-800', t.w, t.h]} aria-hidden={i >= tiles.length ? 'true' : undefined}>
+          <img class="size-full object-cover" src={url(`/placeholder/${t.src}.webp`)} alt="" loading={i < 5 ? 'eager' : 'lazy'} />
         </div>
       ))}
     </div>

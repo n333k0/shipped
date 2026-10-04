@@ -1,6 +1,6 @@
 # Design direction
 
-Visual reference: superside.com (dark pine + spark lime, big type, rounded media tiles). We borrow the mood, not the brand. Name, logo, copy, layout and imagery are our own: all work shown is in-house concept sites (`mockups/sites.html`).
+Visual reference: superside.com (dark pine + spark lime, big type, rounded media tiles). We borrow the mood, not the brand. Name, logo, copy and layout are our own. The device shots in `public/placeholder/` (laptops, tablets, phones) are theirs, used as placeholders until our own work replaces them. Lockup: `shipped.` + `by` + RemotoLabs wordmark.
 
 ## Principles
 

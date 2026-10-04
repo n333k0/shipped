@@ -1,0 +1,9 @@
+---
+// RemotoLabs wordmark. The PNG is used as a mask so it takes the current text colour.
+import { url } from '../lib/url';
+import { brand } from '../data/site';
+const { class: cls = 'h-[11px]' } = Astro.props;
+const mask = `url(${url('/brand/remotolabs.png')}) center / contain no-repeat`;
+---
+
+<span role="img" aria-label={brand.parent} class:list={['inline-block aspect-[1545/189] bg-current', cls]} style={`-webkit-mask: ${mask}; mask: ${mask};`}></span>

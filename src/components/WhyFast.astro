@@ -1,5 +1,5 @@
 ---
-import Mockup from './Mockup.astro';
+import { url } from '../lib/url';
 const removed = ['Proposals', 'Status meetings', 'Pitch presentations', 'Design-to-dev handoffs', 'Account-manager relays', 'Repetitive setup', 'Manual research', 'Feedback by email chain'];
 const kept = [
   { t: 'Senior creative direction', d: 'Every site is directed and signed off by a senior designer. Not reviewed. Directed.' },
@@ -23,14 +23,10 @@ const notThis = ['Templates', '$500 websites', 'Generic AI sites', 'Cookie-cutte
         <p class="mt-4 max-w-lg text-[16px] text-paper/45">Yes, there’s automation behind the curtain. No, it doesn’t design your website. It does the setup and the legwork so people can focus on the decisions that matter.</p>
       </div>
 
-      <div class="relative min-h-[460px] overflow-hidden rounded-[28px] bg-[#2a1840]" data-reveal>
-        <div class="absolute left-8 right-[-60px] top-8 rotate-[-3deg]">
-          <Mockup site="halcyon" />
-        </div>
-        <div class="absolute right-6 top-20 w-[26%] min-w-[110px] rotate-[4deg]">
-          <Mockup site="ledgerly" device="phone" />
-        </div>
-        <div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-pine-900/90 p-5 backdrop-blur-md">
+      <div class="relative overflow-hidden rounded-[28px] bg-pine-800" data-reveal>
+        <img src={url('/placeholder/team-laptops.webp')} alt="Team working on laptops (placeholder image)" loading="lazy" class="h-full min-h-[340px] w-full object-cover opacity-90" />
+        <span class="placeholder-tag absolute left-4 top-4">Placeholder</span>
+        <div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-pine-900/85 p-5 backdrop-blur-md">
           <p class="label text-paper/45">Removed from the process</p>
           <ul class="mt-3 flex flex-wrap gap-2">
             {removed.map((r) => <li class="rounded-full border border-white/10 px-3 py-1 text-[13px] text-paper/60 line-through decoration-booked/70">{r}</li>)}

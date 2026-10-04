@@ -3,7 +3,7 @@
 
 export const brand = {
   name: 'Shipped', // product name — swap in one place
-  parent: 'REMOTO', // Shipped is a REMOTO product
+  parent: 'RemotoLabs', // Shipped is a RemotoLabs product (logo: public/brand/remotolabs.png)
   domain: 'shipped.studio',
   email: 'hello@shipped.studio',
   tagline: 'Websites without the agency.',
@@ -180,17 +180,17 @@ export const monthName = nextWeek
   : '';
 
 // ---------------------------------------------------------------------------
-// Work — CONCEPT sites designed in-house (mockups/sites.html). Brands are fictional.
-// Replace with real client case studies (and real outcomes) as they ship.
+// Work — PLACEHOLDER device shots. Swap each `img` for your own project
+// screenshots (put files in public/work/ and point img there) as they ship.
 // ---------------------------------------------------------------------------
 
 export const work = [
-  { site: 'solace', title: 'Solace', industry: 'Wellness studio', pkg: 'Website+', days: '15-day build', scope: ['Strategy', 'Copy', 'Art direction', 'Booking'], focus: 'Booking-first homepage', bg: 'bg-[#e9dccb]', phone: true },
-  { site: 'ledgerly', title: 'Ledgerly', industry: 'Fintech SaaS', pkg: 'Website', days: '10-day build', scope: ['Messaging', 'Design', 'CMS'], focus: 'Product-led launch site', bg: 'bg-[#1d1840]', phone: false },
-  { site: 'lume', title: 'Osteria Lume', industry: 'Restaurant', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Reservations'], focus: 'One page, one job: tables', bg: 'bg-[#7a2121]', phone: true },
-  { site: 'nord', title: 'Atelier Nord', industry: 'Architecture', pkg: 'Website+', days: '18-day build', scope: ['Design system', 'CMS', 'Bilingual'], focus: 'Portfolio CMS, EN/DK', bg: 'bg-[#d9dcdc]', phone: false },
-  { site: 'bloom', title: 'Bloom', industry: 'Coffee / D2C', pkg: 'Website', days: '10-day build', scope: ['Design', 'Shop', 'Motion'], focus: 'Shop with subscriptions', bg: 'bg-[#ff9cbf]', phone: true },
-  { site: 'kinetic', title: 'Kinetic', industry: 'Developer tool', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Analytics'], focus: 'Launch page for v3', bg: 'bg-[#1a1a1c]', phone: false },
+  { title: 'Content platform', industry: 'Media / SaaS', pkg: 'Website+', days: '15-day build', scope: ['Strategy', 'Copy', 'Art direction', 'CMS'], focus: 'Editorial homepage + CMS', img: '/placeholder/tablet-method.webp' },
+  { title: 'Studio website', industry: 'Creative studio', pkg: 'Website', days: '10-day build', scope: ['Design', 'CMS', 'Motion'], focus: 'Portfolio-first redesign', img: '/placeholder/imac-desk.webp' },
+  { title: 'Health brand', industry: 'Health / D2C', pkg: 'Website', days: '10-day build', scope: ['Design', 'Framer', 'Integrations'], focus: 'Sign-up flow, mobile first', img: '/placeholder/tablet-pharmacy.webp' },
+  { title: 'App launch', industry: 'Consumer tech', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Analytics'], focus: 'Waitlist landing page', img: '/placeholder/phone-hands.webp' },
+  { title: 'Venture fund', industry: 'Venture capital', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Motion'], focus: 'Thesis + founder intake', img: '/placeholder/tablet-founder.webp' },
+  { title: 'Annual report', industry: 'Professional services', pkg: 'Website+', days: '18-day build', scope: ['Messaging', 'Design system', 'CMS'], focus: 'Interactive report microsite', img: '/placeholder/tablet-desk.webp' },
 ];
 
 // ---------------------------------------------------------------------------

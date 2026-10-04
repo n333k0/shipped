@@ -1,6 +1,7 @@
 ---
 import { url } from '../lib/url';
 import Logo from './Logo.astro';
+import ParentLogo from './ParentLogo.astro';
 import { brand, packages } from '../data/site';
 const year = new Date().getFullYear();
 ---
@@ -12,6 +13,7 @@ const year = new Date().getFullYear();
         <Logo />
         <p class="mt-4 max-w-xs text-[15px] text-paper/60">Custom websites. Fixed price. Known launch date.</p>
         <p class="label mt-6 text-paper/40">Async by default · Built in Framer</p>
+        <p class="mt-8 flex items-center gap-2 text-paper/70"><span class="label text-paper/40">A product by</span><ParentLogo class="h-[16px]" /></p>
       </div>
       <div>
         <p class="label text-paper/40">Packages</p>
@@ -41,7 +43,7 @@ const year = new Date().getFullYear();
 
     <div class="mt-6 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-paper/40 sm:flex-row">
       <p>© {year} {brand.parent}. {brand.name} is a {brand.parent} product. You own your website; we just build it.</p>
-      <p class="label">Work shown: in-house concept sites</p>
+      <p class="label">Imagery: placeholders, to be replaced with our work</p>
     </div>
   </div>
 </footer>
