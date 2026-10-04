@@ -235,7 +235,7 @@ export const work = [
   { title: 'Perfect Body', industry: 'Nutrition course', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Enrollment'], focus: 'Course launch + enrollment', img: '/work/perfect-body.webp' },
   { title: 'App launch', industry: 'Consumer tech', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Analytics'], focus: 'Waitlist landing page', img: '/placeholder/phone-hands.webp' },
   { title: 'Venture fund', industry: 'Venture capital', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Motion'], focus: 'Thesis + founder intake', img: '/placeholder/tablet-founder.webp' },
-  { title: 'Rasa', industry: 'Entertainment', pkg: 'Website+', days: '15-day build', scope: ['Art direction', 'Design system', 'Motion'], focus: 'The art of entertainment', img: '/work/rasa.webp' },
+  { title: '1RED', industry: 'AI sales & support', pkg: 'Website', days: '10-day build', scope: ['Messaging', 'Design', 'Framer'], focus: 'SmartBot launch site', img: '/work/1red.webp' },
 ];
 
 // ---------------------------------------------------------------------------
