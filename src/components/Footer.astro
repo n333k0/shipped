@@ -19,13 +19,13 @@ const year = new Date().getFullYear();
         <p class="label text-paper/40">Packages</p>
         <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
           {packages.map((p) => <li><a class="hover:text-spark" href={url(`/start/?package=${p.id}`)}>{p.name} · {p.priceLabel}</a></li>)}
+          <li><a class="hover:text-spark" href={url('/budget/')}>Custom · name your budget</a></li>
         </ul>
       </div>
       <div>
         <p class="label text-paper/40">RemotoLabs products</p>
         <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
           {family.map((f) => <li><a class="hover:text-spark" href={f.url}>{f.name}</a> <span class="text-paper/45">{f.line}</span></li>)}
-          <li><a class="hover:text-spark" href={url('/budget/')}>Name your budget →</a></li>
         </ul>
         <p class="label mt-8 text-paper/40">Studio</p>
         <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
