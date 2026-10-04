@@ -232,7 +232,7 @@ export const monthName = nextWeek
 export const work = [
   { title: 'Content platform', industry: 'Media / SaaS', pkg: 'Website+', days: '15-day build', scope: ['Strategy', 'Copy', 'Art direction', 'CMS'], focus: 'Editorial homepage + CMS', img: '/placeholder/tablet-method.webp' },
   { title: 'Tokn1', industry: 'RWA exchange', pkg: 'Website', days: '10-day build', scope: ['Messaging', 'Design', 'Framer'], focus: 'Digital securities for Latam', img: '/work/tokni.webp' },
-  { title: 'Health brand', industry: 'Health / D2C', pkg: 'Website', days: '10-day build', scope: ['Design', 'Framer', 'Integrations'], focus: 'Sign-up flow, mobile first', img: '/placeholder/tablet-pharmacy.webp' },
+  { title: 'Perfect Body', industry: 'Nutrition course', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Enrollment'], focus: 'Course launch + enrollment', img: '/work/perfect-body.webp' },
   { title: 'App launch', industry: 'Consumer tech', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Analytics'], focus: 'Waitlist landing page', img: '/placeholder/phone-hands.webp' },
   { title: 'Venture fund', industry: 'Venture capital', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Motion'], focus: 'Thesis + founder intake', img: '/placeholder/tablet-founder.webp' },
   { title: 'Rasa', industry: 'Entertainment', pkg: 'Website+', days: '15-day build', scope: ['Art direction', 'Design system', 'Motion'], focus: 'The art of entertainment', img: '/work/rasa.webp' },
