@@ -23,7 +23,11 @@ const groups = [...new Set(addOns.map((a) => a.group))];
               <li class="py-4">
                 <div class="flex items-baseline justify-between gap-3">
                   <p class="text-[16px] font-semibold">{a.name}</p>
-                  <p class="shrink-0 font-mono text-[13px] text-pine-600">{a.priceLabel}</p>
+                  <p class="shrink-0 font-mono text-[13px] text-pine-600">
+                    {a.was && <s class="mr-1 text-ink/35">{a.was}</s>}
+                    {a.priceLabel}
+                    {a.promo && <span class="ml-1 rounded-full bg-spark px-1.5 py-0.5 text-[10px] uppercase tracking-[0.1em] text-ink">{a.promo}</span>}
+                  </p>
                 </div>
                 <p class="mt-1 text-[14px] text-ink/55">{a.detail}</p>
               </li>

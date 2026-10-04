@@ -39,7 +39,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <p class="display mt-24 select-none text-[clamp(64px,17vw,260px)] text-white/[0.06]" aria-hidden="true">{brand.name.toLowerCase()}.</p>
+    <p id="footer-word" class="display mt-24 select-none whitespace-nowrap text-[clamp(64px,22vw,300px)] leading-[0.8] pb-[0.22em] text-white/[0.06]" aria-hidden="true"><span>{brand.name.toLowerCase()}.</span></p>
 
     <div class="mt-6 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-paper/40 sm:flex-row">
       <p>© {year} {brand.parent}. {brand.name} is a {brand.parent} product. You own your website; we just build it.</p>
@@ -47,3 +47,17 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<script>
+  // Size the "shipped." watermark so it spans the content width exactly.
+  const word = document.getElementById('footer-word');
+  if (word) {
+    const fit = () => {
+      const span = word.firstElementChild as HTMLElement;
+      word.style.fontSize = '100px';
+      word.style.fontSize = `${(100 * word.clientWidth) / span.offsetWidth}px`;
+    };
+    document.fonts.ready.then(fit);
+    addEventListener('resize', fit);
+  }
+</script>

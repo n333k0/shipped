@@ -1,9 +1,7 @@
 ---
 import { url } from '../lib/url';
 import Layout from '../layouts/Layout.astro';
-import { packages, addOns, buildWeeks } from '../data/site';
-
-const qtyAddOns = new Set(['page', 'integration']);
+import { packages, addOns, buildWeeks, sectionExplainer } from '../data/site';
 const onboarding = [
   ['The business', 'What you sell, to whom, and what a visitor should do next.', '4 min'],
   ['The taste', 'Three sites you love, three you don’t. Screenshots welcome.', '3 min'],
@@ -35,9 +33,33 @@ const onboarding = [
                     <span class="mt-1 block text-[14px] text-paper/55">{p.pitch}</span>
                     <span class="mt-4 block text-[24px] font-medium tracking-tight">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
                     <span class="label mt-1 block text-paper/45">{p.days}</span>
+                    <span class="mt-3 block border-t border-white/10 pt-3 text-[13px] text-paper/70">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</span>
                   </label>
                 ))}
               </div>
+
+              <!-- What's included: typical sitemap for the selected package -->
+              {packages.map((p) => (
+                <div class="scope mt-4 hidden rounded-[20px] border border-white/10 bg-white/[0.03] p-5" data-scope={p.id}>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-[16px] font-semibold">What {p.name} includes</p>
+                    <p class="label text-spark">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</p>
+                  </div>
+                  <p class="mt-2 max-w-2xl text-[14px] text-paper/55">{sectionExplainer}</p>
+                  <p class="label mt-5 text-paper/40">A typical {p.name} build</p>
+                  <ul class="mt-3 divide-y divide-white/5">
+                    {p.sitemap.map((pg) => (
+                      <li class="grid gap-2 py-3 sm:grid-cols-[180px_1fr] sm:gap-4">
+                        <span class="text-[14px] font-medium">{pg.page}</span>
+                        <span class="flex flex-wrap gap-1.5">
+                          {pg.blocks.map((b) => <span class="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[12px] text-paper/70">{b}</span>)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p class="mt-3 text-[13px] text-paper/45">Yours will be shaped around your business. Need more? Add pages or single sections below.</p>
+                </div>
+              ))}
             </fieldset>
 
             <!-- 2. Add-ons -->
@@ -46,7 +68,7 @@ const onboarding = [
               <div class="mt-5 grid gap-3 sm:grid-cols-2">
                 {addOns.map((a) => (
                   <div class="addon rounded-[18px] border border-white/10 p-4 transition has-[:checked]:border-spark/70 has-[:checked]:bg-spark/5" data-addon={a.id} data-not-for={(a.notFor ?? []).join(',')}>
-                    {qtyAddOns.has(a.id) ? (
+                    {a.qty ? (
                       <div class="flex items-start justify-between gap-4">
                         <div>
                           <p class="text-[16px] font-semibold">{a.name} <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel} each</span></p>
@@ -61,7 +83,12 @@ const onboarding = [
                     ) : (
                       <label class="flex cursor-pointer items-start justify-between gap-4">
                         <span>
-                          <span class="block text-[16px] font-semibold">{a.name} <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel}</span></span>
+                          <span class="block text-[16px] font-semibold">
+                            {a.name}
+                            {a.was && <s class="ml-1 font-mono text-[12px] font-normal text-paper/40">{a.was}</s>}
+                            <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel}</span>
+                            {a.promo && <span class="chip ml-1 border-0 bg-spark px-2 py-0 align-middle text-[10px] text-ink">{a.promo}</span>}
+                          </span>
                           <span class="mt-1 block text-[14px] text-paper/55">{a.detail}</span>
                         </span>
                         <input type="checkbox" name="addon" value={a.id} class="mt-1 size-5 shrink-0 accent-[#d8ff85]" />
@@ -109,6 +136,10 @@ const onboarding = [
                     <input id={id as string} name={id as string} type={type as string} autocomplete={ac as string} required={req as boolean} class="mt-2 h-12 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark" />
                   </label>
                 ))}
+                <label class="block sm:col-span-2">
+                  <span class="label text-paper/50">Notes · optional</span>
+                  <textarea name="notes" rows="4" placeholder="Anything we should know before you brief us? Deadlines, links, the page you’re worried about…" class="mt-2 w-full resize-y rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark"></textarea>
+                </label>
               </div>
             </fieldset>
             <p id="form-error" class="hidden rounded-xl border border-booked/50 bg-booked/10 px-4 py-3 text-[15px] text-booked" role="alert"></p>
@@ -121,6 +152,7 @@ const onboarding = [
               <p id="sum-name" class="mt-2 text-[26px] font-semibold tracking-tight">Website</p>
               <ul id="sum-lines" class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]"></ul>
               <div class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]">
+                <div class="flex justify-between"><span class="text-paper/55">Scope</span><span id="sum-scope">5 pages · 30 sections</span></div>
                 <div class="flex justify-between"><span class="text-paper/55">Timeline</span><span id="sum-days">10 business days</span></div>
                 <div class="flex justify-between"><span class="text-paper/55">Build starts</span><span id="sum-start">Pick a week</span></div>
                 <div class="flex justify-between"><span class="text-paper/55">Estimated launch</span><span id="sum-launch" class="text-spark">—</span></div>
@@ -170,7 +202,7 @@ const onboarding = [
 </Layout>
 
 <script>
-  import { packages, addOns, buildWeeks, type PackageId } from '../data/site';
+  import { packages, addOns, buildWeeks, extraPageSections, type PackageId } from '../data/site';
 
   const form = document.getElementById('checkout') as HTMLFormElement;
   const $ = (id: string) => document.getElementById(id)!;
@@ -209,21 +241,24 @@ const onboarding = [
   function state() {
     const fd = new FormData(form);
     const pkg = packages.find((p) => p.id === (fd.get('package') as PackageId))!;
-    const chosen: { name: string; price: number; days: number }[] = [];
+    const chosen: { id: string; name: string; price: number; days: number; qty: number }[] = [];
     for (const a of addOns) {
       if (a.notFor?.includes(pkg.id)) continue;
-      const qty = a.id === 'page' || a.id === 'integration' ? Number(fd.get(`qty-${a.id}`) || 0) : fd.getAll('addon').includes(a.id) ? 1 : 0;
-      if (qty > 0) chosen.push({ name: qty > 1 ? `${a.name} × ${qty}` : a.name, price: a.price * qty, days: (a.addDays ?? 0) * qty });
+      const qty = a.qty ? Number(fd.get(`qty-${a.id}`) || 0) : fd.getAll('addon').includes(a.id) ? 1 : 0;
+      if (qty > 0) chosen.push({ id: a.id, name: qty > 1 ? `${a.name} × ${qty}` : a.name, price: a.price * qty, days: (a.addDays ?? 0) * qty, qty });
     }
-    const rush = chosen.some((c) => c.name === 'Rush');
+    const qtyOf = (id: string) => chosen.find((c) => c.id === id)?.qty ?? 0;
+    const pages = pkg.pages + qtyOf('page');
+    const sections = pkg.sections + qtyOf('page') * extraPageSections + qtyOf('section');
+    const rush = qtyOf('rush') > 0;
     const [lo, hi] = pkg.days.match(/\d+/g)!.map(Number);
-    const extra = chosen.reduce((n, c) => n + c.days, 0);
+    const extra = Math.ceil(chosen.reduce((n, c) => n + c.days, 0));
     let min = lo + extra;
     let max = (hi ?? lo) + extra;
     if (rush) { min = Math.ceil(min * 0.6); max = Math.ceil(max * 0.6); }
     const total = pkg.price + chosen.reduce((n, c) => n + c.price, 0);
     const week = buildWeeks.find((w) => w.start === fd.get('week'));
-    return { pkg, chosen, min, max, total, week };
+    return { pkg, chosen, min, max, total, week, pages, sections };
   }
 
   function update() {
@@ -236,10 +271,12 @@ const onboarding = [
       el.querySelector('.included')!.classList.toggle('hidden', !included);
     });
 
+    form.querySelectorAll<HTMLElement>('.scope').forEach((el) => el.classList.toggle('hidden', el.dataset.scope !== s.pkg.id));
     $('sum-name').textContent = s.pkg.name;
+    $('sum-scope').textContent = `${s.pages} page${s.pages === 1 ? '' : 's'} · ${s.sections} sections`;
     $('sum-lines').innerHTML = [
       `<li class="flex justify-between"><span>${s.pkg.name}</span><span>${money(s.pkg.price)}</span></li>`,
-      ...s.chosen.map((c) => `<li class="flex justify-between text-paper/70"><span>+ ${c.name}</span><span>${money(c.price)}</span></li>`),
+      ...s.chosen.map((c) => `<li class="flex justify-between text-paper/70"><span>+ ${c.name}</span><span>${c.price ? money(c.price) : '<span class="text-spark">Free</span>'}</span></li>`),
     ].join('');
     $('sum-days').textContent = `${s.min === s.max ? s.min : `${s.min}–${s.max}`} business days`;
     $('sum-start').textContent = s.week ? fmt(new Date(s.week.start + 'T00:00:00')) : 'Pick a week';

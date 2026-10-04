@@ -31,7 +31,15 @@ export interface Package {
   payment: string;
   depositPct: number;
   featured?: boolean;
+  pages: number; // included pages
+  sections: number; // included sections across all pages
+  sitemap: { page: string; blocks: string[] }[]; // a typical build, shown at checkout
 }
+
+// What a "section" is, shown wherever scope is described.
+export const sectionExplainer =
+  'A section is one full-width block on a page: a hero, a feature grid, testimonials, a pricing table, an FAQ, a form. Blog posts and case studies share one template, so 50 posts still count once.';
+export const extraPageSections = 6; // sections included with each extra page
 
 export const packages: Package[] = [
   {
@@ -43,7 +51,7 @@ export const packages: Package[] = [
     pitch: 'One page that does one job very well.',
     bestFor: 'Launches, campaigns, events, consultants, restaurants, new products.',
     includes: [
-      'One custom landing page',
+      'One page, up to 8 sections',
       'Page strategy & structure',
       'Copy assistance',
       'Custom visual design',
@@ -55,6 +63,11 @@ export const packages: Package[] = [
     ],
     payment: 'Paid in full to reserve',
     depositPct: 100,
+    pages: 1,
+    sections: 8,
+    sitemap: [
+      { page: 'Landing page', blocks: ['Hero', 'Problem', 'How it works', 'Features', 'Proof', 'Offer', 'FAQ', 'Sign-up form'] },
+    ],
   },
   {
     id: 'website',
@@ -65,7 +78,7 @@ export const packages: Package[] = [
     pitch: 'A full company website. Strategy to launch.',
     bestFor: 'Startups, studios, SMBs and anyone overdue for a redesign.',
     includes: [
-      'Up to 5 core pages',
+      'Up to 5 pages, 30 sections',
       'Sitemap & conversion structure',
       'Copywriting (first draft by us)',
       'Custom design',
@@ -79,6 +92,15 @@ export const packages: Package[] = [
     payment: '50% to reserve, 50% before launch',
     depositPct: 50,
     featured: true,
+    pages: 5,
+    sections: 30,
+    sitemap: [
+      { page: 'Home', blocks: ['Hero', 'Logos', 'Services', 'How it works', 'Featured work', 'Testimonials', 'FAQ', 'CTA'] },
+      { page: 'About', blocks: ['Intro', 'Story', 'Team', 'Values', 'CTA'] },
+      { page: 'Services', blocks: ['Hero', 'Service list', 'Process', 'Pricing', 'FAQ', 'CTA'] },
+      { page: 'Work or Blog (CMS)', blocks: ['Index', 'Filters', 'Post / case template', 'Related'] },
+      { page: 'Contact', blocks: ['Form', 'Details & map', 'Booking'] },
+    ],
   },
   {
     id: 'websiteplus',
@@ -89,7 +111,7 @@ export const packages: Package[] = [
     pitch: 'Agency-level work. None of the agency.',
     bestFor: 'Funded startups, premium brands, hospitality, architecture, fashion.',
     includes: [
-      'Up to 12 pages',
+      'Up to 12 pages, 70 sections',
       'Positioning & messaging',
       'Full copywriting',
       'Art direction & custom visual assets',
@@ -103,6 +125,18 @@ export const packages: Package[] = [
     ],
     payment: '50% to reserve, 50% before launch',
     depositPct: 50,
+    pages: 12,
+    sections: 70,
+    sitemap: [
+      { page: 'Home', blocks: ['Hero', 'Logos', 'Positioning', 'Services', 'Work', 'Process', 'Testimonials', 'Stats', 'FAQ', 'CTA'] },
+      { page: 'About', blocks: ['Intro', 'Story', 'Team', 'Values', 'Press', 'CTA'] },
+      { page: 'Services × 3', blocks: ['5 sections each'] },
+      { page: 'Work index + case template', blocks: ['Index', 'Filters', 'Case hero', 'Results', 'Gallery', 'Next project'] },
+      { page: 'Pricing', blocks: ['Plans', 'Compare', 'FAQ', 'CTA'] },
+      { page: 'Blog index + post template', blocks: ['Index', 'Categories', 'Post', 'Related'] },
+      { page: 'Careers', blocks: ['Culture', 'Benefits', 'Open roles'] },
+      { page: 'Contact', blocks: ['Form', 'Offices', 'Booking'] },
+    ],
   },
 ];
 
@@ -111,6 +145,7 @@ export const compareRows: { label: string; values: [string, string, string] }[] 
   { label: 'Price', values: ['$1,750', '$4,000', 'from $8,500'] },
   { label: 'Timeline', values: ['5 days', '10 days', '15–20 days'] },
   { label: 'Pages', values: ['1', 'Up to 5', 'Up to 12'] },
+  { label: 'Sections', values: ['Up to 8', 'Up to 30', 'Up to 70'] },
   { label: 'Strategy', values: ['Page structure', 'Sitemap + conversion', 'Positioning + messaging'] },
   { label: 'Copy', values: ['Assisted', 'Written by us', 'Fully written'] },
   { label: 'Design', values: ['Custom', 'Custom', 'Custom design system'] },
@@ -133,15 +168,19 @@ export interface AddOn {
   price: number;
   priceLabel: string;
   notFor?: PackageId[]; // hidden for packages that already include it
-  addDays?: number;
+  addDays?: number; // per unit; fractions add up and round up
+  qty?: boolean; // stepper instead of checkbox
+  was?: string; // original price, shown struck through during a promo
+  promo?: string; // promo label
 }
 
 export const addOns: AddOn[] = [
-  { id: 'page', group: 'Content', name: 'Extra page', detail: 'Designed, written and built like the rest.', price: 400, priceLabel: '+$400', notFor: ['landing'], addDays: 1 },
+  { id: 'page', group: 'Content', name: 'Extra page', detail: 'A new page with up to 6 sections. Designed, written, built.', price: 400, priceLabel: '+$400', notFor: ['landing'], addDays: 1, qty: true },
+  { id: 'section', group: 'Content', name: 'Extra section', detail: 'One more block on any page: gallery, pricing table, FAQ…', price: 150, priceLabel: '+$150', addDays: 0.25, qty: true },
   { id: 'copy', group: 'Content', name: 'Full copywriting', detail: 'Every word written by us, from a 30-min voice note.', price: 1200, priceLabel: '+$1,200', notFor: ['websiteplus'] },
-  { id: 'multilingual', group: 'Content', name: 'Second language', detail: 'Locale setup, switcher and translated pages.', price: 900, priceLabel: '+$900', addDays: 2 },
+  { id: 'multilingual', group: 'Content', name: 'Second language', detail: 'Locale setup, switcher and translated pages.', price: 0, priceLabel: 'Free', was: '+$900', promo: 'Promo', addDays: 2 },
   { id: 'cms', group: 'Features', name: 'Advanced CMS', detail: 'Filters, categories, references, multiple collections.', price: 750, priceLabel: '+$750', notFor: ['landing', 'websiteplus'] },
-  { id: 'integration', group: 'Features', name: 'Integration', detail: 'Booking, CRM, newsletter or payments. Per tool.', price: 250, priceLabel: '+$250' },
+  { id: 'integration', group: 'Features', name: 'Integration', detail: 'Booking, CRM, newsletter or payments. Per tool.', price: 250, priceLabel: '+$250', qty: true },
   { id: 'shop', group: 'Features', name: 'Shop', detail: 'Up to 25 products via Shopify or Framer commerce.', price: 1500, priceLabel: 'from +$1,500', notFor: ['landing'], addDays: 5 },
   { id: 'brand', group: 'Brand & motion', name: 'Brand identity sprint', detail: 'Logo, type, colour and a one-page guideline.', price: 2500, priceLabel: '+$2,500', addDays: 5 },
   { id: 'motion', group: 'Brand & motion', name: 'Signature motion / 3D', detail: 'One hero moment people screenshot.', price: 1200, priceLabel: '+$1,200', addDays: 2 },
@@ -304,8 +343,8 @@ export const faq: { group: string; items: { q: string; a: string }[] }[] = [
   {
     group: 'Scope & revisions',
     items: [
-      { q: 'What happens if I need more than 5 pages?', a: 'Add extra pages at $400 each, or move up to Website+ if you need more than three extra. The configurator does the maths for you.' },
-      { q: 'What counts as a page?', a: 'A unique layout. Your About page is a page. Twenty blog posts using one CMS template count as one page (the template), plus the CMS setup. Legal pages (privacy, terms) are free.' },
+      { q: 'What happens if I need more than 5 pages?', a: 'Add extra pages at $400 each (up to 6 sections per page), or single sections at $150. If you need more than three extra pages, Website+ is usually better value. The configurator shows your page and section count as you go.' },
+      { q: 'What counts as a page, and what’s a section?', a: 'A page is a unique URL with its own layout. A section is one full-width block on it: a hero, a feature grid, testimonials, a pricing table, a form. Packages include both a page count and a section count, so a 40-block homepage doesn’t sneak in as “one page”. Blog posts or case studies built from one CMS template count once. Legal pages (privacy, terms) are free.' },
       { q: 'What if I need additional revisions?', a: 'Extra rounds are $400 each on Landing and $600 on Website and Website+. A round is one consolidated set of feedback, so collect everyone’s notes first. Small fixes after launch are covered by post-launch support.' },
       { q: 'Can you integrate forms, CRM, email or booking systems?', a: 'Yes. Forms are always included. Website includes two integrations (e.g. HubSpot, Mailchimp, Cal.com, Calendly) and Website+ four. Extra integrations are $250 each.' },
     ],

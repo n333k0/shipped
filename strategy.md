@@ -110,6 +110,7 @@ Changes from the brief: the two portfolio sections are merged into one, and so a
 | Price | $1,750 | **$4,000** | from $8,500 |
 | Timeline | 5 business days | **10 business days** | 15–20 business days |
 | Pages | 1 | Up to 5 | Up to 12 |
+| Sections | Up to 8 | Up to 30 | Up to 70 |
 | Revisions | 1 round | 2 rounds | 3 rounds |
 | Support | 7 days | 14 days | 30 days |
 | Payment | 100% upfront | 50 / 50 | 50 / 50 |
@@ -130,13 +131,14 @@ Automation is where margin grows, by cutting research, setup, first-draft copy a
 
 ## E. Add-ons
 
-Kept to nine, in four groups, so the menu fits on one screen:
+Kept to ten, in four groups, so the menu fits on one screen:
 
 | Group | Add-on | Price | Time |
 |---|---|---|---|
-| Content | Extra page | +$400 | +1 day |
+| Content | Extra page (up to 6 sections) | +$400 | +1 day |
+| | Extra section | +$150 | +¼ day |
 | | Full copywriting | +$1,200 | — |
-| | Second language | +$900 | +2 days |
+| | Second language | ~~+$900~~ **Free (promo)** | +2 days |
 | Features | Advanced CMS | +$750 | — |
 | | Integration (booking, CRM, newsletter, payments) | +$250 each | — |
 | | Shop (≤25 products) | from +$1,500 | +5 days |
