@@ -1,0 +1,92 @@
+---
+import Mockup from './Mockup.astro';
+import { nextWeek, openSlotsThisMonth, monthName, packages } from '../data/site';
+import { url } from '../lib/url';
+
+// Concept websites (see mockups/sites.html). Mix of desktop and phone views.
+const tiles: { site: string; device: 'browser' | 'phone' }[] = [
+  { site: 'ledgerly', device: 'browser' },
+  { site: 'bloom', device: 'phone' },
+  { site: 'nord', device: 'browser' },
+  { site: 'solace', device: 'browser' },
+  { site: 'lume', device: 'phone' },
+  { site: 'kinetic', device: 'browser' },
+  { site: 'mira', device: 'browser' },
+  { site: 'solace', device: 'phone' },
+  { site: 'fieldwork', device: 'browser' },
+  { site: 'halcyon', device: 'browser' },
+  { site: 'ledgerly', device: 'phone' },
+  { site: 'bloom', device: 'browser' },
+];
+const loop = [...tiles, ...tiles];
+const from = packages[0].priceLabel;
+---
+
+<section class="relative overflow-hidden pt-[132px] sm:pt-[160px]">
+  <!-- soft glow -->
+  <div class="pointer-events-none absolute left-1/2 top-24 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-spark/10 blur-[120px]" aria-hidden="true"></div>
+
+  <div class="wrap relative text-center">
+    {nextWeek && (
+      <a href="#calendar" class="chip mx-auto border-white/15 bg-white/5 text-paper/80 hover:border-spark/60">
+        <span class="dot"></span>
+        {openSlotsThisMonth} {monthName} build slot{openSlotsThisMonth === 1 ? '' : 's'} open · next start {nextWeek.label}
+      </a>
+    )}
+
+    <h1 class="display mx-auto mt-8 max-w-[14ch] text-[clamp(48px,9vw,128px)]">
+      Your new website. <span class="accent text-spark">Without the agency.</span>
+    </h1>
+
+    <p class="mx-auto mt-7 max-w-[600px] text-[18px] leading-relaxed text-paper/75 sm:text-[20px]">
+      Strategy, copy, design and build for one fixed price. Choose it online, brief us in 20 minutes, launch in 5–20 business days.
+    </p>
+
+    <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href={url("/start/")} class="btn-primary h-14 px-8 text-[16px]">
+        Start your website
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="1.6" /></svg>
+      </a>
+      <a href="#packages" class="btn-ghost h-14 px-8 text-[16px]">See packages</a>
+    </div>
+
+    <ul class="label mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-paper/50">
+      <li>No proposals</li>
+      <li aria-hidden="true">/</li>
+      <li>No hourly billing</li>
+      <li aria-hidden="true">/</li>
+      <li>No meetings required</li>
+      <li aria-hidden="true">/</li>
+      <li>From {from}</li>
+    </ul>
+  </div>
+
+  <div class="relative mt-16 sm:mt-20" aria-label="Concept websites">
+    <div class="flex w-max items-center gap-5 py-6 animate-marquee hover:[animation-play-state:paused]">
+      {loop.map((t, i) => (
+        <div class:list={['shrink-0', t.device === 'phone' ? 'w-[150px] sm:w-[190px]' : 'w-[360px] sm:w-[560px]', i % 2 ? 'translate-y-4' : '-translate-y-4']} aria-hidden={i >= tiles.length ? 'true' : undefined}>
+          <Mockup site={t.site} device={t.device} eager={i < 4} />
+        </div>
+      ))}
+    </div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-pine-900 sm:w-40" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-pine-900 sm:w-40" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- Facts strip -->
+<section class="border-y border-white/10 mt-16 sm:mt-24">
+  <div class="wrap grid grid-cols-2 divide-white/10 md:grid-cols-4 md:divide-x">
+    {[
+      ['Fixed price', 'On the page. No quote.'],
+      ['5–20 days', 'From brief to live.'],
+      ['Async', 'No meetings required.'],
+      ['Yours', 'You own every pixel.'],
+    ].map(([k, v]) => (
+      <div class="px-2 py-8 md:px-8">
+        <p class="text-[22px] font-medium tracking-tight sm:text-[26px]">{k}</p>
+        <p class="mt-1 text-[14px] text-paper/55">{v}</p>
+      </div>
+    ))}
+  </div>
+</section>

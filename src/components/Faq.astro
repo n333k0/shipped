@@ -1,0 +1,35 @@
+---
+import { faq, brand } from '../data/site';
+---
+
+<section id="faq" class="py-24 sm:py-32">
+  <div class="wrap grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
+    <div class="lg:sticky lg:top-28 lg:self-start" data-reveal>
+      <p class="label text-spark">FAQ</p>
+      <h2 class="display mt-4 text-[clamp(40px,6vw,72px)]">Questions, <span class="accent text-spark">answered.</span></h2>
+      <p class="mt-6 max-w-sm text-[16px] text-paper/60">Still unsure? <a href={brand.callLink} class="text-paper underline underline-offset-4">Book 15 minutes</a> or email <a href={`mailto:${brand.email}`} class="text-paper underline underline-offset-4">{brand.email}</a>. A person who builds websites will answer.</p>
+      <nav class="mt-8 hidden flex-wrap gap-2 lg:flex" aria-label="FAQ topics">
+        {faq.map((g) => <a href={`#faq-${g.group.toLowerCase().replace(/[^a-z]+/g, '-')}`} class="chip border-white/15 text-paper/60 hover:text-paper">{g.group}</a>)}
+      </nav>
+    </div>
+
+    <div class="space-y-14">
+      {faq.map((g) => (
+        <div id={`faq-${g.group.toLowerCase().replace(/[^a-z]+/g, '-')}`}>
+          <p class="label text-paper/40">{g.group}</p>
+          <div class="mt-4 divide-y divide-white/10 border-y border-white/10">
+            {g.items.map((item) => (
+              <details class="group">
+                <summary class="flex items-center justify-between gap-6 py-5 text-[18px] font-medium transition hover:text-spark">
+                  {item.q}
+                  <span class="faq-plus grid size-8 shrink-0 place-items-center rounded-full border border-white/15 text-[18px] text-paper/70 transition">+</span>
+                </summary>
+                <p class="max-w-2xl pb-6 text-[16px] leading-relaxed text-paper/65">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

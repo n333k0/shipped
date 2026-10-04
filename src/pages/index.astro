@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Work from '../components/Work.astro';
+import Packages from '../components/Packages.astro';
+import OldWay from '../components/OldWay.astro';
+import Process from '../components/Process.astro';
+import WhyFast from '../components/WhyFast.astro';
+import AddOns from '../components/AddOns.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Calendar from '../components/Calendar.astro';
+import Faq from '../components/Faq.astro';
+import FinalCta from '../components/FinalCta.astro';
+---
+
+<!--
+  Section order (conversion rationale in strategy.md, section C):
+  promise → proof → price → why it's different → how it works → why it's good
+  → extras → trust → date → objections → close
+-->
+<Layout>
+  <Hero />
+  <Work />
+  <Packages />
+  <OldWay />
+  <Process />
+  <WhyFast />
+  <AddOns />
+  <Testimonials />
+  <Calendar />
+  <Faq />
+  <FinalCta />
+</Layout>

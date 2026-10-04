@@ -1,0 +1,47 @@
+---
+import { url } from '../lib/url';
+import Logo from './Logo.astro';
+import { brand, packages } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10 bg-pine-950 pt-20 pb-10">
+  <div class="wrap">
+    <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div>
+        <Logo />
+        <p class="mt-4 max-w-xs text-[15px] text-paper/60">Custom websites. Fixed price. Known launch date.</p>
+        <p class="label mt-6 text-paper/40">Async by default · Built in Framer</p>
+      </div>
+      <div>
+        <p class="label text-paper/40">Packages</p>
+        <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
+          {packages.map((p) => <li><a class="hover:text-spark" href={url(`/start/?package=${p.id}`)}>{p.name} · {p.priceLabel}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="label text-paper/40">Studio</p>
+        <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
+          <li><a class="hover:text-spark" href={url('/#work')}>Work</a></li>
+          <li><a class="hover:text-spark" href={url('/#process')}>Process</a></li>
+          <li><a class="hover:text-spark" href={url('/#calendar')}>Availability</a></li>
+          <li><a class="hover:text-spark" href={url('/#faq')}>FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label text-paper/40">Talk to a human</p>
+        <ul class="mt-4 space-y-2 text-[15px] text-paper/80">
+          <li><a class="hover:text-spark" href={`mailto:${brand.email}`}>{brand.email}</a></li>
+          <li><a class="hover:text-spark" href={brand.callLink}>Book a 15-min call</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="display mt-24 select-none text-[clamp(64px,17vw,260px)] text-white/[0.06]" aria-hidden="true">{brand.name.toLowerCase()}.</p>
+
+    <div class="mt-6 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-paper/40 sm:flex-row">
+      <p>© {year} {brand.parent}. {brand.name} is a {brand.parent} product. You own your website; we just build it.</p>
+      <p class="label">Work shown: in-house concept sites</p>
+    </div>
+  </div>
+</footer>

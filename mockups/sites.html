@@ -1,0 +1,263 @@
+<!doctype html>
+<!--
+  Concept website mockups, rendered to public/mockups/*.webp by scripts/render-mockups.sh.
+  Open sites.html?s=<id> to view one. All brands here are fictional.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;600&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden}
+  .site{display:none;width:100vw;height:100vh;position:relative;overflow:hidden;font-family:Inter,sans-serif}
+  .site.on{display:block}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:28px 56px;font-size:14px;position:relative;z-index:2}
+  nav .links{display:flex;gap:32px}
+  @media (max-width:600px){nav{padding:20px 22px} nav .links{display:none}}
+
+  /* 1 SOLACE — wellness studio */
+  #solace{background:#efe6da;color:#3b2f27;font-family:Inter}
+  #solace .logo{font-family:Fraunces;font-size:24px;font-weight:600;letter-spacing:-.02em}
+  #solace .btn{background:#3b2f27;color:#efe6da;padding:12px 22px;border-radius:99px;font-weight:500}
+  #solace .sun{position:absolute;right:-120px;top:120px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f7c59f,#e38b5a 55%,#b85c38)}
+  #solace .arch{position:absolute;right:180px;top:260px;width:300px;height:520px;border-radius:150px 150px 0 0;background:linear-gradient(#f3d7bd,#d9a982);box-shadow:inset 0 -40px 80px rgba(80,40,20,.25)}
+  #solace h1{font-family:Fraunces;font-weight:300;font-size:112px;line-height:.95;letter-spacing:-.04em;margin:110px 0 0 56px;max-width:720px;position:relative;z-index:2}
+  #solace h1 i{font-style:italic;color:#b85c38}
+  #solace p{margin:32px 0 0 60px;max-width:420px;font-size:18px;line-height:1.5;opacity:.75;position:relative;z-index:2}
+  #solace .row{display:flex;gap:12px;margin:36px 0 0 60px;position:relative;z-index:2}
+  #solace .ghost{border:1px solid #3b2f27;padding:12px 22px;border-radius:99px}
+  #solace .card{position:absolute;left:60px;bottom:48px;display:flex;gap:16px;z-index:2}
+  #solace .card div{background:#f8f2ea;border-radius:18px;padding:16px 20px;font-size:13px;min-width:170px}
+  #solace .card b{display:block;font-family:Fraunces;font-size:22px;font-weight:600;margin-top:4px}
+  @media (max-width:600px){#solace h1{font-size:58px;margin:60px 22px 0} #solace p{margin:20px 22px 0;font-size:16px} #solace .row{margin:26px 22px 0} #solace .sun{width:420px;height:420px;right:-160px;top:auto;bottom:-80px} #solace .arch{right:30px;top:auto;bottom:0;width:180px;height:300px} #solace .card{display:none}}
+
+  /* 2 LEDGERLY — fintech */
+  #ledgerly{background:#070b1a;color:#e7ebff}
+  #ledgerly .logo{font-family:'Space Grotesk';font-weight:700;font-size:22px;display:flex;gap:8px;align-items:center}
+  #ledgerly .logo span{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#7c5cff,#2de2c6)}
+  #ledgerly .btn{background:#e7ebff;color:#070b1a;padding:11px 20px;border-radius:10px;font-weight:600}
+  #ledgerly .glow{position:absolute;left:50%;top:-200px;width:1100px;height:700px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(124,92,255,.45),transparent)}
+  #ledgerly h1{font-family:'Space Grotesk';font-size:84px;line-height:1;letter-spacing:-.045em;text-align:center;margin:70px auto 0;max-width:900px;position:relative}
+  #ledgerly h1 span{background:linear-gradient(90deg,#9b85ff,#2de2c6);-webkit-background-clip:text;color:transparent}
+  #ledgerly p{text-align:center;opacity:.6;font-size:19px;margin:24px auto 0;max-width:560px;position:relative}
+  #ledgerly .dash{position:absolute;left:50%;transform:translateX(-50%);top:470px;width:1040px;height:520px;border-radius:20px;background:#0e1430;border:1px solid rgba(255,255,255,.08);padding:28px;display:grid;grid-template-columns:240px 1fr;gap:24px}
+  #ledgerly .side div{height:14px;border-radius:7px;background:rgba(255,255,255,.07);margin-bottom:18px}
+  #ledgerly .side div:first-child{background:rgba(124,92,255,.5);width:70%}
+  #ledgerly .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  #ledgerly .kpis div{background:rgba(255,255,255,.04);border-radius:14px;padding:18px;font-size:12px;opacity:.9}
+  #ledgerly .kpis b{display:block;font-family:'Space Grotesk';font-size:28px;margin-top:6px}
+  #ledgerly .chart{margin-top:16px;height:250px;border-radius:14px;background:rgba(255,255,255,.03);position:relative;overflow:hidden}
+  #ledgerly .chart svg{position:absolute;inset:0}
+  @media (max-width:600px){#ledgerly h1{font-size:46px;margin-top:50px;padding:0 20px} #ledgerly p{font-size:16px;padding:0 24px} #ledgerly .dash{width:340px;top:420px;grid-template-columns:1fr} #ledgerly .side{display:none} #ledgerly .kpis{grid-template-columns:1fr 1fr}}
+
+  /* 3 ATELIER NORD — architecture */
+  #nord{background:#f4f4f1;color:#111}
+  #nord .logo{font-weight:700;letter-spacing:.2em;font-size:13px}
+  #nord nav{border-bottom:1px solid #111;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  #nord .grid{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 78px)}
+  #nord .l{padding:56px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #111}
+  #nord h1{font-size:120px;font-weight:500;letter-spacing:-.06em;line-height:.88}
+  #nord .meta{display:grid;grid-template-columns:repeat(3,1fr);font-size:12px;letter-spacing:.06em;text-transform:uppercase;gap:20px}
+  #nord .meta b{display:block;font-size:28px;letter-spacing:-.02em;text-transform:none;font-weight:500;margin-top:6px}
+  #nord .r{position:relative;background:linear-gradient(180deg,#cfd3d6,#9aa3a8)}
+  #nord .b1{position:absolute;left:12%;bottom:0;width:38%;height:72%;background:linear-gradient(90deg,#e9e9e6 0 50%,#d2d2ce 50%)}
+  #nord .b2{position:absolute;left:44%;bottom:0;width:40%;height:52%;background:#2b2b2b}
+  #nord .b2:before{content:'';position:absolute;inset:18% 12% auto;height:16%;background:repeating-linear-gradient(90deg,#f0c97a 0 22px,transparent 22px 34px)}
+  #nord .b3{position:absolute;left:0;right:0;bottom:0;height:10%;background:#5f6b4f}
+  #nord .tag{position:absolute;right:24px;top:24px;background:#f4f4f1;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px}
+
+  /* 4 OSTERIA LUME — restaurant */
+  #lume{background:#5a1414;color:#f6e9d7}
+  #lume nav{font-family:'Playfair Display';font-size:15px}
+  #lume .logo{font-family:'Playfair Display';font-style:italic;font-size:28px}
+  #lume .btn{border:1px solid #f6e9d7;padding:10px 20px;border-radius:99px;font-family:Inter;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  #lume h1{font-family:'Playfair Display';font-size:150px;font-weight:400;line-height:.9;letter-spacing:-.03em;text-align:center;margin-top:60px}
+  #lume h1 i{color:#f2b46b}
+  #lume p{text-align:center;font-size:18px;opacity:.8;margin-top:24px;font-family:'Playfair Display';font-style:italic}
+  #lume .plates{display:flex;justify-content:center;gap:40px;margin-top:56px}
+  #lume .plate{width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#fbf3e6 0 52%,#e8d9c3 53% 60%,#f6ecdc 61%);position:relative;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+  #lume .plate:after{content:'';position:absolute;inset:32%;border-radius:50%;background:radial-gradient(circle at 40% 40%,#e7a14a,#b34a1c 60%,#7a2a10)}
+  #lume .plate.p2:after{background:radial-gradient(circle at 40% 40%,#9cbf6a,#4d7a2a 60%,#2d4a18)}
+  #lume .plate.p3:after{background:radial-gradient(circle at 40% 40%,#f4e3a0,#e0b84a 60%,#9a7020)}
+  #lume .bar{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:22px 56px;border-top:1px solid rgba(246,233,215,.25);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  @media (max-width:600px){#lume h1{font-size:76px;margin-top:70px} #lume .plates{gap:14px} #lume .plate{width:150px;height:150px} #lume .plate.p3{display:none} #lume .bar{flex-direction:column;gap:6px;padding:18px 22px}}
+
+  /* 5 MIRA — fashion */
+  #mira{background:#ece7df;color:#141414}
+  #mira .logo{font-family:'Archivo Black';font-size:22px;letter-spacing:.02em}
+  #mira nav{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  #mira h1{font-family:'Archivo Black';font-size:300px;line-height:.8;letter-spacing:-.05em;position:absolute;bottom:-20px;left:40px}
+  #mira .ph{position:absolute;top:110px;width:300px;height:430px}
+  #mira .ph1{left:520px;background:linear-gradient(160deg,#c9b8a3,#8a7360)}
+  #mira .ph2{left:850px;top:180px;background:linear-gradient(160deg,#2f2f2f,#6b6158)}
+  #mira .ph3{left:1180px;top:140px;width:220px;height:300px;background:linear-gradient(160deg,#d9c7b0,#b29a7e)}
+  #mira .ph:after{content:'';position:absolute;left:30%;top:14%;width:40%;height:70%;border-radius:60px 60px 10px 10px;background:rgba(0,0,0,.18)}
+  #mira .cap{position:absolute;left:56px;top:140px;max-width:300px;font-size:14px;line-height:1.6}
+  #mira .cap b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+  #mira .shop{position:absolute;left:56px;top:330px;border-bottom:1px solid;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-bottom:4px}
+
+  /* 6 FIELDWORK — consulting */
+  #fieldwork{background:#fbfaf6;color:#13261d}
+  #fieldwork .logo{font-family:'DM Serif Display';font-size:26px}
+  #fieldwork .btn{background:#1f4d36;color:#fbfaf6;padding:12px 22px;border-radius:8px;font-weight:500}
+  #fieldwork .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;padding:60px 56px 0}
+  #fieldwork h1{font-family:'DM Serif Display';font-size:92px;line-height:1;letter-spacing:-.02em;font-weight:400}
+  #fieldwork h1 i{color:#2f7a52}
+  #fieldwork p{font-size:19px;line-height:1.55;opacity:.7;margin-top:28px;max-width:520px}
+  #fieldwork .logos{display:flex;gap:36px;margin-top:56px;opacity:.45;font-weight:700;letter-spacing:.06em;font-size:15px}
+  #fieldwork .panel{background:#1f4d36;border-radius:24px;height:600px;padding:40px;color:#e8f0e9;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+  #fieldwork .panel:before{content:'';position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;border:60px solid rgba(255,255,255,.06)}
+  #fieldwork .stat b{font-family:'DM Serif Display';font-size:84px;display:block;font-weight:400}
+  #fieldwork .stat{font-size:15px;opacity:.85}
+  #fieldwork .bars{display:flex;align-items:flex-end;gap:14px;height:200px}
+  #fieldwork .bars i{flex:1;background:#7fc79d;border-radius:8px 8px 0 0}
+
+  /* 7 KINETIC — dev tool */
+  #kinetic{background:#0b0b0c;color:#f2f2f2;font-family:'Space Grotesk'}
+  #kinetic .logo{font-weight:700;font-size:22px}
+  #kinetic .logo span{color:#c6ff3d}
+  #kinetic .btn{background:#c6ff3d;color:#0b0b0c;padding:11px 20px;border-radius:8px;font-weight:700}
+  #kinetic .pill{display:inline-block;border:1px solid #333;border-radius:99px;padding:6px 14px;font-family:'JetBrains Mono';font-size:12px;color:#aaa;margin:64px 0 0 56px}
+  #kinetic h1{font-size:104px;line-height:.95;letter-spacing:-.05em;margin:24px 0 0 56px;max-width:780px}
+  #kinetic h1 span{color:#c6ff3d}
+  #kinetic p{margin:26px 0 0 60px;font-size:19px;color:#999;max-width:480px;line-height:1.5}
+  #kinetic .code{position:absolute;right:56px;top:150px;width:560px;background:#141416;border:1px solid #262626;border-radius:16px;padding:22px 26px;font-family:'JetBrains Mono';font-size:15px;line-height:1.9;color:#bbb}
+  #kinetic .code .dots{display:flex;gap:7px;margin-bottom:14px}
+  #kinetic .code .dots i{width:11px;height:11px;border-radius:50%;background:#333}
+  #kinetic .k{color:#c6ff3d}.s{color:#ffb86b}.c{color:#555}
+  #kinetic .term{position:absolute;right:120px;top:560px;width:460px;background:#c6ff3d;color:#0b0b0c;border-radius:14px;padding:18px 22px;font-family:'JetBrains Mono';font-size:14px;line-height:1.8}
+
+  /* 8 BLOOM — coffee D2C */
+  #bloom{background:#ffb8d1;color:#2a1306;font-family:'Bricolage Grotesque'}
+  #bloom .logo{font-weight:800;font-size:30px;letter-spacing:-.04em}
+  #bloom .btn{background:#2a1306;color:#ffb8d1;padding:12px 22px;border-radius:99px;font-weight:700}
+  #bloom h1{font-size:150px;font-weight:800;line-height:.85;letter-spacing:-.06em;margin:50px 0 0 56px;position:relative;z-index:2}
+  #bloom h1 span{color:#ff5a1f}
+  #bloom p{margin:28px 0 0 60px;font-size:20px;max-width:380px;line-height:1.4;font-weight:400;position:relative;z-index:2}
+  #bloom .blob{position:absolute;right:120px;top:120px;width:520px;height:560px;background:#ff5a1f;border-radius:46% 54% 42% 58% / 52% 38% 62% 48%}
+  #bloom .bag{position:absolute;right:250px;top:210px;width:260px;height:380px;background:#fff6e8;border-radius:16px 16px 26px 26px;box-shadow:0 30px 60px rgba(42,19,6,.3);transform:rotate(-6deg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:40px;letter-spacing:-.04em}
+  #bloom .bag small{font-size:13px;font-weight:400;letter-spacing:.1em;margin-top:8px}
+  #bloom .stick{position:absolute;right:90px;top:520px;background:#2a1306;color:#ffb8d1;border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-weight:700;font-size:17px;transform:rotate(12deg)}
+  @media (max-width:600px){#bloom h1{font-size:80px;margin:40px 0 0 22px} #bloom p{margin:20px 22px 0;font-size:17px} #bloom .blob{width:320px;height:340px;right:-40px;top:auto;bottom:-40px} #bloom .bag{width:160px;height:230px;right:70px;top:auto;bottom:60px;font-size:26px} #bloom .stick{width:100px;height:100px;font-size:12px;right:10px;top:auto;bottom:250px}}
+
+  /* 9 HALCYON — VC fund */
+  #halcyon{background:#0f1c2e;color:#eef2f7}
+  #halcyon .logo{font-family:'Syne';font-weight:800;font-size:22px;letter-spacing:.04em}
+  #halcyon .btn{border:1px solid rgba(255,255,255,.4);padding:11px 20px;border-radius:99px}
+  #halcyon .orb{position:absolute;left:50%;top:52%;width:780px;height:780px;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 200deg,#2a5bd7,#7fd1ff,#f5d0a9,#2a5bd7);filter:blur(2px);opacity:.9}
+  #halcyon .orb:after{content:'';position:absolute;inset:3px;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(15,28,46,.2),#0f1c2e 70%)}
+  #halcyon h1{position:relative;text-align:center;font-family:'Syne';font-weight:700;font-size:112px;line-height:.95;letter-spacing:-.04em;margin-top:180px}
+  #halcyon p{position:relative;text-align:center;font-size:19px;opacity:.65;margin-top:24px}
+  #halcyon .foot{position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.12)}
+  #halcyon .foot div{padding:26px 56px;font-size:13px;opacity:.7;border-right:1px solid rgba(255,255,255,.12)}
+  #halcyon .foot b{display:block;font-family:'Syne';font-size:30px;opacity:1;margin-top:4px}
+</style>
+</head>
+<body>
+
+<section class="site" id="solace">
+  <nav><span class="logo">Solace</span><span class="links"><span>Classes</span><span>Retreats</span><span>Studio</span><span>Journal</span></span><span class="btn">Book a class</span></nav>
+  <div class="sun"></div><div class="arch"></div>
+  <h1>Slow down, <i>on purpose.</i></h1>
+  <p>Breathwork, yoga and sound in a light-filled studio. First class is on us.</p>
+  <div class="row"><span class="btn">See the timetable</span><span class="ghost">Visit the studio</span></div>
+  <div class="card"><div>Next class<b>Sunrise Flow · 7:00</b></div><div>Spots left<b>4 of 14</b></div></div>
+</section>
+
+<section class="site" id="ledgerly">
+  <nav><span class="logo"><span></span>Ledgerly</span><span class="links"><span>Product</span><span>Pricing</span><span>Customers</span><span>Docs</span></span><span class="btn">Get started</span></nav>
+  <div class="glow"></div>
+  <h1>Close your books in <span>hours, not weeks.</span></h1>
+  <p>Accounting that reconciles itself. Built for finance teams that would rather be doing finance.</p>
+  <div class="dash">
+    <div class="side"><div></div><div></div><div style="width:80%"></div><div style="width:60%"></div><div></div><div style="width:70%"></div></div>
+    <div>
+      <div class="kpis"><div>Cash on hand<b>$4.82M</b></div><div>Burn / month<b>$212K</b></div><div>Runway<b>22.7 mo</b></div></div>
+      <div class="chart"><svg viewBox="0 0 700 250" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c5cff" stop-opacity=".5"/><stop offset="1" stop-color="#7c5cff" stop-opacity="0"/></linearGradient></defs><path d="M0 200 C80 180 120 190 180 150 S300 120 360 130 S480 70 540 80 S640 30 700 40 L700 250 L0 250Z" fill="url(#g)"/><path d="M0 200 C80 180 120 190 180 150 S300 120 360 130 S480 70 540 80 S640 30 700 40" fill="none" stroke="#9b85ff" stroke-width="3"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="site" id="nord">
+  <nav><span class="logo">ATELIER NORD</span><span class="links"><span>Projects</span><span>Practice</span><span>People</span><span>Contact</span></span><span>EN / DK</span></nav>
+  <div class="grid">
+    <div class="l">
+      <h1>Quiet buildings for loud cities.</h1>
+      <div class="meta"><div>Projects<b>64</b></div><div>Countries<b>9</b></div><div>Founded<b>2011</b></div></div>
+    </div>
+    <div class="r"><div class="b1"></div><div class="b2"></div><div class="b3"></div><span class="tag">Harbour House, Aarhus — 2025</span></div>
+  </div>
+</section>
+
+<section class="site" id="lume">
+  <nav><span class="links"><span>Menu</span><span>Wine</span><span>Private dining</span></span><span class="logo">Osteria Lume</span><span class="btn">Reserve a table</span></nav>
+  <h1>Pasta, <i>slowly.</i></h1>
+  <p>Hand-rolled every morning. Gone by every night.</p>
+  <div class="plates"><div class="plate"></div><div class="plate p2"></div><div class="plate p3"></div></div>
+  <div class="bar"><span>Tue–Sun · 17:30–23:00</span><span>14 Via Roma, Ground floor</span><span>Walk-ins welcome at the bar</span></div>
+</section>
+
+<section class="site" id="mira">
+  <nav><span class="logo">MIRA</span><span class="links"><span>New in</span><span>Womenswear</span><span>Menswear</span><span>Archive</span></span><span>Bag (0)</span></nav>
+  <div class="cap"><b>AW26 — Collection 04</b>Wool, linen and nothing you'll need to replace in five years. Made in small runs in Porto.</div>
+  <span class="shop">Shop the collection →</span>
+  <div class="ph ph1"></div><div class="ph ph2"></div><div class="ph ph3"></div>
+  <h1>MIRA</h1>
+</section>
+
+<section class="site" id="fieldwork">
+  <nav><span class="logo">Fieldwork</span><span class="links"><span>Services</span><span>Case studies</span><span>Team</span><span>Insights</span></span><span class="btn">Talk to a partner</span></nav>
+  <div class="wrap">
+    <div>
+      <h1>Operations advice that <i>survives</i> Monday morning.</h1>
+      <p>We help mid-size companies fix how work actually gets done, then stay until it sticks.</p>
+      <div class="logos"><span>NORTHMILL</span><span>KESTREL</span><span>ARDEN&amp;CO</span><span>VALE</span></div>
+    </div>
+    <div class="panel">
+      <div class="stat"><b>31%</b>average reduction in cycle time across our last 20 engagements</div>
+      <div class="bars"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:82%"></i><i style="height:100%"></i></div>
+    </div>
+  </div>
+</section>
+
+<section class="site" id="kinetic">
+  <nav><span class="logo">kinetic<span>.</span></span><span class="links"><span>Product</span><span>Changelog</span><span>Docs</span><span>Pricing</span></span><span class="btn">Start free</span></nav>
+  <span class="pill">v3.0 — background jobs are here →</span>
+  <h1>Ship workflows, <span>not cron jobs.</span></h1>
+  <p>Durable functions for TypeScript. Retries, schedules and fan-out without the infrastructure.</p>
+  <div class="code"><div class="dots"><i></i><i></i><i></i></div>
+<span class="k">import</span> { job } <span class="k">from</span> <span class="s">'kinetic'</span><br>
+<br>
+<span class="k">export default</span> job(<span class="s">'send-invoice'</span>, {<br>
+&nbsp;&nbsp;retries: <span class="s">5</span>,<br>
+&nbsp;&nbsp;schedule: <span class="s">'0 9 * * MON'</span>,<br>
+}, <span class="k">async</span> (ctx) =&gt; {<br>
+&nbsp;&nbsp;<span class="c">// survives deploys, crashes, and Mondays</span><br>
+&nbsp;&nbsp;<span class="k">await</span> ctx.step(<span class="s">'charge'</span>, charge)<br>
+})</div>
+  <div class="term">$ npx kinetic deploy<br>✓ 3 jobs deployed in 1.8s</div>
+</section>
+
+<section class="site" id="bloom">
+  <nav><span class="logo">bloom</span><span class="links"><span>Shop coffee</span><span>Subscriptions</span><span>Wholesale</span></span><span class="btn">Shop now</span></nav>
+  <div class="blob"></div><div class="bag">bloom<small>NO. 7 — HOUSE BLEND</small></div><div class="stick">Free shipping<br>on 2+ bags</div>
+  <h1>Coffee<br>that's <span>loud.</span></h1>
+  <p>Single-origin, roasted on Tuesdays, at your door by Friday.</p>
+</section>
+
+<section class="site" id="halcyon">
+  <nav><span class="logo">HALCYON</span><span class="links"><span>Thesis</span><span>Portfolio</span><span>Team</span><span>Founders</span></span><span class="btn">Pitch us</span></nav>
+  <div class="orb"></div>
+  <h1>Patient capital<br>for hard problems.</h1>
+  <p>Pre-seed and seed for climate, health and deep tech founders.</p>
+  <div class="foot"><div>Fund III<b>$180M</b></div><div>Companies<b>47</b></div><div>First cheque<b>$500K–2M</b></div><div style="border:0">Follow-on<b>Up to Series B</b></div></div>
+</section>
+
+<script>
+  const id = new URLSearchParams(location.search).get('s') || 'solace';
+  document.getElementById(id)?.classList.add('on');
+</script>
+</body>
+</html>

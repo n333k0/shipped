@@ -1,0 +1,278 @@
+---
+import { url } from '../lib/url';
+import Layout from '../layouts/Layout.astro';
+import { packages, addOns, buildWeeks } from '../data/site';
+
+const qtyAddOns = new Set(['page', 'integration']);
+const onboarding = [
+  ['The business', 'What you sell, to whom, and what a visitor should do next.', '4 min'],
+  ['The taste', 'Three sites you love, three you don’t. Screenshots welcome.', '3 min'],
+  ['The assets', 'Logo, fonts, colours, photos, existing copy. Drag, drop, done.', '5 min'],
+  ['The site', 'Pages, integrations, CMS, domain. Mostly checkboxes.', '4 min'],
+  ['Anything else', 'Deadlines, quirks, opinions. Type it or record a voice note.', '2 min'],
+];
+---
+
+<Layout title="Start your website" minimal>
+  <section class="pt-[110px] pb-24 sm:pt-[130px]">
+    <div class="wrap">
+      <div id="config">
+        <p class="label text-spark">Start your website</p>
+        <h1 class="display mt-4 text-[clamp(40px,6vw,76px)]">Configure it. <span class="accent text-spark">Reserve it.</span> Done.</h1>
+        <p class="mt-4 max-w-xl text-[17px] text-paper/60">Four quick choices. Price, deposit and launch date update as you go. Nothing is charged until the last step.</p>
+
+        <div class="mt-12 grid gap-10 lg:grid-cols-[1fr_380px]">
+          <form id="checkout" class="space-y-12" novalidate>
+            <!-- 1. Package -->
+            <fieldset>
+              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">01</span> Choose your website</legend>
+              <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                {packages.map((p) => (
+                  <label class="relative cursor-pointer rounded-[20px] border border-white/15 p-5 transition hover:border-white/40 has-[:checked]:border-spark has-[:checked]:bg-spark/10">
+                    <input type="radio" name="package" value={p.id} class="sr-only" checked={p.featured} />
+                    {p.featured && <span class="chip absolute right-3 top-3 border-0 bg-spark px-2 py-0.5 text-[10px] text-ink">Popular</span>}
+                    <span class="block text-[20px] font-semibold">{p.name}</span>
+                    <span class="mt-1 block text-[14px] text-paper/55">{p.pitch}</span>
+                    <span class="mt-4 block text-[24px] font-medium tracking-tight">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
+                    <span class="label mt-1 block text-paper/45">{p.days}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <!-- 2. Add-ons -->
+            <fieldset>
+              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">02</span> Add anything? <span class="text-[15px] font-normal text-paper/45">Optional</span></legend>
+              <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                {addOns.map((a) => (
+                  <div class="addon rounded-[18px] border border-white/10 p-4 transition has-[:checked]:border-spark/70 has-[:checked]:bg-spark/5" data-addon={a.id} data-not-for={(a.notFor ?? []).join(',')}>
+                    {qtyAddOns.has(a.id) ? (
+                      <div class="flex items-start justify-between gap-4">
+                        <div>
+                          <p class="text-[16px] font-semibold">{a.name} <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel} each</span></p>
+                          <p class="mt-1 text-[14px] text-paper/55">{a.detail}</p>
+                        </div>
+                        <div class="flex shrink-0 items-center gap-1 rounded-full border border-white/15 p-1">
+                          <button type="button" class="grid size-8 place-items-center rounded-full hover:bg-white/10" data-step="-1" aria-label={`Fewer: ${a.name}`}>−</button>
+                          <input type="number" name={`qty-${a.id}`} value="0" min="0" max="10" class="w-7 bg-transparent text-center font-mono text-[14px] [appearance:textfield]" aria-label={`${a.name} quantity`} readonly />
+                          <button type="button" class="grid size-8 place-items-center rounded-full hover:bg-white/10" data-step="1" aria-label={`More: ${a.name}`}>+</button>
+                        </div>
+                      </div>
+                    ) : (
+                      <label class="flex cursor-pointer items-start justify-between gap-4">
+                        <span>
+                          <span class="block text-[16px] font-semibold">{a.name} <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel}</span></span>
+                          <span class="mt-1 block text-[14px] text-paper/55">{a.detail}</span>
+                        </span>
+                        <input type="checkbox" name="addon" value={a.id} class="mt-1 size-5 shrink-0 accent-[#d8ff85]" />
+                      </label>
+                    )}
+                    <p class="included label mt-2 hidden text-paper/40">Included in this package</p>
+                  </div>
+                ))}
+              </div>
+            </fieldset>
+
+            <!-- 3. Week -->
+            <fieldset>
+              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">03</span> Pick a build week</legend>
+              <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {buildWeeks.map((w) => {
+                  const full = w.booked >= w.slots;
+                  return (
+                    <label class:list={['rounded-[18px] border p-4 transition', full ? 'cursor-not-allowed border-white/5 opacity-40' : 'cursor-pointer border-white/15 hover:border-white/40 has-[:checked]:border-spark has-[:checked]:bg-spark/10']}>
+                      <input type="radio" name="week" value={w.start} class="sr-only" disabled={full} />
+                      <span class="label block text-paper/45">Week of</span>
+                      <span class:list={['mt-1 block text-[22px] font-medium', full && 'line-through']}>{w.label}</span>
+                      <span class:list={['label mt-3 flex items-center gap-2', full ? 'text-booked' : 'text-spark']}>
+                        <span class={full ? 'dot-booked' : 'dot'}></span>{full ? 'Booked' : w.slots - w.booked === 1 ? '1 slot left' : 'Available'}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+              <p class="mt-3 text-[14px] text-paper/45">Full refund up to 7 days before your week. You can move your week once, free.</p>
+            </fieldset>
+
+            <!-- 4. Details -->
+            <fieldset>
+              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">04</span> Who’s it for?</legend>
+              <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  ['name', 'Your name', 'text', 'name', true],
+                  ['email', 'Work email', 'email', 'email', true],
+                  ['company', 'Company', 'text', 'organization', true],
+                  ['url', 'Current website (if any)', 'text', 'url', false],
+                ].map(([id, label, type, ac, req]) => (
+                  <label class="block">
+                    <span class="label text-paper/50">{label}{req ? '' : ' · optional'}</span>
+                    <input id={id as string} name={id as string} type={type as string} autocomplete={ac as string} required={req as boolean} class="mt-2 h-12 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark" />
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <p id="form-error" class="hidden rounded-xl border border-booked/50 bg-booked/10 px-4 py-3 text-[15px] text-booked" role="alert"></p>
+          </form>
+
+          <!-- Summary -->
+          <aside class="lg:sticky lg:top-24 lg:self-start" aria-live="polite">
+            <div class="rounded-[24px] border border-white/10 bg-pine-800 p-6">
+              <p class="label text-paper/45">Your website</p>
+              <p id="sum-name" class="mt-2 text-[26px] font-semibold tracking-tight">Website</p>
+              <ul id="sum-lines" class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]"></ul>
+              <div class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]">
+                <div class="flex justify-between"><span class="text-paper/55">Timeline</span><span id="sum-days">10 business days</span></div>
+                <div class="flex justify-between"><span class="text-paper/55">Build starts</span><span id="sum-start">Pick a week</span></div>
+                <div class="flex justify-between"><span class="text-paper/55">Estimated launch</span><span id="sum-launch" class="text-spark">—</span></div>
+              </div>
+              <div class="mt-5 border-t border-white/10 pt-5">
+                <div class="flex items-baseline justify-between"><span class="text-paper/55">Total, fixed</span><span id="sum-total" class="text-[28px] font-semibold tracking-tight">$4,000</span></div>
+                <div class="mt-1 flex justify-between text-[14px]"><span class="text-paper/55">Due today</span><span id="sum-due">$2,000</span></div>
+                <p id="sum-terms" class="mt-1 text-[13px] text-paper/40">50% to reserve, 50% before launch.</p>
+              </div>
+              <button id="pay" type="submit" form="checkout" class="btn-primary mt-6 w-full h-14 text-[16px]">Reserve &amp; pay</button>
+              <p class="mt-3 text-center text-[12px] text-paper/40">Secure checkout by Stripe. Questions first? <a href={url('/#faq')} class="underline">Read the FAQ</a></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Confirmation (shown after "payment") -->
+      <div id="done" class="mx-auto hidden max-w-3xl text-center" tabindex="-1">
+        <span class="placeholder-tag">Demo: Stripe Checkout and project creation go here</span>
+        <p class="mx-auto mt-8 grid size-16 place-items-center rounded-full bg-spark text-[28px] text-ink">✓</p>
+        <h1 class="display mt-8 text-[clamp(40px,6vw,72px)]">You’re booked. <span class="accent text-spark">That was the hard part.</span></h1>
+        <p id="done-line" class="mx-auto mt-5 max-w-lg text-[18px] text-paper/65"></p>
+
+        <div class="mt-12 rounded-[28px] border border-white/10 bg-pine-800 p-6 text-left sm:p-8">
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">Your brief · about 20 minutes</p>
+            <p class="label text-paper/45">Save &amp; continue any time</p>
+          </div>
+          <ol class="mt-6 space-y-2">
+            {onboarding.map(([t, d, m], i) => (
+              <li class="flex items-center gap-4 rounded-2xl bg-white/[0.04] p-4">
+                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-white/15 font-mono text-[13px] text-spark">{i + 1}</span>
+                <span class="flex-1">
+                  <span class="block text-[16px] font-medium">{t}</span>
+                  <span class="block text-[14px] text-paper/55">{d}</span>
+                </span>
+                <span class="label shrink-0 text-paper/40">{m}</span>
+              </li>
+            ))}
+          </ol>
+          <a href={url('/')} class="btn-primary mt-6 w-full">Start your brief</a>
+          <p class="mt-3 text-center text-[13px] text-paper/45">A copy of your receipt and dashboard link is on its way to your inbox.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { packages, addOns, buildWeeks, type PackageId } from '../data/site';
+
+  const form = document.getElementById('checkout') as HTMLFormElement;
+  const $ = (id: string) => document.getElementById(id)!;
+  const money = (n: number) => '$' + n.toLocaleString('en-US');
+
+  // Preselect from URL: /start?package=landing&week=2026-10-19
+  const params = new URLSearchParams(location.search);
+  const pkgParam = params.get('package');
+  const weekParam = params.get('week');
+  if (pkgParam) form.querySelector<HTMLInputElement>(`input[name=package][value="${pkgParam}"]`)?.click();
+  const weekInput =
+    form.querySelector<HTMLInputElement>(`input[name=week][value="${weekParam}"]:not(:disabled)`) ??
+    form.querySelector<HTMLInputElement>('input[name=week]:not(:disabled)');
+  if (weekInput) weekInput.checked = true;
+
+  // Quantity steppers
+  form.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((b) =>
+    b.addEventListener('click', () => {
+      const input = b.parentElement!.querySelector('input')!;
+      input.value = String(Math.min(10, Math.max(0, Number(input.value) + Number(b.dataset.step))));
+      update();
+    }),
+  );
+
+  function addBusinessDays(iso: string, days: number) {
+    const d = new Date(iso + 'T00:00:00');
+    let left = days - 1; // day 1 is the start date
+    while (left > 0) {
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() !== 0 && d.getDay() !== 6) left--;
+    }
+    return d;
+  }
+  const fmt = (d: Date) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+  function state() {
+    const fd = new FormData(form);
+    const pkg = packages.find((p) => p.id === (fd.get('package') as PackageId))!;
+    const chosen: { name: string; price: number; days: number }[] = [];
+    for (const a of addOns) {
+      if (a.notFor?.includes(pkg.id)) continue;
+      const qty = a.id === 'page' || a.id === 'integration' ? Number(fd.get(`qty-${a.id}`) || 0) : fd.getAll('addon').includes(a.id) ? 1 : 0;
+      if (qty > 0) chosen.push({ name: qty > 1 ? `${a.name} × ${qty}` : a.name, price: a.price * qty, days: (a.addDays ?? 0) * qty });
+    }
+    const rush = chosen.some((c) => c.name === 'Rush');
+    const [lo, hi] = pkg.days.match(/\d+/g)!.map(Number);
+    const extra = chosen.reduce((n, c) => n + c.days, 0);
+    let min = lo + extra;
+    let max = (hi ?? lo) + extra;
+    if (rush) { min = Math.ceil(min * 0.6); max = Math.ceil(max * 0.6); }
+    const total = pkg.price + chosen.reduce((n, c) => n + c.price, 0);
+    const week = buildWeeks.find((w) => w.start === fd.get('week'));
+    return { pkg, chosen, min, max, total, week };
+  }
+
+  function update() {
+    const s = state();
+    // hide add-ons already included in the package
+    form.querySelectorAll<HTMLElement>('.addon').forEach((el) => {
+      const included = (el.dataset.notFor ?? '').split(',').includes(s.pkg.id);
+      el.classList.toggle('opacity-40', included);
+      el.querySelectorAll('input,button').forEach((i) => ((i as HTMLInputElement).disabled = included));
+      el.querySelector('.included')!.classList.toggle('hidden', !included);
+    });
+
+    $('sum-name').textContent = s.pkg.name;
+    $('sum-lines').innerHTML = [
+      `<li class="flex justify-between"><span>${s.pkg.name}</span><span>${money(s.pkg.price)}</span></li>`,
+      ...s.chosen.map((c) => `<li class="flex justify-between text-paper/70"><span>+ ${c.name}</span><span>${money(c.price)}</span></li>`),
+    ].join('');
+    $('sum-days').textContent = `${s.min === s.max ? s.min : `${s.min}–${s.max}`} business days`;
+    $('sum-start').textContent = s.week ? fmt(new Date(s.week.start + 'T00:00:00')) : 'Pick a week';
+    $('sum-launch').textContent = s.week ? `~${fmt(addBusinessDays(s.week.start, s.max))}` : '—';
+    $('sum-total').textContent = (s.pkg.id === 'websiteplus' ? 'from ' : '') + money(s.total);
+    const due = Math.round((s.total * s.pkg.depositPct) / 100);
+    $('sum-due').textContent = money(due);
+    $('sum-terms').textContent = s.pkg.payment + '.';
+    $('pay').textContent = `Reserve & pay ${money(due)}`;
+  }
+
+  form.addEventListener('change', update);
+  update();
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const err = $('form-error');
+    const missing = [...form.querySelectorAll<HTMLInputElement>('input[required]')].filter((i) => !i.value.trim());
+    const emailBad = !/^\S+@\S+\.\S+$/.test((form.elements.namedItem('email') as HTMLInputElement).value);
+    const s = state();
+    if (!s.week) { err.textContent = 'Pick a build week to reserve.'; }
+    else if (missing.length) { err.textContent = 'Add your name, email and company so we know who we’re building for.'; missing[0].focus(); }
+    else if (emailBad) { err.textContent = 'That email doesn’t look right.'; }
+    else err.textContent = '';
+    err.classList.toggle('hidden', !err.textContent);
+    if (err.textContent) return;
+
+    // TODO: create a Stripe Checkout Session server-side and redirect.
+    const name = (form.elements.namedItem('company') as HTMLInputElement).value.trim();
+    $('done-line').textContent = `${s.pkg.name} for ${name}. Build starts ${fmt(new Date(s.week!.start + 'T00:00:00'))}, estimated launch ${fmt(addBusinessDays(s.week!.start, s.max))}. Send your brief at least 2 business days before.`;
+    $('config').classList.add('hidden');
+    $('done').classList.remove('hidden');
+    window.scrollTo({ top: 0 });
+    $('done').focus();
+  });
+</script>

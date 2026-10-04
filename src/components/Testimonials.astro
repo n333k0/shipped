@@ -1,0 +1,40 @@
+---
+import { testimonials } from '../data/site';
+const [lead, ...rest] = testimonials;
+---
+
+<section class="py-24 sm:py-32">
+  <div class="wrap">
+    <div class="flex items-center justify-between gap-4" data-reveal>
+      <p class="label text-spark">What clients say</p>
+      <span class="placeholder-tag">Placeholder quotes: replace with real clients</span>
+    </div>
+
+    <figure class="mt-10 max-w-5xl" data-reveal>
+      <blockquote class="display text-[clamp(34px,5vw,68px)] leading-[1.02]">
+        “{lead.quote.split('. ')[0]}.” <span class="accent text-paper/70">{lead.quote.split('. ').slice(1).join('. ')}</span>
+      </blockquote>
+      <figcaption class="mt-8 flex flex-wrap items-center gap-4">
+        <span class="grid size-12 place-items-center rounded-full bg-spark font-semibold text-ink" aria-hidden="true">?</span>
+        <span>
+          <span class="block text-[16px] font-medium">{lead.who}</span>
+          <span class="block text-[14px] text-paper/50">{lead.role}</span>
+        </span>
+        <span class="chip border-white/15 text-paper/60">{lead.meta}</span>
+      </figcaption>
+    </figure>
+
+    <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {rest.map((t) => (
+        <figure class="flex flex-col rounded-[24px] border border-white/10 bg-white/[0.03] p-6" data-reveal>
+          <p class="label text-spark">{t.meta}</p>
+          <blockquote class="mt-5 text-[18px] leading-snug">“{t.quote}”</blockquote>
+          <figcaption class="mt-auto pt-6 text-[14px]">
+            <span class="block font-medium">{t.who}</span>
+            <span class="block text-paper/50">{t.role}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

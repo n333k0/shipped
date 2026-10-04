@@ -1,0 +1,49 @@
+---
+import { url } from '../lib/url';
+import { buildWeeks, nextWeek, openSlotsThisMonth, monthName } from '../data/site';
+---
+
+<section id="calendar" class="border-y border-white/10 bg-pine-950 py-24 sm:py-32">
+  <div class="wrap">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+      <div data-reveal>
+        <p class="label text-spark">Build calendar</p>
+        <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">Pick your <span class="accent text-spark">build week.</span></h2>
+        <p class="mt-6 max-w-md text-[18px] text-paper/65">We take on about eight websites a month, so each one gets senior attention. When a week is full, it’s full. No waitlist theatre, no countdown timers.</p>
+        <p class="label mt-8 flex items-center gap-2 text-paper/60"><span class="dot"></span>{openSlotsThisMonth} {monthName} slot{openSlotsThisMonth === 1 ? '' : 's'} left</p>
+      </div>
+
+      <div data-reveal>
+        <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {buildWeeks.map((w) => {
+            const left = w.slots - w.booked;
+            const full = left <= 0;
+            return (
+              <li>
+                {full ? (
+                  <div class="h-full rounded-[20px] border border-white/5 bg-white/[0.02] p-5 opacity-60">
+                    <p class="label text-paper/40">Week of</p>
+                    <p class="mt-1 text-[26px] font-medium tracking-tight text-paper/50 line-through decoration-white/30">{w.label}</p>
+                    <p class="label mt-6 flex items-center gap-2 text-booked"><span class="dot-booked"></span>Booked</p>
+                  </div>
+                ) : (
+                  <a href={url(`/start/?week=${w.start}`)} class:list={['group block h-full rounded-[20px] border p-5 transition hover:-translate-y-0.5', w === nextWeek ? 'border-spark bg-spark/10' : 'border-white/15 hover:border-spark/60']}>
+                    <p class="label text-paper/50">Week of</p>
+                    <p class="mt-1 text-[26px] font-medium tracking-tight">{w.label}</p>
+                    <p class="label mt-6 flex items-center gap-2 text-spark"><span class="dot"></span>{left === 1 ? '1 slot left' : 'Available'}</p>
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        {nextWeek && (
+          <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-[15px] text-paper/55">Your week is held the moment payment clears. Free to move once.</p>
+            <a href={url(`/start/?week=${nextWeek.start}`)} class="btn-primary">Reserve {nextWeek.label}</a>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

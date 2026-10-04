@@ -1,0 +1,91 @@
+---
+import { process, brand } from '../data/site';
+
+const dash = [
+  { s: 'done', t: 'Brief received', d: 'Mon' },
+  { s: 'done', t: 'Strategy approved', d: 'Tue' },
+  { s: 'live', t: 'Building: Home, Pricing, About', d: 'Now' },
+  { s: 'next', t: 'Your review', d: 'Wed 28' },
+  { s: 'next', t: 'Launch', d: 'Fri 30' },
+];
+---
+
+<section id="process" class="border-t border-white/10 bg-pine-950 py-24 sm:py-32">
+  <div class="wrap">
+    <div class="max-w-3xl" data-reveal>
+      <p class="label text-spark">Process</p>
+      <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">Here’s literally <span class="accent text-spark">everything</span> that happens.</h2>
+      <p class="mt-6 max-w-xl text-[18px] text-paper/65">Shown for the Website package. Landing compresses it to five days; Website+ stretches it to give strategy and art direction more room.</p>
+    </div>
+
+    <div class="mt-16 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+      <ol class="relative">
+        {process.map((step, i) => (
+          <li class="relative grid grid-cols-[48px_1fr] gap-5 pb-12 last:pb-0 sm:grid-cols-[64px_1fr]" data-reveal>
+            {i < process.length - 1 && <span class="absolute left-[23px] top-12 bottom-0 w-px bg-white/10 sm:left-[31px]" aria-hidden="true"></span>}
+            <span class="grid size-12 place-items-center rounded-full border border-white/15 font-mono text-[14px] text-spark sm:size-16 sm:text-[16px]">{step.n}</span>
+            <div class="pt-1 sm:pt-3">
+              <p class="label text-paper/45">{step.day}</p>
+              <h3 class="mt-2 text-[26px] font-medium tracking-tight sm:text-[30px]">{step.title}</h3>
+              <p class="mt-3 max-w-lg text-[16px] leading-relaxed text-paper/65">{step.body}</p>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {step.list.map((x) => <li class="rounded-full bg-white/[0.06] px-3 py-1 text-[13px] text-paper/75">{x}</li>)}
+              </ul>
+              <p class="mt-4 text-[15px] font-medium text-spark">{step.note}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <!-- Dashboard mock -->
+      <div class="lg:sticky lg:top-28 lg:self-start" data-reveal>
+        <div class="rounded-[28px] border border-white/10 bg-pine-800 p-2 shadow-[0_40px_120px_-40px_rgba(0,0,0,.8)]">
+          <div class="flex items-center gap-1.5 px-4 py-3" aria-hidden="true">
+            <span class="size-2.5 rounded-full bg-white/15"></span><span class="size-2.5 rounded-full bg-white/15"></span><span class="size-2.5 rounded-full bg-white/15"></span>
+            <span class="label ml-3 text-paper/35">app.{brand.domain}/your-company</span>
+          </div>
+          <div class="rounded-[22px] bg-pine-900 p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="label text-paper/45">Project</p>
+                <p class="mt-1 text-[20px] font-medium">Your Company</p>
+              </div>
+              <span class="chip border-spark/30 text-spark"><span class="dot"></span>On track</span>
+            </div>
+            <div class="mt-5 grid grid-cols-3 gap-2 text-center">
+              {[['Package', 'Website'], ['Started', 'Oct 19'], ['Launch', 'Oct 30']].map(([k, v]) => (
+                <div class="rounded-xl bg-white/[0.04] p-3">
+                  <p class="label text-[10px] text-paper/40">{k}</p>
+                  <p class="mt-1 text-[15px] font-medium">{v}</p>
+                </div>
+              ))}
+            </div>
+            <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10">
+              <div class="h-full w-[58%] rounded-full bg-spark"></div>
+            </div>
+            <ul class="mt-5 space-y-1">
+              {dash.map((r) => (
+                <li class:list={['flex items-center justify-between rounded-xl px-3 py-2.5 text-[14px]', r.s === 'live' && 'bg-spark/10']}>
+                  <span class="flex items-center gap-3">
+                    {r.s === 'done' && <span class="grid size-5 place-items-center rounded-full bg-spark text-ink text-[11px]">✓</span>}
+                    {r.s === 'live' && <span class="grid size-5 place-items-center"><span class="dot"></span></span>}
+                    {r.s === 'next' && <span class="size-5 rounded-full border border-white/20"></span>}
+                    <span class:list={[r.s === 'next' ? 'text-paper/45' : 'text-paper']}>{r.t}</span>
+                  </span>
+                  <span class="label text-paper/40">{r.d}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-5 rounded-xl border border-white/10 p-4 text-[14px] text-paper/70">
+              <p class="label text-paper/40">Latest update · 2h ago</p>
+              <p class="mt-2">Homepage is built. Pricing is next. Preview link opens Wednesday, nothing needed from you until then.</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-6 text-center text-[15px] text-paper/55">
+          Everything can happen asynchronously. <span class="text-paper">Need to talk?</span> <a href={brand.callLink} class="text-spark underline underline-offset-4">Grab a call.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import Mockup from './Mockup.astro';
+import { work } from '../data/site';
+---
+
+<section id="work" class="py-24 sm:py-32">
+  <div class="wrap">
+    <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
+      <div>
+        <p class="label text-spark">Selected work</p>
+        <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">The process is repeatable.<br /><span class="accent text-paper/80">The website isn’t.</span></h2>
+      </div>
+      <p class="max-w-sm text-[16px] text-paper/60">Same five steps every time. A different website every time. Six concept builds, one per package and industry we love working with.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2">
+      {work.map((w, i) => (
+        <article class="group" data-reveal>
+          <div class:list={['relative overflow-hidden rounded-[22px] px-6 pt-8 sm:px-10 sm:pt-12', w.bg]}>
+            <span class="chip absolute left-4 top-4 z-10 border-black/10 bg-white/80 text-ink backdrop-blur">Concept</span>
+            <span class="chip absolute right-4 top-4 z-10 border-white/20 bg-pine-900/80 text-paper backdrop-blur">{w.pkg} · {w.days}</span>
+            <div class="translate-y-3 transition duration-700 group-hover:translate-y-0">
+              <Mockup site={w.site} domain={`${w.site}.com`} class="rounded-b-none" />
+            </div>
+            {w.phone && (
+              <div class="absolute bottom-[-40px] right-5 w-[22%] min-w-[92px] transition duration-700 group-hover:bottom-[-24px] sm:right-8">
+                <Mockup site={w.site} device="phone" />
+              </div>
+            )}
+          </div>
+          <div class="mt-4">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 class="text-[20px] font-medium tracking-tight">{w.title} <span class="text-paper/45">· {w.industry}</span></h3>
+              <p class="text-[15px] text-spark">{w.focus}</p>
+            </div>
+            <p class="label mt-2 text-paper/45">{w.scope.join(' · ')}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

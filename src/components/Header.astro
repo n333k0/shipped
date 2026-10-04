@@ -1,0 +1,56 @@
+---
+import { url } from '../lib/url';
+import Logo from './Logo.astro';
+import { nextWeek } from '../data/site';
+
+const { minimal = false } = Astro.props;
+const links = [
+  { href: '/#work', label: 'Work' },
+  { href: '/#packages', label: 'Packages' },
+  { href: '/#process', label: 'Process' },
+  { href: '/#calendar', label: 'Availability' },
+  { href: '/#faq', label: 'FAQ' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-pine-900/80 backdrop-blur-xl">
+  <div class="wrap flex h-[68px] items-center justify-between gap-6">
+    <Logo />
+
+    {!minimal && (
+      <nav class="hidden items-center gap-8 text-[14px] text-paper/80 lg:flex" aria-label="Main">
+        {links.map((l) => <a href={url(l.href)} class="transition hover:text-paper">{l.label}</a>)}
+      </nav>
+    )}
+
+    <div class="flex items-center gap-3">
+      {nextWeek && (
+        <a href={url('/#calendar')} class="label hidden items-center gap-2 text-paper/70 hover:text-paper md:inline-flex">
+          <span class="dot"></span> Next build: {nextWeek.label}
+        </a>
+      )}
+      {minimal ? (
+        <a href={url('/')} class="btn-ghost h-10 px-5 text-[14px]">Back to site</a>
+      ) : (
+        <>
+          <a href={url('/start/')} class="btn-primary h-10 px-5 text-[14px]">Start your website</a>
+          <details class="relative lg:hidden">
+            <summary class="grid size-10 place-items-center rounded-full border border-white/20" aria-label="Menu">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5h12M2 11h12" stroke="currentColor" stroke-width="1.5" /></svg>
+            </summary>
+            <nav class="absolute right-0 top-12 w-56 rounded-2xl border border-white/10 bg-pine-800 p-2 shadow-2xl" aria-label="Mobile">
+              {links.map((l) => <a href={url(l.href)} class="block rounded-xl px-4 py-3 text-[15px] hover:bg-white/5">{l.label}</a>)}
+            </nav>
+          </details>
+        </>
+      )}
+    </div>
+  </div>
+</header>
+
+<script>
+  // Close the mobile menu after picking a link.
+  document.querySelectorAll('header details a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
+</script>

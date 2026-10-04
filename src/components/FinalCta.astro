@@ -1,0 +1,21 @@
+---
+import Mockup from './Mockup.astro';
+import { nextWeek } from '../data/site';
+import { url } from '../lib/url';
+---
+
+<section class="px-4 pb-24 sm:px-6 lg:px-10">
+  <div class="relative mx-auto max-w-[1280px] overflow-hidden rounded-[36px] bg-spark px-6 py-20 text-center text-ink sm:py-28">
+    <div class="absolute right-[-30px] top-[-30px] hidden w-[170px] rotate-[8deg] lg:block" aria-hidden="true"><Mockup site="bloom" device="phone" /></div>
+    <div class="absolute bottom-[-70px] left-[-50px] hidden w-[340px] rotate-[-6deg] lg:block" aria-hidden="true"><Mockup site="lume" /></div>
+    <div class="relative">
+      <p class="label text-ink/60">Send brief. We build. You launch.</p>
+      <h2 class="display mx-auto mt-6 max-w-[13ch] text-[clamp(48px,8vw,120px)]">Come with a business. <span class="accent">Leave with a website.</span></h2>
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href={url('/start/')} class="btn-ink h-14 px-8 text-[16px]">Start your website</a>
+        <a href="#packages" class="btn-line-ink h-14 px-8 text-[16px]">See packages</a>
+      </div>
+      {nextWeek && <p class="label mt-8 text-ink/60">Next available build: week of {nextWeek.label}</p>}
+    </div>
+  </div>
+</section>

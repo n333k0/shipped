@@ -1,0 +1,10 @@
+---
+import { url } from '../lib/url';
+import { brand } from '../data/site';
+const { class: cls = '' } = Astro.props;
+---
+
+<a href={url('/')} class:list={['inline-flex items-baseline gap-0.5 text-[22px] font-semibold tracking-[-0.04em]', cls]} aria-label={`${brand.name} home`}>
+  {brand.name.toLowerCase()}<span class="inline-block size-[7px] rounded-full bg-spark translate-y-[-1px]"></span>
+  <span class="ml-2 hidden font-mono text-[10px] font-normal uppercase tracking-[0.16em] text-paper/45 sm:inline">by {brand.parent}</span>
+</a>

@@ -1,0 +1,7 @@
+<!doctype html>
+<!-- Wraps sites.html in a 390px iframe so headless Chrome can render true phone-width layouts. -->
+<meta charset="utf-8">
+<body style="margin:0">
+<iframe id="f" style="width:390px;height:844px;border:0;display:block"></iframe>
+<script>f.src = 'sites.html' + location.search;</script>
+</body>

@@ -1,0 +1,86 @@
+---
+import { url } from '../lib/url';
+import { packages, compareRows } from '../data/site';
+---
+
+<section id="packages" class="bg-paper py-24 text-ink sm:py-32">
+  <div class="wrap">
+    <div class="max-w-3xl" data-reveal>
+      <p class="label text-pine-500">Pick your website</p>
+      <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">Three products. <span class="accent">One price each.</span></h2>
+      <p class="mt-6 max-w-xl text-[18px] text-ink/65">Everything is on this page: what you get, what it costs and how long it takes. If you know what you need, you can buy it in five minutes.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-3">
+      {packages.map((p) => (
+        <article
+          class:list={[
+            'relative flex flex-col rounded-[28px] p-7 sm:p-9',
+            p.featured ? 'bg-pine-900 text-paper shadow-[0_30px_80px_-30px_rgba(10,33,31,.6)] lg:-my-4 lg:py-12' : 'border border-ink/10 bg-white',
+          ]}
+          data-reveal
+        >
+          <div class="flex items-center justify-between">
+            <h3 class="text-[26px] font-semibold tracking-tight">{p.name}</h3>
+            {p.featured && <span class="chip border-spark/40 bg-spark text-ink">Most popular</span>}
+          </div>
+          <p class:list={['mt-2 text-[16px]', p.featured ? 'text-paper/70' : 'text-ink/60']}>{p.pitch}</p>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            {p.id === 'websiteplus' && <span class:list={['text-[15px]', p.featured ? 'text-paper/60' : 'text-ink/50']}>from</span>}
+            <span class="display text-[56px]">{p.priceLabel}</span>
+          </div>
+          <p class:list={['label mt-2', p.featured ? 'text-spark' : 'text-pine-500']}>{p.days} · fixed price</p>
+
+          <a href={url(`/start/?package=${p.id}`)} class:list={['mt-8 w-full', p.featured ? 'btn-primary' : 'btn-ink']}>Choose {p.name}</a>
+
+          <ul class="mt-8 space-y-3 text-[15px]">
+            {p.includes.map((item) => (
+              <li class="flex gap-3">
+                <svg class:list={['mt-1 shrink-0', p.featured ? 'text-spark' : 'text-pine-500']} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="m2 7.5 3 3 7-7" stroke="currentColor" stroke-width="1.8" /></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class:list={['mt-auto pt-8 text-[13px]', p.featured ? 'text-paper/50' : 'text-ink/45']}>
+            <p class="border-t border-current/20 pt-5"><span class="font-semibold">Best for:</span> {p.bestFor}</p>
+            <p class="mt-2">{p.payment}.</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <details class="group mt-16 rounded-[28px] border border-ink/10 bg-white" data-reveal>
+      <summary class="flex items-center justify-between gap-4 px-7 py-6 sm:px-9">
+        <span class="text-[18px] font-semibold">Compare everything side by side</span>
+        <span class="faq-plus grid size-9 shrink-0 place-items-center rounded-full border border-ink/15 text-[20px] transition">+</span>
+      </summary>
+      <div class="overflow-x-auto px-4 pb-6 sm:px-6">
+        <table class="w-full min-w-[620px] text-left text-[15px]">
+          <thead>
+            <tr class="border-b border-ink/10">
+              <th class="label py-4 pl-3 font-normal text-ink/45" scope="col"><span class="sr-only">Feature</span></th>
+              {packages.map((p) => (
+                <th scope="col" class:list={['py-4 px-3 text-[16px] font-semibold', p.featured && 'text-pine-600']}>{p.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {compareRows.map((r) => (
+              <tr class="border-b border-ink/5 last:border-0">
+                <th scope="row" class="label py-4 pl-3 font-normal text-ink/50">{r.label}</th>
+                {r.values.map((v, i) => <td class:list={['py-4 px-3', i === 1 && 'bg-spark/15 font-medium']}>{v}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <p class="mt-8 text-center text-[15px] text-ink/55">
+      Not sure which one? Pick the closest and tell us in the brief. If it’s the wrong fit, we’ll say so before you pay the rest.{' '}
+      <a class="underline underline-offset-4 hover:text-ink" href={url('/#faq')}>Read the FAQ</a>
+    </p>
+  </div>
+</section>

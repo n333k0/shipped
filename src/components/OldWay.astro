@@ -1,0 +1,65 @@
+---
+import { agencySteps, ourSteps, comparison } from '../data/site';
+---
+
+<section id="why" class="py-24 sm:py-32">
+  <div class="wrap">
+    <div class="max-w-4xl" data-reveal>
+      <p class="label text-spark">Why this exists</p>
+      <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">Great websites shouldn’t take <span class="accent text-spark">three months.</span></h2>
+      <p class="mt-6 max-w-2xl text-[18px] text-paper/65">Agencies make good work. The process around it is the problem: most of a traditional website project is spent deciding how to start, then waiting between steps. So we kept the work and deleted the waiting.</p>
+    </div>
+
+    <!-- the two journeys -->
+    <div class="mt-16 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-[28px] border border-white/10 p-7 sm:p-9" data-reveal>
+        <div class="flex items-center justify-between">
+          <p class="label text-paper/50">The usual way</p>
+          <p class="label text-booked">2–4 months</p>
+        </div>
+        <ol class="mt-7 flex flex-wrap gap-2">
+          {agencySteps.map((s, i) => (
+            <li class="flex items-center gap-2 text-[14px] text-paper/50">
+              <span class="rounded-full border border-white/10 px-3 py-1.5 line-through decoration-white/25">{s}</span>
+              {i < agencySteps.length - 1 && <span aria-hidden="true" class="text-paper/25">→</span>}
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="rounded-[28px] bg-spark p-7 text-ink sm:p-9" data-reveal>
+        <div class="flex items-center justify-between">
+          <p class="label text-ink/60">Our way</p>
+          <p class="label">5–20 business days</p>
+        </div>
+        <ol class="mt-7 flex flex-wrap items-center gap-2">
+          {ourSteps.map((s, i) => (
+            <li class="flex items-center gap-2">
+              <span class="rounded-full bg-ink px-5 py-2.5 text-[18px] font-medium text-paper sm:text-[22px]">{s}</span>
+              {i < ourSteps.length - 1 && <span aria-hidden="true" class="text-[20px]">→</span>}
+            </li>
+          ))}
+        </ol>
+        <p class="mt-8 max-w-md text-[16px] text-ink/70">That’s the whole list. Nothing between the steps except the work.</p>
+      </div>
+    </div>
+
+    <!-- comparison table -->
+    <div class="mt-5 overflow-hidden rounded-[28px] border border-white/10" data-reveal>
+      <div class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1.1fr_1fr_1fr]">
+        <div class="hidden border-b border-white/10 p-5 sm:block"></div>
+        <p class="label border-b border-white/10 p-5 text-paper/45">Traditional agency</p>
+        <p class="label border-b border-white/10 bg-white/[0.04] p-5 text-spark">Us</p>
+        {comparison.map(([k, them, us]) => (
+          <>
+            <p class="col-span-2 px-5 pt-5 text-[13px] text-paper/45 sm:col-span-1 sm:border-b sm:border-white/5 sm:py-5 sm:text-[15px] sm:text-paper/60">{k}</p>
+            <p class="border-b border-white/5 px-5 pb-5 pt-2 text-[15px] text-paper/45 sm:py-5">{them}</p>
+            <p class="border-b border-white/5 bg-white/[0.04] px-5 pb-5 pt-2 text-[15px] font-medium sm:py-5">{us}</p>
+          </>
+        ))}
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-[16px] text-paper/50">No shade to agencies. Some projects need six months and a steering committee. <span class="text-paper/80">Most websites don’t.</span></p>
+  </div>
+</section>

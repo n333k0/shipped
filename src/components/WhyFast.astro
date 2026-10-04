@@ -1,0 +1,66 @@
+---
+import Mockup from './Mockup.astro';
+const removed = ['Proposals', 'Status meetings', 'Pitch presentations', 'Design-to-dev handoffs', 'Account-manager relays', 'Repetitive setup', 'Manual research', 'Feedback by email chain'];
+const kept = [
+  { t: 'Senior creative direction', d: 'Every site is directed and signed off by a senior designer. Not reviewed. Directed.' },
+  { t: 'Design and build together', d: 'We design in the medium it ships in. What you approve is what goes live.' },
+  { t: 'A production system', d: 'Tested components, QA checklists and internal tooling handle the parts that should never be creative.' },
+  { t: 'Thinking before pixels', d: 'Positioning, structure and copy come first. Pretty comes second, and only because it’s easier then.' },
+];
+const notThis = ['Templates', '$500 websites', 'Generic AI sites', 'Cookie-cutter layouts', 'Stock-photo heroes'];
+---
+
+<section class="py-24 sm:py-32">
+  <div class="wrap">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+      <div data-reveal>
+        <p class="label text-spark">How it’s this fast</p>
+        <h2 class="display mt-4 text-[clamp(40px,6vw,80px)]">Fast doesn’t mean rushed. <span class="accent text-spark">Fast means systematic.</span></h2>
+        <p class="mt-6 max-w-lg text-[18px] text-paper/65">
+          Most of an agency timeline isn’t design or code. It’s waiting for the next meeting. We took that out and kept every hour of actual craft.
+          The quality comes from creative decisions. The speed comes from the system around them.
+        </p>
+        <p class="mt-4 max-w-lg text-[16px] text-paper/45">Yes, there’s automation behind the curtain. No, it doesn’t design your website. It does the setup and the legwork so people can focus on the decisions that matter.</p>
+      </div>
+
+      <div class="relative min-h-[460px] overflow-hidden rounded-[28px] bg-[#2a1840]" data-reveal>
+        <div class="absolute left-8 right-[-60px] top-8 rotate-[-3deg]">
+          <Mockup site="halcyon" />
+        </div>
+        <div class="absolute right-6 top-20 w-[26%] min-w-[110px] rotate-[4deg]">
+          <Mockup site="ledgerly" device="phone" />
+        </div>
+        <div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-pine-900/90 p-5 backdrop-blur-md">
+          <p class="label text-paper/45">Removed from the process</p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {removed.map((r) => <li class="rounded-full border border-white/10 px-3 py-1 text-[13px] text-paper/60 line-through decoration-booked/70">{r}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-[28px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+      {kept.map((k, i) => (
+        <div class="bg-pine-900 p-7" data-reveal>
+          <p class="font-mono text-[13px] text-spark">0{i + 1}</p>
+          <h3 class="mt-6 text-[20px] font-medium tracking-tight">{k.t}</h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-paper/60">{k.d}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Quality positioning -->
+    <div class="mt-24 rounded-[32px] bg-paper p-8 text-ink sm:p-14" data-reveal>
+      <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+        <h2 class="display text-[clamp(44px,7vw,104px)]">Built fast.<br /><span class="accent">Not made cheap.</span></h2>
+        <div>
+          <p class="text-[18px] text-ink/70">We’re not the cheapest way to get a website, and we don’t want to be. We’re the alternative to a $15–30K agency project that takes a quarter, without the parts of it you didn’t enjoy.</p>
+          <p class="label mt-8 text-ink/45">What you won’t get</p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {notThis.map((n) => <li class="rounded-full border border-ink/15 px-3 py-1.5 text-[14px] text-ink/55 line-through">{n}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
