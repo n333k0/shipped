@@ -28,7 +28,7 @@ const {
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : '#0d0d0d'} />
+    <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : brand.theme === 'black' ? '#0d0d0d' : '#050505'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,10 +37,10 @@ const {
     />
     <script is:inline>
       document.documentElement.classList.add('js');
-      // ?theme=green|black previews a colour scheme; it sticks for the browser session.
+      // ?theme=void|black|green previews a style; it sticks for the browser session.
       try {
         const t = new URLSearchParams(location.search).get('theme') || sessionStorage.getItem('theme');
-        if (t === 'green' || t === 'black') {
+        if (t === 'green' || t === 'black' || t === 'void') {
           document.documentElement.dataset.theme = t;
           sessionStorage.setItem('theme', t);
         }
@@ -55,6 +55,13 @@ const {
     </main>
     {!minimal && <Footer />}
 
+    <script>
+      // Header turns into the floating pill after a little scroll.
+      const header = document.querySelector<HTMLElement>('.site-header');
+      const onScroll = () => header?.toggleAttribute('data-scrolled', scrollY > 24);
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    </script>
     <script>
       // Scroll reveal. Elements are visible without JS; see global.css.
       const io = new IntersectionObserver(

@@ -6,7 +6,7 @@ export const brand = {
   parent: 'RemotoLabs', // Shipped is a RemotoLabs product (logo: public/brand/remotolabs.png)
   parentUrl: '#', // TODO: RemotoLabs website URL
   parentLine: 'A productized website studio by', // sits before the RemotoLabs logo in the hero
-  theme: 'black' as 'black' | 'green', // colour scheme; 'green' = original dark green
+  theme: 'void' as 'void' | 'black' | 'green', // style: void = Void (default), black = Graphite, green = Pine
   domain: 'shipped.studio',
   email: 'hello@shipped.studio',
   tagline: 'Websites without the agency.',

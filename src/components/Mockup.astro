@@ -17,7 +17,7 @@ const alt = `Concept website for ${site}`;
 ---
 
 {device === 'browser' ? (
-  <figure class:list={['overflow-hidden rounded-[14px] bg-[#1b1f1e] shadow-[0_30px_80px_-30px_rgba(0,0,0,.7)] ring-1 ring-white/10', cls]}>
+  <figure class:list={['overflow-hidden rounded-[14px] bg-[#1b1f1e] ring-1 ring-white/10', cls]}>
     <div class="flex h-7 items-center gap-1.5 px-3" aria-hidden="true">
       <span class="size-2 rounded-full bg-white/20"></span><span class="size-2 rounded-full bg-white/20"></span><span class="size-2 rounded-full bg-white/20"></span>
       <span class="mx-auto -translate-x-4 rounded-md bg-white/10 px-6 py-0.5 font-mono text-[9px] text-white/50">{domain}</span>
@@ -25,7 +25,7 @@ const alt = `Concept website for ${site}`;
     <img src={src} alt={alt} width="1200" height="750" loading={eager ? 'eager' : 'lazy'} class="block aspect-[16/10] w-full object-cover object-top" />
   </figure>
 ) : (
-  <figure class:list={['relative overflow-hidden rounded-[30px] bg-[#111] p-[5px] shadow-[0_30px_80px_-30px_rgba(0,0,0,.8)] ring-1 ring-white/10', cls]}>
+  <figure class:list={['relative overflow-hidden rounded-[30px] bg-[#111] p-[5px] ring-1 ring-white/10', cls]}>
     <span class="absolute left-1/2 top-[11px] z-10 h-[14px] w-[64px] -translate-x-1/2 rounded-full bg-black" aria-hidden="true"></span>
     <img src={src} alt={alt} width="780" height="1688" loading={eager ? 'eager' : 'lazy'} class="block aspect-[390/844] w-full rounded-[25px] object-cover object-top" />
   </figure>

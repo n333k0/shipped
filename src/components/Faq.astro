@@ -6,7 +6,7 @@ import { faq, brand } from '../data/site';
   <div class="wrap grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
     <div class="lg:sticky lg:top-28 lg:self-start" data-reveal>
       <p class="label text-spark">FAQ</p>
-      <h2 class="display mt-4 text-[clamp(40px,6vw,72px)]">Questions, <span class="accent text-spark">answered.</span></h2>
+      <h2 class="display mt-4 t-h2">Questions, <span class="accent text-spark">answered.</span></h2>
       <p class="mt-6 max-w-sm text-[16px] text-paper/60">Still unsure? <a href={brand.callLink} class="text-paper underline underline-offset-4">Book 15 minutes</a> or email <a href={`mailto:${brand.email}`} class="text-paper underline underline-offset-4">{brand.email}</a>. A person who builds websites will answer.</p>
       <nav class="mt-8 hidden flex-wrap gap-2 lg:flex" aria-label="FAQ topics">
         {faq.map((g) => <a href={`#faq-${g.group.toLowerCase().replace(/[^a-z]+/g, '-')}`} class="chip border-white/15 text-paper/60 hover:text-paper">{g.group}</a>)}

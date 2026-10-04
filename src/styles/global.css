@@ -39,9 +39,22 @@
   }
 }
 
-/* Themes. Default is set in src/data/site.ts (brand.theme); preview the other
-   with ?theme=green or ?theme=black on any URL. */
+/* Themes / styles. Default is set in src/data/site.ts (brand.theme). Preview any
+   with ?theme=void | black | green on a URL. Names: Void, Graphite, Pine (see ../_design/STYLES.md). */
+/* Style "Void" (default since 2026-10-04): near-pure black like the lead funnel, flat. */
 :root,
+[data-theme="void"] {
+  --tone-950: #000000;
+  --tone-900: #050505;
+  --tone-800: #0e0e0e;
+  --tone-700: #161616;
+  --tone-600: #222222;
+  --tone-500: #444444;
+  --tone-ink: #070707;
+  --tone-mist: #9a9a9a;
+}
+
+/* Style "Graphite": the first black version. */
 [data-theme="black"] {
   --tone-950: #070707;
   --tone-900: #0d0d0d;
@@ -53,7 +66,7 @@
   --tone-mist: #a3a3a3;
 }
 
-/* Original dark-green scheme (v1), kept for switching back. */
+/* Style "Pine": the original dark-green scheme (v1), kept for switching back. */
 [data-theme="green"] {
   --tone-950: #061412;
   --tone-900: #0a211f;
@@ -85,6 +98,12 @@
 /* custom utilities (Tailwind v4 needs @utility so they can be composed) */
 /* Container follows Superside's system: 16px / 32px margins, fluid until 1280px,
    1216px content from 1280px, 1608px content from 1650px (layout cap 1920px). */
+/* Type scale stepped like Superside's (36→48→60→72 for sections). */
+@utility t-hero { @apply text-[42px] md:text-[64px] lg:text-[80px] xl:text-[96px] 3xl:text-[112px]; }
+@utility t-h2 { @apply text-[34px] md:text-[48px] lg:text-[60px] xl:text-[72px]; }
+@utility t-big { @apply text-[40px] md:text-[60px] lg:text-[80px] xl:text-[96px]; }
+@utility t-quote { @apply text-[30px] md:text-[40px] lg:text-[52px] xl:text-[60px]; }
+@utility t-price { @apply text-[52px] md:text-[64px] lg:text-[80px]; }
 @utility wrap { @apply mx-auto w-full px-4 md:px-8 xl:max-w-[1280px] 3xl:max-w-[1672px]; }
 @utility label { @apply font-mono text-[11px] uppercase tracking-[0.14em]; }
 @utility display { @apply font-sans font-medium tracking-[-0.035em] leading-[0.95]; }
@@ -112,3 +131,21 @@
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .faq-plus { transform: rotate(45deg); }
+
+/* Header: full-width bar at the top, shrinks into a floating pill once you scroll. */
+.site-header { transition: background-color .4s ease, border-color .4s ease, padding .4s ease; }
+.site-header .bar { transition: max-width .55s cubic-bezier(.2,.7,.2,1), height .4s ease, border-radius .45s ease, background-color .4s ease, padding .45s ease, box-shadow .45s ease; }
+.site-header[data-scrolled] { background-color: transparent; border-color: transparent; padding-top: 10px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.site-header[data-scrolled] .bar {
+  max-width: min(1120px, calc(100% - 16px));
+  height: 58px;
+  border-radius: 999px;
+  padding-inline: 22px 8px;
+  background-color: color-mix(in oklab, var(--color-pine-950) 88%, transparent);
+  border: 1px solid rgb(255 255 255 / .08);
+  box-shadow: 0 18px 40px -16px rgb(0 0 0 / .7);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.site-header[data-scrolled] .bar .btn-primary, .site-header[data-scrolled] .bar .btn-ghost { height: 42px; }
+@media (prefers-reduced-motion: reduce) { .site-header, .site-header .bar { transition: none; } }
