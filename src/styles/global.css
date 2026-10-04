@@ -40,7 +40,7 @@
 }
 
 /* Themes / styles. Default is set in src/data/site.ts (brand.theme). Preview any
-   with ?theme=void | black | green on a URL. Names: Void, Graphite, Pine (see ../_design/STYLES.md). */
+   with ?theme=pitch | void | black | green on a URL. Names: Pitch, Void, Graphite, Pine (see ../_design/STYLES.md). */
 /* Style "Void" (default since 2026-10-04): near-pure black like the lead funnel, flat. */
 :root,
 [data-theme="void"] {
@@ -51,6 +51,19 @@
   --tone-600: #222222;
   --tone-500: #444444;
   --tone-ink: #070707;
+  --tone-mist: #9a9a9a;
+}
+
+/* Style "Pitch" (shipped default since 2026-10-04): pure black, no off-black
+   sections. Cards step up only slightly so contrast stays quiet. */
+[data-theme="pitch"] {
+  --tone-950: #000000;
+  --tone-900: #000000;
+  --tone-800: #0a0a0a;
+  --tone-700: #141414;
+  --tone-600: #1f1f1f;
+  --tone-500: #404040;
+  --tone-ink: #050505;
   --tone-mist: #9a9a9a;
 }
 

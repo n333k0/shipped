@@ -2,20 +2,9 @@
 import { nextWeek, openSlotsThisMonth, monthName, packages } from '../data/site';
 import { url } from '../lib/url';
 import ParentLogo from './ParentLogo.astro';
+import Reel from './Reel.astro';
 import { brand } from '../data/site';
 
-// Device shots: /work = our projects, /placeholder = stand-ins to replace.
-const tiles = [
-  { src: '/placeholder/laptop-typing.webp', w: 'w-[240px] sm:w-[300px]', h: 'h-[300px] sm:h-[380px]' },
-  { src: '/placeholder/phone-hands.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
-  { src: '/placeholder/tablet-method.webp', w: 'w-[260px] sm:w-[340px]', h: 'h-[300px] sm:h-[400px]' },
-  { src: '/work/1red-wide.webp', w: 'w-[340px] sm:w-[460px]', h: 'h-[220px] sm:h-[280px]' },
-  { src: '/placeholder/tablet-founder.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[260px] sm:h-[340px]' },
-  { src: '/work/tokni.webp', w: 'w-[240px] sm:w-[320px]', h: 'h-[300px] sm:h-[380px]' },
-  { src: '/work/perfect-body-wide.webp', w: 'w-[360px] sm:w-[450px]', h: 'h-[240px] sm:h-[300px]' },
-  { src: '/placeholder/laptop-ladder.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[280px] sm:h-[360px]' },
-];
-const loop = [...tiles, ...tiles];
 const from = packages[0].priceLabel;
 ---
 
@@ -61,17 +50,7 @@ const from = packages[0].priceLabel;
     </a>
   </div>
 
-  <div class="relative mt-12 sm:mt-14" aria-label="Recent work (placeholder imagery)">
-    <div class="flex w-max items-end gap-4 animate-marquee hover:[animation-play-state:paused]">
-      {loop.map((t, i) => (
-        <div class:list={['shrink-0 overflow-hidden rounded-[22px] bg-pine-800', t.w, t.h]} aria-hidden={i >= tiles.length ? 'true' : undefined}>
-          <img class="size-full object-cover" src={url(t.src)} alt="" loading={i < 5 ? 'eager' : 'lazy'} />
-        </div>
-      ))}
-    </div>
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-pine-900 sm:w-40" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-pine-900 sm:w-40" aria-hidden="true"></div>
-  </div>
+  <Reel class="mt-12 sm:mt-14" />
 </section>
 
 <!-- Facts strip -->

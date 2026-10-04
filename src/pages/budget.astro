@@ -5,10 +5,10 @@
 import Layout from '../layouts/Layout.astro';
 import ParentLogo from '../components/ParentLogo.astro';
 import Footer from '../components/Footer.astro';
+import Reel from '../components/Reel.astro';
 import { url } from '../lib/url';
 import { brand, funnel } from '../data/site';
 
-const reel = ['/placeholder/tablet-method.webp', '/work/tokni.webp', '/work/1red.webp', '/work/perfect-body.webp', '/placeholder/phone-hands.webp', '/placeholder/tablet-founder.webp', '/placeholder/laptop-typing.webp', '/placeholder/laptop-ladder.webp'];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
@@ -29,6 +29,12 @@ const cases = [
   { title: 'Perfect Body', industry: 'Nutrition course', img: '/work/perfect-body.webp', body: 'Course launch page with enrollment flow, then monthly ad and social creative to keep it selling.', facts: [['Package', 'Landing'], ['Scope', 'Enrollment'], ['Live in', '5 days']] },
   { title: '1RED', industry: 'AI sales & support', img: '/work/1red.webp', body: 'Product site for an AI sales bot, with a demo booking flow and a client-logo wall that does the selling.', facts: [['Package', 'Website'], ['Scope', 'Product site'], ['Live in', '10 days']] },
 ];
+const why = [
+  ['No sales team, no account managers', 'You talk to the people doing the work. On an agency invoice, that layer alone is a big share of the price.'],
+  ['Designed and built in one step', 'We design in Framer, the tool your site ships in. No handoff, no rebuild, no second invoice for development.'],
+  ['A production system, not a blank page', 'Tested sections, QA checklists and setup automation handle the parts that repeat on every project.'],
+  ['AI on the legwork, seniors on the calls', 'Research, first drafts and setup run on AI. Every creative decision is made by a senior designer.'],
+];
 const services = [
   ['Website design', 'Strategy, UX and visual design for sites that turn visitors into leads.'],
   ['Landing pages', 'Campaign, launch and product pages built to convert one audience.'],
@@ -48,16 +54,8 @@ const faq = [
 ---
 
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
-  <section id="top" class="funnel relative min-h-[100svh] overflow-hidden bg-black">
-    <!-- slow reel of work, dimmed, behind everything -->
-    <div class="reel pointer-events-none absolute inset-x-0 bottom-[7vh] opacity-[0.22]" aria-hidden="true">
-      <div class="flex w-max gap-4 animate-marquee">
-        {[...reel, ...reel].map((src) => <img src={url(src)} alt="" class="h-[15vh] w-auto rounded-[10px] object-cover" />)}
-      </div>
-    </div>
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#000_75%)]" aria-hidden="true"></div>
-
-    <div class="wrap relative flex min-h-[100svh] flex-col items-center justify-center pb-[24vh] pt-[100px] text-center">
+  <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-[100px] sm:pt-[120px]">
+    <div class="wrap relative flex flex-1 flex-col items-center justify-center text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
         <h1 class="display mt-6 t-hero"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
@@ -69,10 +67,7 @@ const faq = [
 
         <!-- 1 budget -->
         <div class="step" data-step="1">
-          <label class="flex items-baseline justify-center gap-2">
-            <span class="display text-[clamp(56px,10vw,140px)] text-paper/40">$</span>
-            <input name="budget" inputmode="numeric" autocomplete="off" placeholder="your budget" class="big-input w-full max-w-[9ch] bg-transparent text-left placeholder:text-paper/25" />
-          </label>
+          <input name="budget" inputmode="numeric" autocomplete="off" placeholder="your budget" aria-label="Your budget in US dollars" class="big-input w-full bg-transparent text-center placeholder:text-paper/15" />
           <p class="mt-4 text-[14px] text-paper/40">Most projects land between $3,000 and $15,000. Minimum $1,000.</p>
         </div>
 
@@ -90,12 +85,12 @@ const faq = [
 
         <!-- 3 email -->
         <div class="step hidden" data-step="3">
-          <input name="email" type="email" autocomplete="email" placeholder="your email" class="big-input w-full bg-transparent text-center placeholder:text-paper/25" />
+          <input name="email" type="email" autocomplete="email" placeholder="your email" class="big-input w-full bg-transparent text-center placeholder:text-paper/15" />
         </div>
 
         <!-- 4 website -->
         <div class="step hidden" data-step="4">
-          <input name="website" type="text" autocomplete="url" placeholder="current website" class="big-input w-full bg-transparent text-center placeholder:text-paper/25" />
+          <input name="website" type="text" autocomplete="url" placeholder="current website" class="big-input w-full bg-transparent text-center placeholder:text-paper/15" />
         </div>
 
         <!-- 5 timeline -->
@@ -112,7 +107,7 @@ const faq = [
 
         <!-- 6 notes -->
         <div class="step hidden" data-step="6">
-          <textarea name="notes" rows="3" placeholder="anything else? links, references, deadlines" class="w-full resize-none bg-transparent text-center text-[clamp(24px,3.4vw,40px)] font-medium tracking-tight outline-none placeholder:text-paper/25"></textarea>
+          <textarea name="notes" rows="3" placeholder="anything else? links, references, deadlines" class="w-full resize-none bg-transparent text-center text-[clamp(24px,3.4vw,40px)] font-medium tracking-tight outline-none placeholder:text-paper/15"></textarea>
         </div>
 
         <div class="mt-10 flex items-center justify-center gap-3">
@@ -131,31 +126,76 @@ const faq = [
         <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] border border-white/10 p-6 text-left"></div>
       </div>
 
-      <a href={brand.parentUrl} class="absolute bottom-6 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 text-white/80">
+      <a href={brand.parentUrl} class="mt-10 inline-flex items-center gap-2 text-white/80">
         <span class="text-[14px] text-paper/45">A productized website studio by</span><ParentLogo class="h-[13px]" />
       </a>
     </div>
+
+    <Reel class="mt-14 pb-10 sm:mt-16" />
   </section>
 
-  <!-- ===== Below the funnel: the offer, explained ===== -->
+  <!-- ===== Below the funnel: proof → why it costs less → how you pay → what it buys → how it runs ===== -->
 
-  <!-- Video slot -->
-  <section class="bg-pine-900 py-24 sm:py-28">
+  <!-- Case studies -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
     <div class="wrap">
       <div class="grid items-end gap-6 md:grid-cols-2">
         <div>
-          <p class="label text-spark">Watch first</p>
-          <h2 class="display mt-4 t-h2">How a budget <span class="accent text-spark">becomes a website.</span></h2>
+          <p class="label text-spark">Recent launches</p>
+          <h2 class="display mt-4 t-h2">High-end, <span class="accent text-spark">on a budget.</span></h2>
         </div>
-        <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">Two minutes on how we scope, what you get for your number, and why it’s not a template.</p>
+        <a href={url('/#work')} class="text-[16px] text-paper/60 underline underline-offset-4 hover:text-paper md:justify-self-end">See all work →</a>
       </div>
-      <!-- Replace with the real video: <video src=…> or a YouTube/Vimeo embed -->
-      <div class="relative mt-12 aspect-video overflow-hidden rounded-[32px] border border-white/10 bg-pine-800">
-        <img src={url('/work/1red-wide.webp')} alt="" class="absolute inset-0 size-full object-cover opacity-40" />
-        <div class="absolute inset-0 grid place-items-center">
-          <span class="grid size-20 place-items-center rounded-full bg-spark text-ink sm:size-24"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
+      <div class="mt-12 space-y-6">
+        {cases.map((c, i) => (
+          <article class="grid overflow-hidden rounded-[40px] border border-white/10 lg:grid-cols-[1.4fr_1fr]">
+            <div class:list={['bg-pine-800', i % 2 === 1 && 'lg:order-2']}><img src={url(c.img)} alt={`${c.title} website`} loading="lazy" class="aspect-[16/10] size-full object-cover" /></div>
+            <div class="flex flex-col justify-between gap-10 p-8 sm:p-12">
+              <div>
+                <p class="label text-paper/45">{c.industry}</p>
+                <h3 class="display mt-3 text-[40px] sm:text-[48px]">{c.title}</h3>
+                <p class="mt-4 text-[17px] text-paper/65">{c.body}</p>
+              </div>
+              <dl class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                {c.facts.map(([k, v]) => <div><dt class="label text-paper/40">{k}</dt><dd class="mt-2 text-[16px] font-medium">{v}</dd></div>)}
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why it costs less -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="grid items-end gap-6 md:grid-cols-2">
+        <div>
+          <p class="label text-spark">Why it costs less</p>
+          <h2 class="display mt-4 t-h2">Agency quality. <span class="accent text-spark">No agency overhead.</span></h2>
         </div>
-        <span class="label absolute bottom-6 left-6 text-paper/70">Video coming soon · 2 min</span>
+        <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">Same senior craft. We just removed the parts of an agency you pay for but never see.</p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {why.map(([t, b], i) => (
+          <article class="rounded-[32px] border border-white/10 p-8">
+            <p class="font-mono text-[13px] text-spark">0{i + 1}</p>
+            <h3 class="mt-8 text-[22px] font-medium tracking-tight">{t}</h3>
+            <p class="mt-3 text-[15px] leading-relaxed text-paper/60">{b}</p>
+          </article>
+        ))}
+      </div>
+      <div class="mt-5 grid gap-5 md:grid-cols-2">
+        <div class="rounded-[32px] border border-white/10 p-8 sm:p-10">
+          <p class="label text-paper/45">A typical agency</p>
+          <p class="display mt-4 text-[44px] text-paper/50 sm:text-[56px]">$15–30k</p>
+          <p class="mt-2 text-[16px] text-paper/45">8–12 weeks, proposals, status meetings and a separate dev invoice.</p>
+        </div>
+        <div class="rounded-[32px] bg-spark p-8 text-ink sm:p-10">
+          <p class="label text-ink/60">shipped. custom</p>
+          <p class="display mt-4 text-[44px] sm:text-[56px]">$3–25k</p>
+          <p class="mt-2 text-[16px] text-ink/70">1–4 weeks, one written proposal, design and build by the same senior team.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -170,34 +210,47 @@ const faq = [
       </div>
       <div class="mt-12 grid gap-6 lg:grid-cols-2">
         <article class="flex flex-col rounded-[40px] bg-spark p-8 text-ink sm:p-12">
-          <p class="label text-ink/60">The fast lane</p>
+          <div class="flex items-center justify-between gap-4">
+            <p class="label text-ink/60">The fast lane</p>
+            <span class="chip border-ink/20 text-ink/70">Most projects</span>
+          </div>
           <h3 class="display mt-4 text-[40px] sm:text-[52px]">Fixed scope</h3>
           <p class="mt-3 max-w-md text-[17px] text-ink/70">One defined project, one price, one launch date. Best when you know what you need.</p>
+          <div class="mt-8 border-t border-ink/15 pt-8">
+            <p class="label text-ink/55">Typical budget</p>
+            <p class="display mt-3 t-price">$3k–25k</p>
+            <p class="mt-2 text-[15px] text-ink/60">One fixed price, agreed before we start.</p>
+          </div>
           <ul class="mt-8 space-y-3 border-t border-ink/15 pt-8 text-[16px]">
             {['A written scope and sitemap before you pay', 'Three design directions to choose from', 'Fixed price, fixed timeline', 'Launch, handover video and support'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-ink"></span>{t}</li>)}
           </ul>
-          <p class="mt-auto pt-10 text-[15px] text-ink/60">Typical budgets: <strong class="text-ink">$3,000 – $25,000</strong></p>
+          <a href="#top" class="btn-ink btn-wide mt-10 h-14 self-start px-8 text-[16px] lg:mt-auto">Name your budget</a>
         </article>
         <article class="flex flex-col rounded-[40px] border border-white/15 p-8 sm:p-12">
           <p class="label text-paper/50">The flexible lane</p>
           <h3 class="display mt-4 text-[40px] sm:text-[52px]">Monthly</h3>
           <p class="mt-3 max-w-md text-[17px] text-paper/65">Spread the budget over months: site first, then pages, campaigns and design as you grow.</p>
+          <div class="mt-8 border-t border-white/10 pt-8">
+            <p class="label text-paper/50">Membership</p>
+            <p class="mt-3"><span class="display t-price">$3,995</span><span class="ml-1 text-[18px] text-paper/50">/month</span></p>
+            <p class="mt-2 text-[15px] text-paper/55">Pause or cancel anytime.</p>
+          </div>
           <ul class="mt-8 space-y-3 border-t border-white/10 pt-8 text-[16px] text-paper/85">
             {['One request at a time, ~48h each', 'Website, brand, ads, decks: all in scope', 'Pause when it’s quiet, cancel anytime', 'Runs on queued., our design subscription'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-spark"></span>{t}</li>)}
           </ul>
-          <a href={funnel.products.queued.url} class="mt-auto pt-10 text-[15px] text-paper/60 hover:text-paper">From <strong class="text-paper">$3,995/month</strong> · see queued. →</a>
+          <a href={funnel.products.queued.url} class="btn-ghost btn-wide mt-10 h-14 self-start px-8 text-[16px] lg:mt-auto">See queued. →</a>
         </article>
       </div>
     </div>
   </section>
 
   <!-- What your budget gets -->
-  <section class="border-t border-white/10 bg-pine-950 py-24 sm:py-28">
+  <section class="border-t border-white/10 py-24 sm:py-28">
     <div class="wrap">
       <div class="grid items-end gap-6 md:grid-cols-2">
         <div>
-          <p class="label text-spark">What your number gets you</p>
-          <h2 class="display mt-4 t-h2">Real examples, <span class="accent text-spark">real budgets.</span></h2>
+          <p class="label text-spark">Budget guide</p>
+          <h2 class="display mt-4 t-h2">What your number <span class="accent text-spark">gets you.</span></h2>
         </div>
         <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">A rough guide. Your proposal is shaped around your business, not a price list.</p>
       </div>
@@ -234,38 +287,29 @@ const faq = [
     </div>
   </section>
 
-  <!-- Case studies -->
+  <!-- Video slot -->
   <section class="border-t border-white/10 py-24 sm:py-28">
     <div class="wrap">
       <div class="grid items-end gap-6 md:grid-cols-2">
         <div>
-          <p class="label text-spark">Selected work</p>
-          <h2 class="display mt-4 t-h2">High-end, <span class="accent text-spark">on a budget.</span></h2>
+          <p class="label text-spark">See it in action</p>
+          <h2 class="display mt-4 t-h2">Watch a site <span class="accent text-spark">come together.</span></h2>
         </div>
-        <a href={url('/#work')} class="text-[16px] text-paper/60 underline underline-offset-4 hover:text-paper md:justify-self-end">See all work →</a>
+        <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">Two minutes, from first brief to launch day: how we scope, design and build, and what you see along the way.</p>
       </div>
-      <div class="mt-12 space-y-6">
-        {cases.map((c, i) => (
-          <article class="grid overflow-hidden rounded-[40px] border border-white/10 lg:grid-cols-[1.4fr_1fr]">
-            <div class:list={['bg-pine-800', i % 2 === 1 && 'lg:order-2']}><img src={url(c.img)} alt={`${c.title} website`} loading="lazy" class="aspect-[16/10] size-full object-cover" /></div>
-            <div class="flex flex-col justify-between gap-10 p-8 sm:p-12">
-              <div>
-                <p class="label text-paper/45">{c.industry}</p>
-                <h3 class="display mt-3 text-[40px] sm:text-[48px]">{c.title}</h3>
-                <p class="mt-4 text-[17px] text-paper/65">{c.body}</p>
-              </div>
-              <dl class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
-                {c.facts.map(([k, v]) => <div><dt class="label text-paper/40">{k}</dt><dd class="mt-2 text-[16px] font-medium">{v}</dd></div>)}
-              </dl>
-            </div>
-          </article>
-        ))}
+      <!-- Replace with the real video: <video src=…> or a YouTube/Vimeo embed -->
+      <div class="relative mt-12 aspect-video overflow-hidden rounded-[32px] border border-white/10 bg-pine-800">
+        <img src={url('/work/1red-wide.webp')} alt="" class="absolute inset-0 size-full object-cover opacity-40" />
+        <div class="absolute inset-0 grid place-items-center">
+          <span class="grid size-20 place-items-center rounded-full bg-spark text-ink sm:size-24"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
+        </div>
+        <span class="label absolute bottom-6 left-6 text-paper/70">Video coming soon · 2 min</span>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="border-t border-white/10 bg-pine-950 py-24 sm:py-28">
+  <section class="border-t border-white/10 py-24 sm:py-28">
     <div class="wrap">
       <div class="max-w-3xl">
         <p class="label text-spark">What we build</p>
@@ -319,7 +363,7 @@ const faq = [
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
   @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
   .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
-  @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } .funnel .reel > div { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } }
 </style>
 
 <script define:vars={{ endpoint: funnel.endpoint, email: brand.email, products: funnel.products }}>
@@ -340,7 +384,7 @@ const faq = [
 
   budget.addEventListener('input', () => {
     const digits = budget.value.replace(/[^0-9]/g, '').slice(0, 7);
-    budget.value = digits ? Number(digits).toLocaleString('en-US') : '';
+    budget.value = digits ? '$' + Number(digits).toLocaleString('en-US') : '';
     validate();
   });
 
@@ -348,7 +392,7 @@ const faq = [
   const radio = (name) => form.querySelector(`input[name="${name}"]:checked`)?.value ?? '';
 
   function valid() {
-    if (i === 0) return Number(value('budget').replace(/,/g, '')) >= 1000;
+    if (i === 0) return Number(value('budget').replace(/[^0-9]/g, '')) >= 1000;
     if (i === 1) return !!radio('need');
     if (i === 2) return /^\S+@\S+\.\S+$/.test(value('email'));
     if (i === 4) return !!radio('timeline');
@@ -409,11 +453,11 @@ const faq = [
     if (!sent) {
       // No endpoint configured yet: hand the lead to the visitor's mail app.
       const body = Object.entries(lead).map(([k, v]) => `${k}: ${v || '-'}`).join('\n');
-      location.href = `mailto:${email}?subject=${encodeURIComponent(`Budget request: $${lead.budget}`)}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:${email}?subject=${encodeURIComponent(`Budget request: ${lead.budget}`)}&body=${encodeURIComponent(body)}`;
     }
 
     // Suggest the right RemotoLabs product while they wait.
-    const n = Number(lead.budget.replace(/,/g, ''));
+    const n = Number(lead.budget.replace(/[^0-9]/g, ''));
     const pick = lead.need === 'Design every month' ? products.queued : lead.need === 'AI systems' ? products.handled : products.shipped;
     document.getElementById('suggest').innerHTML =
       `<p class="label text-paper/45">While you wait</p><p class="mt-3 text-[20px] font-medium">${pick.name}</p><p class="mt-1 text-[15px] text-paper/60">${pick.line}${n >= 10000 ? ' At your budget we’ll also propose a custom scope.' : ''}</p><a href="${pick.url}" class="mt-4 inline-block text-[15px] text-spark underline underline-offset-4">Take a look →</a>`;

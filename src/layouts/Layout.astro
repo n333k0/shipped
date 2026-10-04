@@ -28,7 +28,7 @@ const {
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : brand.theme === 'black' ? '#0d0d0d' : '#050505'} />
+    <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : brand.theme === 'black' ? '#0d0d0d' : brand.theme === 'pitch' ? '#000000' : '#050505'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,10 +37,10 @@ const {
     />
     <script is:inline>
       document.documentElement.classList.add('js');
-      // ?theme=void|black|green previews a style; it sticks for the browser session.
+      // ?theme=pitch|void|black|green previews a style; it sticks for the browser session.
       try {
         const t = new URLSearchParams(location.search).get('theme') || sessionStorage.getItem('theme');
-        if (t === 'green' || t === 'black' || t === 'void') {
+        if (t === 'green' || t === 'black' || t === 'void' || t === 'pitch') {
           document.documentElement.dataset.theme = t;
           sessionStorage.setItem('theme', t);
         }
