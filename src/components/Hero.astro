@@ -4,17 +4,16 @@ import { url } from '../lib/url';
 import ParentLogo from './ParentLogo.astro';
 import { brand } from '../data/site';
 
-// Placeholder device shots (web work on laptops, tablets, phones). Replace with your own.
+// Device shots: /work = our projects, /placeholder = stand-ins to replace.
 const tiles = [
-  { src: 'laptop-typing', w: 'w-[240px] sm:w-[300px]', h: 'h-[300px] sm:h-[380px]' },
-  { src: 'phone-hands', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
-  { src: 'tablet-method', w: 'w-[260px] sm:w-[340px]', h: 'h-[300px] sm:h-[400px]' },
-  { src: 'tablet-closeup', w: 'w-[340px] sm:w-[460px]', h: 'h-[220px] sm:h-[280px]' },
-  { src: 'tablet-founder', w: 'w-[220px] sm:w-[280px]', h: 'h-[260px] sm:h-[340px]' },
-  { src: 'phone-red', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
-  { src: 'tablet-desk', w: 'w-[240px] sm:w-[320px]', h: 'h-[300px] sm:h-[380px]' },
-  { src: 'tablet-pharmacy', w: 'w-[240px] sm:w-[300px]', h: 'h-[260px] sm:h-[320px]' },
-  { src: 'laptop-ladder', w: 'w-[220px] sm:w-[280px]', h: 'h-[280px] sm:h-[360px]' },
+  { src: '/placeholder/laptop-typing.webp', w: 'w-[240px] sm:w-[300px]', h: 'h-[300px] sm:h-[380px]' },
+  { src: '/placeholder/phone-hands.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[240px] sm:h-[300px]' },
+  { src: '/placeholder/tablet-method.webp', w: 'w-[260px] sm:w-[340px]', h: 'h-[300px] sm:h-[400px]' },
+  { src: '/work/rasa.webp', w: 'w-[340px] sm:w-[460px]', h: 'h-[220px] sm:h-[280px]' },
+  { src: '/placeholder/tablet-founder.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[260px] sm:h-[340px]' },
+  { src: '/work/tokni.webp', w: 'w-[240px] sm:w-[320px]', h: 'h-[300px] sm:h-[380px]' },
+  { src: '/placeholder/tablet-pharmacy.webp', w: 'w-[240px] sm:w-[300px]', h: 'h-[260px] sm:h-[320px]' },
+  { src: '/placeholder/laptop-ladder.webp', w: 'w-[220px] sm:w-[280px]', h: 'h-[280px] sm:h-[360px]' },
 ];
 const loop = [...tiles, ...tiles];
 const from = packages[0].priceLabel;
@@ -66,7 +65,7 @@ const from = packages[0].priceLabel;
     <div class="flex w-max items-end gap-4 animate-marquee hover:[animation-play-state:paused]">
       {loop.map((t, i) => (
         <div class:list={['shrink-0 overflow-hidden rounded-[22px] bg-pine-800', t.w, t.h]} aria-hidden={i >= tiles.length ? 'true' : undefined}>
-          <img class="size-full object-cover" src={url(`/placeholder/${t.src}.webp`)} alt="" loading={i < 5 ? 'eager' : 'lazy'} />
+          <img class="size-full object-cover" src={url(t.src)} alt="" loading={i < 5 ? 'eager' : 'lazy'} />
         </div>
       ))}
     </div>
