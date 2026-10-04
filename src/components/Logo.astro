@@ -1,16 +1,11 @@
 ---
 import { url } from '../lib/url';
-import ParentLogo from './ParentLogo.astro';
 import { brand } from '../data/site';
 const { class: cls = '' } = Astro.props;
 ---
 
-<a href={url('/')} class:list={['inline-flex items-center', cls]} aria-label={`${brand.name} by ${brand.parent}, home`}>
+<a href={url('/')} class:list={['inline-flex items-center', cls]} aria-label={`${brand.name} home`}>
   <span class="inline-flex items-baseline gap-0.5 text-[22px] font-semibold tracking-[-0.04em]">
     {brand.name.toLowerCase()}<span class="inline-block size-[7px] rounded-full bg-spark translate-y-[-1px]"></span>
-  </span>
-  <span class="ml-2.5 hidden items-center gap-1.5 text-paper/55 sm:inline-flex" aria-hidden="true">
-    <span class="font-mono text-[10px] uppercase tracking-[0.16em]">by</span>
-    <ParentLogo class="h-[11px] translate-y-[0.5px]" />
   </span>
 </a>

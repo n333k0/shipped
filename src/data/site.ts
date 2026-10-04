@@ -4,6 +4,7 @@
 export const brand = {
   name: 'Shipped', // product name — swap in one place
   parent: 'RemotoLabs', // Shipped is a RemotoLabs product (logo: public/brand/remotolabs.png)
+  parentUrl: '#', // TODO: RemotoLabs website URL
   domain: 'shipped.studio',
   email: 'hello@shipped.studio',
   tagline: 'Websites without the agency.',

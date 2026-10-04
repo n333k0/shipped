@@ -1,6 +1,8 @@
 ---
 import { nextWeek, openSlotsThisMonth, monthName, packages } from '../data/site';
 import { url } from '../lib/url';
+import ParentLogo from './ParentLogo.astro';
+import { brand } from '../data/site';
 
 // Placeholder device shots (web work on laptops, tablets, phones). Replace with your own.
 const tiles = [
@@ -55,6 +57,11 @@ const from = packages[0].priceLabel;
       <li aria-hidden="true">/</li>
       <li>From {from}</li>
     </ul>
+
+    <a href={brand.parentUrl} class="mt-7 inline-flex items-center gap-2.5 text-white/90 transition hover:text-white" aria-label={`A ${brand.parent} product`}>
+      <span class="font-mono text-[9px] uppercase leading-none tracking-[0.2em] text-paper/45">by</span>
+      <ParentLogo class="h-[15px]" />
+    </a>
   </div>
 
   <div class="relative mt-16 sm:mt-20" aria-label="Recent work (placeholder imagery)">
