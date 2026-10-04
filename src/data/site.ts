@@ -228,7 +228,7 @@ export const monthName = nextWeek
 
 export const work = [
   { title: 'Content platform', industry: 'Media / SaaS', pkg: 'Website+', days: '15-day build', scope: ['Strategy', 'Copy', 'Art direction', 'CMS'], focus: 'Editorial homepage + CMS', img: '/placeholder/tablet-method.webp' },
-  { title: 'Studio website', industry: 'Creative studio', pkg: 'Website', days: '10-day build', scope: ['Design', 'CMS', 'Motion'], focus: 'Portfolio-first redesign', img: '/placeholder/imac-desk.webp' },
+  { title: 'Studio website', industry: 'Creative studio', pkg: 'Website', days: '10-day build', scope: ['Design', 'CMS', 'Motion'], focus: 'Portfolio-first redesign', img: '/placeholder/phone-red.webp' },
   { title: 'Health brand', industry: 'Health / D2C', pkg: 'Website', days: '10-day build', scope: ['Design', 'Framer', 'Integrations'], focus: 'Sign-up flow, mobile first', img: '/placeholder/tablet-pharmacy.webp' },
   { title: 'App launch', industry: 'Consumer tech', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Analytics'], focus: 'Waitlist landing page', img: '/placeholder/phone-hands.webp' },
   { title: 'Venture fund', industry: 'Venture capital', pkg: 'Landing', days: '5-day build', scope: ['Copy', 'Design', 'Motion'], focus: 'Thesis + founder intake', img: '/placeholder/tablet-founder.webp' },
