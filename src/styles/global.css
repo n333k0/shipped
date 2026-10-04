@@ -93,6 +93,7 @@
   ::selection { background: var(--color-spark); color: var(--color-ink); }
   :focus-visible { outline: 2px solid var(--color-spark); outline-offset: 3px; border-radius: 6px; }
   [id] { scroll-margin-top: 88px; }
+  h1, h2, h3 { text-wrap: balance; }
 }
 
 /* custom utilities (Tailwind v4 needs @utility so they can be composed) */
@@ -104,6 +105,7 @@
 @utility t-big { @apply text-[40px] md:text-[60px] lg:text-[80px] xl:text-[96px]; }
 @utility t-quote { @apply text-[30px] md:text-[40px] lg:text-[52px] xl:text-[60px]; }
 @utility t-price { @apply text-[52px] md:text-[64px] lg:text-[80px]; }
+@utility btn-wide { @apply w-full sm:w-auto sm:min-w-[240px]; }
 @utility wrap { @apply mx-auto w-full px-4 md:px-8 xl:max-w-[1280px] 3xl:max-w-[1672px]; }
 @utility label { @apply font-mono text-[11px] uppercase tracking-[0.14em]; }
 @utility display { @apply font-sans font-medium tracking-[-0.035em] leading-[0.95]; }
@@ -135,8 +137,11 @@ details[open] .faq-plus { transform: rotate(45deg); }
 /* Header: full-width bar at the top, shrinks into a floating pill once you scroll. */
 .site-header { transition: background-color .4s ease, border-color .4s ease, padding .4s ease; }
 .site-header .bar { transition: max-width .55s cubic-bezier(.2,.7,.2,1), height .4s ease, border-radius .45s ease, background-color .4s ease, padding .45s ease, box-shadow .45s ease; }
-.site-header[data-scrolled] { background-color: transparent; border-color: transparent; padding-top: 10px; -webkit-backdrop-filter: none; backdrop-filter: none; }
-.site-header[data-scrolled] .bar {
+@media (max-width: 767px) {
+  .site-header, .site-header .bar { transition: none !important; }
+}
+.site-header[data-scrolled], .site-header[data-float] { background-color: transparent; border-color: transparent; padding-top: 10px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.site-header[data-scrolled] .bar, .site-header[data-float] .bar {
   max-width: min(1120px, calc(100% - 16px));
   height: 58px;
   border-radius: 999px;
@@ -147,5 +152,5 @@ details[open] .faq-plus { transform: rotate(45deg); }
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
-.site-header[data-scrolled] .bar .btn-primary, .site-header[data-scrolled] .bar .btn-ghost { height: 42px; }
+.site-header[data-scrolled] .bar .btn-primary, .site-header[data-scrolled] .bar .btn-ghost, .site-header[data-float] .bar .btn-primary, .site-header[data-float] .bar .btn-ghost { height: 42px; }
 @media (prefers-reduced-motion: reduce) { .site-header, .site-header .bar { transition: none; } }

@@ -58,7 +58,9 @@ const {
     <script>
       // Header turns into the floating pill after a little scroll.
       const header = document.querySelector<HTMLElement>('.site-header');
-      const onScroll = () => header?.toggleAttribute('data-scrolled', scrollY > 24);
+      const mobile = matchMedia('(max-width: 767px)');
+      const onScroll = () => header?.toggleAttribute('data-scrolled', mobile.matches || scrollY > 24);
+      mobile.addEventListener('change', onScroll);
       addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     </script>

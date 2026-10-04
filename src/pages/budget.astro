@@ -4,16 +4,51 @@
 // Inspired by the REMOTO lead funnel (3_Coding/2_Promtp Packs/Lead Funnel).
 import Layout from '../layouts/Layout.astro';
 import ParentLogo from '../components/ParentLogo.astro';
+import Footer from '../components/Footer.astro';
 import { url } from '../lib/url';
 import { brand, funnel } from '../data/site';
 
 const reel = ['/placeholder/tablet-method.webp', '/work/tokni.webp', '/work/1red.webp', '/work/perfect-body.webp', '/placeholder/phone-hands.webp', '/placeholder/tablet-founder.webp', '/placeholder/laptop-typing.webp', '/placeholder/laptop-ladder.webp'];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
+
+const tiers = [
+  { budget: '$3–5k', title: 'Landing that converts', body: 'One focused page with real copy, motion and a form. Launch-ready in a week.', items: ['1 page', 'Copy', 'Motion', 'Analytics'] },
+  { budget: '$5–10k', title: 'A full website', body: 'Up to 5 pages, CMS, strategy and copy. The site most companies actually need.', items: ['5 pages', 'CMS', 'SEO setup', 'Integrations'] },
+  { budget: '$10–20k', title: 'Brand + website', body: 'A new identity and a site designed around it, with art direction and signature motion.', items: ['Identity', '8–12 pages', 'Art direction', 'Motion'] },
+  { budget: '$20k+', title: 'Flagship', body: 'Design system, advanced interactions, multilingual, shop. The 10K-agency site, without the agency.', items: ['Design system', 'Multilingual', 'Shop', '3D / motion'] },
+];
+const process = [
+  { n: '01', title: 'Name your budget', body: 'Tell us your number, what you need and when. Two minutes, right here.', time: 'Today' },
+  { n: '02', title: 'Get a free proposal', body: 'A scope, a sitemap and a first design direction for your budget. Fixed scope or monthly, your call.', time: 'Within 24–48h' },
+  { n: '03', title: 'Pick a direction', body: 'You choose from three real design directions, not a mood board. Then we lock it.', time: 'Week 1' },
+  { n: '04', title: 'We build and launch', body: 'Designed and built together in Framer, updates every few days, launch with a handover video.', time: '1–4 weeks' },
+];
+const cases = [
+  { title: 'Tokn1', industry: 'RWA exchange · Latam', img: '/work/tokni.webp', body: 'A launch site for a digital-securities exchange: credible enough for regulators, sharp enough for investors.', facts: [['Package', 'Website'], ['Built in', 'Framer'], ['Live in', '10 days']] },
+  { title: 'Perfect Body', industry: 'Nutrition course', img: '/work/perfect-body.webp', body: 'Course launch page with enrollment flow, then monthly ad and social creative to keep it selling.', facts: [['Package', 'Landing'], ['Scope', 'Enrollment'], ['Live in', '5 days']] },
+  { title: '1RED', industry: 'AI sales & support', img: '/work/1red.webp', body: 'Product site for an AI sales bot, with a demo booking flow and a client-logo wall that does the selling.', facts: [['Package', 'Website'], ['Scope', 'Product site'], ['Live in', '10 days']] },
+];
+const services = [
+  ['Website design', 'Strategy, UX and visual design for sites that turn visitors into leads.'],
+  ['Landing pages', 'Campaign, launch and product pages built to convert one audience.'],
+  ['Brand + web', 'Identity and website designed together, so they actually match.'],
+  ['Framer development', 'Fast, editable sites your team can update without calling anyone.'],
+  ['Motion & interactions', 'The moments people screenshot, without slowing the site down.'],
+  ['CMS, SEO & analytics', 'Blogs, case studies, metadata and tracking set up from day one.'],
+];
+const faq = [
+  { q: 'Is there a minimum budget?', a: '$1,000 for the form, but most projects start around $3,000. Below that we’ll point you to a lighter option or tell you honestly it won’t fit.' },
+  { q: 'What do I get for free?', a: 'A written proposal for your budget: scope, sitemap, timeline and a first design direction. No call required, no commitment.' },
+  { q: 'Fixed scope or monthly: which is better?', a: 'Fixed is faster and cheaper if you know what you need. Monthly is better if the site is the first of many things, like pages, campaigns or brand work.' },
+  { q: 'How is this different from the Shipped packages?', a: 'Packages are set products at set prices. Custom starts from your budget and goals, which suits bigger or unusual projects.' },
+  { q: 'Who will I work with?', a: 'The senior people doing the work, directly. No account managers.' },
+  { q: 'What if I’m not sure what I need?', a: 'Pick “Not sure yet”. We’ll recommend the right RemotoLabs product, whether that’s a website, design every month or AI systems.' },
+];
 ---
 
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
-  <section class="funnel relative min-h-[100svh] overflow-hidden bg-black">
+  <section id="top" class="funnel relative min-h-[100svh] overflow-hidden bg-black">
     <!-- slow reel of work, dimmed, behind everything -->
     <div class="reel pointer-events-none absolute inset-x-0 bottom-[7vh] opacity-[0.22]" aria-hidden="true">
       <div class="flex w-max gap-4 animate-marquee">
@@ -25,12 +60,12 @@ const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
     <div class="wrap relative flex min-h-[100svh] flex-col items-center justify-center pb-[24vh] pt-[100px] text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
-        <h1 class="display mt-6 t-hero">High-end sites. <span class="accent text-paper/60">Friendly budgets.</span></h1>
+        <h1 class="display mt-6 t-hero"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
         <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
       </div>
 
-      <form id="funnel" class="mt-12 w-full max-w-3xl" novalidate>
-        <p id="q" class="label text-paper/45">01 / 06 · Your budget</p>
+      <form id="funnel" class="mt-14 w-full max-w-4xl" novalidate>
+        <p id="q" class="label mb-8 text-paper/45">01 / 06 · Your budget</p>
 
         <!-- 1 budget -->
         <div class="step" data-step="1">
@@ -93,7 +128,7 @@ const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
         <p class="mx-auto grid size-14 place-items-center rounded-full bg-spark text-[24px] text-ink">✓</p>
         <h2 class="display mt-8 t-h2">Got it. <span class="accent text-paper/60">We’re on it.</span></h2>
         <p class="mt-5 text-[17px] text-paper/65">You’ll hear from a person (not a bot) within 24 hours with what we can build for your budget.</p>
-        <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[8px] border border-white/10 p-6 text-left"></div>
+        <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] border border-white/10 p-6 text-left"></div>
       </div>
 
       <a href={brand.parentUrl} class="absolute bottom-6 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 text-white/80">
@@ -101,10 +136,186 @@ const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
       </a>
     </div>
   </section>
+
+  <!-- ===== Below the funnel: the offer, explained ===== -->
+
+  <!-- Video slot -->
+  <section class="bg-pine-900 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="grid items-end gap-6 md:grid-cols-2">
+        <div>
+          <p class="label text-spark">Watch first</p>
+          <h2 class="display mt-4 t-h2">How a budget <span class="accent text-spark">becomes a website.</span></h2>
+        </div>
+        <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">Two minutes on how we scope, what you get for your number, and why it’s not a template.</p>
+      </div>
+      <!-- Replace with the real video: <video src=…> or a YouTube/Vimeo embed -->
+      <div class="relative mt-12 aspect-video overflow-hidden rounded-[32px] border border-white/10 bg-pine-800">
+        <img src={url('/work/1red-wide.webp')} alt="" class="absolute inset-0 size-full object-cover opacity-40" />
+        <div class="absolute inset-0 grid place-items-center">
+          <span class="grid size-20 place-items-center rounded-full bg-spark text-ink sm:size-24"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
+        </div>
+        <span class="label absolute bottom-6 left-6 text-paper/70">Video coming soon · 2 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two lanes -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="max-w-3xl">
+        <p class="label text-spark">Two ways to spend it</p>
+        <h2 class="display mt-4 t-h2">Scope it once, <span class="accent text-spark">or make it monthly.</span></h2>
+        <p class="mt-5 max-w-xl text-[17px] text-paper/60">After you name your budget, we come back with a proposal in one of two lanes. You choose.</p>
+      </div>
+      <div class="mt-12 grid gap-6 lg:grid-cols-2">
+        <article class="flex flex-col rounded-[40px] bg-spark p-8 text-ink sm:p-12">
+          <p class="label text-ink/60">The fast lane</p>
+          <h3 class="display mt-4 text-[40px] sm:text-[52px]">Fixed scope</h3>
+          <p class="mt-3 max-w-md text-[17px] text-ink/70">One defined project, one price, one launch date. Best when you know what you need.</p>
+          <ul class="mt-8 space-y-3 border-t border-ink/15 pt-8 text-[16px]">
+            {['A written scope and sitemap before you pay', 'Three design directions to choose from', 'Fixed price, fixed timeline', 'Launch, handover video and support'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-ink"></span>{t}</li>)}
+          </ul>
+          <p class="mt-auto pt-10 text-[15px] text-ink/60">Typical budgets: <strong class="text-ink">$3,000 – $25,000</strong></p>
+        </article>
+        <article class="flex flex-col rounded-[40px] border border-white/15 p-8 sm:p-12">
+          <p class="label text-paper/50">The flexible lane</p>
+          <h3 class="display mt-4 text-[40px] sm:text-[52px]">Monthly</h3>
+          <p class="mt-3 max-w-md text-[17px] text-paper/65">Spread the budget over months: site first, then pages, campaigns and design as you grow.</p>
+          <ul class="mt-8 space-y-3 border-t border-white/10 pt-8 text-[16px] text-paper/85">
+            {['One request at a time, ~48h each', 'Website, brand, ads, decks: all in scope', 'Pause when it’s quiet, cancel anytime', 'Runs on queued., our design subscription'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-spark"></span>{t}</li>)}
+          </ul>
+          <a href={funnel.products.queued.url} class="mt-auto pt-10 text-[15px] text-paper/60 hover:text-paper">From <strong class="text-paper">$3,995/month</strong> · see queued. →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- What your budget gets -->
+  <section class="border-t border-white/10 bg-pine-950 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="grid items-end gap-6 md:grid-cols-2">
+        <div>
+          <p class="label text-spark">What your number gets you</p>
+          <h2 class="display mt-4 t-h2">Real examples, <span class="accent text-spark">real budgets.</span></h2>
+        </div>
+        <p class="max-w-md text-[16px] text-paper/60 md:justify-self-end">A rough guide. Your proposal is shaped around your business, not a price list.</p>
+      </div>
+      <div class="mt-12 grid gap-px overflow-hidden rounded-[32px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        {tiers.map((t) => (
+          <article class="flex flex-col bg-pine-950 p-8">
+            <p class="display text-[34px] text-spark">{t.budget}</p>
+            <h3 class="mt-3 text-[20px] font-medium tracking-tight">{t.title}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/60">{t.body}</p>
+            <ul class="mt-6 flex flex-wrap gap-1.5">{t.items.map((i) => <li class="rounded-full bg-white/[0.07] px-3 py-1 text-[13px] text-paper/75">{i}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="max-w-3xl">
+        <p class="label text-spark">How it works</p>
+        <h2 class="display mt-4 t-h2">From a number <span class="accent text-spark">to a live site.</span></h2>
+      </div>
+      <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {process.map((p) => (
+          <li class="rounded-[32px] border border-white/10 p-8">
+            <p class="font-mono text-[13px] text-spark">{p.n}</p>
+            <h3 class="mt-8 text-[24px] font-medium tracking-tight">{p.title}</h3>
+            <p class="mt-3 text-[15px] leading-relaxed text-paper/60">{p.body}</p>
+            <p class="label mt-6 text-paper/40">{p.time}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="grid items-end gap-6 md:grid-cols-2">
+        <div>
+          <p class="label text-spark">Selected work</p>
+          <h2 class="display mt-4 t-h2">High-end, <span class="accent text-spark">on a budget.</span></h2>
+        </div>
+        <a href={url('/#work')} class="text-[16px] text-paper/60 underline underline-offset-4 hover:text-paper md:justify-self-end">See all work →</a>
+      </div>
+      <div class="mt-12 space-y-6">
+        {cases.map((c, i) => (
+          <article class="grid overflow-hidden rounded-[40px] border border-white/10 lg:grid-cols-[1.4fr_1fr]">
+            <div class:list={['bg-pine-800', i % 2 === 1 && 'lg:order-2']}><img src={url(c.img)} alt={`${c.title} website`} loading="lazy" class="aspect-[16/10] size-full object-cover" /></div>
+            <div class="flex flex-col justify-between gap-10 p-8 sm:p-12">
+              <div>
+                <p class="label text-paper/45">{c.industry}</p>
+                <h3 class="display mt-3 text-[40px] sm:text-[48px]">{c.title}</h3>
+                <p class="mt-4 text-[17px] text-paper/65">{c.body}</p>
+              </div>
+              <dl class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                {c.facts.map(([k, v]) => <div><dt class="label text-paper/40">{k}</dt><dd class="mt-2 text-[16px] font-medium">{v}</dd></div>)}
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="border-t border-white/10 bg-pine-950 py-24 sm:py-28">
+    <div class="wrap">
+      <div class="max-w-3xl">
+        <p class="label text-spark">What we build</p>
+        <h2 class="display mt-4 t-h2">Your website isn’t a billboard. <span class="accent text-spark">It’s a growth engine.</span></h2>
+      </div>
+      <div class="mt-12 grid gap-px overflow-hidden rounded-[32px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map(([t, b], i) => (
+          <article class="bg-pine-950 p-8">
+            <p class="font-mono text-[13px] text-spark">0{i + 1}</p>
+            <h3 class="mt-6 text-[22px] font-medium tracking-tight">{t}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/60">{b}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-white/10 py-24 sm:py-28">
+    <div class="wrap grid gap-12 lg:grid-cols-[1fr_2fr]">
+      <h2 class="display t-h2">Questions, <span class="accent text-spark">answered.</span></h2>
+      <div class="divide-y divide-white/10 border-y border-white/10">
+        {faq.map((f) => (
+          <details>
+            <summary class="flex items-center justify-between gap-6 py-5 text-[18px] font-medium hover:text-spark">
+              {f.q}
+              <span class="faq-plus grid size-8 shrink-0 place-items-center rounded-full border border-white/15 text-[18px] text-paper/70 transition">+</span>
+            </summary>
+            <p class="max-w-2xl pb-6 text-[16px] leading-relaxed text-paper/65">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Close -->
+  <section class="wrap pb-24">
+    <div class="relative overflow-hidden rounded-[40px] bg-spark px-6 py-20 text-center text-ink sm:py-28">
+      <h2 class="display mx-auto max-w-[16ch] t-big"><span class="block">Got a number?</span> <span class="accent block">Let’s see what it builds.</span></h2>
+      <a href="#top" class="btn-ink btn-wide mx-auto mt-10 h-14 px-8 text-[16px]">Name your budget</a>
+      <p class="label mt-8 text-ink/60">Free proposal · reply within 24h · no commitment</p>
+    </div>
+  </section>
+  <Footer />
+
 </Layout>
 
 <style is:global>
-  .funnel .big-input { font-size: clamp(56px, 10vw, 140px); font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
+  .site-header:not([data-scrolled]) { background: #000; border-color: transparent; }
+  .funnel .big-input { font-size: var(--fit, clamp(48px, 9vw, 128px)); padding-block: 0.08em; font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
   @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
   .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
@@ -161,6 +372,11 @@ const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
     steps[n].querySelector('input:not([type=radio]),textarea')?.focus();
   }
 
+  // Shrink big inputs as text grows so nothing gets cut off.
+  form.querySelectorAll('.big-input').forEach((el) => el.addEventListener('input', () => {
+    const len = (el.value || el.placeholder).length;
+    el.style.setProperty('--fit', `clamp(28px, ${Math.max(3.2, 9 - Math.max(0, len - 9) * 0.32)}vw, 128px)`);
+  }));
   form.addEventListener('input', validate);
   form.addEventListener('change', () => {
     validate();
