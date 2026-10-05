@@ -11,15 +11,15 @@ import { brand, funnel } from '../data/site';
 // The works on the ring, in order. Square-ish shots only, so nothing is cropped off a device.
 // The three real launches first; the stock shots are stand-ins, labelled as open slots.
 const work = [
-  { img: '/work/tokni.webp', name: 'Tokn1', type: 'RWA exchange', year: 'Live in 10 days' },
-  { img: '/work/1red.webp', name: '1RED', type: 'AI sales', year: 'Live in 10 days' },
-  { img: '/work/perfect-body.webp', name: 'Perfect Body', type: 'Course launch', year: 'Live in 5 days' },
-  { img: '/placeholder/laptop-typing.webp', name: 'Your site', type: 'Next build', year: '2026' },
-  { img: '/placeholder/phone-hands.webp', name: 'Your site', type: 'Next build', year: '2026' },
-  { img: '/placeholder/tablet-method.webp', name: 'Your site', type: 'Next build', year: '2026' },
-  { img: '/placeholder/laptop-ladder.webp', name: 'Your site', type: 'Next build', year: '2026' },
-  { img: '/placeholder/tablet-founder.webp', name: 'Your site', type: 'Next build', year: '2026' },
-  { img: '/placeholder/team-laptops.webp', name: 'Your site', type: 'Next build', year: '2026' },
+  { img: '/work/tokni.webp', name: 'Tokn1', type: 'RWA exchange', year: 'Live in 10 days', body: 'A launch site for a digital-securities exchange: credible enough for regulators, sharp enough for investors.', facts: [['Package', 'Website'], ['Built in', 'Framer'], ['Live in', '10 days']] },
+  { img: '/work/1red.webp', name: '1RED', type: 'AI sales', year: 'Live in 10 days', body: 'Product site for an AI sales bot, with a demo booking flow and a client-logo wall that does the selling.', facts: [['Package', 'Website'], ['Scope', 'Product site'], ['Live in', '10 days']] },
+  { img: '/work/perfect-body.webp', name: 'Perfect Body', type: 'Course launch', year: 'Live in 5 days', body: 'Course launch page with enrollment flow, then monthly ad and social creative to keep it selling.', facts: [['Package', 'Landing'], ['Scope', 'Enrollment'], ['Live in', '5 days']] },
+  { img: '/placeholder/laptop-typing.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
+  { img: '/placeholder/phone-hands.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
+  { img: '/placeholder/tablet-method.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
+  { img: '/placeholder/laptop-ladder.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
+  { img: '/placeholder/tablet-founder.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
+  { img: '/placeholder/team-laptops.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
 ];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
@@ -62,7 +62,7 @@ const faq = [
 
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal overlay>
   <section id="top" class="funnel relative overflow-x-clip bg-[#060606]">
-    <div class="ring-content wrap relative z-10 flex min-h-[100svh] flex-col items-center justify-center pb-10 pt-[100px] text-center sm:pb-14 sm:pt-[120px]">
+    <div class="ring-content wrap relative z-10 flex flex-col lg:min-h-[100svh] items-center justify-center pb-10 pt-[100px] text-center sm:pb-14 sm:pt-[120px]">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
         <h1 class="display mt-3 text-[min(43px,calc((100vw-32px)/6.35))] md:text-[66px] lg:text-[82px] xl:text-[98px] 3xl:text-[115px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
@@ -75,7 +75,7 @@ const faq = [
         <!-- 1 budget -->
         <div class="step" data-step="1">
           <input name="budget" inputmode="numeric" autocomplete="off" placeholder="your budget" aria-label="Your budget in US dollars" class="big-input w-full bg-transparent text-center placeholder:text-paper/15" />
-          <p class="mt-4 text-[14px] text-paper/40">Most projects land between $3,000 and $15,000. Minimum $1,000.</p>
+          <p class="mt-4 text-[14px] text-paper/40">Most projects land between $3,000 and $15,000.<br class="sm:hidden" /> Minimum $1,000.</p>
         </div>
 
         <!-- 2 need -->
@@ -133,7 +133,7 @@ const faq = [
       <!-- done -->
       <div id="done" class="hidden max-w-2xl" tabindex="-1">
         <p class="mx-auto grid size-14 place-items-center rounded-full bg-spark text-[24px] text-ink">✓</p>
-        <h2 class="display mt-8 t-h2">Got it. <span class="accent text-paper/60">We’re on it.</span></h2>
+        <h2 class="display mt-8 t-h2">Got it. <span class="accent text-spark">We’re on it.</span></h2>
         <p class="mt-5 text-[17px] text-paper/65">You’ll hear from a person (not a bot) within 24 hours with what we can build for your budget.</p>
         <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] bg-white/[0.03] p-6 text-left"></div>
       </div>
@@ -145,14 +145,14 @@ const faq = [
 
     <!-- Viscose ring of recent work. Pinned while you scroll: it goes around the content first
          (under it on desktop, below it on phones), then slides into a gallery, one work per scroll step. -->
-    <div class="sticky top-0 h-[100svh] overflow-hidden lg:-mt-[100svh]">
+    <div class="sticky top-0 h-[100svh] overflow-hidden max-lg:mt-[calc(45vw-50svh)] lg:-mt-[100svh]">
       <div id="ring" class="absolute inset-0 touch-pan-y" role="img" aria-label="Recent work"
-        data-images={JSON.stringify(work.map((w) => url(w.img)))} data-projects={JSON.stringify(work.map(({ name, type, year }) => ({ name, type, year })))} data-arrow={url('/arrow-up-right.svg')}></div>
+        data-images={JSON.stringify(work.map((w) => url(w.img)))} data-projects={JSON.stringify(work.map(({ img, ...rest }) => rest))} data-arrow={url('/arrow-up-right.svg')}></div>
 
       <div id="ring-ui" class="pointer-events-none absolute inset-0 text-paper" style="opacity:0">
         <p class="label absolute left-[5.5vw] top-[104px] text-paper/45 max-sm:left-4">Recent launches</p>
         <ul id="ring-list" aria-label="Projects" class="absolute right-[5.5vw] top-[104px] flex flex-col items-end text-right leading-[1.35] tracking-[0.01em] max-sm:hidden">
-          {work.map((w, i) => <li style="opacity:.25">{String(i + 1).padStart(2, '0')} {w.name}</li>)}
+          {work.map((w, i) => <li style="opacity:.25"><button type="button" data-go={i} class="transition-colors hover:text-spark">{String(i + 1).padStart(2, '0')} {w.name}</button></li>)}
         </ul>
         {['left', 'right'].map((side) => (
           <div data-meta={side} aria-hidden="true" class="absolute top-1/2 -translate-y-1/2 tracking-[-0.01em]">
@@ -180,6 +180,28 @@ const faq = [
     </div>
     <div id="ring-spacer" aria-hidden="true" class="h-[400svh]"></div>
   </section>
+
+  <!-- Work viewer: opened by clicking a work on the ring -->
+  <dialog id="work-view" class="work-view m-auto max-h-[92svh] w-[min(92vw,1120px)] overflow-y-auto rounded-[32px] bg-[#111] p-0 text-paper" aria-labelledby="wv-name">
+    <div class="grid gap-8 p-4 sm:p-6 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-10 lg:p-8">
+      <div class="grid place-items-center overflow-hidden rounded-[24px] bg-[#0b0b0b]">
+        <img id="wv-img" alt="" class="h-auto max-h-[64svh] w-full object-contain" />
+      </div>
+      <div class="pb-2 lg:pb-0">
+        <p id="wv-idx" class="label text-paper/45"></p>
+        <h2 id="wv-name" class="display mt-3 text-[40px] sm:text-[56px]"></h2>
+        <p id="wv-type" class="mt-2 text-[17px] text-spark"></p>
+        <p id="wv-body" class="mt-5 max-w-md text-[16px] leading-relaxed text-paper/65"></p>
+        <dl id="wv-facts" class="mt-6 grid grid-cols-3 gap-2"></dl>
+        <a id="wv-cta" href="#top" class="btn-primary mt-7 hidden h-12 px-6">Start yours</a>
+        <div class="mt-8 flex items-center gap-2">
+          <button type="button" data-step="-1" class="btn-ghost size-12 p-0" aria-label="Previous work">←</button>
+          <button type="button" data-step="1" class="btn-ghost size-12 p-0" aria-label="Next work">→</button>
+          <form method="dialog" class="ml-auto"><button class="btn-ghost h-12 px-6">Close</button></form>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ===== Below the funnel: proof → why it costs less → how you pay → what it buys → how it runs ===== -->
 
@@ -379,6 +401,12 @@ const faq = [
   /* the ring sits under the content on desktop; empty space lets the pointer through to it */
   .funnel .ring-content { pointer-events: none; }
   .funnel .ring-content :is(a, button, input, label, textarea, select, p, h1, h2, #suggest) { pointer-events: auto; }
+  /* the whole page sits on the hero's near-black, so leaving the gallery doesn't change colour */
+  body { background-color: #060606; }
+  #ring-ui[data-live] #ring-list button { pointer-events: auto; }
+  .work-view::backdrop { background: rgb(6 6 6 / .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .work-view[open] { animation: wv-in .45s cubic-bezier(.2,.7,.2,1); }
+  @keyframes wv-in { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
   .funnel .navrow { display: grid; grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows .55s cubic-bezier(.2,.7,.2,1), opacity .4s ease; }
   .funnel .navrow[data-hide] { grid-template-rows: 0fr; opacity: 0; }
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
@@ -397,9 +425,41 @@ const faq = [
       return { box, goo: box.querySelector('[data-goo]'), layers: [...box.querySelectorAll('[data-layer]')], plain: box.querySelector('[data-plain]') };
     };
     const list = document.getElementById('ring-list');
-    mountRing(el, {
+    const work = JSON.parse(el.dataset.projects || '[]');
+    const dlg = document.getElementById('work-view');
+    const $ = (id) => document.getElementById(id);
+    let current = 0;
+    const view = (i) => {
+      current = (i + work.length) % work.length;
+      const w = work[current];
+      const open = w.name === 'Your site';
+      $('wv-img').src = JSON.parse(el.dataset.images)[current];
+      $('wv-img').alt = open ? 'Placeholder for a future launch' : `${w.name} website`;
+      $('wv-idx').textContent = `${String(current + 1).padStart(2, '0')} / ${String(work.length).padStart(2, '0')}`;
+      $('wv-name').textContent = w.name;
+      $('wv-type').textContent = `${w.type} · ${w.year}`;
+      $('wv-body').textContent = w.body || '';
+      $('wv-facts').innerHTML = (w.facts || []).map(([k, v]) => `<div class="rounded-[16px] bg-white/[0.05] p-3"><dt class="label text-[10px] text-paper/45">${k}</dt><dd class="mt-1 text-[15px]">${v}</dd></div>`).join('');
+      $('wv-cta').classList.toggle('hidden', !open);
+      if (!dlg.open) dlg.showModal();
+    };
+    dlg.querySelectorAll('[data-step]').forEach((b) => b.addEventListener('click', () => view(current + Number(b.dataset.step))));
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') view(current + 1);
+      if (e.key === 'ArrowLeft') view(current - 1);
+    });
+    $('wv-cta').addEventListener('click', (e) => {
+      e.preventDefault();
+      dlg.close();
+      scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => document.querySelector('#funnel input[name="budget"]')?.focus({ preventScroll: true }), 600);
+    });
+
+    const ring = mountRing(el, {
       images: JSON.parse(el.dataset.images || '[]'),
-      projects: JSON.parse(el.dataset.projects || '[]'),
+      projects: work,
+      onOpen: view,
       arrow: el.dataset.arrow,
       spacer: document.getElementById('ring-spacer'),
       ui: {
@@ -423,6 +483,7 @@ const faq = [
         return { hero: { R, card: R * 0.37 }, gallery };
       },
     });
+    list.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => ring.goTo(Number(b.dataset.go))));
   }
 </script>
 
@@ -472,7 +533,6 @@ const faq = [
     q.textContent = `0${n + 1} / 06 · ${labels[n]}`;
     bar.style.width = `${((n + 1) / steps.length) * 100}%`;
     back.classList.toggle('hidden', n === 0);
-    intro.classList.toggle('hidden', n > 0 && innerHeight < 820);
     err.textContent = '';
     validate();
     steps[n].querySelector('input:not([type=radio]),textarea')?.focus();

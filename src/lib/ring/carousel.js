@@ -54,15 +54,13 @@ const params = {
   spinTime: 2.6,
   spinEase: "power2.inOut",
 
-  // drag / click (hero only)
+  // drag (hero only)
   damping: 0.94,
   maxSpeed: 12,
   dragSpeed: 1,
   snap: true,
   snapTime: 0.8,
   snapFrom: 1,
-  pickTime: 0.55,
-  pickEase: "power3.inOut",
   drift: 0.05, // rad/s the ring turns on its own once left alone
   driftAfter: 2.5, // s of no input before it does
 
@@ -172,10 +170,11 @@ const lerp = (a, b, t) => a + (b - a) * t;
  * opts.layout(w, h) → { hero: { R, card }, gallery: { R, card, cx } }, px.
  * opts.spacer: the element whose scroll drives the gallery (optional).
  * opts.ui: { groups, list, items, cut, live, root } for the name lockups.
- * Returns a dispose function.
+ * opts.onOpen(i): called with a work's index when it is clicked to view.
+ * Returns a dispose function, with .goTo(i) to scroll the gallery to work i.
  */
 export function mountRing(container, opts) {
-  const { images, projects = [], arrow, page = "#060606", layout: sizeFor, spacer, ui = {} } = opts;
+  const { images, projects = [], arrow, page = "#060606", layout: sizeFor, spacer, ui = {}, onOpen } = opts;
   let disposed = false;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const state = { progress: 0, spread: 0, spin: 0 };
@@ -334,24 +333,6 @@ export function mountRing(container, opts) {
     picking = false;
   };
 
-  const pick = (i) => {
-    const slot = TAU / count;
-    const base = frontAngle - signedOffset(i) * slot;
-    const target = base + Math.round((state.spin - base) / TAU) * TAU;
-    const slots = Math.abs(target - state.spin) / slot;
-    if (slots < 0.01) return;
-    spinVel = 0;
-    settling = false;
-    picking = true;
-    gsap.killTweensOf(state);
-    gsap.to(state, {
-      spin: target,
-      duration: params.pickTime * Math.sqrt(Math.max(1, slots)),
-      ease: params.pickEase,
-      onComplete: () => { picking = false; },
-    });
-  };
-
   const pointer = { x: 0, y: 0, inside: false, seeded: false };
   const cursor = { x: 0, y: 0, amt: 0, wake: 0 };
   let coarse = false;
@@ -423,9 +404,20 @@ export function mountRing(container, opts) {
     renderer.domElement.releasePointerCapture?.(e.pointerId);
   };
 
+  // Clicking a work opens it. In the gallery a work off to the side is
+  // scrolled to the front first; clicking the front one opens it.
   const onClick = () => {
-    if (!interactive || inGallery || pointerTravel >= 5 || over < 0) return;
-    pick(over);
+    if (pointerTravel >= 5 || over < 0) return;
+    const cell = planeCell[over];
+    if (inGallery && cell !== shown) return goTo(cell);
+    onOpen?.(cell);
+  };
+
+  const goTo = (k) => {
+    if (!spacer) return;
+    const H = innerHeight;
+    const top = spacer.getBoundingClientRect().top + scrollY - H + (params.galleryAt + k * params.perWork) * H;
+    scrollTo({ top: Math.round(top), behavior: reduced ? "auto" : "smooth" });
   };
 
   container.addEventListener("pointerdown", onPointerDown);
@@ -469,6 +461,7 @@ export function mountRing(container, opts) {
   const webF = new Float32Array(MAX_LINKS);
   const sideF = new Float32Array(MAX_PLANES);
   const focusPos = new THREE.Vector2();
+  const planeCell = new Int16Array(MAX_PLANES);
   const swellOf = (i) => Math.max(0.05, 1 + params.swell * hoverF[i] - params.sideScale * sideF[i]);
 
   let over = -1;
@@ -525,7 +518,7 @@ export function mountRing(container, opts) {
     const kRise = chase(dt, params.grab);
     const kFall = chase(dt, params.release);
     const cellOf = (slot) => (imageCount > 0 ? (((-slot) % imageCount) + imageCount) % imageCount : 0);
-    const probe = pointer.inside && pointer.seeded && interactive;
+    const probe = pointer.inside && pointer.seeded && (interactive || inGallery);
     let overI = -1;
     const focusI = track ? over : -1;
     let frontD = 1e9;
@@ -536,6 +529,7 @@ export function mountRing(container, opts) {
       const n = Math.abs(sIdx);
       const u = i === 0 ? clamp01(state.progress) : travel[n];
       const cell = cellOf(sIdx);
+      planeCell[i] = cell;
 
       // The seed is born in its own slot on the ring rather than at the centre,
       // so the heading and form in the middle are never covered.
@@ -615,8 +609,8 @@ export function mountRing(container, opts) {
     }
 
     over = overI;
-    container.style.cursor = over >= 0 && !inGallery ? "pointer" : "";
-    const wantTag = over >= 0 && !inGallery && !coarse && viewW > params.tagFrom;
+    container.style.cursor = over >= 0 ? "pointer" : "";
+    const wantTag = over >= 0 && !coarse && viewW > params.tagFrom;
     if (wantTag !== tagUp) {
       tagUp = wantTag;
       tag.show(wantTag);
@@ -632,7 +626,10 @@ export function mountRing(container, opts) {
       shown = frontCell;
       paintList();
     }
-    if (ui.root) ui.root.style.opacity = String(smoothstep(0.6, 1, s));
+    if (ui.root) {
+      ui.root.style.opacity = String(smoothstep(0.6, 1, s));
+      ui.root.toggleAttribute("data-live", s > 0.6);
+    }
 
     /* honey */
     order.sort((a, b) => signedOffset(a) - signedOffset(b));
@@ -744,8 +741,10 @@ export function mountRing(container, opts) {
     const wasGallery = inGallery;
     inGallery = shift > 0.002;
     if (inGallery && !wasGallery) {
-      // Take over from wherever the hero left the ring, on a slot boundary.
-      anchor = Math.round(spinOut / step) * step;
+      // Take over from wherever the hero left the ring, on a whole turn: at
+      // spin = k * step the work facing front is work k, so step k of the
+      // scroll always fronts work k and the list numbers line up.
+      anchor = Math.round(spinOut / TAU) * TAU;
       dragging = false;
       stopPick();
       spinVel = 0;
@@ -829,7 +828,7 @@ export function mountRing(container, opts) {
   });
   io.observe(container);
 
-  return () => {
+  const dispose = () => {
     disposed = true;
     clearTimeout(holdTimer);
     renderer.setAnimationLoop(null);
@@ -854,4 +853,6 @@ export function mountRing(container, opts) {
     renderer.forceContextLoss();
     renderer.domElement.remove();
   };
+  dispose.goTo = goTo;
+  return dispose;
 }
