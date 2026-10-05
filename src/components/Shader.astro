@@ -1,0 +1,42 @@
+---
+// Dark hero background: Paper Shaders "Mesh Gradient" (Apache-2.0, @paper-design/shaders),
+// mostly black and deep green with slow-drifting lime light. Fades to black at the bottom.
+// Pauses off-screen (built into ShaderMount), stays still for reduced motion.
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['shader pointer-events-none', className]} aria-hidden="true">
+  <div class="mount absolute inset-0"></div>
+  <!-- keeps the copy readable: darker in the middle, black at the bottom -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_42%,rgb(0_0_0/.6),transparent_75%)]"></div>
+  <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-black"></div>
+</div>
+
+<script>
+  import { ShaderMount, meshGradientFragmentShader, getShaderColorFromString, ShaderFitOptions } from '@paper-design/shaders';
+
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['#000000', '#000000', '#0b1a07', '#d8ff85', '#000000', '#16290f', '#000000'];
+  for (const box of document.querySelectorAll<HTMLElement>('.shader')) {
+    const el = box.querySelector<HTMLElement>('.mount')!;
+    try {
+      new ShaderMount(el, meshGradientFragmentShader, {
+        u_colors: colors.map(getShaderColorFromString),
+        u_colorsCount: colors.length,
+        u_distortion: 0.85,
+        u_swirl: 0.35,
+        u_grainMixer: 0,
+        u_grainOverlay: 0.12,
+        u_fit: ShaderFitOptions.cover,
+        u_scale: 1,
+        u_rotation: 0,
+        u_offsetX: 0,
+        u_offsetY: 0,
+        u_originX: 0.5,
+        u_originY: 0.5,
+        u_worldWidth: 0,
+        u_worldHeight: 0,
+      }, undefined, still ? 0 : 0.25, 0, 1, 1920 * 1080);
+    } catch { /* no WebGL: plain black hero */ }
+  }
+</script>

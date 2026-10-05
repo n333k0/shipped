@@ -3,12 +3,16 @@ import { nextWeek, openSlotsThisMonth, monthName, packages } from '../data/site'
 import { url } from '../lib/url';
 import ParentLogo from './ParentLogo.astro';
 import Reel from './Reel.astro';
+import Shader from './Shader.astro';
 import { brand } from '../data/site';
 
 const from = packages[0].priceLabel;
 ---
 
-<section class="relative overflow-hidden pt-[88px] sm:pt-[116px]">
+<section class="relative overflow-hidden">
+  <!-- copy block: the shader fills exactly this area and fades to black where the reel starts -->
+  <div class="relative pb-12 pt-[88px] sm:pb-14 sm:pt-[116px]">
+  <Shader class="absolute inset-0" />
 
   <div class="wrap relative text-center">
     {nextWeek && (
@@ -49,8 +53,9 @@ const from = packages[0].priceLabel;
       <ParentLogo class="h-[14px]" />
     </a>
   </div>
+  </div>
 
-  <Reel class="mt-12 sm:mt-14" />
+  <Reel />
 </section>
 
 <!-- Facts strip -->
