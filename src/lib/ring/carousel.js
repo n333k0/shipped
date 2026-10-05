@@ -1,10 +1,18 @@
 // Viscose ring (morphin.dev "viscose carousel"), ported from React to a plain
-// mount function for the budget hero. Kept from the original: the gooey birth,
-// the unfurl, honey threads, cursor melt, drag/flick with snap, click to
-// centre and the glass "View" tag. Left out: its in-scene heading, side meta,
-// project column and load counter (the page has its own heading and form),
-// the wheel hijack (the page has to scroll) and the off-centre stage move —
-// here the ring stays centred and sized to go around the content.
+// mount function for the budget page.
+//
+// Two states, blended by page scroll:
+//  - hero:    the ring is centred and goes around the heading and form. Cards
+//             stay upright, it drifts, and it can be dragged or clicked.
+//  - gallery: once you scroll, the ring slides left and grows like the
+//             original's stage move, so one work faces front with its number
+//             and name on the left, type on the right and the list top-right.
+//             Each further stretch of scroll turns the next work to the front.
+//
+// Kept from the original: the gooey birth and unfurl, honey threads, cursor
+// melt, flick with snap, click to centre, the glass "View" tag and the melting
+// name lockups. Left out: its in-scene heading, the load counter and the wheel
+// hijack (scroll drives the gallery instead, so the page still scrolls).
 import * as THREE from "three";
 import gsap from "gsap";
 
@@ -15,12 +23,13 @@ import {
   MAX_LINKS,
 } from "./planeShaders";
 import { buildAtlas } from "./atlas";
+import { createMeta } from "./meta";
 import { createTag, TAG_W, TAG_H } from "./tag";
 import {
   TAU,
-
   chase,
   clamp01,
+  easeInOutCubic,
   easeOutCubic,
   signedOffset,
   smoothstep,
@@ -29,10 +38,9 @@ import {
 const FAN_START = 0.06;
 
 const params = {
-  // geometry, all at the reference ring (radius 340, card 90)
+  // Every px figure below is quoted for a 90px card and scaled with the card.
   planeSize: 90,
   aspect: 1, // square cards: the device shots are square-ish, never crop them
-  ringRadius: 340,
   radius: 6, // corner
   textured: true,
   blend: 14,
@@ -46,7 +54,7 @@ const params = {
   spinTime: 2.6,
   spinEase: "power2.inOut",
 
-  // drag / click
+  // drag / click (hero only)
   damping: 0.94,
   maxSpeed: 12,
   dragSpeed: 1,
@@ -57,6 +65,13 @@ const params = {
   pickEase: "power3.inOut",
   drift: 0.05, // rad/s the ring turns on its own once left alone
   driftAfter: 2.5, // s of no input before it does
+
+  // scroll, as fractions of the viewport height
+  shiftFrom: 0.05, // the ring starts sliding into the gallery here
+  shiftTo: 0.75, // and is in place here
+  galleryAt: 0.85, // first work is front from here
+  perWork: 0.55, // scroll per work
+  tail: 0.6, // held on the last work before the page moves on
 
   // glass lip along the top and bottom of the canvas
   glass: true,
@@ -105,6 +120,33 @@ const params = {
   tagRefract: 39.5,
   textFont: "Inter Tight",
 
+  // name lockups either side of the gallery (see meta.js)
+  narrowAt: 1024,
+  tightAt: 640,
+  narrowText: 1.5,
+  tightName: 1.5,
+  tightNameBottom: 24,
+  tightNameRight: 16,
+  tightMetaWidth: 70,
+  metaLeft: 5.5,
+  metaRight: 5.5,
+  metaGapL: 4.7,
+  metaGapR: 3.6,
+  metaWidth: 34,
+  nameSize: (24 / 1440) * 100,
+  nameFont: "Inter Tight",
+  nameWeight: 500,
+  idxSize: (16 / 1440) * 100,
+  idxFont: "Inter Tight",
+  idxWeight: 400,
+  listSize: 0.9,
+  nameMorphTime: 1.2,
+  nameEase: "circ.out",
+  nameBlur: 8.5,
+  nameEdge: 400,
+  nameCut: 0.33,
+  nameSoften: 0.35,
+
   // honey
   thread: 1.0,
   thin: 0.4,
@@ -114,7 +156,7 @@ const params = {
   fillet: 14,
 
   wobble: 3,
-  goo: 22, // lower than the original's 35: upright square cards meet corner to corner, closer than radial ones
+  goo: 22, // lower than the original's 35: upright square cards meet corner to corner
 };
 
 const blankTexture = () => {
@@ -123,12 +165,17 @@ const blankTexture = () => {
   return t;
 };
 
+const lerp = (a, b, t) => a + (b - a) * t;
+
 /**
- * Mounts the ring into `container` (positioned, sized by CSS).
- * `layout(w, h)` returns { R, card, count, glass }: ring radius and card long
- * edge in px, how many cards go round, and whether the glass lip is on. Returns a dispose function.
+ * container: the positioned element the canvas fills.
+ * opts.layout(w, h) → { hero: { R, card }, gallery: { R, card, cx } }, px.
+ * opts.spacer: the element whose scroll drives the gallery (optional).
+ * opts.ui: { groups, list, items, cut, live, root } for the name lockups.
+ * Returns a dispose function.
  */
-export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: sizeFor }) {
+export function mountRing(container, opts) {
+  const { images, projects = [], arrow, page = "#060606", layout: sizeFor, spacer, ui = {} } = opts;
   let disposed = false;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const state = { progress: 0, spread: 0, spin: 0 };
@@ -188,6 +235,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   scene.add(mesh);
 
   const tag = createTag(params, uniforms, arrow);
+  const meta = ui.groups ? createMeta({ groups: ui.groups, list: ui.list, cut: ui.cut, live: ui.live }, params, projects) : null;
 
   /* art */
   let firstIn = false;
@@ -197,20 +245,28 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   uniforms.uAtlas.value = atlas.texture;
   uniforms.uGrid.value.set(atlas.grid[0], atlas.grid[1]);
   const imageCount = atlas.count;
+  // One card per work, so turning one slot always brings the next work round.
+  const count = Math.min(MAX_PLANES, Math.max(3, imageCount));
   atlas.first.then(() => { if (!disposed) firstIn = true; });
 
   /* size */
   let viewW = 1, viewH = 1;
-  let fit = 1, planeK = 1, count = 12, glassOn = true;
+  let sizes = sizeFor(1, 1);
+  let narrowNow = false, tightNow = false;
+
+  const fitSpacer = () => {
+    if (!spacer) return;
+    const n = Math.max(1, projects.length || imageCount);
+    const h = innerHeight * (params.galleryAt + (n - 1) * params.perWork + params.tail);
+    spacer.style.height = `${Math.round(h)}px`;
+  };
 
   const resize = () => {
     viewW = Math.max(1, container.clientWidth);
     viewH = Math.max(1, container.clientHeight);
-    const s = sizeFor(viewW, viewH);
-    count = Math.min(MAX_PLANES, s.count);
-    glassOn = s.glass !== false;
-    fit = s.R / params.ringRadius;
-    planeK = s.card / (params.planeSize * fit);
+    sizes = sizeFor(viewW, viewH);
+    narrowNow = viewW <= params.narrowAt;
+    tightNow = viewW <= params.tightAt;
     renderer.setSize(viewW, viewH);
     camera.left = -viewW / 2;
     camera.right = viewW / 2;
@@ -219,13 +275,32 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     camera.updateProjectionMatrix();
     mesh.scale.set(viewW, viewH, 1);
     uniforms.uResolution.value.set(viewW, viewH);
+    meta?.style({ textK: narrowNow ? params.narrowText : 1, tight: tightNow, viewW });
+    fitSpacer();
   };
   resize();
   const ro = new ResizeObserver(resize);
   ro.observe(container);
+  addEventListener("resize", fitSpacer);
+
+  /* scroll → gallery */
+  // 0 = hero ring, 1 = gallery stage; eased toward the scroll's target.
+  let shiftT = 0, shift = 0;
+  let galleryIdx = 0;
+  const readScroll = () => {
+    if (!spacer) return;
+    const H = innerHeight;
+    // How far the sticky stage has been scrolled through, in px.
+    const p = H - spacer.getBoundingClientRect().top;
+    shiftT = smoothstep(params.shiftFrom * H, params.shiftTo * H, p);
+    const n = Math.max(1, projects.length || imageCount);
+    // Rounded, so the ring always settles with one work square to the front
+    // rather than parking halfway between two.
+    galleryIdx = Math.min(n - 1, Math.max(0, Math.round((p - params.galleryAt * H) / (params.perWork * H))));
+  };
 
   /* spin & input */
-  const frontAngle = 0; // ring stays centred, so 3 o'clock is front
+  const frontAngle = 0; // 3 o'clock faces front in both states
   let interactive = false;
   let spinVel = 0;
   let dragging = false;
@@ -239,6 +314,11 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   let travelX = 0;
   let travelY = 0;
   let lastInput = 0;
+  // What the layout actually turns by. In the hero it is state.spin; in the
+  // gallery it follows the scroll from a slot-aligned anchor.
+  let spinOut = 0;
+  let anchor = 0;
+  let inGallery = false;
 
   const rect = () => container.getBoundingClientRect();
   const pointerAngle = (e) => {
@@ -305,7 +385,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     travelX = e.clientX;
     travelY = e.clientY;
     trackPointer(e);
-    if (!interactive) return;
+    if (!interactive || inGallery) return;
     stopPick();
     if (coarse) beginHold();
     dragging = true;
@@ -344,7 +424,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   };
 
   const onClick = () => {
-    if (!interactive || pointerTravel >= 5 || over < 0) return;
+    if (!interactive || inGallery || pointerTravel >= 5 || over < 0) return;
     pick(over);
   };
 
@@ -354,6 +434,8 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   container.addEventListener("pointercancel", onPointerUp);
   container.addEventListener("pointerleave", onPointerLeave);
   container.addEventListener("click", onClick);
+
+  let unit = 1; // card size / 90, what every px param is scaled by
 
   const updatePointer = (dt) => {
     const live = params.hover && engaged() && pointer.seeded && interactive;
@@ -366,10 +448,11 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
       cursor.wake * Math.pow(0.94, dt * 60),
       clamp01(trail / (Math.max(dt, 0.001) * 2600)),
     );
-    uniforms.uMouse.value.set(cursor.x, cursor.y, cursor.amt, params.melt * fit);
+    const g = Math.min(unit, 2.5);
+    uniforms.uMouse.value.set(cursor.x, cursor.y, cursor.amt, params.melt * g);
     uniforms.uMelt.value.set(
-      params.meltReach * fit,
-      params.wave * fit * cursor.wake * cursor.amt,
+      params.meltReach * g,
+      params.wave * g * cursor.wake * cursor.amt,
       params.waveFreq,
       params.waveSpeed,
     );
@@ -390,21 +473,38 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
 
   let over = -1;
   let tagUp = false;
+  let shown = -1;
+  let announced = -1;
+
+  const paintList = () => {
+    const items = ui.items || [];
+    for (let i = 0; i < items.length; i++) {
+      const on = i === shown;
+      items[i].style.opacity = on ? "1" : "0.25";
+      if (on) items[i].setAttribute("aria-current", "true");
+      else items[i].removeAttribute("aria-current");
+    }
+  };
 
   const layout = (dt) => {
     uniforms.uCount.value = count;
     const step = TAU / count;
     const spread = clamp01(state.spread);
-    const g = fit;
+    const s = easeInOutCubic(shift);
 
-    const W = params.planeSize * planeK * g;
+    // The stage: radius, card and centre slide from the hero ring to the gallery.
+    const R = lerp(sizes.hero.R, sizes.gallery.R, s);
+    const W = lerp(sizes.hero.card, sizes.gallery.card, s);
+    const cx = lerp(0, sizes.gallery.cx, s);
     const H = W / params.aspect;
-    uniforms.uSize.value.set(W, H);
-    uniforms.uRadius.value = params.radius * planeK * g;
+    unit = W / params.planeSize;
+    const g = unit;
 
-    const sepExtent = H; // radial: long edge points outward
+    uniforms.uSize.value.set(W, H);
+    uniforms.uRadius.value = params.radius * g;
+
+    const sepExtent = H;
     const faceEdge = W;
-    const R = params.ringRadius * g;
     const finalSep = Math.max(1, 2 * R * Math.sin(step / 2) - sepExtent);
 
     const maxN = Math.max(1, Math.abs(signedOffset(count - 1)));
@@ -428,6 +528,8 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     const probe = pointer.inside && pointer.seeded && interactive;
     let overI = -1;
     const focusI = track ? over : -1;
+    let frontD = 1e9;
+    let frontCell = -1;
 
     for (let i = 0; i < count; i++) {
       const sIdx = signedOffset(i);
@@ -437,10 +539,14 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
 
       // The seed is born in its own slot on the ring rather than at the centre,
       // so the heading and form in the middle are never covered.
-      const angle = Math.sign(sIdx) * step * cum[n] + state.spin;
-      const px = Math.cos(angle) * R;
+      const angle = Math.sign(sIdx) * step * cum[n] + spinOut;
+      const px = Math.cos(angle) * R + cx;
       const py = Math.sin(angle) * R;
       rest[i].set(px, py);
+
+      const da = angle - frontAngle;
+      const toFront = Math.abs(Math.atan2(Math.sin(da), Math.cos(da)));
+      if (toFront < frontD) { frontD = toFront; frontCell = cell; }
 
       let f = 0, toX = 0, toY = 0;
       if (track) {
@@ -449,7 +555,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
         const dist = Math.hypot(dx, dy);
         f = smoothstep(reach, reach * 0.22, dist) * cursor.amt * u;
         if (f > 0.0001 && dist > 0.0001) {
-          const lean = (params.pull * fit * f) / dist;
+          const lean = (params.pull * Math.min(g, 2.5) * f) / dist;
           toX = dx * lean;
           toY = dy * lean;
         }
@@ -472,16 +578,17 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
         const dy = py - focusPos.y;
         const dist = Math.hypot(dx, dy);
         if (dist > 0.0001) {
-          const away = (params.sidePush * fit * sideF[i]) / dist;
+          const away = (params.sidePush * Math.min(g, 2.5) * sideF[i]) / dist;
           pushX = dx * away;
           pushY = dy * away;
         }
       }
 
       uniforms.uPos.value[i].set(px + leanX[i] + pushX, py + leanY[i] + pushY);
-      // Upright, not turned with the ring: both sides of the ring are on
-      // screen here, and turned cards would show the left half upside down.
-      uniforms.uRot.value[i] = 0;
+      // Upright in the hero (both sides of the ring are on screen there and
+      // turned cards would show the left half upside down); turning with the
+      // ring in the gallery, where only the arc around the front one shows.
+      uniforms.uRot.value[i] = angle * s;
 
       const sx = i === 0 ? easeOutCubic(clamp01(u / 0.7)) : easeOutCubic(clamp01(u / 0.34));
       const sy = i === 0 ? easeOutCubic(clamp01((u - 0.18) / 0.74)) : easeOutCubic(clamp01((u - 0.06) / 0.36));
@@ -508,8 +615,8 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     }
 
     over = overI;
-    container.style.cursor = over >= 0 ? "pointer" : "";
-    const wantTag = over >= 0 && !coarse && viewW > params.tagFrom;
+    container.style.cursor = over >= 0 && !inGallery ? "pointer" : "";
+    const wantTag = over >= 0 && !inGallery && !coarse && viewW > params.tagFrom;
     if (wantTag !== tagUp) {
       tagUp = wantTag;
       tag.show(wantTag);
@@ -519,6 +626,13 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     uniforms.uTag.value.set(cursor.x + params.tagX, cursor.y + params.tagY, tag.box.sx, tag.box.sy);
     uniforms.uTagP.value.set(TAG_W * 0.5, TAG_H * 0.5, TAG_H * 0.5, params.tagRefract);
     uniforms.uTagQ.value.set(params.tagFrost, params.tagRim, 0, 0);
+
+    // The names and the list read whatever work is facing front.
+    if (frontCell >= 0 && frontCell !== shown) {
+      shown = frontCell;
+      paintList();
+    }
+    if (ui.root) ui.root.style.opacity = String(smoothstep(0.6, 1, s));
 
     /* honey */
     order.sort((a, b) => signedOffset(a) - signedOffset(b));
@@ -563,12 +677,12 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     for (let l = linkCount; l < MAX_LINKS; l++) uniforms.uLinkPar.value[l].set(-100, -100, 0, 0);
     uniforms.uLinkCount.value = linkCount;
 
-    uniforms.uK.value = params.goo * planeK * fit;
-    uniforms.uWobble.value = params.wobble * fit * (1 - smoothstep(0.2, 0.95, state.progress));
+    uniforms.uK.value = params.goo * g;
+    uniforms.uWobble.value = params.wobble * Math.min(g, 2.5) * (1 - smoothstep(0.2, 0.95, state.progress));
     uniforms.uTextured.value = params.textured && firstIn ? 1 : 0;
-    uniforms.uBlend.value = Math.max(0.5, params.blend * planeK * g);
+    uniforms.uBlend.value = Math.max(0.5, params.blend * g);
 
-    const on = params.glass && glassOn;
+    const on = params.glass;
     uniforms.uBandTop.value = on ? params.bandTop * viewH : 0;
     uniforms.uBandBottom.value = on ? params.bandBottom * viewH : 0;
     uniforms.uGlass.value.set(params.refract, params.squeeze, params.ripple, params.rippleFreq);
@@ -622,48 +736,84 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     prevT = now;
     uniforms.uTime.value = (now - start) * 0.001;
 
-    if (interactive && !dragging && !picking) {
-      state.spin += spinVel * dt;
-      spinVel *= Math.pow(params.damping, dt * 60);
+    readScroll();
+    shift += (shiftT - shift) * (reduced ? 1 : chase(dt, 0.12));
+    if (Math.abs(shift - shiftT) < 0.0005) shift = shiftT;
+    const step = TAU / count;
 
-      const idle =
-        !reduced && params.drift > 0 && !engaged() && spinVel === 0 &&
-        now - lastInput > params.driftAfter * 1000;
-      if (idle) {
-        // Left alone, it keeps turning slowly instead of sitting parked.
-        state.spin += params.drift * dt;
-        settling = false;
-      } else {
-        let off = 0;
-        if (params.snap) {
-          const slot = TAU / count;
-          const decay = Math.max(0.01, -Math.log(params.damping) * 60);
-          const engage = Math.max(params.snapFrom, decay * slot * 0.5);
-          const rate = 4.8 / Math.max(0.05, params.snapTime);
-          if (!settling && Math.abs(spinVel) < engage) {
-            const coast = state.spin + spinVel / decay;
-            const phase = -frontAngle;
-            snapTo = Math.round((coast + phase) / slot) * slot - phase;
-            snapCap = Math.max(Math.abs(spinVel), slot * 0.5 * rate);
-            settling = true;
-          }
-          if (settling) {
-            off = snapTo - state.spin;
-            const aim = Math.max(-snapCap, Math.min(snapCap, off * rate));
-            spinVel += (aim - spinVel) * clamp01(rate * dt);
-          }
-        } else {
+    const wasGallery = inGallery;
+    inGallery = shift > 0.002;
+    if (inGallery && !wasGallery) {
+      // Take over from wherever the hero left the ring, on a slot boundary.
+      anchor = Math.round(spinOut / step) * step;
+      dragging = false;
+      stopPick();
+      spinVel = 0;
+    }
+    if (!inGallery && wasGallery) {
+      // Hand back to the hero where the gallery left off.
+      if (interactive) state.spin = spinOut;
+      settling = false;
+      lastInput = now;
+    }
+
+    if (inGallery) {
+      const target = anchor + galleryIdx * step;
+      spinOut += (target - spinOut) * (reduced ? 1 : chase(dt, 0.1));
+    } else {
+      if (interactive && !dragging && !picking) {
+        state.spin += spinVel * dt;
+        spinVel *= Math.pow(params.damping, dt * 60);
+
+        const idle =
+          !reduced && params.drift > 0 && !engaged() && spinVel === 0 &&
+          now - lastInput > params.driftAfter * 1000;
+        if (idle) {
+          // Left alone, it keeps turning slowly instead of sitting parked.
+          state.spin += params.drift * dt;
           settling = false;
-        }
-        if (Math.abs(spinVel) < 0.0015 && Math.abs(off) < 0.0008) {
-          spinVel = 0;
-          state.spin += off;
+        } else {
+          let off = 0;
+          if (params.snap) {
+            const decay = Math.max(0.01, -Math.log(params.damping) * 60);
+            const engage = Math.max(params.snapFrom, decay * step * 0.5);
+            const rate = 4.8 / Math.max(0.05, params.snapTime);
+            if (!settling && Math.abs(spinVel) < engage) {
+              const coast = state.spin + spinVel / decay;
+              const phase = -frontAngle;
+              snapTo = Math.round((coast + phase) / step) * step - phase;
+              snapCap = Math.max(Math.abs(spinVel), step * 0.5 * rate);
+              settling = true;
+            }
+            if (settling) {
+              off = snapTo - state.spin;
+              const aim = Math.max(-snapCap, Math.min(snapCap, off * rate));
+              spinVel += (aim - spinVel) * clamp01(rate * dt);
+            }
+          } else {
+            settling = false;
+          }
+          if (Math.abs(spinVel) < 0.0015 && Math.abs(off) < 0.0008) {
+            spinVel = 0;
+            state.spin += off;
+          }
         }
       }
+      spinOut = state.spin;
     }
 
     updatePointer(dt);
     layout(dt);
+
+    // The name arrives with the work once it has (nearly) settled at the front.
+    if (meta && inGallery && shift > 0.6 && shown >= 0 && shown !== announced) {
+      const settledNow = Math.abs(anchor + galleryIdx * step - spinOut) < step * 0.35;
+      if (settledNow) {
+        announced = shown;
+        meta.show(shown);
+      }
+    }
+
     renderer.render(scene, camera);
   };
 
@@ -685,6 +835,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     renderer.setAnimationLoop(null);
     io.disconnect();
     ro.disconnect();
+    removeEventListener("resize", fitSpacer);
     container.removeEventListener("pointerdown", onPointerDown);
     container.removeEventListener("pointermove", onPointerMove);
     container.removeEventListener("pointerup", onPointerUp);
@@ -693,6 +844,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     container.removeEventListener("click", onClick);
     if (tl && tl !== true) tl.kill();
     gsap.killTweensOf(state);
+    meta?.dispose();
     tag.dispose();
     mesh.geometry.dispose();
     mesh.material.dispose();
