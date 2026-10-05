@@ -138,8 +138,9 @@
 @utility btn-line-ink { @apply btn border border-ink/20 text-ink hover:border-ink; }
 /* Wordmark dot: a full stop on the baseline, tucked tight against the last letter, and blinks softly. Sized in em so it scales with the word. */
 @utility logo-dot { @apply ml-[0.025em] inline-block size-[0.24em] shrink-0 rounded-full bg-spark animate-logo-blink; }
-@utility dot { @apply inline-block size-2 rounded-full bg-spark animate-pulse-dot; }
-@utility dot-booked { @apply inline-block size-2 rounded-full bg-booked; }
+/* status dots (spots open, next build…) match the header logo dot exactly: 0.24em × 24px, accent, same blink */
+@utility dot { @apply inline-block size-[5.76px] shrink-0 rounded-full bg-spark animate-logo-blink; }
+@utility dot-booked { @apply inline-block size-[5.76px] shrink-0 rounded-full bg-booked; }
 @utility chip { @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em]; }
 @utility placeholder-tag { @apply font-mono text-[10px] uppercase tracking-[0.14em] rounded-full bg-booked/90 text-ink px-2 py-0.5; }
 
