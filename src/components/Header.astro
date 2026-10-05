@@ -39,24 +39,36 @@ const links = [
         <>
           <a href={brand.callLink} class="btn-ghost hidden h-10 px-5 text-[14px] border-white/12! hover:border-white/35! xl:inline-flex">Free 15-min call</a>
           <a href={url('/start/')} class="btn-primary h-10 px-5 text-[14px]">Start your website</a>
-          <details class="relative lg:hidden">
-            <summary class="grid size-10 place-items-center rounded-full border border-white/20" aria-label="Menu">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5h12M2 11h12" stroke="currentColor" stroke-width="1.5" /></svg>
-            </summary>
-            <nav class="absolute right-0 top-12 w-56 rounded-2xl bg-pine-800 p-2 shadow-2xl" aria-label="Mobile">
-              {links.map((l) => <a href={url(l.href)} class="block rounded-xl px-4 py-3 text-[15px] hover:bg-white/5">{l.label}</a>)}
-              <a href={brand.callLink} class="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-[15px] text-spark hover:bg-white/5">Free 15-min call</a>
-            </nav>
-          </details>
+          <button type="button" class="menu-btn grid size-10 shrink-0 place-items-center rounded-full border border-white/20 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="m-nav">
+            <svg class="i-open" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5h12M2 11h12" stroke="currentColor" stroke-width="1.5" /></svg>
+            <svg class="i-close hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.5" /></svg>
+          </button>
         </>
       )}
     </div>
+    <!-- mobile menu: the pill itself grows to fill the screen (see .m-nav in global.css) -->
+    <nav id="m-nav" class="m-nav hidden basis-full flex-col pb-3 pr-[14px] pt-8 lg:hidden" aria-label="Mobile">
+      {links.map((l) => <a href={url(l.href)} class="block py-2.5 text-[30px] font-medium leading-tight tracking-tight text-paper/90 transition hover:text-spark">{l.label}</a>)}
+      <a href={brand.callLink} class="btn-primary mt-8 h-14 w-full text-[16px]">
+        Book a free 15-min call
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="1.6" /></svg>
+      </a>
+    </nav>
   </div>
 </header>
 
 <script>
-  // Close the mobile menu after picking a link.
-  document.querySelectorAll('header details a').forEach((a) =>
-    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
-  );
+  // Mobile menu: opening it grows the nav pill to full screen.
+  const header = document.querySelector<HTMLElement>('.site-header')!;
+  const btn = header.querySelector<HTMLButtonElement>('.menu-btn');
+  const setMenu = (open: boolean) => {
+    header.toggleAttribute('data-menu', open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    btn?.setAttribute('aria-expanded', String(open));
+    btn?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  btn?.addEventListener('click', () => setMenu(!header.hasAttribute('data-menu')));
+  header.querySelectorAll('.m-nav a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
+  matchMedia('(min-width: 1024px)').addEventListener('change', (m) => m.matches && setMenu(false));
 </script>
