@@ -39,7 +39,7 @@
   @keyframes logo-blink {
     0%, 64%, 100% { opacity: 1; box-shadow: 0 0 0 0 transparent; }
     72% { opacity: 0.15; box-shadow: 0 0 0 0 transparent; }
-    82% { opacity: 1; box-shadow: 0 0 0.55em 0.08em color-mix(in oklab, var(--color-spark) 75%, transparent); }
+    82% { opacity: 1; box-shadow: 0 0 0.35em 0 color-mix(in oklab, var(--color-spark) 35%, transparent); }
   }
   @keyframes pulse-dot {
     0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-spark) 60%, transparent); }
