@@ -54,17 +54,17 @@ const faq = [
 ];
 ---
 
-<Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
-  <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-[100px] sm:pt-[120px]">
+<Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal overlay>
+  <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-[#060606] pb-10 pt-[100px] sm:pb-14 sm:pt-[120px]">
     <div class="relative flex flex-1 flex-col">
     <div class="ring-content wrap relative z-10 flex flex-1 flex-col items-center justify-center text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
-        <h1 class="display mt-6 text-[min(47px,calc((100vw-32px)/6.35))] md:text-[72px] lg:text-[90px] xl:text-[107px] 3xl:text-[126px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
-        <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
+        <h1 class="display mt-6 text-[min(43px,calc((100vw-32px)/6.35))] md:text-[66px] lg:text-[82px] xl:text-[98px] 3xl:text-[115px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
+        <p class="mx-auto mt-4 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
       </div>
 
-      <form id="funnel" class="mt-12 w-full max-w-4xl" novalidate>
+      <form id="funnel" class="mt-8 w-full max-w-4xl" novalidate>
         <p id="q" class="label mb-2 text-paper/45">01 / 06 · Your budget</p>
 
         <!-- 1 budget -->
@@ -364,7 +364,6 @@ const faq = [
 </Layout>
 
 <style is:global>
-  .site-header:not([data-scrolled]) { background: var(--color-pine-900); border-color: transparent; }
   .funnel .big-input { font-size: var(--fit, clamp(48px, 9vw, 128px)); padding-block: 0.08em; font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
   /* the ring sits under the content on desktop; empty space lets the pointer through to it */
   .funnel .ring-content { pointer-events: none; }

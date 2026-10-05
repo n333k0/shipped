@@ -74,7 +74,11 @@ export function buildAtlas(files, onProgress, aspect = 1, fill = "#141414") {
 
   const fetchInto = (i, priority) =>
     load(files[i], priority)
-      .then((img) => paint(img, i))
+      .then((img) => {
+        paint(img, i);
+        // Uploaded as each one lands, so no card sits blank waiting on the slowest file.
+        texture.needsUpdate = true;
+      })
       .catch((err) => console.warn("[atlas]", err.message))
       .finally(() => {
         settled++;

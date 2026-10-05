@@ -599,7 +599,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
   tag.build();
   tag.load(() => { if (!disposed) tag.build(); });
 
-  // Starts once the art is in (or after 4s regardless) and the ring is on screen.
+  // Starts once the art is in (or after 8s regardless) and the ring is on screen.
   let artReady = false;
   let seen = false;
   const maybeStart = () => {
@@ -607,7 +607,7 @@ export function mountRing(container, { images, arrow, page = "#0b0b0b", layout: 
     tag.build();
     tl = build() || true;
   };
-  Promise.race([atlas.ready, new Promise((r) => setTimeout(r, 4000))]).then(() => {
+  Promise.race([atlas.ready, new Promise((r) => setTimeout(r, 8000))]).then(() => {
     artReady = true;
     maybeStart();
   });
