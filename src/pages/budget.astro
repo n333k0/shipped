@@ -66,16 +66,16 @@ const faq = [
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
         <h1 class="display mt-3 text-[min(43px,calc((100vw-32px)/6.35))] md:text-[66px] lg:text-[82px] xl:text-[98px] 3xl:text-[115px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
-        <p class="mx-auto mt-6 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need.<br class="sm:hidden" /> We’ll reply within 24 hours with<br class="sm:hidden" /> what we can build for it, free.</p>
+        <p class="mx-auto mt-6 max-w-md text-[17px] max-sm:mt-4 text-paper/60">Tell us your budget and what you need.<br class="sm:hidden" /> We’ll reply within 24 hours with<br class="sm:hidden" /> what we can build for it, free.</p>
       </div>
 
-      <form id="funnel" class="mt-8 w-full max-w-4xl" novalidate>
+      <form id="funnel" class="mt-8 max-sm:mt-6 w-full max-w-4xl" novalidate>
         <p id="q" class="label mb-2 text-paper/45">01 / 06 · Your budget</p>
 
         <!-- 1 budget -->
         <div class="step" data-step="1">
           <input name="budget" inputmode="numeric" autocomplete="off" placeholder="your budget" aria-label="Your budget in US dollars" class="big-input w-full bg-transparent text-center placeholder:text-paper/15" />
-          <p class="mt-4 text-[14px] text-paper/40">Most projects land between<br class="sm:hidden" /> $3,000 and $15,000.<br class="sm:hidden" /> Minimum $1,000.</p>
+          <p class="mt-4 max-sm:mt-3 text-[14px] text-paper/40">Most projects land between<br class="sm:hidden" /> $3,000 and $15,000.<br class="sm:hidden" /> Minimum $1,000.</p>
         </div>
 
         <!-- 2 need -->
@@ -126,7 +126,7 @@ const faq = [
             </div>
           </div>
         </div>
-        <p id="err" class="mt-4 min-h-[20px] text-[14px] text-booked" role="alert"></p>
+        <p id="err" class="mt-4 max-sm:mt-3 min-h-[20px] text-[14px] text-booked" role="alert"></p>
         <div class="mx-auto mt-2 h-1 w-40 overflow-hidden rounded-full bg-white/10"><div id="bar" class="h-full w-[16%] rounded-full bg-spark transition-all duration-500"></div></div>
       </form>
 
@@ -138,7 +138,7 @@ const faq = [
         <div id="suggest" class="mx-auto mt-10 max-w-md rounded-[24px] bg-white/[0.03] p-6 text-left"></div>
       </div>
 
-      <a href={brand.parentUrl} class="mt-10 inline-flex items-center gap-2 text-white/80">
+      <a href={brand.parentUrl} class="mt-10 max-sm:mt-8 inline-flex items-center gap-2 text-white/80">
         <span class="text-[14px] text-paper/45">A productized web studio by</span><ParentLogo class="h-[13px]" />
       </a>
     </div>
