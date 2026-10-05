@@ -5,10 +5,11 @@
 import Layout from '../layouts/Layout.astro';
 import ParentLogo from '../components/ParentLogo.astro';
 import Footer from '../components/Footer.astro';
-import Reel from '../components/Reel.astro';
 import { url } from '../lib/url';
 import { brand, funnel } from '../data/site';
 
+// Cards on the ring. Square-ish shots only, so nothing is cropped off a device.
+const ringImages = ['/work/1red.webp', '/placeholder/laptop-typing.webp', '/work/tokni.webp', '/placeholder/phone-hands.webp', '/work/perfect-body.webp', '/placeholder/tablet-method.webp', '/placeholder/laptop-ladder.webp', '/placeholder/tablet-founder.webp', '/placeholder/team-laptops.webp'];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
@@ -56,10 +57,10 @@ const faq = [
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
   <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-[100px] sm:pt-[120px]">
     <div class="relative flex flex-1 flex-col">
-    <div class="wrap relative flex flex-1 flex-col items-center justify-center text-center">
+    <div class="ring-content wrap relative z-10 flex flex-1 flex-col items-center justify-center text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
-        <h1 class="display mt-6 text-[min(59px,calc((100vw-32px)/6.35))] md:text-[90px] lg:text-[112px] xl:text-[134px] 3xl:text-[157px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
+        <h1 class="display mt-6 text-[min(47px,calc((100vw-32px)/6.35))] md:text-[72px] lg:text-[90px] xl:text-[107px] 3xl:text-[126px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
         <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
       </div>
 
@@ -134,7 +135,9 @@ const faq = [
 
     </div>
 
-    <Reel class="mt-14 pb-10 sm:mt-16" />
+    <!-- Viscose ring of recent work: around the content on desktop, below the form on phones -->
+    <div id="ring" class="relative mx-auto mt-8 aspect-square w-full max-w-[560px] touch-pan-y lg:absolute lg:inset-0 lg:mt-0 lg:aspect-auto lg:max-w-none" role="img" aria-label="Recent work"
+      data-images={JSON.stringify(ringImages.map((i) => url(i)))} data-arrow={url('/arrow-up-right.svg')}></div>
   </section>
 
   <!-- ===== Below the funnel: proof → why it costs less → how you pay → what it buys → how it runs ===== -->
@@ -363,11 +366,35 @@ const faq = [
 <style is:global>
   .site-header:not([data-scrolled]) { background: var(--color-pine-900); border-color: transparent; }
   .funnel .big-input { font-size: var(--fit, clamp(48px, 9vw, 128px)); padding-block: 0.08em; font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
+  /* the ring sits under the content on desktop; empty space lets the pointer through to it */
+  .funnel .ring-content { pointer-events: none; }
+  .funnel .ring-content :is(a, button, input, label, textarea, select, p, h1, h2, #suggest) { pointer-events: auto; }
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
   @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
   .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
   @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } }
 </style>
+
+<script>
+  import { mountRing } from '../lib/ring/carousel.js';
+  const el = document.getElementById('ring');
+  if (el) {
+    mountRing(el, {
+      images: JSON.parse(el.dataset.images || '[]'),
+      arrow: el.dataset.arrow,
+      layout: (w, h) => {
+        if (w >= 1024) {
+          // Around the content: cards hug the left and right edges, the ring runs off top and bottom.
+          const card = Math.min(210, Math.max(120, w * 0.1));
+          return { R: w * 0.5 - card * 0.75, card, count: 14 };
+        }
+        // Below the form: the whole ring fits in its square, so no glass lip.
+        const R = Math.min(w, h) * 0.38;
+        return { R, card: R * 0.34, count: 10, glass: false };
+      },
+    });
+  }
+</script>
 
 <script define:vars={{ endpoint: funnel.endpoint, email: brand.email, products: funnel.products }}>
   const form = document.getElementById('funnel');
