@@ -14,14 +14,14 @@ const { class: className = '' } = Astro.props;
 <style>
   /* like queued: the dither frames the copy instead of sitting behind it (centre masked out) */
   .shader .mount {
-    -webkit-mask-image: radial-gradient(ellipse 46% 36% at 50% 32%, transparent 62%, #000 100%);
-    mask-image: radial-gradient(ellipse 46% 36% at 50% 32%, transparent 62%, #000 100%);
+    -webkit-mask-image: radial-gradient(ellipse 54% 42% at 50% 32%, transparent 48%, #000 100%);
+    mask-image: radial-gradient(ellipse 54% 42% at 50% 32%, transparent 48%, #000 100%);
   }
   /* phones: the copy spans the full width, so the dither only shows below it */
   @media (max-width: 767px) {
     .shader .mount {
-      -webkit-mask-image: linear-gradient(to bottom, transparent 58%, #000 72%);
-      mask-image: linear-gradient(to bottom, transparent 58%, #000 72%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 60%, #000 84%);
+      mask-image: linear-gradient(to bottom, transparent 60%, #000 84%);
     }
   }
 </style>
