@@ -111,7 +111,7 @@ Changes from the brief: the two portfolio sections are merged into one, and so a
 | Timeline | 5 business days | **10 business days** | 15–20 business days |
 | Pages | 1 | Up to 5 | Up to 12 |
 | Sections | Up to 8 | Up to 30 | Up to 70 |
-| Revisions | 1 round | 2 rounds | 3 rounds |
+| Revisions | Unlimited, 2-day window | Unlimited, 3-day window | Unlimited, 5-day window |
 | Support | 7 days | 14 days | 30 days |
 | Payment | 100% upfront | 50 / 50 | 50 / 50 |
 
@@ -157,8 +157,8 @@ This is implemented on the homepage. In short:
 1. **Tell us about your business** (Day 0). A 20-minute guided brief. No meeting.
 2. **We figure out the website** (Days 1–2). A one-page strategy (positioning, sitemap, copy direction) that you approve with one click.
 3. **We build it** (Days 3–7). Designed and built together, in the real thing.
-4. **You review** (Day 8). A working site with comments left in place. One consolidated round.
-5. **We launch** (Days 9–10). QA, domain, analytics, handover video. Live.
+4. **You review** (Days 8–10). A working site with comments left in place. Unlimited revisions within the approved direction while the review window is open; we turn changes around in a day.
+5. **We launch** (Day 10). QA, domain, analytics, handover video. Live.
 
 ---
 
@@ -196,9 +196,9 @@ Implemented on the homepage ("Why this exists"):
 All 31 questions are answered on the site (`faq` in `src/data/site.ts`), grouped as: The work · Platform · Content & copy · Scope & revisions · Working together · Buying · After launch.
 
 Policy decisions baked into those answers (check them before launch, they're commitments):
-- Extra revision round: $400 (Landing) / $600 (Website, Website+).
+- Revisions: unlimited within the approved direction during the review window (Landing 2 / Website 3 / Website+ 5 business days). Window extension $200 per business day. New direction, pages or sections = add-ons.
 - Client delay: the timeline pauses; after 10 business days paused, the project moves to the next open week.
-- Our delay over 5 business days: refund the Rush fee if one was paid, plus a free revision round.
+- Our delay over 5 business days: refund the Rush fee if one was paid, plus 2 extra review-window days for free.
 - Refunds: full refund up to 7 days before the build week; after that the deposit is non-refundable, but the week can be moved once for free.
 - Hosting is paid by the client directly to Framer.
 
@@ -313,7 +313,7 @@ See `design.md`.
 |---|---|
 | **Scope creep** | Scope is the package checklist and nothing more. Anything else becomes an add-on, quoted in the dashboard the same day. "Page" is defined in the FAQ. |
 | **Late clients** | The build week starts only once the brief is complete (due T−2 days). The timeline pauses on missing input; after 10 paused business days the project moves to the next open week. |
-| **Too many revisions** | Rounds = one consolidated list from one decision-maker. Extra rounds are priced. Comments arrive in the tool, not by email. |
+| **Too many revisions** | Revisions are unlimited but time-boxed by the review window, and limited to the direction approved on day 2. Extensions are priced per day. Comments arrive in the tool, not by email. |
 | **Copy delays** | Default to writing the copy ourselves (included in Website). Client copy is due with the brief or we write it. |
 | **Technical complexity** | Integrations limited to a known list of tools with native Framer support. Anything needing custom code is scoped separately. |
 | **E-commerce** | Max 25 products on the add-on. Larger catalogues, subscriptions or custom checkout get referred out or scoped separately. |
