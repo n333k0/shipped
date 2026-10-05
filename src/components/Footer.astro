@@ -45,7 +45,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div id="footer-word-box" class="mt-24 overflow-hidden" aria-hidden="true">
-      <p id="footer-word" class="display select-none whitespace-nowrap text-[clamp(64px,22vw,300px)] leading-[0.8] text-white/[0.06]"><span>{brand.name.toLowerCase()}.</span></p>
+      <p id="footer-word" class="display select-none whitespace-nowrap text-[clamp(64px,22vw,300px)] leading-[0.8] text-white/[0.06]"><span>{brand.name.toLowerCase()}<span class="fdot">.</span></span></p>
     </div>
 
     <div class="mt-3 sm:mt-5 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-paper/40 sm:flex-row">
@@ -106,5 +106,15 @@ const year = new Date().getFullYear();
 <style>
   #footer-word { transform: translateY(105%); transition: transform 1.3s cubic-bezier(.16, 1, .3, 1); }
   #footer-word-box.in #footer-word { transform: none; }
-  @media (prefers-reduced-motion: reduce) { #footer-word { transform: none; transition: none; } }
+  /* once the word has risen, its dot blinks on three times in the accent colour and stays lit */
+  #footer-word-box.in .fdot { animation: fdot 1.9s 1s ease-in-out forwards; }
+  @keyframes fdot {
+    0%, 22%, 50% { color: rgb(255 255 255 / 0.06); text-shadow: none; }
+    10%, 36%, 64% { color: var(--color-spark); text-shadow: 0 0 0.12em color-mix(in oklab, var(--color-spark) 45%, transparent); }
+    100% { color: var(--color-spark); text-shadow: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #footer-word { transform: none; transition: none; }
+    #footer-word-box.in .fdot { animation: none; color: var(--color-spark); }
+  }
 </style>

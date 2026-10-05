@@ -29,11 +29,17 @@
 
   --animate-marquee: marquee 60s linear infinite;
   --animate-ticker: marquee 30s linear infinite;
+  --animate-logo-blink: logo-blink 3.6s ease-in-out infinite;
   --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+  @keyframes logo-blink {
+    0%, 64%, 100% { opacity: 1; box-shadow: 0 0 0 0 transparent; }
+    72% { opacity: 0.15; box-shadow: 0 0 0 0 transparent; }
+    82% { opacity: 1; box-shadow: 0 0 0.55em 0.08em color-mix(in oklab, var(--color-spark) 75%, transparent); }
   }
   @keyframes pulse-dot {
     0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-spark) 60%, transparent); }
@@ -130,6 +136,8 @@
 @utility btn-ghost { @apply btn border border-white/25 text-paper hover:border-white hover:bg-white/5; }
 @utility btn-ink { @apply btn bg-ink text-paper hover:bg-pine-700; }
 @utility btn-line-ink { @apply btn border border-ink/20 text-ink hover:border-ink; }
+/* Wordmark dot: sits centered on the x-height like a button, a little apart from the last letter, and blinks softly. Sized in em so it scales with the word. */
+@utility logo-dot { @apply ml-[0.17em] inline-block size-[0.31em] shrink-0 translate-y-[-0.1em] rounded-full bg-spark animate-logo-blink; }
 @utility dot { @apply inline-block size-2 rounded-full bg-spark animate-pulse-dot; }
 @utility dot-booked { @apply inline-block size-2 rounded-full bg-booked; }
 @utility chip { @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em]; }
@@ -142,7 +150,7 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .animate-marquee, .animate-ticker, .animate-pulse-dot { animation: none; }
+  .animate-marquee, .animate-ticker, .animate-pulse-dot, .animate-logo-blink, .logo-dot { animation: none; }
 }
 
 details > summary { list-style: none; cursor: pointer; }
