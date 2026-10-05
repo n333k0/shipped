@@ -13,16 +13,16 @@ const { class: className = '' } = Astro.props;
 </div>
 
 <style>
-  /* like queued: the dither frames the copy instead of sitting behind it (centre masked out) */
+  /* like queued: the dither frames the copy instead of sitting behind it; heavily feathered (eased multi-stop fade) */
   .shader .mount {
-    -webkit-mask-image: radial-gradient(ellipse 54% 42% at 50% 32%, transparent 48%, #000 100%);
-    mask-image: radial-gradient(ellipse 54% 42% at 50% 32%, transparent 48%, #000 100%);
+    -webkit-mask-image: radial-gradient(ellipse 66% 54% at 50% 32%, transparent 18%, rgb(0 0 0 / .04) 30%, rgb(0 0 0 / .12) 42%, rgb(0 0 0 / .26) 54%, rgb(0 0 0 / .45) 66%, rgb(0 0 0 / .68) 79%, rgb(0 0 0 / .88) 90%, #000 100%);
+    mask-image: radial-gradient(ellipse 66% 54% at 50% 32%, transparent 18%, rgb(0 0 0 / .04) 30%, rgb(0 0 0 / .12) 42%, rgb(0 0 0 / .26) 54%, rgb(0 0 0 / .45) 66%, rgb(0 0 0 / .68) 79%, rgb(0 0 0 / .88) 90%, #000 100%);
   }
   /* phones: the copy spans the full width, so the dither only shows below it */
   @media (max-width: 767px) {
     .shader .mount {
-      -webkit-mask-image: linear-gradient(to bottom, transparent 60%, #000 84%);
-      mask-image: linear-gradient(to bottom, transparent 60%, #000 84%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 40%, rgb(0 0 0 / .08) 52%, rgb(0 0 0 / .3) 64%, rgb(0 0 0 / .62) 76%, rgb(0 0 0 / .88) 88%, #000 96%);
+      mask-image: linear-gradient(to bottom, transparent 40%, rgb(0 0 0 / .08) 52%, rgb(0 0 0 / .3) 64%, rgb(0 0 0 / .62) 76%, rgb(0 0 0 / .88) 88%, #000 96%);
     }
   }
 </style>
