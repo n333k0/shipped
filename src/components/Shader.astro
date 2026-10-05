@@ -132,8 +132,13 @@ uniform vec3 u_rip[${RIPPLES}]; // x, y, age (s); age < 0 = unused`)
       swirl += (energy - swirl) * .12;
       for (const r of rip) if (r[2] >= 0) { r[2] += dt; if (r[2] > 2.6) r[2] = -1; }
       mount.setUniforms({ u_mouse: mouse, u_hover: hover, u_swirl: swirl, u_rip: rip.map((r) => [...r]) });
-      requestAnimationFrame(tick);
+      raf = onScreen && !document.hidden ? requestAnimationFrame(tick) : 0;
     };
-    requestAnimationFrame(tick);
+    // Only run the pointer loop while the hero is visible.
+    let raf = 0, onScreen = true;
+    const wake = () => { if (!raf && onScreen && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(tick); } };
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; wake(); }).observe(hero);
+    document.addEventListener('visibilitychange', wake);
+    wake();
   }
 </script>

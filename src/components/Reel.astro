@@ -2,6 +2,7 @@
 // Marquee of device shots, shared by the home hero and the budget funnel.
 // /work = our projects, /placeholder = stand-ins to replace.
 import { url } from '../lib/url';
+import { srcset } from '../lib/img';
 
 const { class: className = '' } = Astro.props;
 const tiles = [
@@ -21,7 +22,7 @@ const loop = [...tiles, ...tiles];
   <div class="flex w-max items-end gap-4 animate-marquee hover:[animation-play-state:paused]">
     {loop.map((t, i) => (
       <div class:list={['shrink-0 overflow-hidden rounded-[22px] bg-pine-800', t.w, t.h]} aria-hidden={i >= tiles.length ? 'true' : undefined}>
-        <img class="size-full object-cover" src={url(t.src)} alt="" loading={i < 5 ? 'eager' : 'lazy'} />
+        <img class="size-full object-cover" src={url(t.src)} srcset={srcset(t.src)} sizes="(min-width: 640px) 300px, 240px" alt="" loading={i < 5 ? 'eager' : 'lazy'} />
       </div>
     ))}
   </div>

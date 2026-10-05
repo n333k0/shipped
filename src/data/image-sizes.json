@@ -1,0 +1,224 @@
+{
+ "/brand/remotolabs.png": {
+  "w": 1545,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200
+  ]
+ },
+ "/mockups/bloom-m.webp": {
+  "w": 780,
+  "sizes": [
+   480,
+   640
+  ]
+ },
+ "/mockups/bloom.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/fieldwork.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/halcyon.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/kinetic.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/ledgerly-m.webp": {
+  "w": 780,
+  "sizes": [
+   480,
+   640
+  ]
+ },
+ "/mockups/ledgerly.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/lume-m.webp": {
+  "w": 780,
+  "sizes": [
+   480,
+   640
+  ]
+ },
+ "/mockups/lume.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/mira.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/nord.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/mockups/solace-m.webp": {
+  "w": 780,
+  "sizes": [
+   480,
+   640
+  ]
+ },
+ "/mockups/solace.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/placeholder/laptop-ladder.webp": {
+  "w": 1044,
+  "sizes": [
+   480,
+   640,
+   800
+  ]
+ },
+ "/placeholder/laptop-typing.webp": {
+  "w": 1050,
+  "sizes": [
+   480,
+   640,
+   800
+  ]
+ },
+ "/placeholder/phone-hands.webp": {
+  "w": 768,
+  "sizes": [
+   480,
+   640
+  ]
+ },
+ "/placeholder/tablet-founder.webp": {
+  "w": 600,
+  "sizes": [
+   480
+  ]
+ },
+ "/placeholder/tablet-method.webp": {
+  "w": 1920,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
+ "/placeholder/team-laptops.webp": {
+  "w": 1440,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200
+  ]
+ },
+ "/work/1red-wide.webp": {
+  "w": 1798,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
+ "/work/1red.webp": {
+  "w": 1552,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200
+  ]
+ },
+ "/work/perfect-body-wide.webp": {
+  "w": 1800,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
+ "/work/perfect-body.webp": {
+  "w": 1800,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
+ "/work/tokni.webp": {
+  "w": 1598,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200
+  ]
+ }
+}
