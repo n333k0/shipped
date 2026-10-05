@@ -109,8 +109,9 @@ const start = 2; // state shown before any scrolling (and without JavaScript)
   .roadmap .step-body { transition: opacity .5s; }
   .roadmap.js .step-body { opacity: .4; }
   .roadmap .step.is-on .step-body { opacity: 1; }
-  .roadmap .step.is-on .step-dot { border-color: var(--color-spark); }
-  .roadmap .step.is-done .step-dot { background: var(--color-spark); color: var(--color-ink); }
+  /* number circles: off (grey) until the step is reached, then solid lime. No glow. */
+  .roadmap.js .step-dot { color: rgb(244 244 240 / .35); }
+  .roadmap.js .step.is-on .step-dot { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }
 
   /* Dashboard rows: done / live / next. */
   .dash-row[data-state='live'] { background: color-mix(in oklab, var(--color-spark) 10%, transparent); }
