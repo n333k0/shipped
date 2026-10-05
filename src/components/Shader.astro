@@ -2,7 +2,8 @@
 // Hero background: Paper Shaders "Dithering" (Apache-2.0, @paper-design/shaders), warp shape,
 // 4×4 Bayer, in shipped's lime on black. Extended with pointer effects: swirl around the cursor,
 // a soft halo, and ripple rings on movement (double shockwave on click). Speeds up on hover.
-// Pauses off-screen (built into ShaderMount), stays still for reduced motion.
+// Pauses off-screen (built into ShaderMount), stays still for reduced motion, rebuilds itself if the
+// browser drops its WebGL context.
 const { class: className = '' } = Astro.props;
 ---
 
@@ -71,9 +72,8 @@ uniform vec3 u_rip[${RIPPLES}]; // x, y, age (s); age < 0 = unused`)
   for (const box of document.querySelectorAll<HTMLElement>('.shader')) {
     const el = box.querySelector<HTMLElement>('.mount')!;
     const rip: number[][] = Array.from({ length: RIPPLES }, () => [0, 0, -1]);
-    let mount: ShaderMount;
-    try {
-      mount = new ShaderMount(el, FRAG, {
+    let mount: ShaderMount, speed = still ? 0 : 0.2;
+    const make = () => new ShaderMount(el, FRAG, {
         u_colorBack: getShaderColorFromString('#00000000'),
         u_colorFront: getShaderColorFromString('#d8ff85'),
         u_shape: DitheringShapes.warp,
@@ -92,8 +92,17 @@ uniform vec3 u_rip[${RIPPLES}]; // x, y, age (s); age < 0 = unused`)
         u_hover: 0,
         u_swirl: 0,
         u_rip: rip,
-      }, undefined, still ? 0 : 0.2, 0, 1, 1920 * 1080);
-    } catch { continue; /* no WebGL: plain black hero */ }
+      }, { powerPreference: 'low-power', antialias: false }, speed, 0, 1, 1_300_000); // render cap keeps it light; the dither hides the lower resolution
+    try { mount = make(); } catch { continue; /* no WebGL: plain black hero */ }
+    // Browsers cap live WebGL contexts (~16 across all tabs) and silently kill the oldest. When that
+    // happens (or it happened while the tab was away), rebuild the mount so the hero never stays blank.
+    const lost = () => { const gl = el.querySelector('canvas')?.getContext('webgl2'); return !gl || gl.isContextLost(); };
+    const rebuild = () => { try { mount.dispose(); } catch {} el.replaceChildren(); try { mount = make(); watch(); } catch {} };
+    const watch = () => el.querySelector('canvas')?.addEventListener('webglcontextlost', (e) => { e.preventDefault(); setTimeout(rebuild, 300); }, { once: true });
+    watch();
+    const revive = () => { if (!document.hidden && lost()) rebuild(); };
+    document.addEventListener('visibilitychange', revive);
+    addEventListener('pageshow', revive);
     if (still) continue;
 
     const hero = box.parentElement!;
@@ -110,9 +119,9 @@ uniform vec3 u_rip[${RIPPLES}]; // x, y, age (s); age < 0 = unused`)
 
     hero.addEventListener('pointerenter', (e) => {
       target = toCanvas(e.clientX, e.clientY); mouse = [...target];
-      lastX = e.clientX; lastY = e.clientY; hoverTarget = 1; mount.setSpeed(0.6);
+      lastX = e.clientX; lastY = e.clientY; hoverTarget = 1; mount.setSpeed((speed = 0.6));
     });
-    hero.addEventListener('pointerleave', () => { hoverTarget = 0; mount.setSpeed(0.2); });
+    hero.addEventListener('pointerleave', () => { hoverTarget = 0; mount.setSpeed((speed = 0.2)); });
     hero.addEventListener('pointermove', (e) => {
       target = toCanvas(e.clientX, e.clientY);
       const v = Math.hypot(e.clientX - lastX, e.clientY - lastY); lastX = e.clientX; lastY = e.clientY;
