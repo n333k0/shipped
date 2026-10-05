@@ -47,14 +47,14 @@ import { agencySteps, ourSteps, comparison } from '../data/site';
     <!-- comparison table -->
     <div class="mt-5 overflow-hidden rounded-[28px] bg-white/[0.03]" data-reveal>
       <div class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1.1fr_1fr_1fr]">
-        <div class="hidden border-b border-white/10 p-5 sm:block"></div>
-        <p class="label border-b border-white/10 p-5 text-paper/45">Traditional agency</p>
-        <p class="label border-b border-white/10 bg-white/[0.04] p-5 text-spark">Us</p>
+        <div class="hidden border-b border-white/10 py-5 pl-7 pr-5 sm:block sm:pl-9"></div>
+        <p class="label border-b border-white/10 py-5 pl-7 pr-5 text-paper/45 sm:pl-9">Traditional agency</p>
+        <p class="label border-b border-white/10 bg-white/[0.04] py-5 pl-7 pr-5 text-spark sm:pl-9">Us</p>
         {comparison.map(([k, them, us]) => (
           <>
-            <p class="col-span-2 px-5 pt-5 text-[13px] text-paper/45 sm:col-span-1 sm:border-b sm:border-white/5 sm:py-5 sm:text-[15px] sm:text-paper/60">{k}</p>
-            <p class="border-b border-white/5 px-5 pb-5 pt-2 text-[15px] text-paper/45 sm:py-5">{them}</p>
-            <p class="border-b border-white/5 bg-white/[0.04] px-5 pb-5 pt-2 text-[15px] font-medium sm:py-5">{us}</p>
+            <p class="col-span-2 pl-7 pr-5 pt-5 sm:pl-9 text-[13px] text-paper/45 sm:col-span-1 sm:border-b sm:border-white/5 sm:py-5 sm:text-[15px] sm:text-paper/60">{k}</p>
+            <p class="border-b border-white/5 pb-5 pl-7 pr-5 pt-2 text-[15px] text-paper/45 sm:py-5 sm:pl-9">{them}</p>
+            <p class="border-b border-white/5 bg-white/[0.04] pb-5 pl-7 pr-5 pt-2 text-[15px] font-medium sm:py-5 sm:pl-9">{us}</p>
           </>
         ))}
       </div>
