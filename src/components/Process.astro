@@ -35,7 +35,7 @@ const start = 2; // state shown before any scrolling (and without JavaScript)
         <span class="rail absolute bottom-8 left-[23px] top-6 w-px bg-white/10 sm:left-[31px] sm:top-8" aria-hidden="true"><span class="rail-fill absolute inset-0 origin-top bg-spark"></span></span>
         {process.map((step, i) => (
           <li class:list={['step relative grid grid-cols-[48px_1fr] gap-5 pb-12 last:pb-0 sm:grid-cols-[64px_1fr]', i <= start && 'is-on']} data-reveal>
-            <span class="step-dot relative z-[1] grid size-12 place-items-center rounded-full border border-white/15 bg-pine-950 font-mono text-[14px] text-spark sm:size-16 sm:text-[16px]">{step.n}</span>
+            <span class="step-dot relative z-[1] grid size-12 place-items-center rounded-full border border-white/15 bg-pine-950 font-mono text-[14px] text-spark sm:size-16">{step.n}</span>
             <div class="step-body pt-1 sm:pt-3">
               <p class="label text-paper/45">{step.day}</p>
               <h3 class="mt-2 text-[26px] font-medium tracking-tight sm:text-[30px]">{step.title}</h3>
@@ -105,13 +105,12 @@ const start = 2; // state shown before any scrolling (and without JavaScript)
 <style>
   /* Roadmap: steps light up as you reach them. */
   .roadmap .rail-fill { transform: scaleY(var(--fill, 0)); transition: transform .15s linear; }
-  .roadmap .step-dot { transition: background-color .5s, color .5s, border-color .5s, box-shadow .5s; }
+  .roadmap .step-dot { transition: background-color .5s, color .5s, border-color .5s; }
   .roadmap .step-body { transition: opacity .5s; }
   .roadmap.js .step-body { opacity: .4; }
   .roadmap .step.is-on .step-body { opacity: 1; }
   .roadmap .step.is-on .step-dot { border-color: var(--color-spark); }
   .roadmap .step.is-done .step-dot { background: var(--color-spark); color: var(--color-ink); }
-  .roadmap .step.is-current .step-dot { box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-spark) 14%, transparent); }
 
   /* Dashboard rows: done / live / next. */
   .dash-row[data-state='live'] { background: color-mix(in oklab, var(--color-spark) 10%, transparent); }
