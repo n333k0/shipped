@@ -10,10 +10,11 @@ import { brand, funnel } from '../data/site';
 
 // The works on the ring, in order. Square-ish shots only, so nothing is cropped off a device.
 // The three real launches first; the stock shots are stand-ins, labelled as open slots.
+// `case`: link to the case study (desktop + mobile shots). Empty shows "Case study coming soon".
 const work = [
-  { img: '/work/tokni.webp', name: 'Tokn1', type: 'RWA exchange', year: 'Live in 10 days', body: 'A launch site for a digital-securities exchange: credible enough for regulators, sharp enough for investors.', facts: [['Package', 'Website'], ['Built in', 'Framer'], ['Live in', '10 days']] },
-  { img: '/work/1red.webp', name: '1RED', type: 'AI sales', year: 'Live in 10 days', body: 'Product site for an AI sales bot, with a demo booking flow and a client-logo wall that does the selling.', facts: [['Package', 'Website'], ['Scope', 'Product site'], ['Live in', '10 days']] },
-  { img: '/work/perfect-body.webp', name: 'Perfect Body', type: 'Course launch', year: 'Live in 5 days', body: 'Course launch page with enrollment flow, then monthly ad and social creative to keep it selling.', facts: [['Package', 'Landing'], ['Scope', 'Enrollment'], ['Live in', '5 days']] },
+  { img: '/work/tokni.webp', name: 'Tokn1', type: 'RWA exchange', year: 'Live in 10 days', body: 'A launch site for a digital-securities exchange: credible enough for regulators, sharp enough for investors.', facts: [['Package', 'Website'], ['Built in', 'Framer'], ['Live in', '10 days']], case: '' },
+  { img: '/work/1red.webp', name: '1RED', type: 'AI sales', year: 'Live in 10 days', body: 'Product site for an AI sales bot, with a demo booking flow and a client-logo wall that does the selling.', facts: [['Package', 'Website'], ['Scope', 'Product site'], ['Live in', '10 days']], case: '' },
+  { img: '/work/perfect-body.webp', name: 'Perfect Body', type: 'Course launch', year: 'Live in 5 days', body: 'Course launch page with enrollment flow, then monthly ad and social creative to keep it selling.', facts: [['Package', 'Landing'], ['Scope', 'Enrollment'], ['Live in', '5 days']], case: '' },
   { img: '/placeholder/laptop-typing.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
   { img: '/placeholder/phone-hands.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
   { img: '/placeholder/tablet-method.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
@@ -21,7 +22,12 @@ const work = [
   { img: '/placeholder/tablet-founder.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
   { img: '/placeholder/team-laptops.webp', name: 'Your site', type: 'Next build', year: '2026', body: 'This slot is open. Your site could be the next launch on this ring.' },
 ];
-const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
+// 12 options = an even 4×3 grid (2×6 on phones). 'Design every month' and 'AI systems' route to queued./handled.
+const needs = [
+  'New website', 'Website redesign', 'Brand + website', 'Shopify store',
+  'Landing page', 'Product / SaaS site', 'Multilingual site', 'Motion & 3D',
+  'Move to Framer', 'Design every month', 'AI systems', 'Not sure yet',
+];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
 const tiers = [
@@ -80,11 +86,11 @@ const faq = [
 
         <!-- 2 need -->
         <div class="step hidden -mb-4 pt-4" data-step="2">
-          <div class="flex flex-wrap justify-center gap-3">
+          <div class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
             {needs.map((n) => (
               <label class="cursor-pointer">
                 <input type="radio" name="need" value={n} class="peer sr-only" />
-                <span class="block rounded-full border border-white/20 px-6 py-3 text-[18px] transition hover:border-white/50 peer-checked:border-spark peer-checked:bg-spark peer-checked:text-ink">{n}</span>
+                <span class="block whitespace-nowrap rounded-full border border-white/20 px-3 py-2.5 text-center text-[15px] transition max-[359px]:px-2 max-[359px]:text-[13px] sm:px-4 sm:py-3 sm:text-[17px] hover:border-white/50 peer-checked:border-spark peer-checked:bg-spark peer-checked:text-ink">{n}</span>
               </label>
             ))}
           </div>
@@ -194,6 +200,8 @@ const faq = [
         <p id="wv-body" class="mt-5 max-w-md text-[16px] leading-relaxed text-paper/65"></p>
         <dl id="wv-facts" class="mt-6 grid grid-cols-3 gap-2"></dl>
         <a id="wv-cta" href="#top" class="btn-primary mt-7 hidden h-12 px-6">Start yours</a>
+        <a id="wv-case" target="_blank" rel="noopener" class="btn-primary mt-7 hidden h-12 px-6">View case study ↗</a>
+        <p id="wv-soon" class="label mt-7 hidden text-paper/45">Case study coming soon</p>
         <div class="mt-8 flex items-center gap-2">
           <button type="button" data-step="-1" class="btn-ghost size-12 p-0" aria-label="Previous work">←</button>
           <button type="button" data-step="1" class="btn-ghost size-12 p-0" aria-label="Next work">→</button>
@@ -441,6 +449,9 @@ const faq = [
       $('wv-body').textContent = w.body || '';
       $('wv-facts').innerHTML = (w.facts || []).map(([k, v]) => `<div class="rounded-[16px] bg-white/[0.05] p-3"><dt class="label text-[10px] text-paper/45">${k}</dt><dd class="mt-1 text-[15px]">${v}</dd></div>`).join('');
       $('wv-cta').classList.toggle('hidden', !open);
+      $('wv-case').classList.toggle('hidden', open || !w.case);
+      if (w.case) $('wv-case').href = w.case;
+      $('wv-soon').classList.toggle('hidden', open || !!w.case);
       if (!dlg.open) dlg.showModal();
     };
     dlg.querySelectorAll('[data-step]').forEach((b) => b.addEventListener('click', () => view(current + Number(b.dataset.step))));
