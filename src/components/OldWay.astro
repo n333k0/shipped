@@ -1,10 +1,8 @@
 ---
 import { agencySteps, ourSteps, comparison } from '../data/site';
-
-const ticker = ['Fixed price', 'Live in 5–20 days', 'Unlimited revisions', 'Scope written on day one', 'Post-launch support'];
 ---
 
-<section id="why" class="pt-24 sm:pt-32">
+<section id="why" class="py-24 sm:py-32">
   <div class="wrap">
     <div class="max-w-4xl" data-reveal>
       <p class="label text-spark">Why this exists</p>
@@ -63,28 +61,5 @@ const ticker = ['Fixed price', 'Live in 5–20 days', 'Unlimited revisions', 'Sc
     </div>
 
     <p class="mt-10 text-center text-[16px] text-paper/50">No shade to agencies. Some projects need six months and a steering committee. <span class="text-paper/80">Most websites don’t.</span></p>
-
-    <!-- Section divider: accent block with the offer on a loop. -->
-    <div class="mt-8 overflow-hidden rounded-[28px] bg-spark px-4 py-7 text-ink sm:mt-7 sm:px-8 sm:py-9" role="img" aria-label={ticker.join(', ')}>
-      <div class="ticker overflow-hidden">
-        <div class="flex w-max animate-ticker" aria-hidden="true">
-          {[0, 1].map(() => (
-            <div class="flex shrink-0 items-center">
-              {ticker.map((t) => (
-                <span class="flex items-center whitespace-nowrap text-[32px] font-medium tracking-[-0.02em] sm:text-[48px] lg:text-[56px]">
-                  <span class="px-6 sm:px-8">{t}</span>
-                  <svg viewBox="0 0 24 24" class="size-5 sm:size-7" fill="currentColor"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z" /></svg>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
   </div>
 </section>
-
-<style is:global>
-  /* Divider ticker: fade the text in/out at the block edges. */
-  .ticker { mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-</style>
