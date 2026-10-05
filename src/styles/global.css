@@ -170,23 +170,42 @@ details[open] .faq-plus { transform: rotate(45deg); }
 .site-header[data-scrolled] .bar .btn-primary, .site-header[data-scrolled] .bar .btn-ghost, .site-header[data-float] .bar .btn-primary, .site-header[data-float] .bar .btn-ghost { height: 42px; }
 @media (prefers-reduced-motion: reduce) { .site-header, .site-header .bar { transition: none; } }
 
-/* Mobile menu: the nav pill grows into a full-screen panel in the same colour. */
+/* Mobile menu: the nav pill itself stretches into a full-screen panel (same colour), then the links rise in one by one. */
+.burger { position: relative; width: 16px; height: 16px; }
+.burger i { position: absolute; left: 1px; right: 1px; height: 1.5px; border-radius: 1px; background: currentColor; transition: top .5s cubic-bezier(.76,0,.24,1), transform .5s cubic-bezier(.76,0,.24,1); }
+.burger i:first-child { top: 4.25px; }
+.burger i:last-child { top: 10.25px; }
+[data-menu] .burger i:first-child { top: 7.25px; transform: rotate(45deg); }
+[data-menu] .burger i:last-child { top: 7.25px; transform: rotate(-45deg); }
+@media (min-width: 1024px) { .m-nav { display: none; } }
 @media (max-width: 1023px) {
+  .site-header .bar { position: relative; overflow: hidden; }
+  /* pin the top row in place so it doesn't drift while the panel grows */
+  .site-header[data-scrolled] .bar, .site-header[data-menu] .bar { align-items: flex-start; padding-block: 8px; border-radius: 29px; }
+  .site-header[data-scrolled] .bar > :not(nav), .site-header[data-menu] .bar > :not(nav) { height: 42px; display: flex; align-items: center; }
   .site-header[data-menu] { padding-top: 10px; background-color: transparent; border-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .site-header[data-menu] .bar {
     max-width: calc(100% - 16px);
     height: calc(100dvh - 20px);
-    flex-wrap: wrap; align-content: flex-start; row-gap: 0;
-    padding: 8px 8px 8px 22px;
-    border-radius: 28px;
-    overflow-y: auto;
+    padding-inline: 22px 8px;
     background-color: color-mix(in oklab, var(--color-pine-950) 88%, transparent);
     border: 1px solid rgb(255 255 255 / .08);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
   }
-  .site-header[data-menu] .m-nav { display: flex; }
-  .site-header[data-menu] .bar .m-nav .btn-primary { height: 56px; }
-  .site-header[data-menu] .i-open { display: none; }
-  .site-header[data-menu] .i-close { display: block; }
+  /* closing: links fade out first, then the panel folds back up */
+  .site-header[data-anim] .bar { transition: height .6s cubic-bezier(.76,0,.24,1) .12s, max-width .6s cubic-bezier(.76,0,.24,1) .12s, border-radius .6s ease .12s, background-color .4s ease !important; }
+  .site-header[data-anim][data-menu] .bar { transition-delay: 0s, 0s, 0s, 0s !important; }
+  .m-nav { position: absolute; inset: 74px 22px 22px 22px; display: flex; flex-direction: column; padding-top: 16px; visibility: hidden; transition: visibility 0s linear .7s; }
+  .site-header[data-menu] .m-nav { visibility: visible; transition: none; }
+  .m-nav > * { opacity: 0; transform: translateY(18px); transition: opacity .15s ease, transform .2s ease; }
+  .site-header[data-menu] .m-nav > * {
+    opacity: 1; transform: none;
+    transition: opacity .5s ease calc(.28s + var(--i) * .055s), transform .7s cubic-bezier(.2,.8,.2,1) calc(.28s + var(--i) * .055s);
+  }
+  /* the call button sits at the bottom of the panel */
+  .m-nav .btn-primary, .site-header[data-scrolled] .bar .m-nav .btn-primary { margin-top: auto; height: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header[data-anim] .bar, .m-nav > *, .site-header[data-menu] .m-nav > *, .burger i { transition: none !important; }
 }
