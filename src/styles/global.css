@@ -153,6 +153,8 @@ details[open] .faq-plus { transform: rotate(45deg); }
 @media (max-width: 767px) {
   .site-header, .site-header .bar { transition: none !important; }
 }
+/* overlay: transparent over a full-bleed hero until scrolled */
+.site-header[data-overlay]:not([data-scrolled]) { background-color: transparent; border-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
 .site-header[data-scrolled], .site-header[data-float] { background-color: transparent; border-color: transparent; padding-top: 10px; -webkit-backdrop-filter: none; backdrop-filter: none; }
 .site-header[data-scrolled] .bar, .site-header[data-float] .bar {
   max-width: min(1120px, calc(100% - 16px));

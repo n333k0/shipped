@@ -1,32 +1,32 @@
 ---
-// Dark hero background: Paper Shaders "Mesh Gradient" (Apache-2.0, @paper-design/shaders),
-// mostly black and deep green with slow-drifting lime light. Fades to black at the bottom.
+// Hero background: Paper Shaders "Dithering" (Apache-2.0, @paper-design/shaders), warp shape,
+// 4×4 Bayer, in shipped's lime on black. Speeds up while the pointer is over the hero.
 // Pauses off-screen (built into ShaderMount), stays still for reduced motion.
 const { class: className = '' } = Astro.props;
 ---
 
 <div class:list={['shader pointer-events-none', className]} aria-hidden="true">
-  <div class="mount absolute inset-0"></div>
+  <div class="mount absolute inset-0 opacity-60 mix-blend-screen"></div>
   <!-- keeps the copy readable: darker in the middle, black at the bottom -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_42%,rgb(0_0_0/.6),transparent_75%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_48%_46%_at_50%_48%,rgb(0_0_0/.85),rgb(0_0_0/.4)_60%,transparent_85%)]"></div>
+  <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black via-black/70 to-transparent"></div>
   <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-black"></div>
 </div>
 
 <script>
-  import { ShaderMount, meshGradientFragmentShader, getShaderColorFromString, ShaderFitOptions } from '@paper-design/shaders';
+  import { ShaderMount, ditheringFragmentShader, DitheringShapes, DitheringTypes, getShaderColorFromString, ShaderFitOptions } from '@paper-design/shaders';
 
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const colors = ['#000000', '#000000', '#0b1a07', '#d8ff85', '#000000', '#16290f', '#000000'];
   for (const box of document.querySelectorAll<HTMLElement>('.shader')) {
     const el = box.querySelector<HTMLElement>('.mount')!;
+    let mount: ShaderMount;
     try {
-      new ShaderMount(el, meshGradientFragmentShader, {
-        u_colors: colors.map(getShaderColorFromString),
-        u_colorsCount: colors.length,
-        u_distortion: 0.85,
-        u_swirl: 0.35,
-        u_grainMixer: 0,
-        u_grainOverlay: 0.12,
+      mount = new ShaderMount(el, ditheringFragmentShader, {
+        u_colorBack: getShaderColorFromString('#00000000'),
+        u_colorFront: getShaderColorFromString('#d8ff85'),
+        u_shape: DitheringShapes.warp,
+        u_type: DitheringTypes['4x4'],
+        u_pxSize: 2,
         u_fit: ShaderFitOptions.cover,
         u_scale: 1,
         u_rotation: 0,
@@ -36,7 +36,12 @@ const { class: className = '' } = Astro.props;
         u_originY: 0.5,
         u_worldWidth: 0,
         u_worldHeight: 0,
-      }, undefined, still ? 0 : 0.25, 0, 1, 1920 * 1080);
-    } catch { /* no WebGL: plain black hero */ }
+      }, undefined, still ? 0 : 0.2, 0, 1, 1920 * 1080);
+    } catch { continue; /* no WebGL: plain black hero */ }
+    if (still) continue;
+    // faster while the pointer is over the hero
+    const hero = box.parentElement!;
+    hero.addEventListener('pointerenter', () => mount.setSpeed(0.6));
+    hero.addEventListener('pointerleave', () => mount.setSpeed(0.2));
   }
 </script>

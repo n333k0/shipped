@@ -9,12 +9,14 @@ interface Props {
   title?: string;
   description?: string;
   minimal?: boolean; // checkout uses a stripped-down header, no footer
+  overlay?: boolean; // header sits transparent over a full-bleed hero until scrolled
 }
 
 const {
   title = `${brand.name} by ${brand.parent} — Websites without the agency`,
   description = 'Custom websites, designed, written and built for a fixed price in 5–20 business days. No proposals, no hourly billing, no meetings required.',
   minimal = false,
+  overlay = false,
 } = Astro.props;
 ---
 
@@ -49,7 +51,7 @@ const {
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] btn-primary">Skip to content</a>
-    <Header minimal={minimal} />
+    <Header minimal={minimal} overlay={overlay} />
     <main id="main">
       <slot />
     </main>

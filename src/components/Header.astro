@@ -3,7 +3,7 @@ import { url } from '../lib/url';
 import Logo from './Logo.astro';
 import { nextWeek, brand } from '../data/site';
 
-const { minimal = false } = Astro.props;
+const { minimal = false, overlay = false } = Astro.props;
 const links = [
   { href: '/#work', label: 'Work' },
   { href: '/#packages', label: 'Packages' },
@@ -14,7 +14,7 @@ const links = [
 ];
 ---
 
-<header class="site-header fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-pine-900/80 backdrop-blur-xl">
+<header data-overlay={overlay ? '' : undefined} class="site-header fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-pine-900/80 backdrop-blur-xl">
   <div class="bar wrap flex h-[68px] items-center justify-between gap-6">
     <Logo />
 
