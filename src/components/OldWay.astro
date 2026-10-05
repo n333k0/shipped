@@ -35,7 +35,7 @@ import { agencySteps, ourSteps, comparison } from '../data/site';
         <ol class="mt-7 flex flex-wrap items-center gap-2">
           {ourSteps.map((s, i) => (
             <li class="flex items-center gap-2">
-              <span class="rounded-full bg-ink px-5 py-2.5 text-[18px] font-medium text-paper sm:text-[22px]">{s}</span>
+              <span class="rounded-full bg-ink px-5 py-2.5 text-[18px] font-normal text-paper sm:text-[22px]">{s}</span>
               {i < ourSteps.length - 1 && <span aria-hidden="true" class="text-[20px]">→</span>}
             </li>
           ))}
