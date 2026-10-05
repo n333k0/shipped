@@ -9,15 +9,6 @@ import Reel from '../components/Reel.astro';
 import { url } from '../lib/url';
 import { brand, funnel } from '../data/site';
 
-// Floating device shots around the hero (xl+). Natural aspect ratios, so devices are never cropped.
-const floaters = [
-  { src: '/work/tokni.webp', pos: 'left-[2%] top-[6%] w-[min(15vw,250px)] -rotate-6', d: '0s' },
-  { src: '/placeholder/phone-hands.webp', pos: 'left-[9%] top-[40%] w-[min(10vw,170px)] rotate-3', d: '-2s' },
-  { src: '/work/1red.webp', pos: 'left-[3%] top-[68%] w-[min(14vw,240px)] -rotate-2', d: '-4s' },
-  { src: '/work/perfect-body.webp', pos: 'right-[2%] top-[5%] w-[min(15vw,250px)] rotate-6', d: '-1s' },
-  { src: '/placeholder/tablet-method.webp', pos: 'right-[9%] top-[38%] w-[min(11vw,190px)] -rotate-3', d: '-3s' },
-  { src: '/placeholder/laptop-typing.webp', pos: 'right-[3%] top-[64%] w-[min(10vw,175px)] rotate-2', d: '-5s' },
-];
 const needs = ['A website', 'A landing page', 'Brand + website', 'Design every month', 'AI systems', 'Not sure yet'];
 const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
@@ -65,17 +56,10 @@ const faq = [
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal>
   <section id="top" class="funnel relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-[100px] sm:pt-[120px]">
     <div class="relative flex flex-1 flex-col">
-    <div class="pointer-events-none absolute inset-0 hidden xl:block" aria-hidden="true">
-      {floaters.map((f) => (
-        <div class:list={['floater absolute', f.pos]} style={`animation-delay:${f.d}`}>
-          <img src={url(f.src)} alt="" class="h-auto w-full rounded-[18px] shadow-[0_30px_60px_-20px_rgba(0,0,0,.9)]" />
-        </div>
-      ))}
-    </div>
     <div class="wrap relative flex flex-1 flex-col items-center justify-center text-center">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
-        <h1 class="display mt-6 t-hero"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
+        <h1 class="display mt-6 text-[min(59px,calc((100vw-32px)/6.35))] md:text-[90px] lg:text-[112px] xl:text-[134px] 3xl:text-[157px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
         <p class="mx-auto mt-5 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
       </div>
 
@@ -89,7 +73,7 @@ const faq = [
         </div>
 
         <!-- 2 need -->
-        <div class="step hidden" data-step="2">
+        <div class="step hidden -mb-4 pt-4" data-step="2">
           <div class="flex flex-wrap justify-center gap-3">
             {needs.map((n) => (
               <label class="cursor-pointer">
@@ -111,7 +95,7 @@ const faq = [
         </div>
 
         <!-- 5 timeline -->
-        <div class="step hidden" data-step="5">
+        <div class="step hidden -mb-4 pt-4" data-step="5">
           <div class="flex flex-wrap justify-center gap-3">
             {timelines.map((t) => (
               <label class="cursor-pointer">
@@ -379,13 +363,10 @@ const faq = [
 <style is:global>
   .site-header:not([data-scrolled]) { background: var(--color-pine-900); border-color: transparent; }
   .funnel .big-input { font-size: var(--fit, clamp(48px, 9vw, 128px)); padding-block: 0.08em; font-weight: 500; letter-spacing: -0.04em; line-height: 1; outline: none; caret-color: var(--color-spark); }
-  /* slow loose orbit for the floating sites */
-  .funnel .floater { animation: orbit 14s ease-in-out infinite; }
-  @keyframes orbit { 0%,100% { translate: 0 0; } 25% { translate: 8px -12px; } 50% { translate: 0 -20px; } 75% { translate: -8px -10px; } }
   .funnel .step { animation: step-in 0.5s cubic-bezier(.2,.7,.2,1); }
   @keyframes step-in { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
   .funnel #next:disabled { opacity: 0.3; pointer-events: none; }
-  @media (prefers-reduced-motion: reduce) { .funnel .step, .funnel .floater { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .funnel .step { animation: none; } }
 </style>
 
 <script define:vars={{ endpoint: funnel.endpoint, email: brand.email, products: funnel.products }}>
