@@ -80,8 +80,8 @@ import lanes from '../data/queued-lanes.json';
       <div class="q-works relative h-[220px] shrink-0 sm:h-[280px] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[54%]" aria-hidden="true">
         <div class="q-stage">
           {lanes.map((lane, l) => (
-            <div class="q-lane" style={`--d:${[38, 46, 34, 52][l]}s`}>
-              {[0, 1, 2].map(() => <img src={url(`/placeholder/queued/lane-${l}.webp`)} alt="" width={lane.w} height={lane.h} decoding="async" class="q-strip" />)}
+            <div class="q-lane" style={`--d:${[44, 52][l]}s`}>
+              {[0, 1, 2].map(() => <img src={url(`/placeholder/queued/lane-${l}.webp`)} alt="" width={lane.w} height={lane.h} loading="lazy" decoding="async" class="q-strip" />)}
             </div>
           ))}
         </div>
@@ -99,21 +99,22 @@ import lanes from '../data/queued-lanes.json';
 </section>
 
 <style>
-  /* Lanes are tilted in perspective so they run bottom-left → top-right; each one loops forever.
-     The left edge fades into the orange so work appears out of nowhere. */
-  .q-works { perspective: 1100px; mask-image: linear-gradient(90deg, transparent, #000 28%); }
-  @media (max-width: 767px) { .q-works { mask-image: linear-gradient(180deg, #000 70%, transparent); } }
+  /* Two lanes tilted (flat 2D, no 3D) so they run bottom-left → top-right; each one loops forever.
+     An orange gradient on top fades the left edge, so work appears out of nowhere. */
+  .q-works { contain: paint; }
+  .q-works::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #ff6a3d, transparent 30%); }
+  @media (max-width: 767px) { .q-works::after { background: linear-gradient(0deg, #ff6a3d, transparent 35%); } }
   .q-stage {
-    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 12px;
-    transform: translate(-50%, -50%) rotateX(18deg) rotate(-36deg);
+    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 14px;
+    transform: translate(-50%, -50%) rotate(-36deg);
   }
   .q-lane { display: flex; width: max-content; animation: q-drift var(--d) linear infinite; will-change: transform; }
-  .q-lane:nth-child(even) { margin-left: -110px; }
+  .q-lane:nth-child(even) { margin-left: -180px; }
   /* three copies per lane; sliding by exactly one copy around the centre keeps both ends filled */
   @keyframes q-drift { from { transform: translateX(-16.6667%); } to { transform: translateX(16.6667%); } }
   /* gaps and rounded corners are baked into each strip, so spacing is always even with no holes */
-  .q-strip { height: 140px; width: auto; max-width: none; flex: none; }
-  @media (min-width: 640px) { .q-strip { height: 190px; } }
+  .q-strip { height: 170px; width: auto; max-width: none; flex: none; }
+  @media (min-width: 640px) { .q-strip { height: 280px; } }
   .q-works.is-paused .q-lane { animation-play-state: paused; }
   @media (prefers-reduced-motion: reduce) { .q-lane { animation: none; } }
 </style>

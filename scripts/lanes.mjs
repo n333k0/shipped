@@ -5,13 +5,11 @@ import sharp from 'sharp';
 import { writeFile } from 'node:fs/promises';
 
 export const lanes = [
-  ['sublim', 'bloom', 'shift', 'antler', 'ledgerly'],
-  ['calder', 'perfectbody', 'onered', 'aether', 'mira'],
-  ['wilson', 'solace', 'tokni', 'print', 'kinetic'],
-  ['magazine', 'nord', 'illo', 'halden', 'lume', 'fieldwork'],
-];
-const H = 380; // 2× the tallest on-screen lane (190px)
-const GAP = 24, R = 28; // 12px gap and 14px corners on screen, baked in with transparency
+  ['sublim', 'perfectbody', 'shift', 'antler', 'ledgerly', 'calder'],
+  ['onered', 'aether', 'mira', 'wilson', 'solace', 'tokni'],
+]
+const H = 420; // 1.5× the tallest on-screen lane (280px)
+const GAP = 21, R = 27; // 14px gap and 18px corners on screen, baked in with transparency
 const sizes = [];
 for (const [i, lane] of lanes.entries()) {
   const tiles = await Promise.all(lane.map(async (n) => {
