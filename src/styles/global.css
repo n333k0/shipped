@@ -105,7 +105,7 @@
   }
   ::selection { background: var(--color-spark); color: var(--color-ink); }
   :focus-visible { outline: 2px solid var(--color-spark); outline-offset: 3px; border-radius: 6px; }
-  [id] { scroll-margin-top: 88px; }
+  [id] { scroll-margin-top: 0; }
   h1, h2, h3 { text-wrap: balance; }
 }
 
