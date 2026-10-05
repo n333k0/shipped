@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *' # nightly rebuild so build weeks roll forward
 
 permissions:
   contents: read

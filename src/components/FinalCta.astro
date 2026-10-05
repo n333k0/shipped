@@ -14,7 +14,7 @@ import { url } from '../lib/url';
         <a href={url('/start/')} class="btn-ink h-14 px-8 text-[16px] btn-wide">Start your website</a>
         <a href="#packages" class="btn-line-ink h-14 px-8 text-[16px] btn-wide">See packages</a>
       </div>
-      {nextWeek && <p class="label mt-8 text-ink/60">Next available build: week of {nextWeek.label}</p>}
+      {nextWeek && <p class="label mt-8 text-ink/60">Next available build: week of <span data-next-week>{nextWeek.label}</span></p>}
     </div>
   </div>
 </section>

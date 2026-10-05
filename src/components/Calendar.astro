@@ -19,7 +19,7 @@ import { buildWeeks, nextWeek, openSlotsThisMonth, monthName } from '../data/sit
             const left = w.slots - w.booked;
             const full = left <= 0;
             return (
-              <li>
+              <li data-week={w.start}>
                 {full ? (
                   <div class="h-full rounded-[20px] bg-white/[0.02] p-5 opacity-60">
                     <p class="label text-paper/40">Week of</p>
@@ -40,7 +40,7 @@ import { buildWeeks, nextWeek, openSlotsThisMonth, monthName } from '../data/sit
         {nextWeek && (
           <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p class="text-[15px] text-paper/55">Your week is held the moment payment clears. Free to move once.</p>
-            <a href={url(`/start/?week=${nextWeek.start}`)} class="btn-primary">Reserve {nextWeek.label}</a>
+            <a href={url(`/start/?week=${nextWeek.start}`)} data-next-week-href class="btn-primary">Reserve <span data-next-week>{nextWeek.label}</span></a>
           </div>
         )}
       </div>

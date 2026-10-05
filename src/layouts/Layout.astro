@@ -3,7 +3,7 @@ import { url } from '../lib/url';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { brand } from '../data/site';
+import { brand, openWeeks, leadDays } from '../data/site';
 
 interface Props {
   title?: string;
@@ -56,6 +56,22 @@ const {
       <slot />
     </main>
     {!minimal && <Footer />}
+
+    <!-- Safety net if a nightly rebuild fails: hide build weeks that have started (or are inside the
+         brief lead time) and point every "next build" label at the first week still open. -->
+    <script is:inline define:vars={{ open: openWeeks.map(({ start, label }) => ({ start, label })), leadDays }}>
+      const cutoff = new Date(Date.now() + leadDays * 864e5).toISOString().slice(0, 10);
+      document.querySelectorAll('[data-week]').forEach((el) => {
+        if (el.dataset.week >= cutoff) return;
+        el.hidden = true;
+        el.querySelectorAll('input').forEach((i) => { i.disabled = true; i.checked = false; });
+      });
+      const next = open.find((w) => w.start >= cutoff);
+      if (next) {
+        document.querySelectorAll('[data-next-week]').forEach((el) => { el.textContent = next.label; });
+        document.querySelectorAll('[data-next-week-href]').forEach((el) => { el.setAttribute('href', el.getAttribute('href').replace(/week=[\d-]+/, 'week=' + next.start)); });
+      }
+    </script>
 
     <script>
       // Header turns into the floating pill after a little scroll.

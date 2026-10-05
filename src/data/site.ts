@@ -210,8 +210,23 @@ export const addOns: AddOn[] = [
 
 // ---------------------------------------------------------------------------
 // Build calendar — 2 build slots per week (≈8 projects a month)
-// Week dates are Mondays. Edit `booked` as slots fill.
+// Weeks roll forward on their own: the site rebuilds every night and shows the
+// next `weeksShown` Mondays starting at least `leadDays` from today (the brief is
+// due 2 business days before). Layout hides past weeks if a nightly build fails.
 // ---------------------------------------------------------------------------
+
+export const slotsPerWeek = 2;
+export const weeksShown = 6;
+export const leadDays = 3;
+
+// Sold slots per week (Monday, ISO date). When a client pays, add or increase
+// their week here and push. Past weeks can stay; they're ignored.
+export const booked: Record<string, number> = {
+  '2026-10-05': 2,
+  '2026-10-12': 2,
+  '2026-10-19': 1,
+  '2026-10-26': 1,
+};
 
 export interface BuildWeek {
   start: string; // ISO date, Monday
@@ -220,14 +235,24 @@ export interface BuildWeek {
   booked: number;
 }
 
-export const buildWeeks: BuildWeek[] = [
-  { start: '2026-10-05', label: 'Oct 5', slots: 2, booked: 2 },
-  { start: '2026-10-12', label: 'Oct 12', slots: 2, booked: 2 },
-  { start: '2026-10-19', label: 'Oct 19', slots: 2, booked: 1 },
-  { start: '2026-10-26', label: 'Oct 26', slots: 2, booked: 1 },
-  { start: '2026-11-02', label: 'Nov 2', slots: 2, booked: 0 },
-  { start: '2026-11-09', label: 'Nov 9', slots: 2, booked: 0 },
-];
+const DAY = 86_400_000;
+
+export function weeksFrom(today: Date): BuildWeek[] {
+  const first = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()) + leadDays * DAY);
+  first.setUTCDate(first.getUTCDate() + ((8 - first.getUTCDay()) % 7)); // next Monday on or after
+  return Array.from({ length: weeksShown }, (_, i) => {
+    const d = new Date(first.getTime() + i * 7 * DAY);
+    const start = d.toISOString().slice(0, 10);
+    return {
+      start,
+      label: d.toLocaleString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }),
+      slots: slotsPerWeek,
+      booked: Math.min(slotsPerWeek, booked[start] ?? 0),
+    };
+  });
+}
+
+export const buildWeeks: BuildWeek[] = weeksFrom(new Date());
 
 export const openWeeks = buildWeeks.filter((w) => w.booked < w.slots);
 export const nextWeek = openWeeks[0];
@@ -239,7 +264,7 @@ export const openSlotsThisMonth = (() => {
     .reduce((n, w) => n + (w.slots - w.booked), 0);
 })();
 export const monthName = nextWeek
-  ? new Date(nextWeek.start + 'T00:00:00').toLocaleString('en-US', { month: 'long' })
+  ? new Date(nextWeek.start + 'T00:00:00Z').toLocaleString('en-US', { month: 'long', timeZone: 'UTC' })
   : '';
 
 // ---------------------------------------------------------------------------

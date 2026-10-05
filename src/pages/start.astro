@@ -108,7 +108,7 @@ const onboarding = [
                 {buildWeeks.map((w) => {
                   const full = w.booked >= w.slots;
                   return (
-                    <label class:list={['rounded-[18px] border p-4 transition', full ? 'cursor-not-allowed border-white/5 opacity-40' : 'pick cursor-pointer border-white/15 hover:border-white/40']}>
+                    <label data-week={w.start} class:list={['rounded-[18px] border p-4 transition', full ? 'cursor-not-allowed border-white/5 opacity-40' : 'pick cursor-pointer border-white/15 hover:border-white/40']}>
                       <input type="radio" name="week" value={w.start} class="sr-only" disabled={full} />
                       <span class="label block text-paper/45">Week of</span>
                       <span class:list={['mt-1 block text-[22px] font-medium', full && 'line-through']}>{w.label}</span>
