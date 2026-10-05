@@ -11,6 +11,21 @@ const { class: className = '' } = Astro.props;
   <div class="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-b from-transparent via-black/75 to-black"></div>
 </div>
 
+<style>
+  /* like queued: the dither frames the copy instead of sitting behind it (centre masked out) */
+  .shader .mount {
+    -webkit-mask-image: radial-gradient(ellipse 46% 36% at 50% 32%, transparent 62%, #000 100%);
+    mask-image: radial-gradient(ellipse 46% 36% at 50% 32%, transparent 62%, #000 100%);
+  }
+  /* phones: the copy spans the full width, so the dither only shows below it */
+  @media (max-width: 767px) {
+    .shader .mount {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 58%, #000 72%);
+      mask-image: linear-gradient(to bottom, transparent 58%, #000 72%);
+    }
+  }
+</style>
+
 <script>
   import { ShaderMount, ditheringFragmentShader, DitheringShapes, DitheringTypes, getShaderColorFromString, ShaderFitOptions } from '@paper-design/shaders';
 
