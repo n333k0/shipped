@@ -2,24 +2,8 @@
 import { url } from '../lib/url';
 import { agencySteps, ourSteps, comparison, family } from '../data/site';
 const queued = family.find((f) => f.key === 'queued')!;
-// Work that drifts through the queued. banner (real pieces only).
-type Work = { img: string; w: number; h: number };
-const img = (name: string, w: number, h = 320): Work => ({ img: name, w, h });
-const works: Record<string, Work> = {
-  sublim: img('sublim', 348, 360), calder: img('calder', 338, 360), wilson: img('wilson', 360, 360),
-  shift: img('shift', 686, 360), illo: img('illo', 648, 360), magazine: img('magazine', 281, 360),
-  onered: img('onered', 480, 360), tokni: img('tokni', 377, 360), halden: img('halden', 288, 360),
-  bloom: img('bloom', 512), fieldwork: img('fieldwork', 512), halcyon: img('halcyon', 512), kinetic: img('kinetic', 512),
-  ledgerly: img('ledgerly', 512), lume: img('lume', 512), mira: img('mira', 512), nord: img('nord', 512), solace: img('solace', 512),
-  antler: img('antler', 320), aether: img('aether', 320), print: img('print', 320),
-};
-// Every piece appears once, and each lane is long enough that its loop never shows the same piece twice.
-const lanes = [
-  ['sublim', 'bloom', 'shift', 'antler', 'ledgerly'],
-  ['calder', 'halcyon', 'onered', 'aether', 'mira'],
-  ['wilson', 'solace', 'tokni', 'print', 'kinetic'],
-  ['magazine', 'nord', 'illo', 'halden', 'lume', 'fieldwork'],
-].map((l) => l.map((k) => works[k]));
+// Work that drifts through the queued. banner: one pre-stitched strip per lane (built by scripts/lanes.mjs).
+import lanes from '../data/queued-lanes.json';
 ---
 
 <section id="why" class="pt-24 pb-14 sm:pt-32 sm:pb-16">
@@ -96,10 +80,8 @@ const lanes = [
       <div class="q-works relative h-[220px] shrink-0 sm:h-[280px] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[54%]" aria-hidden="true">
         <div class="q-stage">
           {lanes.map((lane, l) => (
-            <div class="q-lane" style={`--d:${[80, 96, 72, 88][l]}s`}>
-              {[0, 1, 2].map(() => lane.map((w) => (
-                <img src={url(`/placeholder/queued/${w.img}.webp`)} alt="" width={w.w} height={w.h} decoding="async" class="q-card" style={`aspect-ratio:${w.w}/${w.h}`} />
-              )))}
+            <div class="q-lane" style={`--d:${[38, 46, 34, 52][l]}s`}>
+              {[0, 1, 2].map(() => <img src={url(`/placeholder/queued/lane-${l}.webp`)} alt="" width={lane.w} height={lane.h} decoding="async" class="q-strip" />)}
             </div>
           ))}
         </div>
@@ -122,15 +104,28 @@ const lanes = [
   .q-works { perspective: 1100px; mask-image: linear-gradient(90deg, transparent, #000 28%); }
   @media (max-width: 767px) { .q-works { mask-image: linear-gradient(180deg, #000 70%, transparent); } }
   .q-stage {
-    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column;
+    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 12px;
     transform: translate(-50%, -50%) rotateX(18deg) rotate(-36deg);
   }
   .q-lane { display: flex; width: max-content; animation: q-drift var(--d) linear infinite; will-change: transform; }
   .q-lane:nth-child(even) { margin-left: -110px; }
   /* three copies per lane; sliding by exactly one copy around the centre keeps both ends filled */
   @keyframes q-drift { from { transform: translateX(-16.6667%); } to { transform: translateX(16.6667%); } }
-  /* flush: no gaps, square corners, so the lanes read as one moving wall of work */
-  .q-card { height: 140px; width: auto; flex: none; object-fit: cover; }
-  @media (min-width: 640px) { .q-card { height: 190px; } }
+  /* gaps and rounded corners are baked into each strip, so spacing is always even with no holes */
+  .q-strip { height: 140px; width: auto; max-width: none; flex: none; }
+  @media (min-width: 640px) { .q-strip { height: 190px; } }
+  .q-works.is-paused .q-lane { animation-play-state: paused; }
   @media (prefers-reduced-motion: reduce) { .q-lane { animation: none; } }
 </style>
+
+<script>
+  // The lanes only move while the banner is on screen and the tab is visible.
+  const works = document.querySelector<HTMLElement>('.q-works');
+  if (works) {
+    let onScreen = false;
+    const sync = () => works.classList.toggle('is-paused', !onScreen || document.hidden);
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }).observe(works);
+    document.addEventListener('visibilitychange', sync);
+    sync();
+  }
+</script>
