@@ -6,7 +6,7 @@ import { writeFile } from 'node:fs/promises';
 
 export const lanes = [
   ['sublim', 'bloom', 'shift', 'antler', 'ledgerly'],
-  ['calder', 'halcyon', 'onered', 'aether', 'mira'],
+  ['calder', 'perfectbody', 'onered', 'aether', 'mira'],
   ['wilson', 'solace', 'tokni', 'print', 'kinetic'],
   ['magazine', 'nord', 'illo', 'halden', 'lume', 'fieldwork'],
 ];
