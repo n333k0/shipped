@@ -7,10 +7,9 @@ const { class: className = '' } = Astro.props;
 
 <div class:list={['shader pointer-events-none', className]} aria-hidden="true">
   <div class="mount absolute inset-0 opacity-60 mix-blend-screen"></div>
-  <!-- keeps the copy readable: darker in the middle, black at the bottom -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_48%_46%_at_50%_48%,rgb(0_0_0/.85),rgb(0_0_0/.4)_60%,transparent_85%)]"></div>
-  <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black via-black/70 to-transparent"></div>
-  <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-black"></div>
+  <!-- light fades: a touch under the nav, and a short one into the next section -->
+  <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black"></div>
 </div>
 
 <script>

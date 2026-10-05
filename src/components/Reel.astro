@@ -17,7 +17,7 @@ const tiles = [
 const loop = [...tiles, ...tiles];
 ---
 
-<div class:list={['relative', className]} aria-label="Recent work (placeholder imagery)">
+<div class:list={['reel relative', className]} aria-label="Recent work (placeholder imagery)">
   <div class="flex w-max items-end gap-4 animate-marquee hover:[animation-play-state:paused]">
     {loop.map((t, i) => (
       <div class:list={['shrink-0 overflow-hidden rounded-[22px] bg-pine-800', t.w, t.h]} aria-hidden={i >= tiles.length ? 'true' : undefined}>
@@ -25,6 +25,9 @@ const loop = [...tiles, ...tiles];
       </div>
     ))}
   </div>
-  <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-pine-900 sm:w-40" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-pine-900 sm:w-40" aria-hidden="true"></div>
 </div>
+
+<style>
+  /* edges fade the tiles themselves (no black bars), so whatever is behind the reel shows through */
+  .reel { -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent); }
+</style>
