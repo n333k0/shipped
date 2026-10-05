@@ -81,5 +81,37 @@ const {
       );
       document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
     </script>
+    <script>
+      // Every <details> opens and closes with a height animation instead of snapping.
+      const ease = 'cubic-bezier(.2,.7,.2,1)';
+      document.querySelectorAll('details').forEach((d) => {
+        const s = d.querySelector(':scope > summary');
+        if (!s) return;
+        let anim = null;
+        s.addEventListener('click', (e) => {
+          if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          e.preventDefault();
+          const start = d.offsetHeight;
+          anim?.cancel();
+          const opening = !d.open || 'closing' in d.dataset;
+          let end;
+          if (opening) {
+            delete d.dataset.closing;
+            d.open = true;
+            end = d.offsetHeight;
+          } else {
+            d.dataset.closing = '';
+            end = s.offsetHeight + (d.offsetHeight - d.clientHeight);
+          }
+          d.style.overflow = 'hidden';
+          anim = d.animate({ height: [`${start}px`, `${end}px`] }, { duration: 420, easing: ease });
+          anim.onfinish = () => {
+            if (!opening) { d.open = false; delete d.dataset.closing; }
+            d.style.overflow = '';
+            anim = null;
+          };
+        });
+      });
+    </script>
   </body>
 </html>

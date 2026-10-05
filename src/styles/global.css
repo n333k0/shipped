@@ -146,7 +146,8 @@
 
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
-details[open] .faq-plus { transform: rotate(45deg); }
+details[open]:not([data-closing]) .faq-plus { transform: rotate(45deg); }
+.faq-plus { transition: transform .38s cubic-bezier(.2,.7,.2,1), color .2s, border-color .2s; }
 
 /* Header: full-width bar at the top, shrinks into a floating pill once you scroll. */
 .site-header { transition: background-color .4s ease, border-color .4s ease, padding .4s ease; }
