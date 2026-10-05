@@ -1,6 +1,7 @@
 ---
 // Hero background: Paper Shaders "Dithering" (Apache-2.0, @paper-design/shaders), warp shape,
-// 4×4 Bayer, in shipped's lime on black. Speeds up while the pointer is over the hero.
+// 4×4 Bayer, in shipped's lime on black. Extended with pointer effects: swirl around the cursor,
+// a soft halo, and ripple rings on movement (double shockwave on click). Speeds up on hover.
 // Pauses off-screen (built into ShaderMount), stays still for reduced motion.
 const { class: className = '' } = Astro.props;
 ---
@@ -29,12 +30,50 @@ const { class: className = '' } = Astro.props;
 <script>
   import { ShaderMount, ditheringFragmentShader, DitheringShapes, DitheringTypes, getShaderColorFromString, ShaderFitOptions } from '@paper-design/shaders';
 
+  // Paper's dithering shader, extended with pointer effects (all in screen pixels, centred, y up):
+  // a velocity-driven swirl around the cursor, a soft halo, and expanding ripple rings.
+  const RIPPLES = 8;
+  const FRAG = ditheringFragmentShader
+    .replace('out vec4 fragColor;', `out vec4 fragColor;
+uniform vec2 u_mouse;      // cursor in canvas pixels
+uniform float u_hover;     // 0..1 eased
+uniform float u_swirl;     // radians, from pointer speed
+uniform vec3 u_rip[${RIPPLES}]; // x, y, age (s); age < 0 = unused`)
+    // swirl: rotate the pattern around the cursor before the warp runs
+    .replace('    // Warp\n    shapeUV *= .003;', `    // Warp
+    {
+      vec2 dm = canvasPixelizedUV - u_mouse;
+      float R = 320. * u_pixelRatio;
+      float fall = exp(-dot(dm, dm) / (R * R));
+      float a = u_swirl * fall;
+      vec2 rot = mat2(cos(a), sin(a), -sin(a), cos(a)) * dm;
+      shapeUV += (rot - dm) / u_pixelRatio;
+    }
+    shapeUV *= .003;`)
+    // rings + halo add brightness to the warp shape, so the dither lights them up
+    .replace('    shape = smoothstep(0.02, 1., shape);\n', `    shape = smoothstep(0.02, 1., shape);
+    {
+      float pr = u_pixelRatio;
+      vec2 dm = canvasPixelizedUV - u_mouse;
+      shape += .55 * u_hover * exp(-dot(dm, dm) / pow(150. * pr, 2.));
+      for (int i = 0; i < ${RIPPLES}; i++) {
+        vec3 r = u_rip[i];
+        if (r.z < 0.) continue;
+        float d = length(canvasPixelizedUV - r.xy);
+        float radius = r.z * 620. * pr;
+        float w = (34. + 40. * r.z) * pr;
+        shape += 1.1 * exp(-pow((d - radius) / w, 2.)) * exp(-r.z * 1.25);
+      }
+    }
+`);
+
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   for (const box of document.querySelectorAll<HTMLElement>('.shader')) {
     const el = box.querySelector<HTMLElement>('.mount')!;
+    const rip: number[][] = Array.from({ length: RIPPLES }, () => [0, 0, -1]);
     let mount: ShaderMount;
     try {
-      mount = new ShaderMount(el, ditheringFragmentShader, {
+      mount = new ShaderMount(el, FRAG, {
         u_colorBack: getShaderColorFromString('#00000000'),
         u_colorFront: getShaderColorFromString('#d8ff85'),
         u_shape: DitheringShapes.warp,
@@ -49,12 +88,52 @@ const { class: className = '' } = Astro.props;
         u_originY: 0.5,
         u_worldWidth: 0,
         u_worldHeight: 0,
+        u_mouse: [-1e5, -1e5],
+        u_hover: 0,
+        u_swirl: 0,
+        u_rip: rip,
       }, undefined, still ? 0 : 0.2, 0, 1, 1920 * 1080);
     } catch { continue; /* no WebGL: plain black hero */ }
     if (still) continue;
-    // faster while the pointer is over the hero
+
     const hero = box.parentElement!;
-    hero.addEventListener('pointerenter', () => mount.setSpeed(0.6));
-    hero.addEventListener('pointerleave', () => mount.setSpeed(0.2));
+    const canvas = () => el.querySelector('canvas');
+    // pointer in canvas pixels (centre origin, y up), matching the shader
+    const toCanvas = (x: number, y: number) => {
+      const c = canvas(); if (!c) return [-1e5, -1e5];
+      const r = c.getBoundingClientRect(), s = c.width / r.width;
+      return [(x - r.left - r.width / 2) * s, (r.height / 2 - (y - r.top)) * s];
+    };
+    let target = [-1e5, -1e5], mouse = [-1e5, -1e5], hover = 0, hoverTarget = 0, swirl = 0, energy = 0;
+    let lastX = 0, lastY = 0, lastEmit = [-1e5, -1e5], next = 0;
+    const emit = (p: number[]) => { rip[next] = [p[0], p[1], 0]; next = (next + 1) % RIPPLES; };
+
+    hero.addEventListener('pointerenter', (e) => {
+      target = toCanvas(e.clientX, e.clientY); mouse = [...target];
+      lastX = e.clientX; lastY = e.clientY; hoverTarget = 1; mount.setSpeed(0.6);
+    });
+    hero.addEventListener('pointerleave', () => { hoverTarget = 0; mount.setSpeed(0.2); });
+    hero.addEventListener('pointermove', (e) => {
+      target = toCanvas(e.clientX, e.clientY);
+      const v = Math.hypot(e.clientX - lastX, e.clientY - lastY); lastX = e.clientX; lastY = e.clientY;
+      energy = Math.min(energy + v * 0.012, 3.2); // fast flicks build up a hard twist
+      // a ring every ~140 CSS px of travel
+      const c = canvas(), s = c ? c.width / c.getBoundingClientRect().width : 1;
+      if (Math.hypot(target[0] - lastEmit[0], target[1] - lastEmit[1]) > 140 * s) { emit(target); lastEmit = [...target]; }
+    });
+    hero.addEventListener('pointerdown', (e) => { const p = toCanvas(e.clientX, e.clientY); emit(p); emit(p); }); // click: double shockwave
+
+    let last = performance.now();
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, .1); last = now;
+      mouse = mouse.map((m, i) => m + (target[i] - m) * .18);
+      hover += (hoverTarget - hover) * .06;
+      energy *= Math.pow(0.12, dt);          // twist relaxes over ~1s
+      swirl += (energy - swirl) * .12;
+      for (const r of rip) if (r[2] >= 0) { r[2] += dt; if (r[2] > 2.6) r[2] = -1; }
+      mount.setUniforms({ u_mouse: mouse, u_hover: hover, u_swirl: swirl, u_rip: rip.map((r) => [...r]) });
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }
 </script>
