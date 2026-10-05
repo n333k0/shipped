@@ -1,13 +1,24 @@
 ---
 import { process, brand } from '../data/site';
 
+// One dashboard row per process step. As the reader scrolls the steps, the rows tick over.
 const dash = [
-  { s: 'done', t: 'Brief received', d: 'Mon' },
-  { s: 'done', t: 'Strategy approved', d: 'Tue' },
-  { s: 'live', t: 'Building: Home, Pricing, About', d: 'Now' },
-  { s: 'next', t: 'Your review', d: 'Wed 28' },
-  { s: 'next', t: 'Launch', d: 'Fri 30' },
+  { t: 'Brief received', d: 'Mon 19' },
+  { t: 'Strategy approved', d: 'Tue 20' },
+  { t: 'Building: Home, Pricing, About', d: 'Mon 26' },
+  { t: 'Your review', d: 'Wed 28' },
+  { t: 'Launch', d: 'Fri 30' },
 ];
+// Progress bar width and "latest update" text for each step.
+const progress = [12, 30, 58, 84, 100];
+const updates = [
+  'Brief is in. Your strategy page lands tomorrow, nothing needed from you until then.',
+  'Strategy page is ready. Approve it with one click and we start building.',
+  'Homepage is built. Pricing is next. Preview link opens Wednesday, nothing needed from you until then.',
+  'Your preview is live. Leave comments right on the page; fixes go in the same day.',
+  'You’re live. Domain connected, analytics on, handover video in your inbox.',
+];
+const start = 2; // state shown before any scrolling (and without JavaScript)
 ---
 
 <section id="process" class="border-t border-white/10 bg-pine-950 py-24 sm:py-32">
@@ -19,12 +30,13 @@ const dash = [
     </div>
 
     <div class="mt-16 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-      <ol class="relative">
+      <ol class="roadmap relative" data-step={start}>
+        <!-- rail: grey track plus a lime fill that grows with scroll -->
+        <span class="rail absolute bottom-8 left-[23px] top-6 w-px bg-white/10 sm:left-[31px] sm:top-8" aria-hidden="true"><span class="rail-fill absolute inset-0 origin-top bg-spark"></span></span>
         {process.map((step, i) => (
-          <li class="relative grid grid-cols-[48px_1fr] gap-5 pb-12 last:pb-0 sm:grid-cols-[64px_1fr]" data-reveal>
-            {i < process.length - 1 && <span class="absolute left-[23px] top-12 bottom-0 w-px bg-white/10 sm:left-[31px]" aria-hidden="true"></span>}
-            <span class="grid size-12 place-items-center rounded-full border border-white/15 font-mono text-[14px] text-spark sm:size-16 sm:text-[16px]">{step.n}</span>
-            <div class="pt-1 sm:pt-3">
+          <li class:list={['step relative grid grid-cols-[48px_1fr] gap-5 pb-12 last:pb-0 sm:grid-cols-[64px_1fr]', i <= start && 'is-on']} data-reveal>
+            <span class="step-dot relative z-[1] grid size-12 place-items-center rounded-full border border-white/15 bg-pine-950 font-mono text-[14px] text-spark sm:size-16 sm:text-[16px]">{step.n}</span>
+            <div class="step-body pt-1 sm:pt-3">
               <p class="label text-paper/45">{step.day}</p>
               <h3 class="mt-2 text-[26px] font-medium tracking-tight sm:text-[30px]">{step.title}</h3>
               <p class="mt-3 max-w-lg text-[16px] leading-relaxed text-paper/65">{step.body}</p>
@@ -61,24 +73,24 @@ const dash = [
               ))}
             </div>
             <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10">
-              <div class="h-full w-[58%] rounded-full bg-spark"></div>
+              <div class="dash-bar h-full rounded-full bg-spark transition-[width] duration-700 ease-out" style={`width:${progress[start]}%`}></div>
             </div>
-            <ul class="mt-5 space-y-1">
-              {dash.map((r) => (
-                <li class:list={['flex items-center justify-between rounded-xl px-3 py-2.5 text-[14px]', r.s === 'live' && 'bg-spark/10']}>
+            <ul class="dash mt-5 space-y-1" data-progress={JSON.stringify(progress)} data-updates={JSON.stringify(updates)}>
+              {dash.map((r, i) => (
+                <li class="dash-row flex items-center justify-between rounded-xl px-3 py-2.5 text-[14px] transition-colors duration-500" data-state={i < start ? 'done' : i === start ? 'live' : 'next'}>
                   <span class="flex items-center gap-3">
-                    {r.s === 'done' && <span class="grid size-5 place-items-center rounded-full bg-spark text-ink text-[11px]">✓</span>}
-                    {r.s === 'live' && <span class="grid size-5 place-items-center"><span class="dot"></span></span>}
-                    {r.s === 'next' && <span class="size-5 rounded-full border border-white/20"></span>}
-                    <span class:list={[r.s === 'next' ? 'text-paper/45' : 'text-paper']}>{r.t}</span>
+                    <span class="dash-icon relative grid size-5 place-items-center rounded-full border transition duration-500">
+                      <span class="dash-check text-[11px] text-ink">✓</span><span class="dash-dot dot"></span>
+                    </span>
+                    <span class="dash-t transition-colors duration-500">{r.t}</span>
                   </span>
-                  <span class="label text-paper/40">{r.d}</span>
+                  <span class="label text-paper/40"><span class="dash-d">{r.d}</span><span class="dash-now">Now</span></span>
                 </li>
               ))}
             </ul>
             <div class="mt-5 rounded-xl bg-white/[0.04] p-4 text-[14px] text-paper/70">
-              <p class="label text-paper/40">Latest update · 2h ago</p>
-              <p class="mt-2">Homepage is built. Pricing is next. Preview link opens Wednesday, nothing needed from you until then.</p>
+              <p class="label text-paper/40">Latest update · just now</p>
+              <p class="dash-update mt-2 transition-opacity duration-300">{updates[start]}</p>
             </div>
           </div>
         </div>
@@ -89,3 +101,85 @@ const dash = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Roadmap: steps light up as you reach them. */
+  .roadmap .rail-fill { transform: scaleY(var(--fill, 0)); transition: transform .15s linear; }
+  .roadmap .step-dot { transition: background-color .5s, color .5s, border-color .5s, box-shadow .5s; }
+  .roadmap .step-body { transition: opacity .5s; }
+  .roadmap.js .step-body { opacity: .4; }
+  .roadmap .step.is-on .step-body { opacity: 1; }
+  .roadmap .step.is-on .step-dot { border-color: var(--color-spark); }
+  .roadmap .step.is-done .step-dot { background: var(--color-spark); color: var(--color-ink); }
+  .roadmap .step.is-current .step-dot { box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-spark) 14%, transparent); }
+
+  /* Dashboard rows: done / live / next. */
+  .dash-row[data-state='live'] { background: color-mix(in oklab, var(--color-spark) 10%, transparent); }
+  .dash-row .dash-icon { border-color: rgb(255 255 255 / .2); }
+  .dash-row .dash-check, .dash-row .dash-dot, .dash-row .dash-now { display: none; }
+  .dash-row[data-state='done'] .dash-icon { background: var(--color-spark); border-color: transparent; }
+  .dash-row[data-state='done'] .dash-check { display: inline; }
+  .dash-row[data-state='live'] .dash-icon { border-color: transparent; }
+  .dash-row[data-state='live'] .dash-dot { display: inline-block; }
+  .dash-row[data-state='live'] .dash-d { display: none; }
+  .dash-row[data-state='live'] .dash-now { display: inline; }
+  .dash-row[data-state='next'] .dash-t { color: rgb(244 244 240 / .45); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .roadmap .step-body { opacity: 1; }
+  }
+</style>
+
+<script>
+  // Scroll-driven roadmap: the rail fills as the reader moves through the steps,
+  // each step lights up when it crosses the middle of the screen, and the dashboard follows.
+  const road = document.querySelector<HTMLElement>('.roadmap');
+  const dashEl = document.querySelector<HTMLElement>('.dash');
+  if (road && dashEl && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const steps = [...road.querySelectorAll<HTMLElement>('.step')];
+    const dots = steps.map((s) => s.querySelector<HTMLElement>('.step-dot')!);
+    const rail = road.querySelector<HTMLElement>('.rail')!;
+    const rows = [...dashEl.querySelectorAll<HTMLElement>('.dash-row')];
+    const bar = document.querySelector<HTMLElement>('.dash-bar')!;
+    const update = document.querySelector<HTMLElement>('.dash-update')!;
+    const progress: number[] = JSON.parse(dashEl.dataset.progress!);
+    const updates: string[] = JSON.parse(dashEl.dataset.updates!);
+    let current = -2;
+
+    const center = (el: HTMLElement) => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; };
+    function layout() {
+      // rail runs from the first circle's centre to the last one's
+      const top = road!.getBoundingClientRect().top;
+      rail.style.top = center(dots[0]) - top + 'px';
+      rail.style.height = center(dots[dots.length - 1]) - center(dots[0]) + 'px';
+    }
+    function setStep(k: number) {
+      if (k === current) return;
+      current = k;
+      steps.forEach((s, i) => {
+        s.classList.toggle('is-on', i <= k);
+        s.classList.toggle('is-done', i < k || (k === steps.length - 1 && i === k));
+        s.classList.toggle('is-current', i === k);
+      });
+      const shown = Math.max(k, 0);
+      const last = k === rows.length - 1; // launched: everything is ticked
+      rows.forEach((r, i) => (r.dataset.state = i < shown || last ? 'done' : i === shown ? 'live' : 'next'));
+      bar.style.width = (k < 0 ? 4 : progress[k]) + '%';
+      update.style.opacity = '0';
+      setTimeout(() => { update.textContent = updates[shown]; update.style.opacity = '1'; }, 250);
+    }
+    function onScroll() {
+      layout();
+      const line = innerHeight * 0.55;
+      const first = center(dots[0]), last = center(dots[dots.length - 1]);
+      road!.style.setProperty('--fill', String(Math.min(1, Math.max(0, (line - first) / (last - first)))));
+      let k = -1;
+      dots.forEach((d, i) => { if (center(d) <= line) k = i; });
+      setStep(k);
+    }
+    road.classList.add('js');
+    onScroll();
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll);
+  }
+</script>

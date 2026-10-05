@@ -2,7 +2,7 @@
 import { url } from '../lib/url';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-import { packages, addOns, buildWeeks, sectionExplainer } from '../data/site';
+import { packages, addOns, buildWeeks, sectionExplainer, brand } from '../data/site';
 const onboarding = [
   ['The business', 'What you sell, to whom, and what a visitor should do next.', '4 min'],
   ['The taste', 'Three sites you love, three you don’t. Screenshots welcome.', '3 min'],
@@ -165,6 +165,12 @@ const onboarding = [
               </div>
               <button id="pay" type="submit" form="checkout" class="btn-primary mt-6 w-full h-14 text-[16px]">Reserve &amp; pay</button>
               <p class="mt-3 text-center text-[12px] text-paper/40">Secure checkout by Stripe. Questions first? <a href={url('/#faq')} class="underline">Read the FAQ</a></p>
+            </div>
+            <!-- Talk before paying -->
+            <div class="mt-3 rounded-[24px] bg-white/[0.03] p-6 text-center">
+              <p class="text-[15px] font-medium">Not sure yet?</p>
+              <p class="mt-1 text-[14px] text-paper/55">Talk it through with us before you pay. Free, no pitch.</p>
+              <a href={brand.callLink} class="btn-ghost mt-4 h-12 w-full border-white/12! text-[15px] hover:border-white/35!">Book a free 15-min call</a>
             </div>
           </aside>
         </div>

@@ -1,7 +1,7 @@
 ---
 import { url } from '../lib/url';
 import Logo from './Logo.astro';
-import { nextWeek } from '../data/site';
+import { nextWeek, brand } from '../data/site';
 
 const { minimal = false } = Astro.props;
 const links = [
@@ -31,9 +31,13 @@ const links = [
         </a>
       )}
       {minimal ? (
-        <a href={url('/')} class="btn-ghost h-10 px-5 text-[14px] border-white/12! hover:border-white/35!">Back to site</a>
+        <>
+          <a href={brand.callLink} class="btn-ghost hidden h-10 px-5 text-[14px] border-white/12! hover:border-white/35! sm:inline-flex">Free 15-min call</a>
+          <a href={url('/')} class="btn-ghost h-10 px-5 text-[14px] border-white/12! hover:border-white/35!">Back to site</a>
+        </>
       ) : (
         <>
+          <a href={brand.callLink} class="btn-ghost hidden h-10 px-5 text-[14px] border-white/12! hover:border-white/35! xl:inline-flex">Free 15-min call</a>
           <a href={url('/start/')} class="btn-primary h-10 px-5 text-[14px]">Start your website</a>
           <details class="relative lg:hidden">
             <summary class="grid size-10 place-items-center rounded-full border border-white/20" aria-label="Menu">
@@ -41,6 +45,7 @@ const links = [
             </summary>
             <nav class="absolute right-0 top-12 w-56 rounded-2xl bg-pine-800 p-2 shadow-2xl" aria-label="Mobile">
               {links.map((l) => <a href={url(l.href)} class="block rounded-xl px-4 py-3 text-[15px] hover:bg-white/5">{l.label}</a>)}
+              <a href={brand.callLink} class="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-[15px] text-spark hover:bg-white/5">Free 15-min call</a>
             </nav>
           </details>
         </>
