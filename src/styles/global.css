@@ -137,7 +137,7 @@
 @utility btn-ink { @apply btn bg-ink text-paper hover:bg-pine-700; }
 @utility btn-line-ink { @apply btn border border-ink/20 text-ink hover:border-ink; }
 /* Wordmark dot: sits centered on the x-height like a button, a little apart from the last letter, and blinks softly. Sized in em so it scales with the word. */
-@utility logo-dot { @apply ml-[0.17em] inline-block size-[0.31em] shrink-0 translate-y-[-0.1em] rounded-full bg-spark animate-logo-blink; }
+@utility logo-dot { @apply ml-[0.34em] inline-block size-[0.31em] shrink-0 translate-y-[-0.1em] rounded-full bg-spark animate-logo-blink; }
 @utility dot { @apply inline-block size-2 rounded-full bg-spark animate-pulse-dot; }
 @utility dot-booked { @apply inline-block size-2 rounded-full bg-booked; }
 @utility chip { @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em]; }
