@@ -3,25 +3,33 @@ import { url } from '../lib/url';
 import { agencySteps, ourSteps, comparison, family } from '../data/site';
 const queued = family.find((f) => f.key === 'queued')!;
 // Work that drifts through the queued. banner: real pieces plus a few marks/specimens drawn in code.
-type Work = { img?: string; w?: number; made?: string };
+type Work = { img?: string; w?: number; h?: number; made?: string };
+const img = (name: string, w: number, h = 320): Work => ({ img: name, w, h });
 const works: Record<string, Work> = {
-  sublim: { img: 'sublim', w: 348 }, calder: { img: 'calder', w: 338 }, wilson: { img: 'wilson', w: 360 },
-  shift: { img: 'shift', w: 686 }, illo: { img: 'illo', w: 648 }, magazine: { img: 'magazine', w: 281 },
-  onered: { img: 'onered', w: 480 }, tokni: { img: 'tokni', w: 377 }, halden: { img: 'halden', w: 288 },
+  sublim: img('sublim', 348, 360), calder: img('calder', 338, 360), wilson: img('wilson', 360, 360),
+  shift: img('shift', 686, 360), illo: img('illo', 648, 360), magazine: img('magazine', 281, 360),
+  onered: img('onered', 480, 360), tokni: img('tokni', 377, 360), halden: img('halden', 288, 360),
+  bloom: img('bloom', 512), fieldwork: img('fieldwork', 512), halcyon: img('halcyon', 512), kinetic: img('kinetic', 512),
+  ledgerly: img('ledgerly', 512), lume: img('lume', 512), mira: img('mira', 512), nord: img('nord', 512), solace: img('solace', 512),
+  antler: img('antler', 320), aether: img('aether', 320), print: img('print', 320),
   mark: { made: 'mark' }, palette: { made: 'palette' }, type: { made: 'type' }, word: { made: 'word' },
+  poster: { made: 'poster' }, badge: { made: 'badge' }, mono: { made: 'mono' },
 };
+// Every piece appears once, and each lane is long enough that its loop never shows the same piece twice.
 const lanes = [
-  ['sublim', 'mark', 'shift', 'halden', 'palette', 'wilson'],
-  ['calder', 'type', 'onered', 'magazine', 'word', 'illo'],
-  ['tokni', 'wilson', 'word', 'sublim', 'mark', 'calder'],
-  ['illo', 'palette', 'halden', 'type', 'onered', 'shift'],
-  ['magazine', 'shift', 'mark', 'tokni', 'calder', 'type'],
+  ['sublim', 'bloom', 'mark', 'shift', 'antler', 'ledgerly', 'palette'],
+  ['calder', 'halcyon', 'type', 'onered', 'aether', 'mira', 'poster'],
+  ['wilson', 'solace', 'word', 'tokni', 'print', 'kinetic', 'badge'],
+  ['magazine', 'nord', 'mono', 'illo', 'halden', 'lume', 'fieldwork'],
 ].map((l) => l.map((k) => works[k]));
 const made: Record<string, string> = {
   mark: '<svg viewBox="0 0 100 100" width="46%"><circle cx="38" cy="50" r="26" fill="#0b0b0b"/><circle cx="62" cy="50" r="26" fill="none" stroke="#0b0b0b" stroke-width="6"/></svg><b>orbit</b>',
   palette: '<i style="background:#14213d"></i><i style="background:#fca311"></i><i style="background:#e5e5e5"></i><i style="background:#6a994e"></i>',
   type: '<em>Aa</em><b>Display serif · 400</b>',
   word: '<em>lumen</em>',
+  poster: '<em>Open<br>studio<br>24</em><b>Fri · 7pm</b>',
+  badge: '<span>est.<br>2026</span>',
+  mono: '<em>K</em>',
 };
 ---
 
@@ -99,10 +107,10 @@ const made: Record<string, string> = {
       <div class="q-works relative h-[220px] shrink-0 sm:h-[280px] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[54%]" aria-hidden="true">
         <div class="q-stage">
           {lanes.map((lane, l) => (
-            <div class="q-lane" style={`--d:${[46, 58, 40, 52, 44][l]}s`}>
+            <div class="q-lane" style={`--d:${[56, 68, 50, 62][l]}s`}>
               {[0, 1, 2].map(() => lane.map((w) => (
                 w.img
-                  ? <img src={url(`/placeholder/queued/${w.img}.webp`)} alt="" width={w.w} height={360} decoding="async" class="q-card" style={`aspect-ratio:${w.w}/360`} />
+                  ? <img src={url(`/placeholder/queued/${w.img}.webp`)} alt="" width={w.w} height={w.h} decoding="async" class="q-card" style={`aspect-ratio:${w.w}/${w.h}`} />
                   : <span class:list={['q-card q-made', `q-${w.made}`]} set:html={made[w.made!]} />
               )))}
             </div>
@@ -112,7 +120,7 @@ const made: Record<string, string> = {
       <div class="relative z-[1] flex flex-col justify-between gap-8 px-6 pb-7 pt-6 sm:px-10 sm:pb-9 md:w-[50%] md:py-9 md:pl-12 md:pr-0">
         <span class="inline-flex items-baseline text-[20px] font-semibold tracking-[-0.04em] sm:text-[22px]" style="--color-spark: var(--color-ink)">queued<span class="logo-dot"></span></span>
         <span class="block">
-          <span class="display block text-[38px] leading-[0.98] sm:text-[48px]">Need design every month <span class="accent">after launch?</span></span>
+          <span class="display block text-[42px] leading-[0.98] sm:text-[53px]">Need design every month<br /><span class="accent">after launch?</span></span>
           <span class="mt-4 block max-w-md text-[16px] leading-snug text-ink/70 sm:text-[17px]">Ads, decks, social posts, the next landing page. One flat monthly fee, about 48 hours a request.</span>
           <span class="btn mt-7 h-14 w-full bg-ink px-10 text-[16px] text-paper transition-colors group-hover:bg-black sm:w-auto sm:min-w-[260px]">See queued →</span>
         </span>
@@ -127,15 +135,15 @@ const made: Record<string, string> = {
   .q-works { perspective: 1100px; mask-image: linear-gradient(90deg, transparent, #000 28%); }
   @media (max-width: 767px) { .q-works { mask-image: linear-gradient(180deg, #000 70%, transparent); } }
   .q-stage {
-    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 12px;
+    position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 6px;
     transform: translate(-50%, -50%) rotateX(18deg) rotate(-26deg);
   }
-  .q-lane { display: flex; gap: 12px; width: max-content; animation: q-drift var(--d) linear infinite; will-change: transform; }
-  .q-lane:nth-child(even) { margin-left: -90px; }
+  .q-lane { display: flex; gap: 6px; width: max-content; animation: q-drift var(--d) linear infinite; will-change: transform; }
+  .q-lane:nth-child(even) { margin-left: -70px; }
   /* three copies per lane; sliding by exactly one copy around the centre keeps both ends filled */
   @keyframes q-drift { from { transform: translateX(-16.6667%); } to { transform: translateX(16.6667%); } }
-  .q-card { height: 104px; width: auto; flex: none; border-radius: 12px; object-fit: cover; }
-  @media (min-width: 640px) { .q-card { height: 128px; } }
+  .q-card { height: 112px; width: auto; flex: none; border-radius: 10px; object-fit: cover; }
+  @media (min-width: 640px) { .q-card { height: 140px; } }
   .q-made { aspect-ratio: 1; font-size: clamp(14px, 1vw, 16px); display: grid; place-items: center; align-content: center; gap: 10px; overflow: hidden; color: #0b0b0b; }
   .q-made :global(b) { font: 600 0.8em/1 var(--font-sans); letter-spacing: -0.02em; }
   .q-mark { background: #f3f1ea; }
@@ -146,5 +154,12 @@ const made: Record<string, string> = {
   .q-type :global(b) { font: 400 10px/1 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; opacity: .6; }
   .q-word { background: #c7d2fe; }
   .q-word :global(em) { font: 600 2.2em/1 var(--font-sans); font-style: normal; letter-spacing: -0.06em; }
+  .q-poster { background: #d8ff85; justify-items: start; padding: 0 14%; }
+  .q-poster :global(em) { font: 700 1.9em/0.86 var(--font-sans); font-style: normal; letter-spacing: -0.05em; text-transform: uppercase; }
+  .q-poster :global(b) { font: 500 0.7em/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+  .q-badge { background: #0b3d2e; }
+  .q-badge :global(span) { display: grid; place-items: center; width: 62%; aspect-ratio: 1; border-radius: 50%; background: #f3c4d1; color: #0b3d2e; font: italic 400 1.5em/0.95 var(--font-serif); text-align: center; }
+  .q-mono { background: #fff4e0; }
+  .q-mono :global(em) { font: italic 400 5.5em/1 var(--font-serif); color: #c2410c; }
   @media (prefers-reduced-motion: reduce) { .q-lane { animation: none; } }
 </style>
