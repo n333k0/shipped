@@ -26,15 +26,15 @@ const timelines = ['ASAP', 'This month', 'In 1–3 months', 'Just exploring'];
 
 const tiers = [
   { budget: '$3–5k', title: 'Landing that converts', body: 'One focused page with real copy, motion and a form. Launch-ready in a week.', items: ['1 page', 'Copy', 'Motion', 'Analytics'] },
-  { budget: '$5–10k', title: 'A full website', body: 'Up to 5 pages, CMS, strategy and copy. The site most companies actually need.', items: ['5 pages', 'CMS', 'SEO setup', 'Integrations'] },
-  { budget: '$10–20k', title: 'Brand + website', body: 'A new identity and a site designed around it, with art direction and signature motion.', items: ['Identity', '8–12 pages', 'Art direction', 'Motion'] },
-  { budget: '$20k+', title: 'Flagship', body: 'Design system, advanced interactions, multilingual, shop. The 10K-agency site, without the agency.', items: ['Design system', 'Multilingual', 'Shop', '3D / motion'] },
+  { budget: '$5–8k', title: 'A full website', body: 'Up to 5 pages, CMS, strategy and copy. The site most companies actually need.', items: ['5 pages', 'CMS', 'SEO setup', 'Integrations'] },
+  { budget: '$8–15k', title: 'Brand + website', body: 'A new identity and a site designed around it, with art direction and signature motion.', items: ['Identity', '8–12 pages', 'Art direction', 'Motion'] },
+  { budget: '$15k+', title: 'Flagship', body: 'Design system, advanced interactions, multilingual, shop. The $50k-studio site, without the studio.', items: ['Design system', 'Multilingual', 'Shop', '3D / motion'] },
 ];
 const process = [
   { n: '01', title: 'Name your budget', body: 'Tell us your number, what you need and when. Two minutes, right here.', time: 'Today' },
   { n: '02', title: 'Get a free proposal', body: 'A scope, a sitemap and a first design direction for your budget. Fixed scope or monthly, your call.', time: 'Within 24–48h' },
   { n: '03', title: 'Pick a direction', body: 'You choose from three real design directions, not a mood board. Then we lock it.', time: 'Week 1' },
-  { n: '04', title: 'We build and launch', body: 'Designed and built together in Framer, updates every few days, launch with a handover video.', time: '1–4 weeks' },
+  { n: '04', title: 'We build and launch', body: 'Designed and built together in Framer, updates every few days, launch with a handover video.', time: '1–6 weeks' },
 ];
 const why = [
   ['No sales team, no account managers', 'You talk to the people doing the work. On an agency invoice, that layer alone is a big share of the price.'],
@@ -53,7 +53,7 @@ const services = [
 const faq = [
   { q: 'Is there a minimum budget?', a: '$1,000 for the form, but most projects start around $3,000. Below that we’ll point you to a lighter option or tell you honestly it won’t fit.' },
   { q: 'What do I get for free?', a: 'A written proposal for your budget: scope, sitemap, timeline and a first design direction. No call required, no commitment.' },
-  { q: 'Fixed scope or monthly: which is better?', a: 'Fixed is faster and cheaper if you know what you need. Monthly is better if the site is the first of many things, like pages, campaigns or brand work.' },
+  { q: 'Fixed scope or monthly: which is better?', a: 'Fixed is faster and cheaper for building the site. Monthly is for what comes after: pages, campaigns and brand work as you grow. Most clients do fixed first, then monthly.' },
   { q: 'How is this different from the Shipped packages?', a: 'Packages are set products at set prices. Custom starts from your budget and goals, which suits bigger or unusual projects.' },
   { q: 'Who will I work with?', a: 'The senior people doing the work, directly. No account managers.' },
   { q: 'What if I’m not sure what I need?', a: 'Pick “Not sure yet”. We’ll recommend the right RemotoLabs product, whether that’s a website, design every month or AI systems.' },
@@ -226,14 +226,14 @@ const faq = [
       </div>
       <div class="mt-5 grid gap-5 md:grid-cols-2">
         <div class="rounded-[32px] bg-white/[0.03] p-8 sm:p-10">
-          <p class="label text-paper/45">A typical agency</p>
-          <p class="display mt-4 text-[44px] text-paper/50 sm:text-[56px]">$15–30k</p>
-          <p class="mt-2 text-[16px] text-paper/45">8–12 weeks, proposals, status meetings and a separate dev invoice.</p>
+          <p class="label text-paper/45">A typical studio</p>
+          <p class="display mt-4 text-[44px] text-paper/50 sm:text-[56px]">$30–60k</p>
+          <p class="mt-2 text-[16px] text-paper/45">8–16 weeks, proposals, status meetings and a separate dev invoice.</p>
         </div>
         <div class="rounded-[32px] bg-spark p-8 text-ink sm:p-10">
           <p class="label text-ink/60">shipped. custom</p>
-          <p class="display mt-4 text-[44px] sm:text-[56px]">$3–25k</p>
-          <p class="mt-2 text-[16px] text-ink/70">1–4 weeks, one written proposal, design and build by the same senior team.</p>
+          <p class="display mt-4 text-[44px] sm:text-[56px]">$3–15k</p>
+          <p class="mt-2 text-[16px] text-ink/70">1–6 weeks, one written proposal, design and build by the same senior team.</p>
         </div>
       </div>
     </div>
@@ -257,27 +257,27 @@ const faq = [
           <p class="mt-3 max-w-md text-[17px] text-ink/70">One defined project, one price, one launch date. Best when you know what you need.</p>
           <div class="mt-8 border-t border-ink/15 pt-8">
             <p class="label text-ink/55">Typical budget</p>
-            <p class="display mt-3 t-price">$3k–25k</p>
-            <p class="mt-2 text-[15px] text-ink/60">One fixed price, agreed before we start.</p>
+            <p class="display mt-3 t-price">$3k–15k</p>
+            <p class="mt-2 text-[15px] text-ink/60">One fixed price, agreed before we start. Bigger builds by proposal.</p>
           </div>
-          <ul class="mt-8 space-y-3 border-t border-ink/15 pt-8 text-[16px]">
+          <ul class="mb-auto mt-8 space-y-3 border-t border-ink/15 pt-8 text-[16px]">
             {['A written scope and sitemap before you pay', 'Three design directions to choose from', 'Fixed price, fixed timeline', 'Launch, handover video and support'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-ink"></span>{t}</li>)}
           </ul>
-          <a href="#top" class="btn-ink btn-wide mt-10 h-14 self-start px-8 text-[16px] lg:mt-auto">Name your budget</a>
+          <a href="#top" class="btn-ink btn-wide mt-10 h-14 self-start px-8 text-[16px]">Name your budget</a>
         </article>
         <article class="flex flex-col rounded-[40px] bg-white/[0.03] p-8 sm:p-12">
-          <p class="label text-paper/50">The flexible lane</p>
+          <p class="label text-paper/50">The growth lane</p>
           <h3 class="display mt-4 text-[40px] sm:text-[52px]">Monthly</h3>
-          <p class="mt-3 max-w-md text-[17px] text-paper/65">Spread the budget over months: site first, then pages, campaigns and design as you grow.</p>
+          <p class="mt-3 max-w-md text-[17px] text-paper/65">Launch fixed, then keep going: new pages, campaigns, ads and design every month.</p>
           <div class="mt-8 border-t border-white/10 pt-8">
             <p class="label text-paper/50">Membership</p>
             <p class="mt-3"><span class="display t-price">$3,995</span><span class="ml-1 text-[18px] text-paper/50">/month</span></p>
-            <p class="mt-2 text-[15px] text-paper/55">Pause or cancel anytime.</p>
+            <p class="mt-2 text-[15px] text-paper/55">Pause or cancel anytime. Best after launch: for a new site, the fixed lane is faster and cheaper.</p>
           </div>
-          <ul class="mt-8 space-y-3 border-t border-white/10 pt-8 text-[16px] text-paper/85">
+          <ul class="mb-auto mt-8 space-y-3 border-t border-white/10 pt-8 text-[16px] text-paper/85">
             {['One request at a time, ~48h each', 'Website, brand, ads, decks: all in scope', 'Pause when it’s quiet, cancel anytime', 'Runs on queued., our design subscription'].map((t) => <li class="flex gap-3"><span class="mt-[9px] size-1.5 shrink-0 rounded-full bg-spark"></span>{t}</li>)}
           </ul>
-          <a href={funnel.products.queued.url} class="btn-ghost btn-wide mt-10 h-14 self-start px-8 text-[16px] lg:mt-auto">See queued. →</a>
+          <a href={funnel.products.queued.url} class="btn-ghost btn-wide mt-10 h-14 self-start px-8 text-[16px]">See queued. →</a>
         </article>
       </div>
     </div>
