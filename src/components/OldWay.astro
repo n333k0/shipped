@@ -45,16 +45,16 @@ import { agencySteps, ourSteps, comparison } from '../data/site';
     </div>
 
     <!-- comparison table -->
-    <div class="mt-5 overflow-hidden rounded-[28px] bg-white/[0.03]" data-reveal>
+    <div class="mt-5 overflow-hidden rounded-[22px] bg-white/[0.03] sm:rounded-[28px]" data-reveal>
       <div class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1.1fr_1fr_1fr]">
         <div class="hidden border-b border-white/10 py-5 pl-7 pr-5 sm:block sm:pl-9"></div>
-        <p class="label border-b border-white/10 py-5 pl-7 pr-5 text-paper/45 sm:pl-9">Traditional agency</p>
-        <p class="label border-b border-white/10 bg-white/[0.04] py-5 pl-7 pr-5 text-spark sm:pl-9">Us</p>
+        <p class="label flex items-center px-4 py-3.5 text-paper/45 sm:border-b sm:border-white/10 sm:py-5 sm:pl-9 sm:pr-5"><span class="sm:hidden">Agency</span><span class="hidden sm:inline">Traditional agency</span></p>
+        <p class="bg-spark px-4 py-3 text-[17px] font-semibold tracking-tight text-ink sm:label sm:border-b sm:border-white/10 sm:bg-white/[0.04] sm:py-5 sm:pl-9 sm:pr-5 sm:text-spark"><span class="sm:hidden">shipped.</span><span class="hidden sm:inline">Us</span></p>
         {comparison.map(([k, them, us]) => (
           <>
-            <p class="col-span-2 pl-7 pr-5 pt-5 sm:pl-9 text-[13px] text-paper/45 sm:col-span-1 sm:border-b sm:border-white/5 sm:py-5 sm:text-[15px] sm:text-paper/60">{k}</p>
-            <p class="border-b border-white/5 pb-5 pl-7 pr-5 pt-2 text-[15px] text-paper/45 sm:py-5 sm:pl-9">{them}</p>
-            <p class="border-b border-white/5 bg-white/[0.04] pb-5 pl-7 pr-5 pt-2 text-[15px] font-medium sm:py-5 sm:pl-9">{us}</p>
+            <p class="col-span-2 border-t border-white/[0.06] px-4 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/40 sm:col-span-1 sm:border-b sm:border-t-0 sm:border-white/5 sm:py-5 sm:pl-9 sm:pr-5 sm:font-sans sm:text-[15px] sm:normal-case sm:tracking-normal sm:text-paper/60">{k}</p>
+            <p class="px-4 pb-3.5 pt-1.5 text-[14px] text-paper/50 sm:border-b sm:border-white/5 sm:py-5 sm:pl-9 sm:pr-5 sm:text-[15px] sm:text-paper/45">{them}</p>
+            <p class="px-4 pb-3.5 pt-1.5 text-[14px] font-medium sm:border-b sm:border-white/5 sm:bg-white/[0.04] sm:py-5 sm:pl-9 sm:pr-5 sm:text-[15px]">{us}</p>
           </>
         ))}
       </div>
