@@ -44,17 +44,25 @@ import { agencySteps, ourSteps, comparison } from '../data/site';
       </div>
     </div>
 
-    <!-- comparison table -->
-    <div class="mt-5 overflow-hidden rounded-[22px] bg-white/[0.03] sm:rounded-[28px]" data-reveal>
-      <div class="grid grid-cols-[1fr_1fr] sm:grid-cols-[1.1fr_1fr_1fr]">
-        <div class="hidden border-b border-white/10 py-5 pl-7 pr-5 sm:block sm:pl-9"></div>
-        <p class="label flex items-center px-4 py-3.5 text-paper/45 sm:border-b sm:border-white/10 sm:py-5 sm:pl-9 sm:pr-5"><span class="sm:hidden">Agency</span><span class="hidden sm:inline">Traditional agency</span></p>
-        <p class="bg-spark px-4 py-3 text-[17px] font-semibold tracking-tight text-ink sm:label sm:border-b sm:border-white/10 sm:bg-white/[0.04] sm:py-5 sm:pl-9 sm:pr-5 sm:text-spark"><span class="sm:hidden">shipped.</span><span class="hidden sm:inline">Us</span></p>
-        {comparison.map(([k, them, us]) => (
+    <!-- comparison table: label | agency | shipped (one highlighted column, logo on top) -->
+    <div class="mt-5 overflow-hidden rounded-[22px] bg-white/[0.03] pb-1.5 pr-1.5 sm:rounded-[28px] sm:pb-3 sm:pr-3" data-reveal>
+      <div class="grid grid-cols-[0.8fr_1fr_1.1fr] text-[13px] leading-snug sm:grid-cols-[1.1fr_1fr_1fr] sm:text-[15px]">
+        <div></div>
+        <p class="label self-end px-3 pb-3 text-paper/45 sm:px-8 sm:pb-5"><span class="sm:hidden">Agency</span><span class="hidden sm:inline">Traditional agency</span></p>
+        <p class="mt-1.5 rounded-t-[16px] bg-spark px-3 pb-3 pt-3.5 text-ink sm:mt-3 sm:rounded-t-[20px] sm:px-8 sm:pb-5 sm:pt-6">
+          <span class="inline-flex items-baseline gap-0.5 text-[19px] font-semibold tracking-[-0.04em] sm:text-[24px]">shipped<span class="inline-block size-[6px] rounded-full bg-ink sm:size-[7px]"></span></span>
+        </p>
+        {comparison.map(([k, them, us], i) => (
           <>
-            <p class="col-span-2 border-t border-white/[0.06] px-4 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/40 sm:col-span-1 sm:border-b sm:border-t-0 sm:border-white/5 sm:py-5 sm:pl-9 sm:pr-5 sm:font-sans sm:text-[15px] sm:normal-case sm:tracking-normal sm:text-paper/60">{k}</p>
-            <p class="px-4 pb-3.5 pt-1.5 text-[14px] text-paper/50 sm:border-b sm:border-white/5 sm:py-5 sm:pl-9 sm:pr-5 sm:text-[15px] sm:text-paper/45">{them}</p>
-            <p class="px-4 pb-3.5 pt-1.5 text-[14px] font-medium sm:border-b sm:border-white/5 sm:bg-white/[0.04] sm:py-5 sm:pl-9 sm:pr-5 sm:text-[15px]">{us}</p>
+            <p class="border-t border-white/[0.06] py-3.5 pl-4 pr-2 text-paper/45 sm:py-5 sm:pl-9 sm:pr-5 sm:text-paper/60">{k}</p>
+            <p class="flex gap-2 border-t border-white/[0.06] px-3 py-3.5 text-paper/50 sm:gap-3 sm:px-8 sm:py-5 sm:text-paper/45">
+              <svg class="mt-[3px] size-3.5 shrink-0 text-paper/30 sm:mt-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" /></svg>
+              <span>{them}</span>
+            </p>
+            <p class:list={['flex gap-2 border-t border-ink/20 bg-spark/[0.14] px-3 py-3.5 font-medium sm:gap-3 sm:px-8 sm:py-5', i === comparison.length - 1 && 'rounded-b-[16px] sm:rounded-b-[20px]']}>
+              <svg class="mt-[3px] size-3.5 shrink-0 text-spark sm:mt-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" /></svg>
+              <span>{us}</span>
+            </p>
           </>
         ))}
       </div>
