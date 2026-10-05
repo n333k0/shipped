@@ -14,6 +14,7 @@
 }
 
 @theme {
+  --color-black: #0b0b0b; /* off-black: every bg-black / from-black follows the page colour */
   --color-spark: #d8ff85;
   --color-spark-dim: #b6dc65;
   --color-paper: #f3f1ea;
@@ -57,11 +58,11 @@
 /* Style "Pitch" (shipped default since 2026-10-04): pure black, no off-black
    sections. Cards step up only slightly so contrast stays quiet. */
 [data-theme="pitch"] {
-  --tone-950: #000000;
-  --tone-900: #000000;
-  --tone-800: #0a0a0a;
-  --tone-700: #141414;
-  --tone-600: #1f1f1f;
+  --tone-950: #0b0b0b;
+  --tone-900: #0b0b0b;
+  --tone-800: #121212;
+  --tone-700: #1a1a1a;
+  --tone-600: #242424;
   --tone-500: #404040;
   --tone-ink: #050505;
   --tone-mist: #9a9a9a;
