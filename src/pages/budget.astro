@@ -66,7 +66,7 @@ const faq = [
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
         <h1 class="display mt-3 text-[min(43px,calc((100vw-32px)/6.35))] md:text-[66px] lg:text-[82px] xl:text-[98px] 3xl:text-[115px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
-        <p class="mx-auto mt-6 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need. We’ll reply within 24 hours with what we can build for it, free.</p>
+        <p class="mx-auto mt-6 max-w-md text-[17px] text-paper/60">Tell us your budget and what you need.<br class="sm:hidden" /> We’ll reply within 24 hours with<br class="sm:hidden" /> what we can build for it, free.</p>
       </div>
 
       <form id="funnel" class="mt-8 w-full max-w-4xl" novalidate>
@@ -482,7 +482,7 @@ const faq = [
         // Phones: an upright oval around the content, down both edges of the screen.
         // Side cards run out to the screen edges.
         const card = Math.min(w * 0.18, 76);
-        return { hero: { R: w / 2 - card * 0.15, Ry: h * 0.47, card }, gallery };
+        return { hero: { R: w / 2 + card * 0.2, Ry: h * 0.47, card }, gallery };
       },
     });
     list.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => ring.goTo(Number(b.dataset.go))));
