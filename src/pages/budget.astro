@@ -480,9 +480,9 @@ const faq = [
           return { hero: { R: w * 0.4, card }, gallery };
         }
         // Phones: an upright oval around the content, down both edges of the screen.
-        // Side cards stay whole on screen, 6px in from the edge.
+        // Side cards run out to the screen edges.
         const card = Math.min(w * 0.18, 76);
-        return { hero: { R: w / 2 - card / 2 - 6, Ry: h * 0.4, card }, gallery };
+        return { hero: { R: w / 2 - card * 0.15, Ry: h * 0.47, card }, gallery };
       },
     });
     list.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => ring.goTo(Number(b.dataset.go))));
