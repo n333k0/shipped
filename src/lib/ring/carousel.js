@@ -167,7 +167,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 
 /**
  * container: the positioned element the canvas fills.
- * opts.layout(w, h) → { hero: { R, card }, gallery: { R, card, cx } }, px.
+ * opts.layout(w, h) → { hero: { R, Ry?, card }, gallery: { R, card, cx } }, px.
  * opts.spacer: the element whose scroll drives the gallery (optional).
  * opts.ui: { groups, list, items, cut, live, root } for the name lockups.
  * opts.onOpen(i): called with a work's index when it is clicked to view.
@@ -487,6 +487,8 @@ export function mountRing(container, opts) {
 
     // The stage: radius, card and centre slide from the hero ring to the gallery.
     const R = lerp(sizes.hero.R, sizes.gallery.R, s);
+    // the hero ring may be an upright oval (phones); the gallery is always round
+    const Ry = lerp(sizes.hero.Ry ?? sizes.hero.R, sizes.gallery.R, s);
     const W = lerp(sizes.hero.card, sizes.gallery.card, s);
     const cx = lerp(0, sizes.gallery.cx, s);
     const H = W / params.aspect;
@@ -535,7 +537,7 @@ export function mountRing(container, opts) {
       // so the heading and form in the middle are never covered.
       const angle = Math.sign(sIdx) * step * cum[n] + spinOut;
       const px = Math.cos(angle) * R + cx;
-      const py = Math.sin(angle) * R;
+      const py = Math.sin(angle) * Ry;
       rest[i].set(px, py);
 
       const da = angle - frontAngle;

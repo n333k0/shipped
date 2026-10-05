@@ -62,7 +62,7 @@ const faq = [
 
 <Layout title={`Name your budget · ${brand.name} by ${brand.parent}`} description="High-end websites on friendly budgets. Tell us your budget and what you need, and we’ll send you what we can build for it, free." minimal overlay>
   <section id="top" class="funnel relative overflow-x-clip bg-[#060606]">
-    <div class="ring-content wrap relative z-10 flex flex-col lg:min-h-[100svh] items-center justify-center pb-10 pt-[100px] text-center sm:pb-14 sm:pt-[120px]">
+    <div class="ring-content wrap relative z-10 flex min-h-[100svh] flex-col items-center justify-center pb-10 pt-[100px] text-center sm:pb-14 sm:pt-[120px]">
       <div id="intro">
         <p class="label text-paper/45">shipped. custom</p>
         <h1 class="display mt-3 text-[min(43px,calc((100vw-32px)/6.35))] md:text-[66px] lg:text-[82px] xl:text-[98px] 3xl:text-[115px]"><span class="block">High-end sites.</span> <span class="accent block text-spark">Friendly budgets.</span></h1>
@@ -145,7 +145,7 @@ const faq = [
 
     <!-- Viscose ring of recent work. Pinned while you scroll: it goes around the content first
          (under it on desktop, below it on phones), then slides into a gallery, one work per scroll step. -->
-    <div class="sticky top-0 h-[100svh] overflow-hidden max-lg:mt-[calc(45vw-50svh)] lg:-mt-[100svh]">
+    <div class="sticky top-0 -mt-[100svh] h-[100svh] overflow-hidden">
       <div id="ring" class="absolute inset-0 touch-pan-y" role="img" aria-label="Recent work"
         data-images={JSON.stringify(work.map((w) => url(w.img)))} data-projects={JSON.stringify(work.map(({ img, ...rest }) => rest))} data-arrow={url('/arrow-up-right.svg')}></div>
 
@@ -479,8 +479,10 @@ const faq = [
           const card = Math.min(231, Math.max(132, w * 0.11));
           return { hero: { R: w * 0.4, card }, gallery };
         }
-        const R = Math.min(w, h) * 0.38;
-        return { hero: { R, card: R * 0.37 }, gallery };
+        // Phones: an upright oval around the content, down both edges of the screen.
+        // Side cards stay whole on screen, 6px in from the edge.
+        const card = Math.min(w * 0.18, 76);
+        return { hero: { R: w / 2 - card / 2 - 6, Ry: h * 0.4, card }, gallery };
       },
     });
     list.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => ring.goTo(Number(b.dataset.go))));
