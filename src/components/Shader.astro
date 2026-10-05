@@ -8,16 +8,16 @@ const { class: className = '' } = Astro.props;
 ---
 
 <div class:list={['shader pointer-events-none', className]} aria-hidden="true">
-  <div class="mount absolute inset-0 opacity-40 mix-blend-screen"></div>
+  <div class="mount absolute inset-0 opacity-55 mix-blend-screen"></div>
   <!-- a short fade into the next section (no shadow under the nav) -->
   <div class="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-b from-transparent via-black/75 to-black"></div>
 </div>
 
 <style>
-  /* like queued: the dither frames the copy instead of sitting behind it; heavily feathered (eased multi-stop fade) */
+  /* the dither frames the copy: a wide dark centre from the slots badge down to the RemotoLabs line (as in Figma), feathered out to the edges */
   .shader .mount {
-    -webkit-mask-image: radial-gradient(ellipse 66% 54% at 50% 32%, transparent 18%, rgb(0 0 0 / .04) 30%, rgb(0 0 0 / .12) 42%, rgb(0 0 0 / .26) 54%, rgb(0 0 0 / .45) 66%, rgb(0 0 0 / .68) 79%, rgb(0 0 0 / .88) 90%, #000 100%);
-    mask-image: radial-gradient(ellipse 66% 54% at 50% 32%, transparent 18%, rgb(0 0 0 / .04) 30%, rgb(0 0 0 / .12) 42%, rgb(0 0 0 / .26) 54%, rgb(0 0 0 / .45) 66%, rgb(0 0 0 / .68) 79%, rgb(0 0 0 / .88) 90%, #000 100%);
+    -webkit-mask-image: radial-gradient(ellipse 62% 48% at 50% 34%, transparent 52%, rgb(0 0 0 / .06) 60%, rgb(0 0 0 / .18) 68%, rgb(0 0 0 / .38) 77%, rgb(0 0 0 / .64) 86%, rgb(0 0 0 / .86) 94%, #000 100%);
+    mask-image: radial-gradient(ellipse 62% 48% at 50% 34%, transparent 52%, rgb(0 0 0 / .06) 60%, rgb(0 0 0 / .18) 68%, rgb(0 0 0 / .38) 77%, rgb(0 0 0 / .64) 86%, rgb(0 0 0 / .86) 94%, #000 100%);
   }
   /* phones: the copy spans the full width, so the dither only shows below it */
   @media (max-width: 767px) {
