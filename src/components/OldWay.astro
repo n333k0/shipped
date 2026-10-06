@@ -36,11 +36,11 @@ import lanes from '../data/queued-lanes.json';
           <p class="label text-ink/60">Our way</p>
           <p class="label">5–20 business days</p>
         </div>
-        <!-- pills grow to fill each row; on phones they match the hero CTA (h-14, 16px) -->
+        <!-- pills grow to fill each row; same height and type size as the hero CTA (h-14, 16px) -->
         <ol class="mt-7 flex flex-wrap items-center gap-2.5">
           {ourSteps.map((s, i) => (
             <li class="flex grow items-center gap-2.5">
-              <span class="flex h-14 flex-1 items-center justify-center rounded-full bg-ink px-6 text-[16px] font-normal text-paper sm:h-auto sm:py-4 sm:text-[28px]">{s}</span>
+              <span class="flex h-14 flex-1 items-center justify-center rounded-full bg-ink px-6 text-[16px] font-normal text-paper">{s}</span>
               {i < ourSteps.length - 1 && <span aria-hidden="true" class="text-[22px]">→</span>}
             </li>
           ))}
