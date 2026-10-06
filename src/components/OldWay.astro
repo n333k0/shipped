@@ -77,7 +77,7 @@ import lanes from '../data/queued-lanes.json';
 
     <!-- Section divider: cross-sell to queued., in queued's own orange. Copy on the left;
          on the right, tilted lanes of queued. work drift diagonally up and out of the frame. -->
-    <a href={queued.url} class="q-promo group relative mt-14 flex flex-col overflow-hidden rounded-[28px] bg-[#ff6a3d] text-ink sm:mt-16 md:min-h-[380px] md:flex-row" data-reveal>
+    <a href={queued.url} class="q-promo group relative mt-14 flex flex-col overflow-hidden rounded-[28px] bg-[#eb4f2b] text-ink sm:mt-16 md:min-h-[380px] md:flex-row" data-reveal>
       <div class="q-works relative h-[220px] shrink-0 sm:h-[280px] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[54%]" aria-hidden="true">
         <div class="q-stage">
           {lanes.map((lane, l) => (
@@ -103,8 +103,8 @@ import lanes from '../data/queued-lanes.json';
   /* Two lanes tilted (flat 2D, no 3D) so they run bottom-left → top-right; each one loops forever.
      An orange gradient on top fades the left edge, so work appears out of nowhere. */
   .q-works { contain: paint; }
-  .q-works::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #ff6a3d, transparent 30%); }
-  @media (max-width: 767px) { .q-works::after { background: linear-gradient(0deg, #ff6a3d, transparent 35%); } }
+  .q-works::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #eb4f2b, transparent 30%); }
+  @media (max-width: 767px) { .q-works::after { background: linear-gradient(0deg, #eb4f2b, transparent 35%); } }
   .q-stage {
     position: absolute; left: 50%; top: 50%; display: flex; flex-direction: column; gap: 14px;
     transform: translate(-50%, -50%) rotate(-36deg);
