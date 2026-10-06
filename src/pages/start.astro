@@ -25,16 +25,16 @@ const onboarding = [
             <!-- 1. Package -->
             <fieldset>
               <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">01</span> Choose your website</legend>
+              <!-- Phones: compact rows (name/pitch/scope left, price/days right). sm+: stacked cards. -->
               <div class="mt-5 grid gap-3 sm:grid-cols-3">
                 {packages.map((p) => (
-                  <label class="pick relative cursor-pointer rounded-[20px] border border-white/15 p-5 transition hover:border-white/40">
+                  <label class="pick relative cursor-pointer rounded-[20px] border border-white/15 p-5 transition hover:border-white/40 max-sm:grid max-sm:grid-cols-[minmax(0,1fr)_auto] max-sm:gap-x-4 max-sm:px-4 max-sm:py-3.5">
                     <input type="radio" name="package" value={p.id} class="sr-only" checked={p.featured} />
-                    {p.featured && <span class="chip absolute right-3 top-3 border-0 bg-spark px-2 py-0.5 text-[10px] text-ink">Popular</span>}
-                    <span class="block text-[20px] font-semibold">{p.name}</span>
-                    <span class="mt-1 block text-[14px] text-paper/55">{p.pitch}</span>
-                    <span class="mt-4 block text-[24px] font-medium tracking-tight">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
-                    <span class="label mt-1 block text-paper/45">{p.days}</span>
-                    <span class="mt-3 block border-t border-white/10 pt-3 text-[13px] text-paper/70">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</span>
+                    <span class="block text-[20px] font-semibold max-sm:col-start-1 max-sm:row-start-1 max-sm:text-[18px]">{p.name}{p.featured && <span class="chip absolute right-3 top-3 border-0 bg-spark px-2 py-0.5 text-[10px] text-ink max-sm:static max-sm:ml-2 max-sm:align-middle">Popular</span>}</span>
+                    <span class="mt-1 block text-[14px] text-paper/55 max-sm:col-span-2 max-sm:row-start-2 max-sm:mt-0.5 max-sm:text-[13px]">{p.pitch}</span>
+                    <span class="mt-4 block text-[24px] font-medium tracking-tight max-sm:col-start-2 max-sm:row-start-1 max-sm:mt-0 max-sm:text-right max-sm:text-[20px]">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
+                    <span class="label mt-1 block text-paper/45 max-sm:col-start-2 max-sm:row-start-3 max-sm:mt-2 max-sm:self-center max-sm:text-right max-sm:tracking-[0.1em]">{p.days}</span>
+                    <span class="mt-3 block border-t border-white/10 pt-3 text-[13px] text-paper/70 max-sm:col-start-1 max-sm:row-start-3 max-sm:mt-2 max-sm:border-0 max-sm:pt-0 max-sm:text-[12px]">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</span>
                   </label>
                 ))}
               </div>
