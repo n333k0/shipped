@@ -1,0 +1,100 @@
+---
+// Internal: the owner hides references that should never show as examples in the brief.
+// Not linked anywhere, noindex. Hidden slugs live in src/data/ref-exclude.json.
+import Layout from '../layouts/Layout.astro';
+import { allRefs, industries } from '../data/brief';
+import excluded from '../data/ref-exclude.json';
+import { url } from '../lib/url';
+
+const cats = industries.filter((i) => i.id !== 'other');
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+---
+
+<Layout title="Curar referencias · interno" minimal noindex>
+  <section class="pb-40 pt-[96px]">
+    <div class="wrap">
+      <p class="label text-spark">Uso interno · no se muestra a clientes</p>
+      <h1 class="display mt-3 text-[40px] sm:text-[56px]">Referencias <span class="accent text-spark">que mostramos.</span></h1>
+      <p class="mt-3 max-w-2xl text-[16px] text-paper/60">Ocultá las que no querés que aparezcan como ejemplo en el formulario. Los cambios quedan guardados en este navegador; para aplicarlos en el sitio, copiá la lista y guardala en GitHub (botón de abajo).</p>
+
+      <div id="tabs" class="-mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0">
+        <button class="chip-f" data-tab="all" aria-pressed="true">Todas · {allRefs.length}</button>
+        {cats.map((c) => <button class="chip-f" data-tab={c.id} aria-pressed="false">{c.name} · {allRefs.filter((r) => r.cats.includes(c.id)).length}</button>)}
+        <button class="chip-f" data-tab="hidden" aria-pressed="false">Ocultas · <span id="n-hidden">0</span></button>
+      </div>
+
+      <div id="grid" class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {allRefs.map((r) => (
+          <article class="cur" data-slug={r.slug} data-cats={r.cats.join(' ')}>
+            <a href={r.url} target="_blank" rel="noopener" class="block overflow-hidden rounded-[12px] bg-white/[0.04]">
+              <img src={url(`/refs/${r.slug}.webp`)} alt="" loading="lazy" width="520" height="325" class="aspect-[16/10] w-full object-cover object-top" />
+            </a>
+            <div class="mt-2 flex items-start justify-between gap-2">
+              <div class="min-w-0">
+                <p class="truncate text-[14px] font-medium">{host(r.url)}</p>
+                <p class="truncate text-[12px] text-paper/45">{r.cats.join(' · ')} · {r.mode}</p>
+              </div>
+              <button class="tog shrink-0 rounded-full border border-white/15 px-3 py-1 text-[12px] transition hover:border-white/50" data-slug={r.slug}>Ocultar</button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-pine-900/90 backdrop-blur-xl">
+    <div class="wrap flex flex-wrap items-center gap-2 py-3">
+      <p class="mr-auto text-[14px] text-paper/60"><b id="n-hidden-2" class="text-paper">0</b> ocultas · <span id="n-changed">sin cambios</span></p>
+      <button id="copy" class="btn-ghost h-11 border-white/15 px-5 text-[14px]">Copiar lista</button>
+      <a href="https://github.com/n333k0/shipped/edit/main/src/data/ref-exclude.json" target="_blank" rel="noopener" class="btn-primary h-11 px-5 text-[14px]">Guardar en GitHub ↗</a>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .chip-f { display: inline-flex; flex: none; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.15); font-size: 14px; color: rgb(243 241 234 / 0.8); }
+  .chip-f[aria-pressed="true"] { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }
+  .cur.off img { opacity: .25; filter: grayscale(1); }
+  .cur.off .tog { background: var(--color-booked); border-color: var(--color-booked); color: var(--color-ink); }
+  .cur[hidden] { display: none; }
+</style>
+
+<script define:vars={{ saved: excluded }}>
+  const KEY = 'shipped:curate';
+  let hidden;
+  try { hidden = new Set(JSON.parse(localStorage.getItem(KEY) || 'null') ?? saved); } catch { hidden = new Set(saved); }
+  let tab = 'all';
+  const cards = [...document.querySelectorAll('.cur')];
+  const render = () => {
+    cards.forEach((c) => {
+      const off = hidden.has(c.dataset.slug);
+      c.classList.toggle('off', off);
+      c.querySelector('.tog').textContent = off ? 'Oculta · mostrar' : 'Ocultar';
+      c.hidden = tab === 'hidden' ? !off : tab !== 'all' && !c.dataset.cats.split(' ').includes(tab);
+    });
+    const n = [...hidden].filter((s) => cards.some((c) => c.dataset.slug === s)).length;
+    document.getElementById('n-hidden').textContent = n;
+    document.getElementById('n-hidden-2').textContent = n;
+    const changed = [...hidden].filter((s) => !saved.includes(s)).length + saved.filter((s) => !hidden.has(s)).length;
+    document.getElementById('n-changed').textContent = changed ? `${changed} cambio${changed > 1 ? 's' : ''} sin guardar en GitHub` : 'sin cambios';
+    try { localStorage.setItem(KEY, JSON.stringify([...hidden])); } catch {}
+  };
+  document.getElementById('grid').addEventListener('click', (e) => {
+    const b = e.target.closest('.tog');
+    if (!b) return;
+    hidden.has(b.dataset.slug) ? hidden.delete(b.dataset.slug) : hidden.add(b.dataset.slug);
+    render();
+  });
+  document.getElementById('tabs').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-tab]');
+    if (!b) return;
+    tab = b.dataset.tab;
+    document.querySelectorAll('[data-tab]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  });
+  document.getElementById('copy').addEventListener('click', async (e) => {
+    await navigator.clipboard.writeText(JSON.stringify([...hidden].sort(), null, 2) + '\n');
+    e.target.textContent = 'Copiada ✓ · pegala en GitHub';
+  });
+  render();
+</script>

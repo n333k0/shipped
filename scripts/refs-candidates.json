@@ -1,0 +1,142 @@
+{
+  "saas": [
+    "algolia-com",
+    "blackforestlabs-ai",
+    "bolt-new",
+    "basecamp-com",
+    "captions-ai",
+    "arweave-org",
+    "astro-build",
+    "atlassian-design"
+  ],
+  "creative": [
+    "stinkstudios-com",
+    "basicagency-com",
+    "14islands-com",
+    "kvs-services",
+    "lessestudio-com",
+    "bynikistudio-com",
+    "karocrafts-com",
+    "portalone-studio",
+    "alternativeaesthetics-co-uk",
+    "dversostudio-io"
+  ],
+  "services": [
+    "campaignmonitor-com",
+    "deepagency-com",
+    "feedly-com",
+    "tracebit-com",
+    "anytype-io",
+    "brooklynmuseum-org",
+    "ciid-dk",
+    "convertkit-com",
+    "coursera-org",
+    "daisyui-com",
+    "drxlr-com",
+    "basicagency-com",
+    "brevo-com",
+    "burb-co"
+  ],
+  "ecommerce": [
+    "apple-com",
+    "artek-fi",
+    "arcteryx-com",
+    "bose-com",
+    "audocph-com",
+    "kefdirect-com",
+    "bowerswilkins-com"
+  ],
+  "hospitality": [
+    "bird-co",
+    "hopper-com",
+    "eurostar-com",
+    "eater-com",
+    "wagamama-com",
+    "sierra-ai",
+    "lyft-com",
+    "firsty-app"
+  ],
+  "architecture": [
+    "artek-fi",
+    "audocph-com",
+    "archdaily-com",
+    "archigreendesigns-com",
+    "dversostudio-io",
+    "kvs-services",
+    "zudo-amsterdam",
+    "lessestudio-com"
+  ],
+  "health": [
+    "modernhealth-com",
+    "wenatal-com",
+    "alma-food",
+    "alliahealth-co",
+    "callbaba-com",
+    "tempo-fit",
+    "joindawn-com",
+    "hx-clinic",
+    "confluent-io",
+    "grillitype-com",
+    "porsche-com",
+    "stately-ai",
+    "archigreendesigns-com"
+  ],
+  "fashion": [
+    "arcteryx-com",
+    "fjallraven-com",
+    "gymshark-com",
+    "hypebeast-com",
+    "hypebeast-kr",
+    "maharishistore-com",
+    "outdoorvoices-com",
+    "underarmour-com",
+    "lafamigliamysteryunfolds-gucci-com"
+  ],
+  "culture": [
+    "artforum-com",
+    "barbican-org-uk",
+    "beauxartsparis-fr",
+    "archdaily-com",
+    "metmuseum-org",
+    "museumofmoney-com",
+    "louvre-fr",
+    "centrepompidou-fr",
+    "francouvertes-com",
+    "dropout-tv"
+  ],
+  "food": [
+    "cooking-nytimes-com",
+    "wagamama-com",
+    "beardmeatsfood-co-uk",
+    "drinkolipop-com",
+    "eater-com",
+    "barbican-org-uk",
+    "beauxartsparis-fr",
+    "columbia-com"
+  ],
+  "finance": [
+    "blockstream-com",
+    "coinbase-com",
+    "rainbow-me",
+    "arweave-org",
+    "audius-co",
+    "wagmi-com",
+    "n26-com",
+    "owo-app",
+    "everswap-com",
+    "copilot-money",
+    "lemonsqueezy-com",
+    "doodles-app"
+  ],
+  "personal": [
+    "beehiiv-com",
+    "buttondown-email",
+    "convertkit-com",
+    "109ichiki-com",
+    "kelseydake-com",
+    "anchor-fm",
+    "burb-co",
+    "lemonsqueezy-com",
+    "beardmeatsfood-co-uk"
+  ]
+}

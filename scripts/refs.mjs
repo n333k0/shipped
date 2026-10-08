@@ -3,7 +3,7 @@
 // "card" (the 1440px fold) and a "full" strip (the page, scrolled on hover), plus tags and
 // nearest design neighbours so picks can pull in similar sites.
 //   node scripts/refs.mjs
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, readFile, access } from 'node:fs/promises';
 import sharp from 'sharp';
 
 const ENDPOINT = 'https://inspomcp.dev/api/mcp';
@@ -42,16 +42,24 @@ async function call(name, args) {
   return null;
 }
 
+// Discovered candidates (scripts/refs-discover.mjs) follow the curated ones; the owner's exclusions
+// (src/data/ref-exclude.json, edited at /curate/) never make it in.
+const candidates = JSON.parse(await readFile('scripts/refs-candidates.json', 'utf8').catch(() => '{}'));
+const excluded = new Set(JSON.parse(await readFile('src/data/ref-exclude.json', 'utf8').catch(() => '[]')));
+const exists = (f) => access(f).then(() => true, () => false);
+
 // slug → categories, in the order listed
 const cats = new Map();
 for (const [cat, slugs] of Object.entries(curated)) for (const s of slugs) cats.set(s, [...(cats.get(s) ?? []), cat]);
+for (const [cat, slugs] of Object.entries(candidates)) for (const s of slugs) if (!cats.get(s)?.includes(cat)) cats.set(s, [...(cats.get(s) ?? []), cat]);
+// excluded sites stay in the pool file so /curate/ can bring them back; the brief filters them out
+void excluded;
 const slugs = [...cats.keys()];
 
 // Editor-curated issues get a small boost.
 const editorial = new Set();
 for (const issue of (await call('list_collections', {}))?.issues ?? []) for (const s of issue.screens) editorial.add(s.slug);
 
-await rm('public/refs', { recursive: true, force: true });
 await mkdir('public/refs', { recursive: true });
 
 const refs = [];
@@ -59,12 +67,17 @@ const skipped = [];
 async function build(slug) {
   const s = await call('get_screen', { slug });
   if (!s?.fullPage) return skipped.push(slug);
-  const raw = Buffer.from(await (await fetch(s.fullPage)).arrayBuffer());
-  const { data: img, info } = await sharp(raw).resize({ width: W }).toBuffer({ resolveWithObject: true });
-  const h = Math.min(MAX_H, info.height);
-  const fold = Math.round((W * 10) / 16); // 16:10, a 1440×900 desktop fold
-  await sharp(img).extract({ left: 0, top: 0, width: W, height: Math.min(fold, h) }).webp({ quality: 72 }).toFile(`public/refs/${slug}.webp`);
-  await sharp(img).extract({ left: 0, top: 0, width: W, height: h }).webp({ quality: 62 }).toFile(`public/refs/${slug}.full.webp`);
+  let h;
+  if (await exists(`public/refs/${slug}.full.webp`)) {
+    h = (await sharp(`public/refs/${slug}.full.webp`).metadata()).height; // already captured
+  } else {
+    const raw = Buffer.from(await (await fetch(s.fullPage)).arrayBuffer());
+    const { data: img, info } = await sharp(raw).resize({ width: W }).toBuffer({ resolveWithObject: true });
+    h = Math.min(MAX_H, info.height);
+    const fold = Math.round((W * 10) / 16); // 16:10, a 1440×900 desktop fold
+    await sharp(img).extract({ left: 0, top: 0, width: W, height: Math.min(fold, h) }).webp({ quality: 72 }).toFile(`public/refs/${slug}.webp`);
+    await sharp(img).extract({ left: 0, top: 0, width: W, height: h }).webp({ quality: 62 }).toFile(`public/refs/${slug}.full.webp`);
+  }
   const near = await call('find_similar', { slug, limit: 16, detail: 'concise', maxTokens: 3000 });
   refs.push({
     slug,

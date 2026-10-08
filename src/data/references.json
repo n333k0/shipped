@@ -31,7 +31,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/linear-app/full.1440.webp?v=1777897828",
     "editorial": false,
     "similar": [
-      "013"
+      "013",
+      "124"
     ]
   },
   {
@@ -99,7 +100,9 @@
     "h": 3400,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/raycast-com/full.1440.webp?v=1777662025",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "123"
+    ]
   },
   {
     "id": "004",
@@ -131,7 +134,9 @@
     "h": 2212,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arc-net/full.1440.webp?v=1777661858",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "142"
+    ]
   },
   {
     "id": "005",
@@ -197,7 +202,7 @@
     "editorial": false,
     "similar": [
       "029",
-      "056",
+      "060",
       "119"
     ]
   },
@@ -231,7 +236,9 @@
     "h": 2222,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/superhuman-com/full.1440.webp?v=1777901276",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "144"
+    ]
   },
   {
     "id": "008",
@@ -263,7 +270,9 @@
     "h": 3400,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pitch-com/full.1440.webp?v=1778759217",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "147"
+    ]
   },
   {
     "id": "009",
@@ -425,7 +434,9 @@
     "h": 3032,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/modal-com/full.1440.webp?v=1777662088",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "124"
+    ]
   },
   {
     "id": "014",
@@ -458,8 +469,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pentagram-com/full.768.webp?v=1777662165",
     "editorial": false,
     "similar": [
-      "055",
-      "054",
+      "059",
+      "058",
       "030",
       "019",
       "031"
@@ -494,7 +505,9 @@
     "h": 2383,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/locomotive-ca/full.1440.webp?v=1777662575",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "150"
+    ]
   },
   {
     "id": "016",
@@ -527,7 +540,9 @@
     "h": 325,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lusion-co/full.1440.webp?v=1777899114",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "189"
+    ]
   },
   {
     "id": "017",
@@ -634,7 +649,7 @@
     "similar": [
       "031",
       "030",
-      "055"
+      "059"
     ]
   },
   {
@@ -705,7 +720,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/humaan-com/full.1440.webp?v=1780406517",
     "editorial": false,
     "similar": [
-      "052",
+      "056",
       "019"
     ]
   },
@@ -739,7 +754,9 @@
     "h": 3400,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buck-co/full.1440.webp?v=1778749479",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "129"
+    ]
   },
   {
     "id": "023",
@@ -803,6 +820,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/madebyanalogue-co-uk/full.1440.webp?v=1779977713",
     "editorial": false,
     "similar": [
+      "138",
       "103"
     ]
   },
@@ -970,7 +988,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/designstudio-com/full.1440.webp?v=1780402873",
     "editorial": false,
     "similar": [
-      "056",
+      "060",
       "119",
       "006"
     ]
@@ -1007,7 +1025,7 @@
     "editorial": false,
     "similar": [
       "019",
-      "055",
+      "059",
       "014",
       "031"
     ]
@@ -1149,7 +1167,9 @@
     "h": 2329,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/everlane-com/full.1440.webp?v=1779109756",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "187"
+    ]
   },
   {
     "id": "035",
@@ -1213,7 +1233,10 @@
     "h": 1274,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nike-com/full.1440.webp?v=1777917874",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "189",
+      "131"
+    ]
   },
   {
     "id": "037",
@@ -1246,6 +1269,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bellroy-com/full.1440.webp?v=1779109226",
     "editorial": true,
     "similar": [
+      "166",
       "035"
     ]
   },
@@ -1351,8 +1375,8 @@
       "069",
       "030",
       "031",
-      "060",
-      "063"
+      "046",
+      "045"
     ]
   },
   {
@@ -1387,7 +1411,7 @@
     "editorial": false,
     "similar": [
       "029",
-      "056"
+      "060"
     ]
   },
   {
@@ -1424,12 +1448,160 @@
       "031",
       "030",
       "019",
-      "063",
+      "045",
       "040"
     ]
   },
   {
     "id": "043",
+    "slug": "louispoulsen-com",
+    "title": "Louispoulsen",
+    "url": "https://louispoulsen.com",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "luxe"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Warm, golden liquid light washes over clean, spacious layouts, a refined, understated elegance.",
+    "palette": [
+      "#d49434",
+      "#683e14",
+      "#d4a963",
+      "#b08052"
+    ],
+    "h": 2521,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/louispoulsen-com/full.1440.webp?v=1779110327",
+    "editorial": false,
+    "similar": [
+      "044",
+      "159"
+    ]
+  },
+  {
+    "id": "044",
+    "slug": "flos-com",
+    "title": "Flos",
+    "url": "https://flos.com",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "luxe",
+      "cold",
+      "serious"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep charcoal expanse, crisp sans-serif geometry, cool, reflective, and subtly luxurious.",
+    "palette": [
+      "#af7f4f",
+      "#2c2014",
+      "#d5bca3",
+      "#90806c"
+    ],
+    "h": 2701,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flos-com/full.1440.webp?v=1779109814",
+    "editorial": false,
+    "similar": [
+      "043"
+    ]
+  },
+  {
+    "id": "045",
+    "slug": "hay-com",
+    "title": "HAY.com - latest products, designer news and retailer info",
+    "url": "https://www.hay.com",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "split-studio",
+    "northstar": "Warm sand and soft shadows, clean san-serifs, a quiet, modern Mediterranean stillness.",
+    "palette": [
+      "#9c564a",
+      "#f4c474",
+      "#22473f",
+      "#5c9ca1"
+    ],
+    "h": 985,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hay-com/full.1440.webp?v=1780406671",
+    "editorial": false,
+    "similar": [
+      "031",
+      "046",
+      "040",
+      "030",
+      "019"
+    ]
+  },
+  {
+    "id": "046",
+    "slug": "knoll-com",
+    "title": "Knoll",
+    "url": "https://knoll.com",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "editorial"
+    ],
+    "vibes": [
+      "calm",
+      "luxe",
+      "soft"
+    ],
+    "structure": "split-studio",
+    "northstar": "Warm, muted earth tones, clean sans-serifs, and generous, airy negative space create a refined, contemplative feel.",
+    "palette": [
+      "#f4572f",
+      "#5c2c18",
+      "#f8a793",
+      "#9f8578"
+    ],
+    "h": 478,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/knoll-com/full.1440.webp?v=1777900492",
+    "editorial": false,
+    "similar": [
+      "040",
+      "045"
+    ]
+  },
+  {
+    "id": "047",
     "slug": "belmond-com",
     "title": "Belmond",
     "url": "https://belmond.com",
@@ -1460,12 +1632,12 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/belmond-com/full.1440.webp?v=1777916016",
     "editorial": false,
     "similar": [
-      "061",
-      "062"
+      "043",
+      "044"
     ]
   },
   {
-    "id": "044",
+    "id": "048",
     "slug": "standardhotels-com",
     "title": "Standardhotels",
     "url": "https://standardhotels.com",
@@ -1494,10 +1666,12 @@
     "h": 325,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/standardhotels-com/full.1440.webp?v=1777901121",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "160"
+    ]
   },
   {
-    "id": "045",
+    "id": "049",
     "slug": "lyfehotels-com",
     "title": "Lyfehotels",
     "url": "https://lyfehotels.com",
@@ -1528,12 +1702,12 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lyfehotels-com/full.1440.webp?v=1777916054",
     "editorial": false,
     "similar": [
-      "047",
+      "051",
       "074"
     ]
   },
   {
-    "id": "046",
+    "id": "050",
     "slug": "explorajourneys-com",
     "title": "Luxury Cruises | Explora Journeys",
     "url": "https://explorajourneys.com/",
@@ -1566,7 +1740,7 @@
     ]
   },
   {
-    "id": "047",
+    "id": "051",
     "slug": "atomixnyc-com",
     "title": "Atomixnyc",
     "url": "https://atomixnyc.com",
@@ -1604,7 +1778,7 @@
     ]
   },
   {
-    "id": "048",
+    "id": "052",
     "slug": "mirazur-fr",
     "title": "Mirazur Fr",
     "url": "https://mirazur.fr",
@@ -1640,7 +1814,7 @@
     ]
   },
   {
-    "id": "049",
+    "id": "053",
     "slug": "dinnerbyheston-com",
     "title": "Dinnerbyheston",
     "url": "https://dinnerbyheston.com",
@@ -1672,12 +1846,12 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dinnerbyheston-com/full.1440.webp?v=1778750131",
     "editorial": false,
     "similar": [
-      "051",
+      "055",
       "117"
     ]
   },
   {
-    "id": "050",
+    "id": "054",
     "slug": "deathandcompany-com",
     "title": "Deathandcompany",
     "url": "https://deathandcompany.com",
@@ -1707,11 +1881,11 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deathandcompany-com/full.1440.webp?v=1777916157",
     "editorial": false,
     "similar": [
-      "043"
+      "047"
     ]
   },
   {
-    "id": "051",
+    "id": "055",
     "slug": "finethought-com-au",
     "title": "//--- Fine Thought ---//",
     "url": "https://finethought.com.au/",
@@ -1744,7 +1918,7 @@
     "similar": []
   },
   {
-    "id": "052",
+    "id": "056",
     "slug": "herzogdemeuron-com",
     "title": "Herzogdemeuron",
     "url": "https://herzogdemeuron.com",
@@ -1776,11 +1950,11 @@
     "similar": [
       "119",
       "029",
-      "056"
+      "060"
     ]
   },
   {
-    "id": "053",
+    "id": "057",
     "slug": "snohetta-com",
     "title": "Snohetta",
     "url": "https://snohetta.com",
@@ -1812,11 +1986,11 @@
     "similar": [
       "029",
       "119",
-      "056"
+      "060"
     ]
   },
   {
-    "id": "054",
+    "id": "058",
     "slug": "big-dk",
     "title": "Big Dk",
     "url": "https://big.dk",
@@ -1851,7 +2025,7 @@
     ]
   },
   {
-    "id": "055",
+    "id": "059",
     "slug": "normarchitects-com",
     "title": "Normarchitects",
     "url": "https://normarchitects.com",
@@ -1887,7 +2061,7 @@
     ]
   },
   {
-    "id": "056",
+    "id": "060",
     "slug": "works-studio",
     "title": "Works Studio",
     "url": "https://works.studio",
@@ -1922,7 +2096,7 @@
     ]
   },
   {
-    "id": "057",
+    "id": "061",
     "slug": "kkaa-co-jp",
     "title": "Kkaa Co Jp",
     "url": "https://kkaa.co.jp",
@@ -1953,12 +2127,12 @@
     "editorial": false,
     "similar": [
       "031",
-      "055",
-      "060"
+      "059",
+      "046"
     ]
   },
   {
-    "id": "058",
+    "id": "062",
     "slug": "nbstudio-co-uk",
     "title": "Nbstudio Co Uk",
     "url": "https://nbstudio.co.uk",
@@ -1989,11 +2163,12 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nbstudio-co-uk/full.768.webp?v=1777899229",
     "editorial": false,
     "similar": [
-      "047"
+      "146",
+      "051"
     ]
   },
   {
-    "id": "059",
+    "id": "063",
     "slug": "houseofhoney-com",
     "title": "House of Honey | Interior Design Studio",
     "url": "https://houseofhoney.com/",
@@ -2024,153 +2199,6 @@
     "editorial": false,
     "similar": [
       "088"
-    ]
-  },
-  {
-    "id": "060",
-    "slug": "knoll-com",
-    "title": "Knoll",
-    "url": "https://knoll.com",
-    "cats": [
-      "architecture",
-      "ecommerce"
-    ],
-    "mode": "light",
-    "styles": [
-      "minimalism",
-      "swiss",
-      "editorial"
-    ],
-    "vibes": [
-      "calm",
-      "luxe",
-      "soft"
-    ],
-    "structure": "split-studio",
-    "northstar": "Warm, muted earth tones, clean sans-serifs, and generous, airy negative space create a refined, contemplative feel.",
-    "palette": [
-      "#f4572f",
-      "#5c2c18",
-      "#f8a793",
-      "#9f8578"
-    ],
-    "h": 478,
-    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/knoll-com/full.1440.webp?v=1777900492",
-    "editorial": false,
-    "similar": [
-      "040",
-      "063"
-    ]
-  },
-  {
-    "id": "061",
-    "slug": "louispoulsen-com",
-    "title": "Louispoulsen",
-    "url": "https://louispoulsen.com",
-    "cats": [
-      "architecture",
-      "ecommerce"
-    ],
-    "mode": "dark",
-    "styles": [
-      "minimalism",
-      "editorial",
-      "swiss",
-      "dark-mode"
-    ],
-    "vibes": [
-      "calm",
-      "soft",
-      "luxe"
-    ],
-    "structure": "marquee-hero",
-    "northstar": "Warm, golden liquid light washes over clean, spacious layouts, a refined, understated elegance.",
-    "palette": [
-      "#d49434",
-      "#683e14",
-      "#d4a963",
-      "#b08052"
-    ],
-    "h": 2521,
-    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/louispoulsen-com/full.1440.webp?v=1779110327",
-    "editorial": false,
-    "similar": [
-      "062"
-    ]
-  },
-  {
-    "id": "062",
-    "slug": "flos-com",
-    "title": "Flos",
-    "url": "https://flos.com",
-    "cats": [
-      "architecture",
-      "ecommerce"
-    ],
-    "mode": "dark",
-    "styles": [
-      "minimalism",
-      "editorial",
-      "monochrome",
-      "dark-mode"
-    ],
-    "vibes": [
-      "luxe",
-      "cold",
-      "serious"
-    ],
-    "structure": "marquee-hero",
-    "northstar": "Deep charcoal expanse, crisp sans-serif geometry, cool, reflective, and subtly luxurious.",
-    "palette": [
-      "#af7f4f",
-      "#2c2014",
-      "#d5bca3",
-      "#90806c"
-    ],
-    "h": 2701,
-    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flos-com/full.1440.webp?v=1779109814",
-    "editorial": false,
-    "similar": [
-      "061"
-    ]
-  },
-  {
-    "id": "063",
-    "slug": "hay-com",
-    "title": "HAY.com - latest products, designer news and retailer info",
-    "url": "https://www.hay.com",
-    "cats": [
-      "architecture",
-      "ecommerce"
-    ],
-    "mode": "light",
-    "styles": [
-      "minimalism",
-      "editorial",
-      "swiss"
-    ],
-    "vibes": [
-      "calm",
-      "soft",
-      "warm"
-    ],
-    "structure": "split-studio",
-    "northstar": "Warm sand and soft shadows, clean san-serifs, a quiet, modern Mediterranean stillness.",
-    "palette": [
-      "#9c564a",
-      "#f4c474",
-      "#22473f",
-      "#5c9ca1"
-    ],
-    "h": 985,
-    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hay-com/full.1440.webp?v=1780406671",
-    "editorial": false,
-    "similar": [
-      "031",
-      "060",
-      "040",
-      "030",
-      "019"
     ]
   },
   {
@@ -2302,7 +2330,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/menkind-co/full.1440.webp?v=1789050175",
     "editorial": false,
     "similar": [
-      "064"
+      "064",
+      "172"
     ]
   },
   {
@@ -2334,6 +2363,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bevel-health/full.1440.webp?v=1789044258",
     "editorial": false,
     "similar": [
+      "173",
+      "175",
       "064"
     ]
   },
@@ -2405,7 +2436,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/peloton-com/full.1440.webp?v=1777901370",
     "editorial": false,
     "similar": [
-      "047"
+      "051",
+      "137"
     ]
   },
   {
@@ -2502,7 +2534,9 @@
     "h": 1799,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ssense-com/full.1440.webp?v=1779110977",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "129"
+    ]
   },
   {
     "id": "074",
@@ -2535,7 +2569,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/maisonmargiela-com/full.1440.webp?v=1779110353",
     "editorial": false,
     "similar": [
-      "047",
+      "051",
       "076",
       "116",
       "086"
@@ -2608,7 +2642,7 @@
     "editorial": false,
     "similar": [
       "074",
-      "047"
+      "051"
     ]
   },
   {
@@ -2645,7 +2679,9 @@
     "h": 325,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chloe-com/full.1440.webp?v=1778750148",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "157"
+    ]
   },
   {
     "id": "078",
@@ -2711,7 +2747,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cuyana-com/full.1440.webp?v=1777900232",
     "editorial": false,
     "similar": [
-      "041"
+      "041",
+      "183"
     ]
   },
   {
@@ -2774,7 +2811,9 @@
     "h": 3024,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/moma-org/full.1440.webp?v=1779110439",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "168"
+    ]
   },
   {
     "id": "082",
@@ -2809,7 +2848,7 @@
     "editorial": false,
     "similar": [
       "086",
-      "047",
+      "051",
       "083"
     ]
   },
@@ -2912,7 +2951,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/newmuseum-org/full.1440.webp?v=1779110541",
     "editorial": false,
     "similar": [
-      "043"
+      "047"
     ]
   },
   {
@@ -2945,6 +2984,7 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pacegallery-com/full.1440.webp?v=1777903025",
     "editorial": false,
     "similar": [
+      "193",
       "074"
     ]
   },
@@ -3076,7 +3116,7 @@
     "similar": [
       "019",
       "031",
-      "055",
+      "059",
       "030"
     ]
   },
@@ -3111,7 +3151,9 @@
     "h": 325,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/xlrecordings-com/full.1440.webp?v=1777900036",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "207"
+    ]
   },
   {
     "id": "092",
@@ -3145,7 +3187,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thirdmanrecords-com/full.1440.webp?v=1779111226",
     "editorial": false,
     "similar": [
-      "018"
+      "018",
+      "165"
     ]
   },
   {
@@ -3280,7 +3323,7 @@
     "editorial": false,
     "similar": [
       "117",
-      "049"
+      "053"
     ]
   },
   {
@@ -3680,7 +3723,9 @@
     "h": 2877,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ethereum-org/full.1440.webp?v=1777904084",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "129"
+    ]
   },
   {
     "id": "109",
@@ -3712,7 +3757,9 @@
     "h": 1579,
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/uniswap-org/full.1440.webp?v=1777904104",
     "editorial": false,
-    "similar": []
+    "similar": [
+      "205"
+    ]
   },
   {
     "id": "110",
@@ -3782,7 +3829,7 @@
       "119",
       "029",
       "115",
-      "056"
+      "060"
     ]
   },
   {
@@ -3924,7 +3971,7 @@
       "119",
       "029",
       "111",
-      "056"
+      "060"
     ]
   },
   {
@@ -3959,7 +4006,8 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frankchimero-com/full.1440.webp?v=1777899522",
     "editorial": false,
     "similar": [
-      "047"
+      "051",
+      "146"
     ]
   },
   {
@@ -4030,7 +4078,9 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/craigmod-com/full.1440.webp?v=1777662782",
     "editorial": false,
     "similar": [
-      "084"
+      "157",
+      "084",
+      "131"
     ]
   },
   {
@@ -4065,7 +4115,7 @@
     "editorial": false,
     "similar": [
       "029",
-      "056",
+      "060",
       "111",
       "115"
     ]
@@ -4100,8 +4150,9 @@
     "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ozgur-design/full.1440.webp?v=1780049801",
     "editorial": false,
     "similar": [
+      "150",
       "117",
-      "051"
+      "055"
     ]
   },
   {
@@ -4138,5 +4189,3331 @@
     "similar": [
       "117"
     ]
+  },
+  {
+    "id": "122",
+    "slug": "algolia-com",
+    "title": "Algolia",
+    "url": "https://algolia.com",
+    "cats": [
+      "saas"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "monochrome",
+      "futurist",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "serious"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Deep indigo expanse, clean sans-serif precision, a cool, focused digital architecture.",
+    "palette": [
+      "#205df9",
+      "#040434",
+      "#8eabfb",
+      "#99694d"
+    ],
+    "h": 2826,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/algolia-com/full.1440.webp?v=1778749308",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "123",
+    "slug": "blackforestlabs-ai",
+    "title": "Blackforestlabs",
+    "url": "https://blackforestlabs.ai",
+    "cats": [
+      "saas"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "futurist",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "calm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep, cool ocean depths - clean sans-serif type floating on a dark, luminous, digital canvas.",
+    "palette": [
+      "#0e778f",
+      "#0a5c79",
+      "#86def3",
+      "#59a3ae"
+    ],
+    "h": 3140,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/blackforestlabs-ai/full.1440.webp?v=1779109289",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "124",
+    "slug": "bolt-new",
+    "title": "Bolt New",
+    "url": "https://bolt.new",
+    "cats": [
+      "saas"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "cold"
+    ],
+    "structure": "specimen",
+    "northstar": "Deep indigo expanse, crisp sans-serif clarity, and subtle gradients evoke focused digital space.",
+    "palette": [
+      "#148cfc",
+      "#14448c",
+      "#7fbcf6",
+      "#9c765c"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bolt-new/full.1440.webp?v=1777662440",
+    "editorial": false,
+    "similar": [
+      "013"
+    ]
+  },
+  {
+    "id": "125",
+    "slug": "basecamp-com",
+    "title": "Basecamp",
+    "url": "https://basecamp.com",
+    "cats": [
+      "saas"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "serious"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Warm coral gradients and playful, slightly quirky sans-serifs float in open, airy negative space.",
+    "palette": [
+      "#1273eb",
+      "#128424",
+      "#fbdcb8",
+      "#b08f54"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/basecamp-com/full.1440.webp?v=1777916866",
+    "editorial": false,
+    "similar": [
+      "206"
+    ]
+  },
+  {
+    "id": "126",
+    "slug": "captions-ai",
+    "title": "Captions",
+    "url": "https://captions.ai",
+    "cats": [
+      "saas"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "glassmorphism"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "soft"
+    ],
+    "structure": "split-studio",
+    "northstar": "Glassy, pastel gradients meet clean, geometric sans-serifs in a spacious, airy digital realm.",
+    "palette": [
+      "#54d3f4",
+      "#2a688c",
+      "#93f8fa",
+      "#698a8f"
+    ],
+    "h": 1450,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/captions-ai/full.1440.webp?v=1777898851",
+    "editorial": false,
+    "similar": [
+      "031"
+    ]
+  },
+  {
+    "id": "127",
+    "slug": "arweave-org",
+    "title": "Arweave",
+    "url": "https://arweave.org",
+    "cats": [
+      "saas",
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "technical",
+      "calm",
+      "cold"
+    ],
+    "structure": "specimen",
+    "northstar": "Cool, clinical white space, stark sans-serifs, and a muted, digital-sunrise glow.",
+    "palette": [
+      "#fc6404",
+      "#833301",
+      "#fcaa72",
+      "#777777"
+    ],
+    "h": 338,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arweave-org/full.1440.webp?v=1777904147",
+    "editorial": false,
+    "similar": [
+      "182"
+    ]
+  },
+  {
+    "id": "128",
+    "slug": "astro-build",
+    "title": "Astro Build",
+    "url": "https://astro.build",
+    "cats": [
+      "saas"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "monochrome",
+      "futurist",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "calm"
+    ],
+    "structure": "specimen",
+    "northstar": "Deep indigo expanse, crisp sans-serif geometry, and a subtly glowing, technical quiet.",
+    "palette": [
+      "#551ca5",
+      "#1c1469",
+      "#8968bf",
+      "#5a5582"
+    ],
+    "h": 3193,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/astro-build/full.1440.webp?v=1780402812",
+    "editorial": false,
+    "similar": [
+      "124",
+      "013"
+    ]
+  },
+  {
+    "id": "129",
+    "slug": "atlassian-design",
+    "title": "Atlassian",
+    "url": "https://atlassian.design",
+    "cats": [
+      "saas"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "soft"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Soft, cool technicality - minimalist space with gentle gradients and clean sans-serifs.",
+    "palette": [
+      "#1c6cdc",
+      "#7c44a0",
+      "#cc7cf4",
+      "#9f9874"
+    ],
+    "h": 3387,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/atlassian-design/full.1440.webp?v=1777901733",
+    "editorial": false,
+    "similar": [
+      "168"
+    ]
+  },
+  {
+    "id": "130",
+    "slug": "stinkstudios-com",
+    "title": "Stinkstudios",
+    "url": "https://stinkstudios.com",
+    "cats": [
+      "creative"
+    ],
+    "mode": "dark",
+    "styles": [
+      "playful",
+      "maximalism",
+      "editorial",
+      "dark-mode"
+    ],
+    "vibes": [
+      "loud",
+      "playful",
+      "raw"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Bold, gestural brushstrokes on a vibrant, textured canvas of playful, raw energy.",
+    "palette": [
+      "#d2961e",
+      "#1f3469",
+      "#f1c4ac",
+      "#b6789f"
+    ],
+    "h": 2020,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stinkstudios-com/full.1440.webp?v=1777899028",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "131",
+    "slug": "basicagency-com",
+    "title": "Basicagency",
+    "url": "https://basicagency.com",
+    "cats": [
+      "creative",
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "photographic",
+    "northstar": "Soft, muted earth tones whisper across a spacious layout, anchored by a relaxed, humanist sans-serif.",
+    "palette": [
+      "#ac5c36",
+      "#783418",
+      "#dfb09a",
+      "#916857"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/basicagency-com/full.1440.webp?v=1779109211",
+    "editorial": false,
+    "similar": [
+      "189"
+    ]
+  },
+  {
+    "id": "132",
+    "slug": "14islands-com",
+    "title": "14islands | Creative design & technology agency",
+    "url": "https://14islands.com",
+    "cats": [
+      "creative"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "brutalism"
+    ],
+    "vibes": [
+      "serious",
+      "cold",
+      "technical"
+    ],
+    "structure": "split-studio",
+    "northstar": "Crisp, stark geometry - cold gray type floats on expansive, echoing white.",
+    "palette": [
+      "#c59461",
+      "#e4b782",
+      "#452c1d",
+      "#87674e"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/14islands-com/full.1440.webp?v=1780490862",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "133",
+    "slug": "kvs-services",
+    "title": "KVS Studio - Product Design & Creative Development",
+    "url": "https://kvs.services/",
+    "cats": [
+      "creative",
+      "architecture"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "monochrome"
+    ],
+    "vibes": [
+      "cold",
+      "serious",
+      "technical"
+    ],
+    "structure": "specimen",
+    "northstar": "Monochrome, stark digital expanse - geometric forms carved from cool, echoing space.",
+    "palette": [
+      "#eab412",
+      "#f5d983",
+      "#7b5e09",
+      "#6c746e"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kvs-services/full.1440.webp?v=1779977540",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "134",
+    "slug": "lessestudio-com",
+    "title": "Lesse Studio - Design & Technology",
+    "url": "https://lessestudio.com/",
+    "cats": [
+      "creative",
+      "architecture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "serious",
+      "cold",
+      "technical"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep charcoal expanse, crisp geometric sans-serif, cool, precise digital architecture.",
+    "palette": [
+      "#817f7d",
+      "#bdbcbb",
+      "#434241",
+      "#84847c"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lessestudio-com/full.1440.webp?v=1779977677",
+    "editorial": false,
+    "similar": [
+      "207"
+    ]
+  },
+  {
+    "id": "135",
+    "slug": "bynikistudio-com",
+    "title": "NIKI Studio",
+    "url": "https://bynikistudio.com/",
+    "cats": [
+      "creative"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "serious",
+      "cold",
+      "technical"
+    ],
+    "structure": "split-studio",
+    "northstar": "Deep charcoal expanse, precise geometric type, cool digital stillness.",
+    "palette": [
+      "#ba7924",
+      "#e9c28f",
+      "#54240c",
+      "#7c7f80"
+    ],
+    "h": 2701,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bynikistudio-com/full.1440.webp?v=1779917526",
+    "editorial": false,
+    "similar": [
+      "137",
+      "116"
+    ]
+  },
+  {
+    "id": "136",
+    "slug": "karocrafts-com",
+    "title": "KARO | NYC Artist & Designer",
+    "url": "https://karocrafts.com/",
+    "cats": [
+      "creative"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "brutalism"
+    ],
+    "vibes": [
+      "serious",
+      "raw",
+      "cold"
+    ],
+    "structure": "split-studio",
+    "northstar": "Brutal monochrome geometry, stark sans-serifs, vast negative space evokes a cool, industrial stillness.",
+    "palette": [
+      "#bc744c",
+      "#e7bcb0",
+      "#3c548a",
+      "#944c4c"
+    ],
+    "h": 2753,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/karocrafts-com/full.1440.webp?v=1779977297",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "137",
+    "slug": "portalone-studio",
+    "title": "Brand, UX, and Web Design Experts | Portal One",
+    "url": "https://portalone.studio/",
+    "cats": [
+      "creative"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "brutalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "cold",
+      "serious",
+      "technical"
+    ],
+    "structure": "split-studio",
+    "northstar": "Deep charcoal expanse, crisp geometric sans-serif, vast digital stillness.",
+    "palette": [
+      "#7f7f7f",
+      "#bcbcbc",
+      "#424242",
+      "#7c7c7c"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/portalone-studio/full.1440.webp?v=1780050046",
+    "editorial": false,
+    "similar": [
+      "116"
+    ]
+  },
+  {
+    "id": "138",
+    "slug": "alternativeaesthetics-co-uk",
+    "title": "Alternative Aesthetics Illustration",
+    "url": "https://alternativeaesthetics.co.uk/",
+    "cats": [
+      "creative"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "monochrome",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "loud",
+      "raw"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Bold, hand-drawn black ink chaos on crisp white, a playful, energetic explosion.",
+    "palette": [
+      "#7f7f7f",
+      "#bcbcbc",
+      "#424242",
+      "#7c7c7c"
+    ],
+    "h": 1281,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alternativeaesthetics-co-uk/full.1440.webp?v=1779916988",
+    "editorial": false,
+    "similar": [
+      "024",
+      "103"
+    ]
+  },
+  {
+    "id": "139",
+    "slug": "dversostudio-io",
+    "title": "dverso studio - Web Design & Development",
+    "url": "https://dversostudio.io/",
+    "cats": [
+      "creative",
+      "architecture"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "monochrome"
+    ],
+    "vibes": [
+      "cold",
+      "serious",
+      "technical"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Cool, geometric grid - muted beige, stark black, precise sans-serif - a digital atelier.",
+    "palette": [
+      "#da5e30",
+      "#fcf4e3",
+      "#8e2a12",
+      "#a8875e"
+    ],
+    "h": 361,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dversostudio-io/full.1440.webp?v=1779917969",
+    "editorial": false,
+    "similar": [
+      "029",
+      "060",
+      "056"
+    ]
+  },
+  {
+    "id": "140",
+    "slug": "campaignmonitor-com",
+    "title": "Campaign Monitor: Email Marketing Platform & Services",
+    "url": "https://campaignmonitor.com/",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Cool, geometric blues and muted purples; crisp, clean sans-serif; spacious, purposeful layout.",
+    "palette": [
+      "#7c5be9",
+      "#9c7cfc",
+      "#270f74",
+      "#a59f52"
+    ],
+    "h": 2504,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/campaignmonitor-com/full.1440.webp?v=1779917555",
+    "editorial": true,
+    "similar": [
+      "151"
+    ]
+  },
+  {
+    "id": "141",
+    "slug": "deepagency-com",
+    "title": "AI Modelling Agency | Deep Agency",
+    "url": "https://deepagency.com/",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "specimen",
+    "northstar": "Cool, clinical blues and warm ochres, crisp sans-serif lines in spacious, airy composition.",
+    "palette": [
+      "#fb6b26",
+      "#eeae92",
+      "#a83f15",
+      "#957063"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deepagency-com/full.1440.webp?v=1779917823",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "142",
+    "slug": "feedly-com",
+    "title": "Feedly",
+    "url": "https://feedly.com",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "monochrome"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "component-playground",
+    "northstar": "Cool, spacious digital architecture - crisp sans-serif geometry on a muted, tranquil teal and gray field.",
+    "palette": [
+      "#35b555",
+      "#041424",
+      "#f2f7fc",
+      "#569e67"
+    ],
+    "h": 522,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/feedly-com/full.1440.webp?v=1779109774",
+    "editorial": false,
+    "similar": [
+      "004"
+    ]
+  },
+  {
+    "id": "143",
+    "slug": "tracebit-com",
+    "title": "Tracebit",
+    "url": "https://tracebit.com",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss"
+    ],
+    "vibes": [
+      "serious",
+      "technical"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Clinical Swiss precision, burnt orange accents on a pale limestone void",
+    "palette": [
+      "#e14b1e",
+      "#f7cfc3",
+      "#75270f",
+      "#807574"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tracebit-com/full.1440.webp?v=1789044039",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "144",
+    "slug": "anytype-io",
+    "title": "Anytype",
+    "url": "https://anytype.io",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "monochrome"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "soft"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Soft, warm paper textures cradle crisp, geometric type in a subtly glowing, muted palette.",
+    "palette": [
+      "#f0a80e",
+      "#7d5707",
+      "#fbe7bc",
+      "#b0888c"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/anytype-io/full.1440.webp?v=1777901433",
+    "editorial": false,
+    "similar": [
+      "007"
+    ]
+  },
+  {
+    "id": "145",
+    "slug": "brooklynmuseum-org",
+    "title": "Brooklynmuseum",
+    "url": "https://brooklynmuseum.org",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial"
+    ],
+    "vibes": [
+      "soft",
+      "calm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep indigo depths, elegant sans-serifs, expansive negative space breathes thoughtful calm.",
+    "palette": [
+      "#046cfc",
+      "#58202b",
+      "#fc9c5c",
+      "#a05966"
+    ],
+    "h": 2314,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brooklynmuseum-org/full.1440.webp?v=1779109353",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "146",
+    "slug": "ciid-dk",
+    "title": "Ciid Dk",
+    "url": "https://ciid.dk",
+    "cats": [
+      "services"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "warm"
+    ],
+    "structure": "split-studio",
+    "northstar": "Warm ochre and muted steel, precise sans-serifs in spacious, airy compositions.",
+    "palette": [
+      "#a05120",
+      "#63200c",
+      "#e2bcc2",
+      "#988a79"
+    ],
+    "h": 3115,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ciid-dk/full.1440.webp?v=1777901701",
+    "editorial": false,
+    "similar": [
+      "116"
+    ]
+  },
+  {
+    "id": "147",
+    "slug": "convertkit-com",
+    "title": "Convertkit",
+    "url": "https://convertkit.com",
+    "cats": [
+      "services",
+      "personal"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Cool, spacious, geometric - crisp sans-serifs on a calming, muted blue-grey expanse.",
+    "palette": [
+      "#43adf2",
+      "#1c6494",
+      "#8cd2fc",
+      "#ac6c54"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/convertkit-com/full.1440.webp?v=1779109508",
+    "editorial": false,
+    "similar": [
+      "008"
+    ]
+  },
+  {
+    "id": "148",
+    "slug": "coursera-org",
+    "title": "Coursera",
+    "url": "https://coursera.org",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "serious"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Cool, spacious digital study: crisp sans-serif meets deep blues and subtle, warm accents.",
+    "palette": [
+      "#0454d4",
+      "#045cd4",
+      "#e4ebfb",
+      "#a7505a"
+    ],
+    "h": 1945,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/coursera-org/full.1440.webp?v=1779109551",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "149",
+    "slug": "daisyui-com",
+    "title": "Daisyui",
+    "url": "https://daisyui.com",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "serious"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Cool, crisp digital architecture - stark white canvas, precise sans-serif geometry, subtle blue accents.",
+    "palette": [
+      "#fabc20",
+      "#04d494",
+      "#fc667f",
+      "#7f7f81"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/daisyui-com/full.768.webp?v=1777903953",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "150",
+    "slug": "drxlr-com",
+    "title": "Drexler | Web Design & Development, Ecommerce, Email Marketing",
+    "url": "https://drxlr.com/",
+    "cats": [
+      "services"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "brutalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "cold",
+      "serious",
+      "technical"
+    ],
+    "structure": "specimen",
+    "northstar": "Icy, stark black-and-white geometry; precise, cold sans-serifs in vast, echoing space.",
+    "palette": [
+      "#f20c0c",
+      "#fcc4c4",
+      "#7e0606",
+      "#8a6c6c"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/drxlr-com/full.1440.webp?v=1779917977",
+    "editorial": false,
+    "similar": [
+      "015",
+      "117"
+    ]
+  },
+  {
+    "id": "151",
+    "slug": "brevo-com",
+    "title": "Brevo: Email & SMS Marketing, CRM & Automation Platform",
+    "url": "https://brevo.com/",
+    "cats": [
+      "services"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "technical",
+      "calm",
+      "serious"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Cool, spacious digital architecture: clean sans-serif, muted teal and warm graphite hues.",
+    "palette": [
+      "#dc9140",
+      "#c4fca4",
+      "#8a4e1c",
+      "#7b5eac"
+    ],
+    "h": 2293,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brevo-com/full.1440.webp?v=1779917426",
+    "editorial": false,
+    "similar": [
+      "140"
+    ]
+  },
+  {
+    "id": "152",
+    "slug": "burb-co",
+    "title": "Burb | Community Growth Tools for Creators",
+    "url": "https://burb.co/",
+    "cats": [
+      "services",
+      "personal"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Deep charcoal expanse - crisp, geometric sans serif, subtle gradient depth.",
+    "palette": [
+      "#5f6bdc",
+      "#f1b28b",
+      "#650e0c",
+      "#9a7155"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/burb-co/full.1440.webp?v=1779917494",
+    "editorial": false,
+    "similar": [
+      "165",
+      "018"
+    ]
+  },
+  {
+    "id": "153",
+    "slug": "apple-com",
+    "title": "Apple",
+    "url": "https://apple.com",
+    "cats": [
+      "ecommerce"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "cold"
+    ],
+    "structure": "split-studio",
+    "northstar": "Cool, spacious, minimalist; crisp sans serif geometry on a serene, light-filled expanse.",
+    "palette": [
+      "#0474e4",
+      "#205c7c",
+      "#94c6e2",
+      "#6ca4ac"
+    ],
+    "h": 2141,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/apple-com/full.1440.webp?v=1779109111",
+    "editorial": false,
+    "similar": [
+      "031"
+    ]
+  },
+  {
+    "id": "154",
+    "slug": "artek-fi",
+    "title": "Artek Fi",
+    "url": "https://artek.fi",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Warm, sculpted wood and soft creams float in a quiet, thoughtfully curated space.",
+    "palette": [
+      "#b84450",
+      "#601a09",
+      "#db9ea4",
+      "#866b4b"
+    ],
+    "h": 2575,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/artek-fi/full.1440.webp?v=1777900463",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "155",
+    "slug": "arcteryx-com",
+    "title": "Arcteryx",
+    "url": "https://arcteryx.com",
+    "cats": [
+      "ecommerce",
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "technical",
+      "raw",
+      "cold"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Cool, technical expanse - crisp sans serif geometry on muted, atmospheric blues and grays.",
+    "palette": [
+      "#34648c",
+      "#042c64",
+      "#9ebfdb",
+      "#547b93"
+    ],
+    "h": 1706,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arcteryx-com/full.1440.webp?v=1777900585",
+    "editorial": false,
+    "similar": [
+      "129",
+      "168"
+    ]
+  },
+  {
+    "id": "156",
+    "slug": "bose-com",
+    "title": "Bose",
+    "url": "https://bose.com",
+    "cats": [
+      "ecommerce"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "cold"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep violet nebula glow, clean sans-serif geometry, spacious digital quietude.",
+    "palette": [
+      "#9e42bc",
+      "#542364",
+      "#cc9cdc",
+      "#747474"
+    ],
+    "h": 2895,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bose-com/full.1440.webp?v=1779109326",
+    "editorial": false,
+    "similar": [
+      "159",
+      "207"
+    ]
+  },
+  {
+    "id": "157",
+    "slug": "audocph-com",
+    "title": "Audocph",
+    "url": "https://audocph.com",
+    "cats": [
+      "ecommerce",
+      "architecture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "luxe"
+    ],
+    "structure": "photographic",
+    "northstar": "Soft, muted ochre and taupe - clean, spacious layout with elegant, subtly geometric sans-serif.",
+    "palette": [
+      "#958569",
+      "#4d4537",
+      "#c7bfb1",
+      "#6b635b"
+    ],
+    "h": 1594,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/audocph-com/full.1440.webp?v=1778671605",
+    "editorial": false,
+    "similar": [
+      "169"
+    ]
+  },
+  {
+    "id": "158",
+    "slug": "kefdirect-com",
+    "title": "Kefdirect",
+    "url": "https://kefdirect.com",
+    "cats": [
+      "ecommerce"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "technical",
+      "calm",
+      "luxe"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Deep burgundy shadows embrace clean, geometric forms with understated, sophisticated sans-serif type.",
+    "palette": [
+      "#b38146",
+      "#5a2f13",
+      "#f8d58b",
+      "#917974"
+    ],
+    "h": 2089,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kefdirect-com/full.1440.webp?v=1777900433",
+    "editorial": false,
+    "similar": [
+      "119",
+      "029",
+      "006"
+    ]
+  },
+  {
+    "id": "159",
+    "slug": "bowerswilkins-com",
+    "title": "Bowerswilkins",
+    "url": "https://bowerswilkins.com",
+    "cats": [
+      "ecommerce"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "luxe",
+      "calm",
+      "soft"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Warm, muted ochre backdrop cradles elegant sans serif, exuding refined stillness.",
+    "palette": [
+      "#b47e5b",
+      "#612c1a",
+      "#dcb29c",
+      "#ac7c5c"
+    ],
+    "h": 2761,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bowerswilkins-com/full.1440.webp?v=1779109326",
+    "editorial": false,
+    "similar": [
+      "156",
+      "207",
+      "043"
+    ]
+  },
+  {
+    "id": "160",
+    "slug": "bird-co",
+    "title": "Bird",
+    "url": "https://bird.co",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "playful",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "warm",
+      "soft"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Warm, muted earth tones and playful sans-serifs create a breezy, approachable, open feeling.",
+    "palette": [
+      "#b43817",
+      "#325412",
+      "#e4bca5",
+      "#a8785b"
+    ],
+    "h": 2149,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bird-co/full.1440.webp?v=1779109237",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "161",
+    "slug": "hopper-com",
+    "title": "Hopper",
+    "url": "https://hopper.com",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "monochrome"
+    ],
+    "vibes": [
+      "calm",
+      "cold",
+      "technical"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Cool, expansive digital space - precise sans-serifs on a muted, gradient blue canvas.",
+    "palette": [
+      "#4c9cd4",
+      "#223152",
+      "#b9d4ee",
+      "#6793a7"
+    ],
+    "h": 1102,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hopper-com/full.1440.webp?v=1779110058",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "162",
+    "slug": "eurostar-com",
+    "title": "Eurostar",
+    "url": "https://eurostar.com",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "split-studio",
+    "northstar": "Deep plum geometry and clean, assertive sans-serifs - a focused, modern travel experience.",
+    "palette": [
+      "#efb021",
+      "#7c0454",
+      "#f48cd1",
+      "#ac7a6c"
+    ],
+    "h": 2720,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eurostar-com/full.1440.webp?v=1779109749",
+    "editorial": false,
+    "similar": [
+      "153",
+      "107"
+    ]
+  },
+  {
+    "id": "163",
+    "slug": "eater-com",
+    "title": "Eater",
+    "url": "https://eater.com",
+    "cats": [
+      "hospitality",
+      "food"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "serious"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Crisp, warm ochre and deep umber, clean sans-serif, spacious, thoughtfully curated.",
+    "palette": [
+      "#e50909",
+      "#7c1b04",
+      "#f4c46c",
+      "#956868"
+    ],
+    "h": 2351,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eater-com/full.1440.webp?v=1779109714",
+    "editorial": false,
+    "similar": [
+      "168"
+    ]
+  },
+  {
+    "id": "164",
+    "slug": "wagamama-com",
+    "title": "Wagamama",
+    "url": "https://wagamama.com",
+    "cats": [
+      "hospitality",
+      "food"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "dark-mode"
+    ],
+    "vibes": [
+      "warm",
+      "soft"
+    ],
+    "structure": "specimen",
+    "northstar": "Earthy ochre and deep forest green, clean sans-serif, spacious and inviting.",
+    "palette": [
+      "#e12e26",
+      "#6a570c",
+      "#ec4c4c",
+      "#636f98"
+    ],
+    "h": 1187,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wagamama-com/full.1440.webp?v=1779111449",
+    "editorial": false,
+    "similar": [
+      "053",
+      "117"
+    ]
+  },
+  {
+    "id": "165",
+    "slug": "sierra-ai",
+    "title": "Better customer experiences | Sierra",
+    "url": "https://sierra.ai",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Warm, muted earth tones rest on spacious, clean layouts with a gentle, humanist typeface.",
+    "palette": [
+      "#92663c",
+      "#ccab93",
+      "#6c3514",
+      "#997755"
+    ],
+    "h": 3089,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sierra-ai/full.1440.webp?v=1780313962",
+    "editorial": false,
+    "similar": [
+      "152"
+    ]
+  },
+  {
+    "id": "166",
+    "slug": "lyft-com",
+    "title": "Lyft",
+    "url": "https://lyft.com",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Warm, muted photography overlaid with clean, spacious typography; a feeling of friendly ease.",
+    "palette": [
+      "#b67f24",
+      "#65361a",
+      "#eccc9c",
+      "#9d8655"
+    ],
+    "h": 2020,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lyft-com/full.1440.webp?v=1779110317",
+    "editorial": false,
+    "similar": [
+      "037"
+    ]
+  },
+  {
+    "id": "167",
+    "slug": "firsty-app",
+    "title": "Firsty",
+    "url": "https://www.firsty.app",
+    "cats": [
+      "hospitality"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss"
+    ],
+    "vibes": [
+      "loud",
+      "playful"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Electric lime punch, heavy Swiss blocks floating on stark optic white",
+    "palette": [
+      "#d9f837",
+      "#e0f478",
+      "#6c8004",
+      "#9da353"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/firsty-app/full.1440.webp?v=1789049396",
+    "editorial": false,
+    "similar": [
+      "064"
+    ]
+  },
+  {
+    "id": "168",
+    "slug": "archdaily-com",
+    "title": "Archdaily",
+    "url": "https://archdaily.com",
+    "cats": [
+      "architecture",
+      "culture"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "technical"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Deep indigo geometry, crisp sans-serif clarity, spacious and quietly authoritative.",
+    "palette": [
+      "#385ea7",
+      "#04348c",
+      "#aabbdc",
+      "#aca95b"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/archdaily-com/full.png?v=1778749615",
+    "editorial": false,
+    "similar": [
+      "129"
+    ]
+  },
+  {
+    "id": "169",
+    "slug": "archigreendesigns-com",
+    "title": "Archi Green Design Studio - Architectural Design Studio",
+    "url": "https://archigreendesigns.com/",
+    "cats": [
+      "architecture",
+      "health"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "luxe",
+      "warm"
+    ],
+    "structure": "photographic",
+    "northstar": "Warm ochre and deep umber - elegant sans serif, spacious layout, tranquil architectural study.",
+    "palette": [
+      "#ab8749",
+      "#d7c3a2",
+      "#48330c",
+      "#9c8c74"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/archigreendesigns-com/full.1440.webp?v=1779917053",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "170",
+    "slug": "zudo-amsterdam",
+    "title": "Zudo",
+    "url": "https://www.zudo.amsterdam",
+    "cats": [
+      "architecture"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "warm"
+    ],
+    "structure": "map-diagram",
+    "northstar": "Playful isometric bustle, candy-coated pastels, dense hand-drawn chaos on clinical white",
+    "palette": [
+      "#ce7f41",
+      "#91dfe6",
+      "#693d1b",
+      "#649aa1"
+    ],
+    "h": 2924,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/zudo-amsterdam/full.1440.webp?v=1789049225",
+    "editorial": false,
+    "similar": [
+      "125",
+      "218",
+      "214"
+    ]
+  },
+  {
+    "id": "171",
+    "slug": "modernhealth-com",
+    "title": "Modernhealth",
+    "url": "https://modernhealth.com",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "technical"
+    ],
+    "structure": "split-studio",
+    "northstar": "Cool, spacious digital clarity - precise sans-serif geometry on muted, tranquil indigo depths.",
+    "palette": [
+      "#046cbc",
+      "#684b22",
+      "#80b3df",
+      "#9f937a"
+    ],
+    "h": 3111,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/modernhealth-com/full.1440.webp?v=1779110418",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "172",
+    "slug": "wenatal-com",
+    "title": "WeNatal",
+    "url": "https://wenatal.com",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Warm taupe editorial stillness, elegant serifs floating over soft marble light",
+    "palette": [
+      "#89593f",
+      "#b3b7f0",
+      "#150a04",
+      "#ad8161"
+    ],
+    "h": 2599,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wenatal-com/full.1440.webp?v=1789044173",
+    "editorial": false,
+    "similar": [
+      "064",
+      "067"
+    ]
+  },
+  {
+    "id": "173",
+    "slug": "alma-food",
+    "title": "Alma",
+    "url": "https://www.alma.food",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "playful"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Mossy sage minimalism, soft rounded corners floating on warm cream paper",
+    "palette": [
+      "#c3d638",
+      "#f3b34f",
+      "#146c84",
+      "#61929a"
+    ],
+    "h": 2252,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alma-food/full.1440.webp?v=1789044317",
+    "editorial": false,
+    "similar": [
+      "175",
+      "068"
+    ]
+  },
+  {
+    "id": "174",
+    "slug": "alliahealth-co",
+    "title": "Allia Health Group | Discover the new era of digital health.",
+    "url": "https://alliahealth.co/",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Soft teal gradients and open, airy sans-serif type create a serene, modern clinical feel.",
+    "palette": [
+      "#04899a",
+      "#70d9b8",
+      "#04949f",
+      "#569ca4"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alliahealth-co/full.1440.webp?v=1779916956",
+    "editorial": false,
+    "similar": [
+      "099"
+    ]
+  },
+  {
+    "id": "175",
+    "slug": "callbaba-com",
+    "title": "Baba",
+    "url": "https://www.callbaba.com",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "playful"
+    ],
+    "vibes": [
+      "warm",
+      "loud"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Saturated crimson warmth, bold rounded white type, floating soft grey bubbles",
+    "palette": [
+      "#d52c26",
+      "#e49494",
+      "#a6360c",
+      "#6c8494"
+    ],
+    "h": 2656,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/callbaba-com/full.1440.webp?v=1789050244",
+    "editorial": false,
+    "similar": [
+      "173",
+      "064",
+      "067"
+    ]
+  },
+  {
+    "id": "176",
+    "slug": "tempo-fit",
+    "title": "Tempo Fit",
+    "url": "https://tempo.fit",
+    "cats": [
+      "health"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "dark-mode"
+    ],
+    "vibes": [
+      "serious",
+      "technical",
+      "warm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep crimson expanse, bold sans-serif geometry, a focused, energetic, minimalist depth.",
+    "palette": [
+      "#c41024",
+      "#890416",
+      "#f48490",
+      "#b0646c"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tempo-fit/full.768.webp?v=1779111122",
+    "editorial": false,
+    "similar": [
+      "208"
+    ]
+  },
+  {
+    "id": "177",
+    "slug": "joindawn-com",
+    "title": "Dawn: AI for Mental Health | 24/7 support for your mind",
+    "url": "https://joindawn.com/",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "glassmorphism",
+      "playful"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "warm"
+    ],
+    "structure": "split-studio",
+    "northstar": "Golden hour serenity: soft gradients, airy sans-serif, open spatial breathing.",
+    "palette": [
+      "#fbb534",
+      "#fbd37c",
+      "#633316",
+      "#5e8899"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/joindawn-com/full.1440.webp?v=1779977240",
+    "editorial": false,
+    "similar": [
+      "031",
+      "069",
+      "171"
+    ]
+  },
+  {
+    "id": "178",
+    "slug": "hx-clinic",
+    "title": "HX | První klinika medicíny 3.0 v Česku",
+    "url": "https://hx.clinic/",
+    "cats": [
+      "health"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "soft"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep charcoal expanse, clean sans-serif, and subtle gradient warmth evoke quiet confidence.",
+    "palette": [
+      "#b25d4c",
+      "#d7aba2",
+      "#542c24",
+      "#967667"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hx-clinic/full.768.webp?v=1779976881",
+    "editorial": false,
+    "similar": [
+      "091"
+    ]
+  },
+  {
+    "id": "179",
+    "slug": "confluent-io",
+    "title": "Confluent",
+    "url": "https://confluent.io",
+    "cats": [
+      "health"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "serious"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Deep indigo expanse, crisp sans-serif, and a structured, data-driven clarity.",
+    "palette": [
+      "#0756fb",
+      "#042c86",
+      "#68bcf4",
+      "#556fa1"
+    ],
+    "h": 2359,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/confluent-io/full.1440.webp?v=1779109505",
+    "editorial": false,
+    "similar": [
+      "122"
+    ]
+  },
+  {
+    "id": "180",
+    "slug": "grillitype-com",
+    "title": "Grillitype",
+    "url": "https://grillitype.com",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "calm"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Cool, precise geometric grids; muted olive, pale peach, and stark white, a technical whisper.",
+    "palette": [
+      "#98a125",
+      "#656b18",
+      "#f7cde1",
+      "#7c7c7c"
+    ],
+    "h": 2058,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grillitype-com/full.1440.webp?v=1779109945",
+    "editorial": false,
+    "similar": [
+      "029",
+      "119"
+    ]
+  },
+  {
+    "id": "181",
+    "slug": "porsche-com",
+    "title": "Porsche",
+    "url": "https://porsche.com",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "monochrome",
+      "futurist"
+    ],
+    "vibes": [
+      "luxe",
+      "cold",
+      "serious"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Cool, brushed metal expanses, stark sans-serif precision, and deep charcoal shadows.",
+    "palette": [
+      "#822126",
+      "#541620",
+      "#e49599",
+      "#6e8aa6"
+    ],
+    "h": 2076,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/porsche-com/full.1440.webp?v=1779110752",
+    "editorial": false,
+    "similar": [
+      "003"
+    ]
+  },
+  {
+    "id": "182",
+    "slug": "stately-ai",
+    "title": "Stately",
+    "url": "https://stately.ai",
+    "cats": [
+      "health"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "swiss"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "calm"
+    ],
+    "structure": "specimen",
+    "northstar": "Deep indigo tech space: crisp sans-serif, clean lines, a quietly powerful digital depth.",
+    "palette": [
+      "#145ce8",
+      "#351f74",
+      "#f495c6",
+      "#6c54ac"
+    ],
+    "h": 3078,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stately-ai/full.1440.webp?v=1777898498",
+    "editorial": false,
+    "similar": [
+      "127"
+    ]
+  },
+  {
+    "id": "183",
+    "slug": "fjallraven-com",
+    "title": "Fjallraven",
+    "url": "https://fjallraven.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "playful"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "technical"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Soft, muted greys and blues, clean sans-serif, spacious and subtly technical.",
+    "palette": [
+      "#206bdd",
+      "#28160b",
+      "#ddb79a",
+      "#a78260"
+    ],
+    "h": 2371,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fjallraven-com/full.1440.webp?v=1777900577",
+    "editorial": false,
+    "similar": [
+      "041"
+    ]
+  },
+  {
+    "id": "184",
+    "slug": "gymshark-com",
+    "title": "Gymshark",
+    "url": "https://gymshark.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial"
+    ],
+    "vibes": [
+      "soft",
+      "warm"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Dusty rose and warm cream, clean sans-serif, spacious, subtly sculpted and athletic.",
+    "palette": [
+      "#c97f56",
+      "#841240",
+      "#e482a8",
+      "#a5675d"
+    ],
+    "h": 2866,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gymshark-com/full.1440.webp?v=1779109984",
+    "editorial": false,
+    "similar": [
+      "041",
+      "080"
+    ]
+  },
+  {
+    "id": "185",
+    "slug": "hypebeast-com",
+    "title": "Hypebeast",
+    "url": "https://hypebeast.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome"
+    ],
+    "vibes": [
+      "serious",
+      "calm",
+      "luxe"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Deep charcoal expanses, crisp sans-serifs, and a quiet, considered sense of spaciousness.",
+    "palette": [
+      "#d5566d",
+      "#6c0411",
+      "#a8cddc",
+      "#9a6c5a"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hypebeast-com/full.768.webp?v=1779110104",
+    "editorial": false,
+    "similar": [
+      "080",
+      "183"
+    ]
+  },
+  {
+    "id": "186",
+    "slug": "hypebeast-kr",
+    "title": "Hypebeast Kr",
+    "url": "https://hypebeast.kr",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism"
+    ],
+    "vibes": [
+      "serious",
+      "calm"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Cool, muted teal and cream, clean sans-serif, spacious layouts evoke understated, confident authority.",
+    "palette": [
+      "#b06a3e",
+      "#1f8565",
+      "#edd6af",
+      "#767f7e"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hypebeast-kr/full.768.webp?v=1779110103",
+    "editorial": false,
+    "similar": [
+      "080",
+      "029"
+    ]
+  },
+  {
+    "id": "187",
+    "slug": "maharishistore-com",
+    "title": "Maharishistore",
+    "url": "https://maharishistore.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "vintage"
+    ],
+    "vibes": [
+      "calm",
+      "soft",
+      "raw"
+    ],
+    "structure": "split-studio",
+    "northstar": "Dusty sepia and muted charcoal, with a subtly textured, spacious serif - quiet confidence.",
+    "palette": [
+      "#3d669e",
+      "#753833",
+      "#e0c1af",
+      "#9e6353"
+    ],
+    "h": 1518,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/maharishistore-com/full.1440.webp?v=1777900266",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "188",
+    "slug": "outdoorvoices-com",
+    "title": "Outdoorvoices",
+    "url": "https://outdoorvoices.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "photographic",
+    "northstar": "Ethereal forest stillness: muted blues and greens, clean sans-serif, expansive, airy space.",
+    "palette": [
+      "#2c54ac",
+      "#1b3369",
+      "#debeaa",
+      "#917568"
+    ],
+    "h": 1361,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/outdoorvoices-com/full.1440.webp?v=1779110633",
+    "editorial": false,
+    "similar": [
+      "131",
+      "189"
+    ]
+  },
+  {
+    "id": "189",
+    "slug": "underarmour-com",
+    "title": "Underarmour",
+    "url": "https://underarmour.com",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "monochrome",
+      "brutalism"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "serious"
+    ],
+    "structure": "photographic",
+    "northstar": "Deep charcoal geometry, crisp sans-serifs, vast negative space breathes focused, athletic power.",
+    "palette": [
+      "#449498",
+      "#5e3328",
+      "#f47c7c",
+      "#a07763"
+    ],
+    "h": 3218,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/underarmour-com/full.1440.webp?v=1777917908",
+    "editorial": false,
+    "similar": [
+      "131"
+    ]
+  },
+  {
+    "id": "190",
+    "slug": "lafamigliamysteryunfolds-gucci-com",
+    "title": "Home | Gucci La Famiglia",
+    "url": "https://lafamigliamysteryunfolds.gucci.com/",
+    "cats": [
+      "fashion"
+    ],
+    "mode": "dark",
+    "styles": [
+      "editorial",
+      "maximalism",
+      "vintage",
+      "dark-mode"
+    ],
+    "vibes": [
+      "luxe",
+      "soft",
+      "cold"
+    ],
+    "structure": "photographic",
+    "northstar": "Deep amber glow on aged stone, elegant serif whispers in a hushed, expansive space.",
+    "palette": [
+      "#a6600a",
+      "#f3ebdd",
+      "#4c1c06",
+      "#a49450"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lafamigliamysteryunfolds-gucci-com/full.1440.webp?v=1779977471",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "191",
+    "slug": "artforum-com",
+    "title": "Artforum",
+    "url": "https://artforum.com",
+    "cats": [
+      "culture"
+    ],
+    "mode": "light",
+    "styles": [
+      "editorial",
+      "minimalism",
+      "swiss"
+    ],
+    "vibes": [
+      "serious",
+      "calm",
+      "luxe"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Deep ochre and charcoal, refined sans-serifs float in spacious, gallery-like clarity.",
+    "palette": [
+      "#cd7d32",
+      "#683b1b",
+      "#f8c2d5",
+      "#7d8a92"
+    ],
+    "h": 2963,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/artforum-com/full.1440.webp?v=1777899747",
+    "editorial": false,
+    "similar": [
+      "119",
+      "029",
+      "056"
+    ]
+  },
+  {
+    "id": "192",
+    "slug": "barbican-org-uk",
+    "title": "Barbican Org Uk",
+    "url": "https://barbican.org.uk",
+    "cats": [
+      "culture",
+      "food"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "soft"
+    ],
+    "structure": "specimen",
+    "northstar": "Warm, muted earth tones, clean sans-serifs, vast open space - a sophisticated, tranquil stage.",
+    "palette": [
+      "#d44c04",
+      "#ac3c04",
+      "#be8666",
+      "#aa6f57"
+    ],
+    "h": 1675,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/barbican-org-uk/full.1440.webp?v=1780402827",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "193",
+    "slug": "beauxartsparis-fr",
+    "title": "Beauxartsparis Fr",
+    "url": "https://beauxartsparis.fr",
+    "cats": [
+      "culture",
+      "food"
+    ],
+    "mode": "dark",
+    "styles": [
+      "editorial",
+      "minimalism",
+      "monochrome",
+      "vintage",
+      "dark-mode"
+    ],
+    "vibes": [
+      "serious",
+      "calm",
+      "raw"
+    ],
+    "structure": "split-studio",
+    "northstar": "Grayscale sketchbooks open to raw, contemplative figures, adrift in quiet, spacious depths.",
+    "palette": [
+      "#5b14c4",
+      "#0544a6",
+      "#b89ce5",
+      "#84b16a"
+    ],
+    "h": 1235,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beauxartsparis-fr/full.1440.webp?v=1779109224",
+    "editorial": false,
+    "similar": [
+      "086",
+      "062"
+    ]
+  },
+  {
+    "id": "194",
+    "slug": "metmuseum-org",
+    "title": "Metmuseum",
+    "url": "https://metmuseum.org",
+    "cats": [
+      "culture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "soft"
+    ],
+    "structure": "specimen",
+    "northstar": "Warm ochre and terracotta hues, clean sans-serif, spacious depth like a hushed gallery.",
+    "palette": [
+      "#e4042c",
+      "#bc0528",
+      "#f47c94",
+      "#7f5854"
+    ],
+    "h": 1973,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/metmuseum-org/full.1440.webp?v=1777902717",
+    "editorial": false,
+    "similar": [
+      "121"
+    ]
+  },
+  {
+    "id": "195",
+    "slug": "museumofmoney-com",
+    "title": "Interactive Money Museum in Dallas | MoMoney",
+    "url": "https://museumofmoney.com/",
+    "cats": [
+      "culture"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "minimalism"
+    ],
+    "vibes": [
+      "playful",
+      "warm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Bright citrus bursts on a clean, open canvas, playful sans-serifs feel approachable.",
+    "palette": [
+      "#eeee42",
+      "#f2d9ca",
+      "#055131",
+      "#a9584b"
+    ],
+    "h": 2015,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/museumofmoney-com/full.1440.webp?v=1779978058",
+    "editorial": false,
+    "similar": [
+      "145"
+    ]
+  },
+  {
+    "id": "196",
+    "slug": "louvre-fr",
+    "title": "Louvre Fr",
+    "url": "https://louvre.fr",
+    "cats": [
+      "culture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "soft"
+    ],
+    "structure": "letter",
+    "northstar": "Quiet, cool teal and grey expanse - crisp sans-serif, spacious, subtly authoritative.",
+    "palette": [
+      "#14947c",
+      "#048373",
+      "#a1d2cc",
+      "#848484"
+    ],
+    "h": 2905,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/louvre-fr/full.1440.webp?v=1779110319",
+    "editorial": false,
+    "similar": [
+      "197",
+      "194",
+      "085"
+    ]
+  },
+  {
+    "id": "197",
+    "slug": "centrepompidou-fr",
+    "title": "Centrepompidou Fr",
+    "url": "https://centrepompidou.fr",
+    "cats": [
+      "culture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "serious",
+      "soft"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Soft ochre and muted umber tones, clean sans-serifs, spacious grid - a quietly authoritative clarity.",
+    "palette": [
+      "#ea8537",
+      "#824022",
+      "#e4b377",
+      "#797371"
+    ],
+    "h": 2060,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/centrepompidou-fr/full.1440.webp?v=1777902776",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "198",
+    "slug": "francouvertes-com",
+    "title": "Accueil - Francouvertes",
+    "url": "https://francouvertes.com/",
+    "cats": [
+      "culture"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "loud",
+      "playful"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Electric lime energy explodes with bold, playful sans-serifs on a vibrant, layered canvas.",
+    "palette": [
+      "#fbfb24",
+      "#f264fa",
+      "#6d301c",
+      "#af5252"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/francouvertes-com/full.1440.webp?v=1779918159",
+    "editorial": false,
+    "similar": [
+      "214"
+    ]
+  },
+  {
+    "id": "199",
+    "slug": "dropout-tv",
+    "title": "Dropout Tv",
+    "url": "https://dropout.tv",
+    "cats": [
+      "culture"
+    ],
+    "mode": "dark",
+    "styles": [
+      "playful",
+      "maximalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "playful",
+      "loud"
+    ],
+    "structure": "split-studio",
+    "northstar": "Bold, playful geometry with warm, saturated hues and a quirky, hand-drawn sans-serif.",
+    "palette": [
+      "#e7d136",
+      "#90142a",
+      "#ceb25b",
+      "#937267"
+    ],
+    "h": 2820,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dropout-tv/full.1440.webp?v=1779109694",
+    "editorial": false,
+    "similar": [
+      "146"
+    ]
+  },
+  {
+    "id": "200",
+    "slug": "cooking-nytimes-com",
+    "title": "Cooking Nytimes",
+    "url": "https://cooking.nytimes.com",
+    "cats": [
+      "food"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "swiss"
+    ],
+    "vibes": [
+      "calm",
+      "warm",
+      "soft"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Warm, earthy tones and clean, open grids evoke quiet culinary exploration.",
+    "palette": [
+      "#dd3921",
+      "#794120",
+      "#edc393",
+      "#b18c66"
+    ],
+    "h": 3119,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cooking-nytimes-com/full.1440.webp?v=1779109523",
+    "editorial": false,
+    "similar": [
+      "088",
+      "099"
+    ]
+  },
+  {
+    "id": "201",
+    "slug": "beardmeatsfood-co-uk",
+    "title": "Beard Meats Food",
+    "url": "https://www.beardmeatsfood.co.uk",
+    "cats": [
+      "food",
+      "personal"
+    ],
+    "mode": "dark",
+    "styles": [
+      "brutalism",
+      "monochrome",
+      "playful",
+      "dark-mode"
+    ],
+    "vibes": [
+      "loud",
+      "playful",
+      "raw"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "High-contrast brutalist roar, chunky white type on charcoal with neon lime sparks",
+    "palette": [
+      "#bad306",
+      "#ecfb7e",
+      "#667210",
+      "#747474"
+    ],
+    "h": 1481,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beardmeatsfood-co-uk/full.1440.webp?v=1789049400",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "202",
+    "slug": "drinkolipop-com",
+    "title": "OLIPOP | Healthy Prebiotic Soda",
+    "url": "https://www.drinkolipop.com",
+    "cats": [
+      "food"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "warm",
+      "soft",
+      "calm"
+    ],
+    "structure": "photographic",
+    "northstar": "Warm apricot ruffles embrace playful, rounded sans-serif, fostering joyful, generous space.",
+    "palette": [
+      "#fa3535",
+      "#fba38b",
+      "#04846c",
+      "#8f5c54"
+    ],
+    "h": 2214,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/drinkolipop-com/full.1440.webp?v=1780490925",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "203",
+    "slug": "columbia-com",
+    "title": "Columbia",
+    "url": "https://columbia.com",
+    "cats": [
+      "food"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial",
+      "playful"
+    ],
+    "vibes": [
+      "technical",
+      "warm",
+      "soft"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Earthy, playful sans-serif - soft greens and browns, spacious and functional.",
+    "palette": [
+      "#bea250",
+      "#188037",
+      "#c6b480",
+      "#99965d"
+    ],
+    "h": 1824,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/columbia-com/full.1440.webp?v=1779109534",
+    "editorial": false,
+    "similar": [
+      "064"
+    ]
+  },
+  {
+    "id": "204",
+    "slug": "blockstream-com",
+    "title": "Blockstream",
+    "url": "https://blockstream.com",
+    "cats": [
+      "finance"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "cold",
+      "serious"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Electric teal shadows pulse across stark, geometric forms, punctuated by crisp, assertive sans-serifs.",
+    "palette": [
+      "#04c3fb",
+      "#0a5973",
+      "#fcc076",
+      "#77acbc"
+    ],
+    "h": 1609,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/blockstream-com/full.1440.webp?v=1780402836",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "205",
+    "slug": "coinbase-com",
+    "title": "Coinbase",
+    "url": "https://coinbase.com",
+    "cats": [
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "monochrome",
+      "futurist"
+    ],
+    "vibes": [
+      "cold",
+      "technical",
+      "serious"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Deep indigo expanse, crisp geometric sans-serif, digital clarity and precise spatial layering.",
+    "palette": [
+      "#0949f1",
+      "#041c7f",
+      "#81a5e9",
+      "#6180ba"
+    ],
+    "h": 2665,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/coinbase-com/full.1440.webp?v=1777898998",
+    "editorial": false,
+    "similar": [
+      "109"
+    ]
+  },
+  {
+    "id": "206",
+    "slug": "rainbow-me",
+    "title": "Rainbow Me",
+    "url": "https://rainbow.me",
+    "cats": [
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "calm"
+    ],
+    "structure": "feature-stack",
+    "northstar": "Electric sky-blue expanse, playful rainbow hues, and bold, rounded typography.",
+    "palette": [
+      "#f2a119",
+      "#1d4244",
+      "#84e4fb",
+      "#905d08"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/rainbow-me/full.1440.webp?v=1779110825",
+    "editorial": false,
+    "similar": [
+      "125",
+      "205"
+    ]
+  },
+  {
+    "id": "207",
+    "slug": "audius-co",
+    "title": "Audius",
+    "url": "https://audius.co",
+    "cats": [
+      "finance"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "monochrome",
+      "dark-mode"
+    ],
+    "vibes": [
+      "serious",
+      "raw",
+      "cold"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Raw, charcoal photography with bold, assertive sans-serif type in a spacious, industrial feel.",
+    "palette": [
+      "#7f7f7f",
+      "#424242",
+      "#bcbcbc",
+      "#7c7c7c"
+    ],
+    "h": 2679,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/audius-co/full.1440.webp?v=1777918171",
+    "editorial": false,
+    "similar": [
+      "156",
+      "159"
+    ]
+  },
+  {
+    "id": "208",
+    "slug": "wagmi-com",
+    "title": "Wagmi",
+    "url": "https://wagmi.com",
+    "cats": [
+      "finance"
+    ],
+    "mode": "dark",
+    "styles": [
+      "editorial",
+      "minimalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "cold",
+      "serious",
+      "technical"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Icy, deep-sea blue depths - clean, geometric sans-serifs on expansive, subtly textured space.",
+    "palette": [
+      "#1fafdf",
+      "#04161c",
+      "#ecdbc2",
+      "#ac7c64"
+    ],
+    "h": 2102,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wagmi-com/full.1440.webp?v=1777898978",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "209",
+    "slug": "n26-com",
+    "title": "N26",
+    "url": "https://n26.com",
+    "cats": [
+      "finance"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "monochrome",
+      "glassmorphism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "cold",
+      "technical"
+    ],
+    "structure": "specimen",
+    "northstar": "Cool, spacious digital loft - crisp sans-serif type floats on a deep, calming teal expanse.",
+    "palette": [
+      "#2164a4",
+      "#0f8474",
+      "#90bde8",
+      "#8d8873"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/n26-com/full.1440.webp?v=1779110493",
+    "editorial": false,
+    "similar": [
+      "013",
+      "124",
+      "055"
+    ]
+  },
+  {
+    "id": "210",
+    "slug": "owo-app",
+    "title": "OWO - Send money on WhatsApp",
+    "url": "https://owo.app/",
+    "cats": [
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "minimalism"
+    ],
+    "vibes": [
+      "playful",
+      "warm"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Warm, playful hues dance on a soft canvas, bold sans-serifs pop with joyful energy.",
+    "palette": [
+      "#fb3404",
+      "#fbce86",
+      "#a39418",
+      "#7c5494"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/owo-app/full.1440.webp?v=1780049788",
+    "editorial": false,
+    "similar": [
+      "103"
+    ]
+  },
+  {
+    "id": "211",
+    "slug": "everswap-com",
+    "title": "EverSwap - Trade, Lend, Borrow.",
+    "url": "https://everswap.com/",
+    "cats": [
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism",
+      "editorial"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "manifesto",
+    "northstar": "Ethereal, gradient peaks cradle soft, flowing sans-serifs in a tranquil, sky-blue haze.",
+    "palette": [
+      "#497fda",
+      "#8abdf9",
+      "#345485",
+      "#8ca359"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/everswap-com/full.768.webp?v=1779918022",
+    "editorial": false,
+    "similar": [
+      "108",
+      "109"
+    ]
+  },
+  {
+    "id": "212",
+    "slug": "copilot-money",
+    "title": "Copilot Money",
+    "url": "https://copilot.money",
+    "cats": [
+      "finance"
+    ],
+    "mode": "dark",
+    "styles": [
+      "playful",
+      "minimalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Deep indigo expanse with playful, rounded typography floating on soft, glowing gradients.",
+    "palette": [
+      "#1c6bfb",
+      "#0e2d66",
+      "#6a9dfc",
+      "#7157a1"
+    ],
+    "h": 3177,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/copilot-money/full.1440.webp?v=1779109530",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "213",
+    "slug": "lemonsqueezy-com",
+    "title": "Lemonsqueezy",
+    "url": "https://lemonsqueezy.com",
+    "cats": [
+      "finance",
+      "personal"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "swiss",
+      "brutalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "calm",
+      "technical",
+      "cold"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Electric violet geometry - clean sans-serif structure on vast, airy digital space.",
+    "palette": [
+      "#5424e4",
+      "#3d1c9f",
+      "#fad87d",
+      "#ac748c"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lemonsqueezy-com/full.768.webp?v=1777903683",
+    "editorial": false,
+    "similar": []
+  },
+  {
+    "id": "214",
+    "slug": "doodles-app",
+    "title": "Doodles: Be Beautiful. Be Everywhere.",
+    "url": "https://doodles.app/",
+    "cats": [
+      "finance"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "soft",
+      "warm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Dreamy pastel clouds drift over a boundless, whimsical landscape of rounded forms.",
+    "palette": [
+      "#249dc3",
+      "#eea6c7",
+      "#25618c",
+      "#9d5d93"
+    ],
+    "h": 2394,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/doodles-app/full.1440.webp?v=1779917906",
+    "editorial": false,
+    "similar": [
+      "023"
+    ]
+  },
+  {
+    "id": "215",
+    "slug": "beehiiv-com",
+    "title": "Beehiiv",
+    "url": "https://beehiiv.com",
+    "cats": [
+      "personal"
+    ],
+    "mode": "dark",
+    "styles": [
+      "minimalism",
+      "brutalism",
+      "dark-mode"
+    ],
+    "vibes": [
+      "technical",
+      "serious",
+      "cold"
+    ],
+    "structure": "ecosystem-index",
+    "northstar": "Deep indigo expanse, stark sans-serif, cool, technical data streams.",
+    "palette": [
+      "#2e3cb7",
+      "#050544",
+      "#f5abde",
+      "#759ca5"
+    ],
+    "h": 3071,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beehiiv-com/full.1440.webp?v=1777901253",
+    "editorial": false,
+    "similar": [
+      "213"
+    ]
+  },
+  {
+    "id": "216",
+    "slug": "buttondown-email",
+    "title": "Buttondown Email",
+    "url": "https://buttondown.email",
+    "cats": [
+      "personal"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "minimalism"
+    ],
+    "vibes": [
+      "playful",
+      "warm",
+      "calm"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Warm, playful gradients float on a clean, airy canvas with friendly, rounded typography.",
+    "palette": [
+      "#096efb",
+      "#1c54ac",
+      "#f5eb89",
+      "#4e6083"
+    ],
+    "h": 1951,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buttondown-email/full.1440.webp?v=1779109384",
+    "editorial": false,
+    "similar": [
+      "203"
+    ]
+  },
+  {
+    "id": "217",
+    "slug": "109ichiki-com",
+    "title": "1:09 Portfolio",
+    "url": "https://109ichiki.com/",
+    "cats": [
+      "personal"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism"
+    ],
+    "vibes": [
+      "playful",
+      "loud"
+    ],
+    "structure": "bento-grid",
+    "northstar": "Electric lavender and cyan, bubbly sans-serif, floating digital depth.",
+    "palette": [
+      "#109cf2",
+      "#a9a2f9",
+      "#1467bc",
+      "#98ac60"
+    ],
+    "h": 325,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/109ichiki-com/full.1440.webp?v=1779916304",
+    "editorial": false,
+    "similar": [
+      "103",
+      "138",
+      "024"
+    ]
+  },
+  {
+    "id": "218",
+    "slug": "kelseydake-com",
+    "title": "Kelseydake",
+    "url": "https://kelseydake.com",
+    "cats": [
+      "personal"
+    ],
+    "mode": "light",
+    "styles": [
+      "playful",
+      "maximalism",
+      "vintage"
+    ],
+    "vibes": [
+      "loud",
+      "playful",
+      "warm"
+    ],
+    "structure": "portfolio-grid",
+    "northstar": "Retro neon explosion: bold, hand-drawn lettering on a vibrant, textured backdrop.",
+    "palette": [
+      "#fcdc04",
+      "#690e13",
+      "#fbdba3",
+      "#7653a7"
+    ],
+    "h": 3400,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kelseydake-com/full.768.webp?v=1779110178",
+    "editorial": false,
+    "similar": [
+      "130",
+      "029",
+      "111"
+    ]
+  },
+  {
+    "id": "219",
+    "slug": "anchor-fm",
+    "title": "Anchor Fm",
+    "url": "https://anchor.fm",
+    "cats": [
+      "personal"
+    ],
+    "mode": "light",
+    "styles": [
+      "minimalism"
+    ],
+    "vibes": [
+      "calm",
+      "soft"
+    ],
+    "structure": "marquee-hero",
+    "northstar": "Deep indigo expanse - clean sans-serif floats on soft, muted gradients.",
+    "palette": [
+      "#12a0ac",
+      "#084b70",
+      "#c6e7de",
+      "#978266"
+    ],
+    "h": 1783,
+    "original": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/anchor-fm/full.1440.webp?v=1777900124",
+    "editorial": false,
+    "similar": []
   }
 ]

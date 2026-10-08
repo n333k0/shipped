@@ -18,6 +18,7 @@ interface Props {
   description?: string;
   minimal?: boolean; // checkout uses a stripped-down header, no footer
   overlay?: boolean; // header sits transparent over a full-bleed hero until scrolled
+  noindex?: boolean; // internal pages
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   description = 'Custom websites, designed, written and built for a fixed price in 5–20 business days. No proposals, no hourly billing, no meetings required.',
   minimal = false,
   overlay = false,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -36,6 +38,7 @@ const {
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta name="theme-color" content={brand.theme === 'green' ? '#0a211f' : brand.theme === 'black' ? '#0d0d0d' : brand.theme === 'pitch' ? '#0b0b0b' : '#050505'} />

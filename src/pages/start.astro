@@ -461,7 +461,7 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
               <div class="rounded-xl bg-white/[0.04] px-3 py-2"><span class="block text-paper/45">Pages</span><span id="pn-pages" class="text-[17px] font-medium">—</span></div>
               <div class="rounded-xl bg-white/[0.04] px-3 py-2"><span class="block text-paper/45">Blocks</span><span id="pn-blocks" class="text-[17px] font-medium">—</span></div>
             </div>
-            <div id="pn-map" class="sitemap mt-4 max-h-[38vh] overflow-y-auto lg:max-h-[44vh]"></div>
+            <div id="pn-map" class="mt-4"></div>
             <div id="pn-taste" class="mt-4 flex flex-wrap gap-1.5"></div>
             <div class="mt-5 border-t border-white/10 pt-4">
               <div class="flex items-center justify-between text-[14px]"><span class="text-paper/55">Brief complete</span><span id="pn-pct" class="font-mono text-spark">0%</span></div>
@@ -623,6 +623,22 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
   .mini .n { position: absolute; top: 6px; left: 6px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 999px; background: var(--color-spark); color: var(--color-ink); font: 500 11px var(--font-mono); transform: scale(0); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
   .mini[aria-pressed="true"] .n { transform: scale(1); }
 
+  /* Your site, as an object */
+  .siteobj { display: block; width: 100%; height: auto; overflow: visible; }
+  .siteobj .plate { fill: var(--color-pine-800); stroke: rgb(243 241 234 / 0.42); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .siteobj .home .plate { stroke: var(--color-spark); }
+  .siteobj .m { stroke: rgb(243 241 234 / 0.3); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+  .siteobj .home .m { stroke: rgb(243 241 234 / 0.55); }
+  .siteobj .m-hi { stroke: var(--color-spark); stroke-width: 1.5; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+  .siteobj .float { animation: obj-float 6s ease-in-out infinite; }
+  .siteobj .sheet { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .siteobj .enter { animation: sheet-in .7s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d); }
+  .siteobj .lbl { font: 400 10px var(--font-sans); fill: rgb(243 241 234 / 0.7); }
+  .siteobj .lbl.hi { fill: var(--color-spark); } .siteobj .lbl.dim { fill: rgb(243 241 234 / 0.4); } .siteobj .lbl.over { fill: var(--color-booked); }
+  .siteobj .cnt { font: 500 9px var(--font-mono); fill: rgb(243 241 234 / 0.45); }
+  @keyframes obj-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  @keyframes sheet-in { from { opacity: 0; transform: translateY(-18px); } }
+
   /* Live sitemap glyphs: each block draws a tiny wireframe */
   .sitemap { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 0.18) transparent; padding-right: 6px; }
   .sitemap .pg + .pg { margin-top: 12px; }
@@ -652,7 +668,7 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
     .panel { position: sticky; top: 96px; align-self: start; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .panel, .blk, .ref .n, .mini .n, .pkg * { transition: none !important; animation: none !important; }
+    .panel, .blk, .ref .n, .mini .n, .pkg *, .siteobj * { transition: none !important; animation: none !important; }
   }
 </style>
 

@@ -2,6 +2,7 @@
 // The answers are saved as one structured brief (see BriefData in src/scripts/brief.ts).
 import type { PackageId } from './site';
 import references from './references.json';
+import excluded from './ref-exclude.json'; // owner's hidden references, edited at /curate/
 
 // Where a finished brief is POSTed as JSON. Empty = the brief stays in the visitor's
 // browser and they can download it (until the database is connected).
@@ -92,7 +93,9 @@ export interface Reference {
   editorial: boolean; // in an inspo editor collection
   similar: string[]; // inspo's nearest neighbours that are also in the pool
 }
-export const refs = references as Reference[];
+export const allRefs = references as Reference[];
+const hidden = new Set<string>(excluded);
+export const refs = allRefs.filter((r) => !hidden.has(r.slug));
 export const refsPerPage = 12;
 
 // Style filters over the pool. They move matching sites to the front rather than hide the rest.

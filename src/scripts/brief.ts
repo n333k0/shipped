@@ -140,6 +140,12 @@ form.addEventListener('change', (e) => {
 });
 
 function onChange(k: string) {
+  if (k === 'industry') {
+    // picks from another category don't belong in this brief any more
+    const scope = new Set(refScope().map((r) => r.id));
+    s.refs = s.refs.filter((id) => scope.has(id));
+    if (!s.refs.includes(s.closest)) s.closest = '';
+  }
   if (k === 'industry' || k === 'goal' || k === 'product') renderRefs();
   if (k === 'product') { reseedIfUntouched(); renderPages(); }
   if (k === 'product' || k === 'goal') { s.recoApproved = false; renderReco(); }
@@ -172,6 +178,13 @@ function basicsSignals() {
   return { hits, goal, structures: productStructures[str('product')] ?? [] };
 }
 
+// The references they may see: only their category once they've picked one. Basics text, goal,
+// format and style filters reorder inside it; they never bring in sites from other categories.
+function refScope() {
+  const ind = str('industry');
+  return ind && ind !== 'other' ? refs.filter((r) => r.cats.includes(ind)) : refs;
+}
+
 function rankedRefs() {
   const ind = str('industry');
   const near = neighbours[ind] ?? [];
@@ -180,9 +193,10 @@ function rankedRefs() {
   const score = (r: Reference) => {
     let sc = 0;
     if (ind && ind !== 'other') {
+      // their category comes first, all of it, before any neighbour
       const i = r.cats.indexOf(ind);
-      if (i === 0) sc += 10;
-      else if (i > 0) sc += 8;
+      if (i === 0) sc += 30;
+      else if (i > 0) sc += 28;
       else {
         const n = near.findIndex((c) => r.cats.includes(c));
         if (n > -1) sc += 4 - n * 0.5;
@@ -200,7 +214,7 @@ function rankedRefs() {
     if (r.editorial) sc += 0.5;
     return sc;
   };
-  return [...refs].sort((a, b) => score(b) - score(a) || deal.get(a.id)! - deal.get(b.id)!);
+  return refScope().sort((a, b) => score(b) - score(a) || deal.get(a.id)! - deal.get(b.id)!);
 }
 
 function renderWhy() {
@@ -246,7 +260,7 @@ function renderRefs() {
   shownRefs.clear();
   list.forEach((r) => shownRefs.add(r.id));
   $('#refs').innerHTML = list.map(refCard).join('');
-  const left = refs.length - list.length;
+  const left = refScope().filter((r) => !shownRefs.has(r.id)).length;
   $('#refs-more').hidden = left <= 0;
   $('#refs-more').textContent = `Show ${Math.min(refsPerPage, left)} more`;
   $$<HTMLButtonElement>('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String((s.refFilters ?? []).includes(b.dataset.filter!))));
@@ -281,7 +295,7 @@ function renderPicks() {
 
 function renderLike() {
   const row = $('#refs-like-row');
-  const like = s.refs.length ? refs.filter((r) => !s.refs.includes(r.id) && !shownRefs.has(r.id)).map((r) => [r, likeness(r)] as const).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([r]) => r) : [];
+  const like = s.refs.length ? refScope().filter((r) => !s.refs.includes(r.id) && !shownRefs.has(r.id)).map((r) => [r, likeness(r)] as const).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([r]) => r) : [];
   const key = like.map((r) => r.id).join();
   $('#refs-like').hidden = !like.length;
   if (row.dataset.key === key) return;
@@ -785,7 +799,35 @@ function tasteWords() {
   return words;
 }
 
-let shownBlocks = new Set<string>();
+// The site as one small object: each page a floating isometric sheet, stacked, Home on top in the
+// accent, a few marks per sheet for its sections. New sheets drift in; nothing to scroll.
+let shownPages = 0;
+function siteObject(pages: Page[], limit: number) {
+  const n = pages.length;
+  const gap = n > 1 ? Math.min(22, 92 / (n - 1)) : 0;
+  const base = n > 1 ? 150 : 108;
+  const iso = 'matrix(0.866 0.5 -0.866 0.5 0 0)';
+  const W = 104, H = 78;
+  const layer = (pg: Page, i: number) => {
+    const top = i === 0;
+    const y = base - (n - 1 - i) * gap;
+    const marks = pg.blocks.slice(0, top ? 7 : 3).map((b, k) => {
+      const len = b.type === 'hero' ? 62 : b.type === 'cta' ? 34 : 48 + ((k * 13) % 30);
+      return `<line x1="${-W / 2 + 12}" y1="${-H / 2 + 16 + k * 8.5}" x2="${-W / 2 + 12 + len}" y2="${-H / 2 + 16 + k * 8.5}" class="${b.type === 'cta' ? 'm-hi' : 'm'}" />`;
+    }).join('');
+    const enter = i >= shownPages && shownPages > 0 ? ' enter' : '';
+    return `<g class="sheet${top ? ' home' : ''}${enter}" style="--d:${i * 0.05}s"><g transform="translate(108 ${y}) ${iso}"><rect x="${-W / 2}" y="${-H / 2}" width="${W}" height="${H}" rx="5" class="plate" /><line x1="${-W / 2}" y1="${-H / 2 + 8}" x2="${W / 2}" y2="${-H / 2 + 8}" class="m" />${marks}</g></g>`;
+  };
+  const layers = pages.map(layer).reverse().join('');
+  const shown = pages.slice(0, 6);
+  const total = blockCount(pages);
+  const list = shown.map((pg, i) => `<text x="214" y="${44 + i * 19}" class="lbl${i === 0 ? ' hi' : ''}">${esc((pg.name || 'Untitled').slice(0, 14))}<tspan class="cnt" x="300" text-anchor="end">${pg.blocks.length}</tspan></text>`).join('')
+    + (n > 6 ? `<text x="214" y="${44 + 6 * 19}" class="lbl dim">+${n - 6} more</text>` : '')
+    + (total > limit ? `<text x="214" y="${44 + Math.min(n, 7) * 19 + 4}" class="lbl over">${total - limit} over</text>` : '');
+  shownPages = n;
+  return `<svg class="siteobj" viewBox="0 0 304 200" role="img" aria-label="${n} page${n === 1 ? '' : 's'}, ${total} blocks"><g class="float">${layers}</g>${list}</svg>`;
+}
+
 function renderPanel() {
   const p = pkg();
   const x = extras();
@@ -798,18 +840,9 @@ function renderPanel() {
   $('#pn-pages').textContent = str('product') || isBuilder ? `${pages.length} / ${l.pages}` : '—';
   $('#pn-blocks').textContent = str('product') || isBuilder ? `${blocks} / ${l.blocks}` : '—';
 
-  // Only blocks that weren't on screen before animate in; the rest stay still on every re-render.
-  const keyOf = (pg: Page, b: Block, bi: number) => `${pg.name}|${bi}|${b.type}`;
-  const first = !shownBlocks.size;
-  const nowShown = new Set<string>();
-  let n = 0;
   $('#pn-map').innerHTML = pages.length
-    ? (note ? `<p class="label mb-2 text-paper/40">${esc(note)}</p>` : '') +
-      pages
-        .map((pg) => `<div class="pg"><p class="mb-1.5 flex justify-between text-[13px]"><span class="font-medium">${esc(pg.name || 'Untitled')}</span><span class="text-paper/40">${pg.blocks.length}</span></p>${pg.blocks.map((b, bi) => { n++; const k = keyOf(pg, b, bi); nowShown.add(k); return `<div class="blk${n > l.blocks ? ' over' : ''}${!first && !shownBlocks.has(k) ? ' new' : ''}" title="${esc(typeName(b.type))}">${glyph(blockTypes.find((t) => t.id === b.type)?.g ?? 'text')}</div>`; }).join('')}</div>`)
-        .join('')
-    : '<p class="text-[14px] text-paper/40">Your pages and blocks show up here as you build.</p>';
-  shownBlocks = nowShown;
+    ? (note ? `<p class="label mb-1 text-paper/40">${esc(note)}</p>` : '') + siteObject(pages, l.blocks)
+    : '<p class="py-6 text-[14px] text-paper/40">Pick a format and your site takes shape here.</p>';
 
   const thumbs = s.refs.map(byId).map((r) => `<img src="${refImg(r)}" alt="" class="h-[26px] w-[42px] rounded-md object-cover object-top" />`).join('');
   $('#pn-taste').innerHTML = thumbs + tasteWords().map((w) => `<span class="rounded-full bg-white/[0.06] px-2.5 py-1 text-[12px] text-paper/70">${esc(w)}</span>`).join('');
