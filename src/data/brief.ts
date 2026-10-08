@@ -2,7 +2,7 @@
 // The answers are saved as one structured brief (see BriefData in src/scripts/brief.ts).
 import { checkout, type PackageId } from './site';
 import references from './references.json';
-import excluded from './ref-exclude.json'; // owner's hidden references, edited at /curate/
+import excluded from './ref-exclude.json'; // owner's hidden references, edited with `npm run curate` (local)
 
 // Where a finished brief is POSTed as JSON. Empty = the brief stays in the visitor's
 // browser and they can download it (until the database is connected).

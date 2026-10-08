@@ -2,7 +2,7 @@
 // hand-picked list in refs.mjs. Sweeps each inspo industry across every facet (style, vibe, mode,
 // colour, type, structure) so the whole archive for that industry surfaces; results carry the
 // industry tag, so nothing from another category gets in. Merges into scripts/refs-candidates.json;
-// refs.mjs adds them after the curated ones, and the owner prunes the pool at /curate/.
+// refs.mjs adds them after the curated ones, and the owner prunes the pool with `npm run curate` (local).
 //   node scripts/refs-discover.mjs [target per category, default 60]
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fromInspo } from './inspo-cats.mjs';

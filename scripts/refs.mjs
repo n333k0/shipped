@@ -46,7 +46,7 @@ async function call(name, args) {
 }
 
 // Discovered candidates (scripts/refs-discover.mjs) follow the curated ones; the owner's exclusions
-// (src/data/ref-exclude.json, edited at /curate/) never make it in.
+// (src/data/ref-exclude.json, edited with `npm run curate`) never make it in.
 const candidates = JSON.parse(await readFile('scripts/refs-candidates.json', 'utf8').catch(() => '{}'));
 const excluded = new Set(JSON.parse(await readFile('src/data/ref-exclude.json', 'utf8').catch(() => '[]')));
 const exists = (f) => access(f).then(() => true, () => false);
@@ -55,7 +55,7 @@ const exists = (f) => access(f).then(() => true, () => false);
 const cats = new Map();
 for (const [cat, slugs] of Object.entries(curated)) for (const s of slugs) cats.set(s, [...(cats.get(s) ?? []), cat]);
 for (const [cat, slugs] of Object.entries(candidates)) for (const s of slugs) if (!cats.get(s)?.includes(cat)) cats.set(s, [...(cats.get(s) ?? []), cat]);
-// excluded sites stay in the pool file so /curate/ can bring them back; the brief filters them out
+// excluded sites stay in the pool file so the curate tool can bring them back; the brief filters them out
 void excluded;
 const slugs = [...cats.keys()];
 
