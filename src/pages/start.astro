@@ -37,13 +37,13 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
         <form id="brief" class="min-w-0" novalidate>
           {stages.map((s, i) => (
             <div class="stage" data-stage={i} hidden={i !== 0}>
-              <header class="flex items-start gap-4 sm:gap-6">
+              <header class="flex items-start gap-4 overflow-x-clip sm:gap-6">
                 <div class="min-w-0 flex-1">
                   <p class="label text-spark">0{i + 1} — {s.name}</p>
                   <h1 class="display mt-3 text-[38px] sm:text-[52px] lg:text-[60px]">{s.title} <span class="accent text-spark">{s.accent}</span></h1>
                   <p class="mt-3 max-w-xl text-[16px] text-paper/60 sm:text-[17px]">{s.intro}</p>
                 </div>
-                <div class="figure w-[96px] shrink-0 sm:w-[150px] lg:w-[180px]" data-figure={s.figure} data-play aria-hidden="true"></div>
+                <div class="fit relative shrink-0" aria-hidden="true"><div data-figure={s.figure} data-play data-fit></div></div>
               </header>
 
               <div class="mt-10 space-y-12 sm:space-y-14">
@@ -472,6 +472,12 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
     --hairline-lo: rgb(5 5 5 / 0.16);
   }
   .figure { aspect-ratio: 5 / 4; }
+  /* Stage figures are sized by the drawing, not the 5:4 box: --fit-h is how tall the line art
+     stands, --fit-w caps how wide it may get. brief.ts scales the box and trims the empty plate. */
+  .fit { --fit-h: 72px; --fit-w: 120px; height: var(--fit-h); width: var(--fit-h); }
+  .fit > [data-figure] { position: absolute; left: 0; top: 0; width: calc(var(--fit-h) * 1.25); }
+  @media (min-width: 640px) { .fit { --fit-h: 110px; --fit-w: 220px; } }
+  @media (min-width: 1024px) { .fit { --fit-h: 155px; --fit-w: 300px; } }
 
   /* A picked option turns fully accent and everything inside adapts (same as the old checkout). */
   .pick:has(input:checked), .pick.on { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }

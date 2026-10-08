@@ -786,9 +786,34 @@ const io = new IntersectionObserver((entries) => {
       label: '',
     });
     if (live) liveFigure(el, fig);
+    if (el.hasAttribute('data-fit')) fit(el);
   }
 }, { rootMargin: '120px' });
 $$('[data-figure]').forEach((el) => io.observe(el));
+
+// Stage figures: scale the 5:4 box so the drawing itself is --fit-h tall (capped at --fit-w wide),
+// and shift it so the empty plate around the drawing spills out instead of taking up room.
+const fitted = new Map<HTMLElement, DOMRect>();
+function fit(el: HTMLElement) {
+  const svg = el.querySelector('svg');
+  if (!svg) return;
+  let g = fitted.get(el);
+  if (!g) {
+    g = svg.getBBox();
+    if (!g.height) return;
+    fitted.set(el, g);
+  }
+  const wrap = el.parentElement!;
+  const cs = getComputedStyle(wrap);
+  const h = parseFloat(cs.getPropertyValue('--fit-h'));
+  const k = Math.min(h / g.height, parseFloat(cs.getPropertyValue('--fit-w')) / g.width);
+  el.style.width = svg.viewBox.baseVal.width * k + 'px';
+  el.style.left = -g.x * k + 'px';
+  el.style.top = (h - g.height * k) / 2 - g.y * k + 'px';
+  wrap.style.width = g.width * k + 'px';
+}
+let fitTimer = 0;
+window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = window.setTimeout(() => fitted.forEach((_, el) => fit(el)), 100); });
 
 // Option cards: the figure acts out its move (the laptop opens and closes…) while the card
 // is hovered or picked. On phones there's no hover, so picking it is what sets it going.
