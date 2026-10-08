@@ -130,7 +130,8 @@ form.addEventListener('change', (e) => {
 
 function onChange(k: string) {
   if (k === 'industry') renderRefs();
-  if (k === 'product' || k === 'goal') { reseedIfUntouched(); renderPages(); renderReco(); }
+  if (k === 'product') { reseedIfUntouched(); renderPages(); }
+  if (k === 'product' || k === 'goal') { s.recoApproved = false; renderReco(); }
   if (k === 'pages_mode' && str('pages_mode') === 'builder' && !s.pages.length) { seedPages(); renderPages(); }
   if (k === 'assets') renderFiles();
   applyShows();
@@ -513,6 +514,7 @@ function tasteWords() {
   return words;
 }
 
+let shownBlocks = new Set<string>();
 function renderPanel() {
   const p = pkg();
   const x = extras();
@@ -525,13 +527,18 @@ function renderPanel() {
   $('#pn-pages').textContent = str('product') || isBuilder ? `${pages.length} / ${l.pages}` : '—';
   $('#pn-blocks').textContent = str('product') || isBuilder ? `${blocks} / ${l.blocks}` : '—';
 
+  // Only blocks that weren't on screen before animate in; the rest stay still on every re-render.
+  const keyOf = (pg: Page, b: Block, bi: number) => `${pg.name}|${bi}|${b.type}`;
+  const first = !shownBlocks.size;
+  const nowShown = new Set<string>();
   let n = 0;
   $('#pn-map').innerHTML = pages.length
     ? (note ? `<p class="label mb-2 text-paper/40">${esc(note)}</p>` : '') +
       pages
-        .map((pg) => `<div class="pg"><p class="mb-1.5 flex justify-between text-[13px]"><span class="font-medium">${esc(pg.name || 'Untitled')}</span><span class="text-paper/40">${pg.blocks.length}</span></p>${pg.blocks.map((b) => { n++; return `<div class="blk${n > l.blocks ? ' over' : ''}" title="${esc(typeName(b.type))}">${glyph(blockTypes.find((t) => t.id === b.type)?.g ?? 'text')}</div>`; }).join('')}</div>`)
+        .map((pg) => `<div class="pg"><p class="mb-1.5 flex justify-between text-[13px]"><span class="font-medium">${esc(pg.name || 'Untitled')}</span><span class="text-paper/40">${pg.blocks.length}</span></p>${pg.blocks.map((b, bi) => { n++; const k = keyOf(pg, b, bi); nowShown.add(k); return `<div class="blk${n > l.blocks ? ' over' : ''}${!first && !shownBlocks.has(k) ? ' new' : ''}" title="${esc(typeName(b.type))}">${glyph(blockTypes.find((t) => t.id === b.type)?.g ?? 'text')}</div>`; }).join('')}</div>`)
         .join('')
     : '<p class="text-[14px] text-paper/40">Your pages and blocks show up here as you build.</p>';
+  shownBlocks = nowShown;
 
   const thumbs = s.refs.map((id) => refs.find((r) => r.id === id)!).map((r) => `<img src="${url(`/refs/${r.slug}.webp`)}" alt="" class="h-9 w-7 rounded-md object-cover object-top" />`).join('');
   $('#pn-taste').innerHTML = thumbs + tasteWords().map((w) => `<span class="rounded-full bg-white/[0.06] px-2.5 py-1 text-[12px] text-paper/70">${esc(w)}</span>`).join('');
