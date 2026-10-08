@@ -1,336 +1,542 @@
 ---
 import { url } from '../lib/url';
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import { packages, addOns, buildWeeks, sectionExplainer, brand } from '../data/site';
-const onboarding = [
-  ['The business', 'What you sell, to whom, and what a visitor should do next.', '4 min'],
-  ['The taste', 'Three sites you love, three you don’t. Screenshots welcome.', '3 min'],
-  ['The assets', 'Logo, fonts, colours, photos, existing copy. Drag, drop, done.', '5 min'],
-  ['The site', 'Pages, integrations, CMS, domain. Mostly checkboxes.', '4 min'],
-  ['Anything else', 'Deadlines, quirks, opinions. Type it or record a voice note.', '2 min'],
-];
+import { packages, brand } from '../data/site';
+import {
+  stages, industries, goals, traits, sliders, pushSlider, motionLevels,
+  assets, locked, copyStatus, dumpKinds, features, maxRefs,
+} from '../data/brief';
+
+// shared field styles (16px text so iOS doesn't zoom on focus)
+const fld = 'mt-2 h-12 w-full rounded-xl border border-transparent bg-white/[0.04] px-4 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark';
+const area = 'mt-2 w-full resize-y rounded-xl border border-transparent bg-white/[0.04] px-4 py-3 text-[16px] leading-relaxed outline-none transition placeholder:text-paper/30 focus:border-spark';
+const chip = 'pick inline-flex min-h-11 cursor-pointer items-center rounded-full border border-white/15 px-4 text-[15px] transition hover:border-white/40';
+const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px]';
+const productFigure: Record<string, string> = { landing: 'phone', website: 'laptop', websiteplus: 'elevator' };
 ---
 
-<Layout title="Start your website" minimal>
-  <section class="pt-[110px] pb-12 sm:pt-[130px]">
+<Layout title="Build your site — Shipped" minimal>
+  <section class="hl pb-44 pt-[84px] sm:pt-[104px]" id="flow">
     <div class="wrap">
-      <div id="config">
-        <p class="label text-spark">Start your website</p>
-        <h1 class="display mt-4 text-[51px] md:text-[72px] lg:text-[90px] xl:text-[108px]">Configure it. <span class="accent text-spark">Reserve it.</span> Done.</h1>
-        <p class="mt-4 max-w-xl text-[17px] text-paper/60">Four quick choices. Price, deposit and launch date update as you go. Nothing is charged until the last step.</p>
+      <!-- Stepper: segments on phones, named steps from sm -->
+      <nav aria-label="Brief steps" class="sticky top-[64px] z-20 -mx-4 bg-pine-900/90 px-4 py-3 backdrop-blur md:static md:mx-0 md:bg-transparent md:px-0 md:backdrop-blur-none">
+        <ol id="stepper" class="grid grid-cols-6 gap-1.5 sm:gap-2">
+          {stages.map((s, i) => (
+            <li>
+              <button type="button" data-goto={i} class="step group block w-full text-left" aria-label={`Step ${i + 1}: ${s.name}`}>
+                <span class="bar block h-[3px] rounded-full bg-white/12 transition-colors"></span>
+                <span class="label mt-2 hidden text-paper/40 transition-colors sm:block"><span class="text-paper/25">0{i + 1}</span> {s.name}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+        <p class="label mt-2 flex justify-between text-paper/45 sm:hidden"><span id="step-now">01 Basics</span><span id="step-pct">0% complete</span></p>
+      </nav>
 
-        <div class="mt-12 grid gap-10 lg:grid-cols-[1fr_380px]">
-          <form id="checkout" class="space-y-12" novalidate>
-            <!-- 1. Package -->
-            <fieldset>
-              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">01</span> Choose your website</legend>
-              <!-- Phones: compact rows (name/pitch/scope left, price/days right). sm+: stacked cards. -->
-              <div class="mt-5 grid gap-3 sm:grid-cols-3">
-                {packages.map((p) => (
-                  <label class="pick relative cursor-pointer rounded-[20px] border border-white/15 p-5 transition hover:border-white/40 max-sm:grid max-sm:grid-cols-[minmax(0,1fr)_auto] max-sm:gap-x-4 max-sm:px-4 max-sm:py-3.5">
-                    <input type="radio" name="package" value={p.id} class="sr-only" checked={p.featured} />
-                    <span class="block text-[20px] font-semibold max-sm:col-start-1 max-sm:row-start-1 max-sm:text-[18px]">{p.name}{p.featured && <span class="chip absolute right-3 top-3 border-0 bg-spark px-2 py-0.5 text-[10px] text-ink max-sm:static max-sm:ml-2 max-sm:align-middle">Popular</span>}</span>
-                    <span class="mt-1 block text-[14px] text-paper/55 max-sm:col-span-2 max-sm:row-start-2 max-sm:mt-0.5 max-sm:text-[13px]">{p.pitch}</span>
-                    <span class="mt-4 block text-[24px] font-medium tracking-tight max-sm:col-start-2 max-sm:row-start-1 max-sm:mt-0 max-sm:text-right max-sm:text-[20px]">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
-                    <span class="label mt-1 block text-paper/45 max-sm:col-start-2 max-sm:row-start-3 max-sm:mt-2 max-sm:self-center max-sm:text-right max-sm:tracking-[0.1em]">{p.days}</span>
-                    <span class="mt-3 block border-t border-white/10 pt-3 text-[13px] text-paper/70 max-sm:col-start-1 max-sm:row-start-3 max-sm:mt-2 max-sm:border-0 max-sm:pt-0 max-sm:text-[12px]">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</span>
-                  </label>
-                ))}
-              </div>
-
-              <!-- What's included: typical sitemap for the selected package -->
-              {packages.map((p) => (
-                <div class="scope mt-4 hidden rounded-[20px] bg-white/[0.03] p-5" data-scope={p.id}>
-                  <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <p class="text-[16px] font-semibold">What {p.name} includes</p>
-                    <p class="label text-spark">{p.pages === 1 ? '1 page' : `Up to ${p.pages} pages`} · {p.sections} sections</p>
-                  </div>
-                  <p class="mt-2 max-w-2xl text-[14px] text-paper/55">{sectionExplainer}</p>
-                  <p class="label mt-5 text-paper/40">A typical {p.name} build</p>
-                  <ul class="mt-3 divide-y divide-white/5">
-                    {p.sitemap.map((pg) => (
-                      <li class="grid gap-2 py-3 sm:grid-cols-[180px_1fr] sm:gap-4">
-                        <span class="text-[14px] font-medium">{pg.page}</span>
-                        <span class="flex flex-wrap gap-1.5">
-                          {pg.blocks.map((b) => <span class="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[12px] text-paper/70">{b}</span>)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p class="mt-3 text-[13px] text-paper/45">Yours will be shaped around your business. Need more? Add pages or single sections below.</p>
+      <div class="mt-6 grid gap-10 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px]">
+        <form id="brief" class="min-w-0" novalidate>
+          {stages.map((s, i) => (
+            <div class="stage" data-stage={i} hidden={i !== 0}>
+              <header class="flex items-start gap-4 sm:gap-6">
+                <div class="min-w-0 flex-1">
+                  <p class="label text-spark">0{i + 1} — {s.name}</p>
+                  <h1 class="display mt-3 text-[38px] sm:text-[52px] lg:text-[60px]">{s.title} <span class="accent text-spark">{s.accent}</span></h1>
+                  <p class="mt-3 max-w-xl text-[16px] text-paper/60 sm:text-[17px]">{s.intro}</p>
                 </div>
-              ))}
-            </fieldset>
+                <div class="figure w-[96px] shrink-0 sm:w-[150px] lg:w-[180px]" data-figure={s.figure} data-play aria-hidden="true"></div>
+              </header>
 
-            <!-- 2. Add-ons -->
-            <fieldset>
-              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">02</span> Add anything? <span class="text-[15px] font-normal text-paper/45">Optional</span></legend>
-              <div class="mt-5 grid gap-3 sm:grid-cols-2">
-                {addOns.map((a) => (
-                  <div class="addon pick rounded-[18px] border border-white/15 p-4 transition hover:border-white/40" data-addon={a.id} data-not-for={(a.notFor ?? []).join(',')}>
-                    {a.qty ? (
-                      <div class="flex items-start justify-between gap-4">
-                        <div>
-                          <p class="text-[16px] font-semibold">{a.name} <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel} each</span></p>
-                          <p class="mt-1 text-[14px] text-paper/55">{a.detail}</p>
-                        </div>
-                        <div class="flex shrink-0 items-center gap-1 rounded-full border border-white/15 p-1">
-                          <button type="button" class="grid size-8 place-items-center rounded-full hover:bg-white/10" data-step="-1" aria-label={`Fewer: ${a.name}`}>−</button>
-                          <input type="number" name={`qty-${a.id}`} value="0" min="0" max="10" class="w-7 bg-transparent text-center font-mono text-[14px] [appearance:textfield]" aria-label={`${a.name} quantity`} readonly />
-                          <button type="button" class="grid size-8 place-items-center rounded-full hover:bg-white/10" data-step="1" aria-label={`More: ${a.name}`}>+</button>
-                        </div>
+              <div class="mt-10 space-y-12 sm:space-y-14">
+                {s.id === 'basics' && (
+                  <>
+                    <fieldset>
+                      <legend class={qh}>What are we building?</legend>
+                      <div class="mt-4 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
+                        {packages.map((p) => (
+                          <label class="pick relative flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-4 transition hover:border-white/40 sm:block sm:p-5">
+                            <input type="radio" name="product" value={p.id} data-k="product" class="sr-only" />
+                            <div class="hl-card figure w-[64px] shrink-0 sm:mb-4 sm:w-[96px]" data-figure={productFigure[p.id]} aria-hidden="true"></div>
+                            <span class="block min-w-0 flex-1">
+                              <span class="flex items-baseline justify-between gap-3">
+                                <span class="text-[19px] font-semibold">{p.name}</span>
+                                <span class="text-[17px] font-medium tracking-tight sm:hidden">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
+                              </span>
+                              <span class="mt-0.5 block text-[14px] text-paper/55">{p.pages === 1 ? 'One page' : `Up to ${p.pages} pages`} · {p.sections} blocks · {p.days}</span>
+                              <span class="mt-4 hidden text-[24px] font-medium tracking-tight sm:block">{p.id === 'websiteplus' ? 'from ' : ''}{p.priceLabel}</span>
+                            </span>
+                          </label>
+                        ))}
                       </div>
-                    ) : (
-                      <label class="flex cursor-pointer items-start justify-between gap-4">
-                        <span>
-                          <span class="block text-[16px] font-semibold">
-                            {a.name}
-                            {a.was && <s class="ml-1 font-mono text-[12px] font-normal text-paper/40">{a.was}</s>}
-                            <span class="ml-1 font-mono text-[12px] font-normal text-spark">{a.priceLabel}</span>
-                            {a.promo && <span class="chip ml-1 border-0 bg-spark px-2 py-0 align-middle text-[10px] text-ink">{a.promo}</span>}
-                          </span>
-                          <span class="mt-1 block text-[14px] text-paper/55">{a.detail}</span>
-                        </span>
-                        <input type="checkbox" name="addon" value={a.id} class="mt-1 size-5 shrink-0 accent-[#d8ff85]" />
+                      <label class="pick mt-2.5 flex cursor-pointer items-center justify-between gap-4 rounded-[20px] border border-dashed border-white/20 p-4 transition hover:border-white/40 sm:mt-3 sm:p-5">
+                        <input type="radio" name="product" value="unsure" data-k="product" class="sr-only" />
+                        <span><span class="block text-[17px] font-semibold">Not sure?</span><span class="block text-[14px] text-paper/55">Tell us what you’re building. We’ll recommend the right format.</span></span>
+                        <span aria-hidden="true" class="text-[20px]">→</span>
                       </label>
-                    )}
-                    <p class="included label mt-2 hidden text-paper/40">Included in this package</p>
-                  </div>
-                ))}
-              </div>
-            </fieldset>
+                      <label class="mt-3 block" data-show="product=unsure" hidden>
+                        <span class="label text-paper/50">What are you building?</span>
+                        <textarea data-k="unsure_note" rows="3" class={area} placeholder="A site for my architecture studio with a few projects and a contact page…"></textarea>
+                      </label>
+                    </fieldset>
 
-            <!-- 3. Week -->
-            <fieldset>
-              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">03</span> Pick a build week</legend>
-              <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {buildWeeks.map((w) => {
-                  const full = w.booked >= w.slots;
-                  return (
-                    <label data-week={w.start} class:list={['rounded-[18px] border p-4 transition', full ? 'cursor-not-allowed border-white/5 opacity-40' : 'pick cursor-pointer border-white/15 hover:border-white/40']}>
-                      <input type="radio" name="week" value={w.start} class="sr-only" disabled={full} />
-                      <span class="label block text-paper/45">Week of</span>
-                      <span class:list={['mt-1 block text-[22px] font-medium', full && 'line-through']}>{w.label}</span>
-                      <span class:list={['label mt-3 flex items-center gap-2', full ? 'text-booked' : 'text-spark']}>
-                        <span class={full ? 'dot-booked' : 'dot'}></span>{full ? 'Booked' : w.slots - w.booked === 1 ? '1 slot left' : 'Available'}
-                      </span>
-                    </label>
-                  );
-                })}
-              </div>
-              <p class="mt-3 text-[14px] text-paper/45">Full refund up to 7 days before your week. You can move your week once, free.</p>
-            </fieldset>
+                    <fieldset>
+                      <legend class={qh}>What kind of business is it?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">This changes the references we show you next.</p>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {industries.map((ind) => (
+                          <label class={chip}><input type="radio" name="industry" value={ind.id} data-k="industry" class="sr-only" />{ind.name}</label>
+                        ))}
+                      </div>
+                      <input data-k="industry_other" data-show="industry=other" hidden class={fld} placeholder="Tell us the category" />
+                    </fieldset>
 
-            <!-- 4. Details -->
-            <fieldset>
-              <legend class="flex items-center gap-3 text-[22px] font-medium"><span class="font-mono text-[14px] text-spark">04</span> Who’s it for?</legend>
-              <div class="mt-5 grid gap-3 sm:grid-cols-2">
-                {[
-                  ['name', 'Your name', 'text', 'name', true],
-                  ['email', 'Work email', 'email', 'email', true],
-                  ['company', 'Company', 'text', 'organization', true],
-                  ['url', 'Current website (if any)', 'text', 'url', false],
-                ].map(([id, label, type, ac, req]) => (
-                  <label class="block">
-                    <span class="label text-paper/50">{label}{req ? '' : ' · optional'}</span>
-                    <input id={id as string} name={id as string} type={type as string} autocomplete={ac as string} required={req as boolean} class="mt-2 h-12 w-full rounded-xl border border-transparent bg-white/[0.04] px-4 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark" />
-                  </label>
-                ))}
-                <label class="block sm:col-span-2">
-                  <span class="label text-paper/50">Notes · optional</span>
-                  <textarea name="notes" rows="4" placeholder="Anything we should know before you brief us? Deadlines, links, the page you’re worried about…" class="mt-2 w-full resize-y rounded-xl border border-transparent bg-white/[0.04] px-4 py-3 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark"></textarea>
-                </label>
-              </div>
-            </fieldset>
-            <p id="form-error" class="hidden rounded-xl border border-booked/50 bg-booked/10 px-4 py-3 text-[15px] text-booked" role="alert"></p>
-          </form>
+                    <fieldset>
+                      <legend class={qh}>Tell us about it</legend>
+                      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                        <label class="block"><span class="label text-paper/50">Company / project name</span><input data-k="company" autocomplete="organization" class={fld} /></label>
+                        <label class="block"><span class="label text-paper/50">Current website · optional</span><input data-k="current_site" type="url" inputmode="url" class={fld} placeholder="yourcompany.com" /></label>
+                        <label class="block sm:col-span-2"><span class="label text-paper/50">Instagram, LinkedIn, etc. · optional</span><input data-k="socials" class={fld} placeholder="@yourcompany, linkedin.com/company/…" /></label>
+                        <label class="block sm:col-span-2"><span class="label text-paper/50">What do you do, in your own words?</span><textarea data-k="describe" rows="3" class={area} placeholder="We design small homes in Patagonia that…"></textarea></label>
+                        <label class="block"><span class="label text-paper/50">What are you selling?</span><input data-k="selling" class={fld} placeholder="Residential projects from $400k" /></label>
+                        <label class="block"><span class="label text-paper/50">Who’s it for?</span><input data-k="audience" class={fld} placeholder="Families building a second home" /></label>
+                      </div>
+                    </fieldset>
 
-          <!-- Summary -->
-          <aside class="lg:sticky lg:top-24 lg:mt-[53px] lg:self-start" aria-live="polite">
-            <div class="rounded-[24px] bg-white/[0.03] p-6">
-              <p class="label text-paper/45">Your website</p>
-              <p id="sum-name" class="mt-2 text-[26px] font-semibold tracking-tight">Website</p>
-              <ul id="sum-lines" class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]"></ul>
-              <div class="mt-5 space-y-2 border-t border-white/10 pt-5 text-[14px]">
-                <div class="flex justify-between"><span class="text-paper/55">Scope</span><span id="sum-scope">5 pages · 30 sections</span></div>
-                <div class="flex justify-between"><span class="text-paper/55">Timeline</span><span id="sum-days">10 business days</span></div>
-                <div class="flex justify-between"><span class="text-paper/55">Build starts</span><span id="sum-start">Pick a week</span></div>
-                <div class="flex justify-between"><span class="text-paper/55">Estimated launch</span><span id="sum-launch" class="text-spark">—</span></div>
+                    <fieldset>
+                      <legend class={qh}>When this website works, what happens?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">The one thing a visitor should do. Everything else is ranked around it.</p>
+                      <div class="mt-4 grid gap-2 sm:grid-cols-2">
+                        {goals.map((g) => (
+                          <label class="pick flex min-h-12 cursor-pointer items-center gap-3 rounded-2xl border border-white/15 px-4 py-3 text-[15px] transition hover:border-white/40">
+                            <input type="radio" name="goal" value={g.id} data-k="goal" class="sr-only" />
+                            <span class="radio-dot" aria-hidden="true"></span>{g.name}
+                          </label>
+                        ))}
+                      </div>
+                      <input data-k="goal_other" data-show="goal=other" hidden class={fld} placeholder="What should happen?" />
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Who should we talk to?</legend>
+                      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                        <label class="block"><span class="label text-paper/50">Your name</span><input data-k="name" autocomplete="name" class={fld} /></label>
+                        <label class="block"><span class="label text-paper/50">Work email</span><input data-k="email" type="email" inputmode="email" autocomplete="email" class={fld} /></label>
+                      </div>
+                      <p class="mt-3 text-[13px] text-paper/40">Your answers save on this device as you go. Come back any time.</p>
+                    </fieldset>
+                  </>
+                )}
+
+                {s.id === 'direction' && (
+                  <>
+                    <fieldset>
+                      <legend class={qh}>Which ones feel like you?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Pick up to {maxRefs}. Don’t overthink it. <span id="ref-count" class="text-spark"></span></p>
+                      <div id="refs" class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4"></div>
+                      <p class="mt-3 text-[13px] text-paper/40">Screens from the <a href="https://inspomcp.dev" class="underline" target="_blank" rel="noopener">inspo</a> archive. Picked for your category, then a few neighbours.</p>
+                    </fieldset>
+
+                    <fieldset data-need-refs hidden>
+                      <legend class={qh}>Which one feels closest?</legend>
+                      <div id="closest" class="mt-4 flex gap-2.5"></div>
+                    </fieldset>
+
+                    <fieldset data-need-refs hidden>
+                      <legend class={qh}>What do you like about them?</legend>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {traits.map((t) => <label class={chip}><input type="checkbox" value={t} data-k="traits" class="sr-only" />{t}</label>)}
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Now tune it</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Drag each one to where your site should sit.</p>
+                      <div class="mt-5 space-y-6">
+                        {sliders.map((sl) => (
+                          <label class="block">
+                            <span class="flex justify-between text-[14px] text-paper/70"><span>{sl.left}</span><span>{sl.right}</span></span>
+                            <input type="range" min="0" max="100" value="50" data-k={`slider_${sl.id}`} class="range mt-2 w-full" aria-label={`${sl.left} to ${sl.right}`} />
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="rounded-[24px] bg-white/[0.03] p-5 sm:p-6">
+                      <legend class="sr-only">How far can we push it?</legend>
+                      <p class={qh}>How far can we <span class="accent text-spark">push it?</span></p>
+                      <p class="mt-1 text-[14px] text-paper/50">Liking a wild reference and wanting a wild site aren’t the same thing. Be honest.</p>
+                      <label class="mt-5 block">
+                        <span class="flex justify-between text-[14px] text-paper/70"><span>{pushSlider.left}</span><span>{pushSlider.right}</span></span>
+                        <input type="range" min="0" max="100" value="50" data-k={`slider_${pushSlider.id}`} class="range mt-2 w-full" aria-label="Safe to experimental" />
+                      </label>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>How alive should it feel?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Each card moves the way your site would. Touch them.</p>
+                      <div class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+                        {motionLevels.map((m) => (
+                          <label class="pick block cursor-pointer rounded-[20px] border border-white/15 p-3 transition hover:border-white/40 sm:p-4">
+                            <input type="radio" name="motion" value={m.id} data-k="motion" class="sr-only" />
+                            <div class="hl-card figure" data-figure="terrain" data-intensity={m.intensity} {...(m.play ? { 'data-play': '' } : {})} aria-hidden="true"></div>
+                            <span class="label mt-3 block text-paper/45">{m.n}</span>
+                            <span class="mt-1 block text-[17px] font-semibold">{m.name}</span>
+                            <span class="mt-0.5 block text-[13px] leading-snug text-paper/55">{m.detail}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Who are you up against?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Competitors’ sites.</p>
+                      <div class="url-list mt-3" data-list="competitors"></div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Who isn’t a competitor, but feels the way you want to feel?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Any brand, any industry. Often the most useful answer in the brief.</p>
+                      <div class="url-list mt-3" data-list="aspirational"></div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>What should this <span class="accent text-spark">not</span> look like?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Most people know what they hate better than what they want.</p>
+                      <div class="url-list mt-3" data-list="anti"></div>
+                      <label class="mt-4 block"><span class="label text-paper/50">What do you hate about these?</span><textarea data-k="anti_why" rows="3" class={area} placeholder="Stock photos, too corporate, everything in boxes…"></textarea></label>
+                    </fieldset>
+                  </>
+                )}
+
+                {s.id === 'content' && (
+                  <>
+                    <fieldset>
+                      <legend class={qh}>What do you already have?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Tick it, then drop the files right under it.</p>
+                      <div class="mt-4 space-y-2">
+                        {assets.map((a) => (
+                          <div class="asset rounded-[18px] border border-white/10 transition" data-asset={a.id}>
+                            <label class="flex min-h-14 cursor-pointer items-center justify-between gap-3 px-4">
+                              <span class="text-[16px] font-medium">{a.name}</span>
+                              <input type="checkbox" value={a.id} data-k="assets" class="box" />
+                            </label>
+                            <div class="asset-body hidden px-4 pb-4">
+                              {a.id === 'palette' && <input data-k="palette_hex" class={fld + ' mb-3 mt-0'} placeholder="#0B0B0B, #D8FF85, #F3F1EA" />}
+                              <label class="drop flex cursor-pointer flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-white/20 px-4 py-5 text-center transition hover:border-spark">
+                                <input type="file" multiple accept={a.accept} data-files={`asset:${a.id}`} class="sr-only" />
+                                <span class="text-[15px] font-medium">Upload {a.name.toLowerCase()}</span>
+                                <span class="text-[13px] text-paper/45">{a.hint} · tap or drag</span>
+                              </label>
+                              <ul class="files mt-2 space-y-1" data-files-list={`asset:${a.id}`}></ul>
+                            </div>
+                          </div>
+                        ))}
+                        <label class="pick flex min-h-14 cursor-pointer items-center justify-between gap-3 rounded-[18px] border border-dashed border-white/20 px-4 transition">
+                          <span class="text-[16px] font-medium">Nothing yet</span>
+                          <input type="checkbox" value="nothing" data-k="assets" class="box" />
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Anything we absolutely cannot change?</legend>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {locked.map((l) => <label class={chip}><input type="checkbox" value={l} data-k="locked" class="sr-only" />{l}</label>)}
+                      </div>
+                      <input data-k="locked_note" data-show="locked~Other" hidden class={fld} placeholder="What else is locked?" />
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>What’s the situation with copy?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">So nobody says “I thought you were writing the texts” in week two.</p>
+                      <div class="mt-4 grid gap-2 sm:grid-cols-2">
+                        {copyStatus.map((c) => (
+                          <label class="pick flex cursor-pointer items-start gap-3 rounded-2xl border border-white/15 px-4 py-3.5 transition hover:border-white/40">
+                            <input type="radio" name="copy" value={c.id} data-k="copy" class="sr-only" />
+                            <span class="radio-dot mt-1" aria-hidden="true"></span>
+                            <span><span class="block text-[16px] font-medium">{c.name}</span><span class="block text-[14px] text-paper/55">{c.detail}</span></span>
+                          </label>
+                        ))}
+                      </div>
+                      <label class="mt-4 block" data-show="copy=nothing" hidden>
+                        <span class="label text-paper/50">Tell us everything you know about your company. We’ll take it from there.</span>
+                        <textarea data-k="copy_story" rows="6" class={area} placeholder="How it started, what you’re proud of, what clients say about you…"></textarea>
+                      </label>
+                    </fieldset>
+                  </>
+                )}
+
+                {s.id === 'pages' && (
+                  <>
+                    <fieldset>
+                      <legend class={qh}>How do you want to do this?</legend>
+                      <div class="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+                        <label class="pick flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-4 transition hover:border-white/40 sm:block sm:p-5">
+                          <input type="radio" name="pages_mode" value="builder" data-k="pages_mode" class="sr-only" />
+                          <div class="hl-card figure w-[72px] shrink-0 sm:mb-4 sm:w-[110px]" data-figure="stack" aria-hidden="true"></div>
+                          <span><span class="block text-[18px] font-semibold">I know what I want</span><span class="block text-[14px] text-paper/55">Lay out every page and fill each block.</span></span>
+                        </label>
+                        <label class="pick flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-4 transition hover:border-white/40 sm:block sm:p-5">
+                          <input type="radio" name="pages_mode" value="dump" data-k="pages_mode" class="sr-only" />
+                          <div class="hl-card figure w-[72px] shrink-0 sm:mb-4 sm:w-[110px]" data-figure="sieve" aria-hidden="true"></div>
+                          <span><span class="block text-[18px] font-semibold">I have no idea</span><span class="block text-[14px] text-paper/55">Perfect. Drop everything, we’ll propose the structure. No extra cost.</span></span>
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    <!-- Path A: the builder -->
+                    <div data-show="pages_mode=builder" hidden>
+                      <div class="sticky top-[128px] z-10 -mx-4 bg-pine-900/90 px-4 py-3 backdrop-blur md:top-[72px] md:mx-0 md:rounded-2xl md:px-4">
+                        <div class="flex items-center justify-between gap-3 text-[14px]">
+                          <span><b id="b-count" class="font-semibold">0</b><span class="text-paper/50"> / <span id="b-limit">30</span> blocks</span> <span class="text-paper/30">·</span> <b id="p-count" class="font-semibold">0</b><span class="text-paper/50"> / <span id="p-limit">5</span> pages</span></span>
+                          <button type="button" id="reset-pages" class="label text-paper/45 underline-offset-4 hover:text-paper hover:underline">Start over</button>
+                        </div>
+                        <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10"><div id="b-bar" class="h-full rounded-full bg-spark transition-[width] duration-500"></div></div>
+                        <p id="b-extra" class="mt-2 hidden text-[13px] text-spark"></p>
+                      </div>
+                      <div id="pages" class="mt-4 space-y-4"></div>
+                      <div class="mt-4 flex gap-2">
+                        <input id="new-page" class={fld + ' mt-0'} placeholder="New page name, e.g. Journal" />
+                        <button type="button" id="add-page" class="btn-ghost h-12 shrink-0 px-5">+ Add page</button>
+                      </div>
+                    </div>
+
+                    <!-- Path B: the dump -->
+                    <div data-show="pages_mode=dump" hidden class="space-y-8">
+                      <div>
+                        <p class={qh}>The dump</p>
+                        <p class="mt-1 text-[14px] text-paper/45">Drag everything here. Messy is fine.</p>
+                        <label class="drop mt-4 block cursor-pointer rounded-[24px] border border-dashed border-white/25 p-5 text-center transition hover:border-spark sm:p-8">
+                          <input type="file" multiple data-files="dump" class="sr-only" />
+                          <div class="figure mx-auto w-[150px] sm:w-[200px]" data-figure="basket" data-play aria-hidden="true"></div>
+                          <span class="mt-3 block text-[17px] font-semibold">Drop files or tap to upload</span>
+                          <span class="mt-2 flex flex-wrap justify-center gap-1.5">
+                            {dumpKinds.map((k) => <span class="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[12px] text-paper/60">{k}</span>)}
+                          </span>
+                        </label>
+                        <ul class="files mt-2 space-y-1" data-files-list="dump"></ul>
+                      </div>
+                      <label class="block"><span class="label text-paper/50">Links · Notion, Drive, competitor sites, anything</span><textarea data-k="dump_links" rows="3" class={area} placeholder="One per line"></textarea></label>
+                      <label class="block"><span class="label text-paper/50">Tell us anything we should know</span><textarea data-k="dump_notes" rows="7" class={area} placeholder="Brain-dump it. Half sentences welcome."></textarea></label>
+
+                      <div class="rounded-[24px] bg-white/[0.03] p-5 sm:p-6">
+                        <p class="label text-spark">We’d start here</p>
+                        <p class="mt-2 text-[15px] text-paper/60">A first structure from what you’ve told us so far. We’ll refine it from your files before the build plan.</p>
+                        <div id="reco" class="mt-5 space-y-4"></div>
+                        <div class="mt-5 flex flex-col gap-2 sm:flex-row">
+                          <button type="button" id="approve-reco" class="btn-primary h-12 sm:flex-1">Approve structure</button>
+                          <button type="button" id="edit-reco" class="btn-ghost h-12 sm:flex-1">Edit it myself</button>
+                        </div>
+                        <p id="reco-ok" class="mt-3 hidden text-center text-[14px] text-spark">Approved. We’ll build from this and adjust it with you.</p>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {s.id === 'features' && (
+                  <>
+                    <fieldset>
+                      <legend class={qh}>What does the site need to do?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Tick what applies. Each one asks a question or two, nothing more.</p>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {features.map((f) => <label class={chip}><input type="checkbox" value={f.id} data-k="features" class="sr-only" />{f.name}</label>)}
+                        <label class={chip}><input type="checkbox" value="none" data-k="features" class="sr-only" />None of these</label>
+                      </div>
+                      <div class="mt-5 space-y-3">
+                        {features.map((f) => (
+                          <div class="rounded-[20px] bg-white/[0.03] p-4 sm:p-5" data-show={`features~${f.id}`} hidden>
+                            <p class="label text-spark">{f.name}</p>
+                            <div class="mt-1 grid gap-4 sm:grid-cols-2">
+                              {f.fields.map((fd) =>
+                                fd.type === 'chips' ? (
+                                  <div class="sm:col-span-2">
+                                    <span class="label mt-2 block text-paper/50">{fd.label}</span>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                      {fd.options!.map((o) => <label class={chip}><input type="checkbox" value={o} data-k={`f_${f.id}_${fd.id}`} class="sr-only" />{o}</label>)}
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <label class="block"><span class="label mt-2 block text-paper/50">{fd.label}</span><input data-k={`f_${f.id}_${fd.id}`} type={fd.type === 'url' ? 'url' : 'text'} class={fld} placeholder={fd.placeholder} /></label>
+                                ),
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>Do you already own the domain?</legend>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <label class={chip}><input type="radio" name="domain_own" value="yes" data-k="domain_own" class="sr-only" />Yes</label>
+                        <label class={chip}><input type="radio" name="domain_own" value="no" data-k="domain_own" class="sr-only" />No, help me get one</label>
+                      </div>
+                      <input data-k="domain" data-show="domain_own=yes" hidden class={fld} inputmode="url" placeholder="yourcompany.com" />
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class={qh}>The technical stuff</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Skip anything you don’t know. No passwords here; we ask for access later, securely.</p>
+                      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                        <label class="block"><span class="label text-paper/50">Current hosting</span><input data-k="hosting" class={fld} placeholder="Squarespace, GoDaddy, no idea…" /></label>
+                        <label class="block"><span class="label text-paper/50">Current CMS</span><input data-k="current_cms" class={fld} placeholder="WordPress, Webflow, none" /></label>
+                      </div>
+                      <p class="label mt-5 text-paper/50">Pages that rank on Google we should keep?</p>
+                      <div class="mt-2 flex flex-wrap gap-2">
+                        {['Yes', 'No', 'Not sure'].map((o) => <label class={chip}><input type="radio" name="seo_keep" value={o} data-k="seo_keep" class="sr-only" />{o}</label>)}
+                      </div>
+                      <textarea data-k="seo_urls" data-show="seo_keep=Yes" hidden rows="3" class={area} placeholder="URLs to keep or redirect, one per line"></textarea>
+                    </fieldset>
+                  </>
+                )}
+
+                {s.id === 'review' && (
+                  <div id="review"></div>
+                )}
               </div>
-              <div class="mt-5 border-t border-white/10 pt-5">
-                <div class="flex items-baseline justify-between"><span class="text-paper/55">Total, fixed</span><span id="sum-total" class="text-[28px] font-semibold tracking-tight">$4,000</span></div>
-                <div class="mt-1 flex justify-between text-[14px]"><span class="text-paper/55">Due today</span><span id="sum-due">$2,000</span></div>
-                <p id="sum-terms" class="mt-1 text-[13px] text-paper/40">50% to reserve, 50% before launch.</p>
-              </div>
-              <button id="pay" type="submit" form="checkout" class="btn-primary mt-6 w-full h-14 text-[16px]">Reserve &amp; pay</button>
-              <p class="mt-3 text-center text-[12px] text-paper/40">Secure checkout by Stripe. Questions first? <a href={url('/#faq')} class="underline">Read the FAQ</a></p>
             </div>
-            <!-- Talk before paying -->
-            <div class="mt-3 rounded-[24px] bg-white/[0.03] p-6 text-center">
-              <p class="text-[15px] font-medium">Not sure yet?</p>
-              <p class="mt-1 text-[14px] text-paper/55">Talk it through with us before you pay. Free, no pitch.</p>
-              <a href={brand.callLink} class="btn-ghost mt-4 h-12 w-full border-white/12! text-[15px] hover:border-white/35!">Book a free 15-min call</a>
+          ))}
+          <p id="form-error" class="mt-8 hidden rounded-xl border border-booked/50 bg-booked/10 px-4 py-3 text-[15px] text-booked" role="alert"></p>
+        </form>
+
+        <!-- Your site, live. Sticky column on desktop; a bottom sheet on phones. -->
+        <aside id="panel" class="panel" aria-label="Your site so far" aria-live="polite">
+          <div class="panel-in rounded-t-[28px] bg-pine-800 p-5 pb-6 lg:rounded-[24px] lg:bg-white/[0.03] lg:p-6">
+            <div class="mx-auto mb-4 h-1 w-10 rounded-full bg-white/20 lg:hidden" aria-hidden="true"></div>
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="label text-paper/45">Your site</p>
+                <p id="pn-name" class="mt-1 text-[24px] font-semibold tracking-tight">Pick a format</p>
+              </div>
+              <p id="pn-price" class="text-right text-[20px] font-medium tracking-tight"></p>
             </div>
-          </aside>
-        </div>
+            <div class="mt-4 grid grid-cols-2 gap-2 text-[13px]">
+              <div class="rounded-xl bg-white/[0.04] px-3 py-2"><span class="block text-paper/45">Pages</span><span id="pn-pages" class="text-[17px] font-medium">—</span></div>
+              <div class="rounded-xl bg-white/[0.04] px-3 py-2"><span class="block text-paper/45">Blocks</span><span id="pn-blocks" class="text-[17px] font-medium">—</span></div>
+            </div>
+            <div id="pn-map" class="sitemap mt-4 max-h-[38vh] overflow-y-auto lg:max-h-[44vh]"></div>
+            <div id="pn-taste" class="mt-4 flex flex-wrap gap-1.5"></div>
+            <div class="mt-5 border-t border-white/10 pt-4">
+              <div class="flex items-center justify-between text-[14px]"><span class="text-paper/55">Brief complete</span><span id="pn-pct" class="font-mono text-spark">0%</span></div>
+              <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10"><div id="pn-bar" class="h-full w-0 rounded-full bg-spark transition-[width] duration-500"></div></div>
+            </div>
+            <a href={brand.callLink} class="mt-4 block text-center text-[13px] text-paper/45 underline-offset-4 hover:text-paper hover:underline">Rather talk it through? Book a free 15-min call</a>
+          </div>
+        </aside>
       </div>
 
-      <!-- Confirmation (shown after "payment") -->
-      <div id="done" class="mx-auto hidden max-w-3xl text-center" tabindex="-1">
-        <span class="placeholder-tag">Demo: Stripe Checkout and project creation go here</span>
-        <p class="mx-auto mt-8 grid size-16 place-items-center rounded-full bg-spark text-[28px] text-ink">✓</p>
-        <h1 class="display mt-8 t-h2">You’re booked. <span class="accent text-spark">That was the hard part.</span></h1>
-        <p id="done-line" class="mx-auto mt-5 max-w-lg text-[18px] text-paper/65"></p>
-
-        <div class="mt-12 rounded-[28px] bg-white/[0.03] p-6 text-left sm:p-8">
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">Your brief · about 20 minutes</p>
-            <p class="label text-paper/45">Save &amp; continue any time</p>
-          </div>
-          <ol class="mt-6 space-y-2">
-            {onboarding.map(([t, d, m], i) => (
-              <li class="flex items-center gap-4 rounded-2xl bg-white/[0.04] p-4">
-                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-white/15 font-mono text-[13px] text-spark">{i + 1}</span>
-                <span class="flex-1">
-                  <span class="block text-[16px] font-medium">{t}</span>
-                  <span class="block text-[14px] text-paper/55">{d}</span>
-                </span>
-                <span class="label shrink-0 text-paper/40">{m}</span>
-              </li>
-            ))}
-          </ol>
-          <a href={url('/')} class="btn-primary mt-6 w-full">Start your brief</a>
-          <p class="mt-3 text-center text-[13px] text-paper/45">A copy of your receipt and dashboard link is on its way to your inbox.</p>
+      <!-- Sent -->
+      <div id="done" class="mx-auto hidden max-w-2xl pb-16 text-center" tabindex="-1">
+        <div class="figure mx-auto w-[220px] sm:w-[300px]" data-figure="slow" data-play aria-hidden="true"></div>
+        <h1 class="display mt-6 t-h2">Brief in. <span class="accent text-spark">Build plan next.</span></h1>
+        <p id="done-line" class="mx-auto mt-5 max-w-lg text-[17px] text-paper/65 sm:text-[18px]"></p>
+        <div id="done-demo" class="mt-8 hidden">
+          <span class="placeholder-tag">Demo: saved in this browser for now</span>
+          <button type="button" id="download" class="btn-ghost mx-auto mt-4 flex h-12">Download brief (.json)</button>
         </div>
+        <a href={url('/')} class="btn-primary mt-8 h-14 px-8 text-[16px]">Back to the site</a>
       </div>
     </div>
   </section>
-  <Footer />
+
+  <!-- Thumb bar -->
+  <div id="thumbbar" class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-pine-900/90 backdrop-blur-xl">
+    <div class="wrap flex items-center gap-2 py-3 pb-[max(12px,env(safe-area-inset-bottom))]">
+      <button type="button" id="back" class="btn-ghost size-12 shrink-0 px-0" aria-label="Previous step">←</button>
+      <button type="button" id="pill" class="flex h-12 min-w-0 flex-1 items-center gap-3 rounded-full bg-white/[0.06] px-4 text-left lg:hidden" aria-controls="panel" aria-expanded="false">
+        <span class="ring shrink-0" id="pill-ring" aria-hidden="true"></span>
+        <span class="min-w-0 truncate text-[14px]"><span id="pill-text">Your site</span></span>
+      </button>
+      <span class="hidden flex-1 text-[14px] text-paper/45 lg:block" id="bar-hint"></span>
+      <button type="button" id="next" class="btn-primary h-12 shrink-0 px-6 text-[15px] sm:px-8">Continue →</button>
+    </div>
+  </div>
+  <div id="scrim" class="fixed inset-0 z-30 hidden bg-black/60 lg:hidden"></div>
 </Layout>
 
 <style is:global>
-  /* A picked option (package, add-on, week) turns fully accent and everything inside adapts. */
+  /* Hairline figures in the site palette: plates match the page, lit strokes in the accent. */
+  .hl {
+    --hairline-plate: var(--color-pine-900);
+    --hairline-hi: var(--color-spark);
+    --hairline-edge: rgb(243 241 234 / 0.62);
+    --hairline-mid: rgb(243 241 234 / 0.28);
+    --hairline-lo: rgb(243 241 234 / 0.1);
+    --hairline-stroke: 1;
+  }
+  .pick:has(input:checked) .hl-card, .pick.on .hl-card {
+    --hairline-plate: var(--color-spark);
+    --hairline-hi: var(--color-ink);
+    --hairline-edge: rgb(5 5 5 / 0.72);
+    --hairline-mid: rgb(5 5 5 / 0.38);
+    --hairline-lo: rgb(5 5 5 / 0.16);
+  }
+  .figure { aspect-ratio: 5 / 4; }
+
+  /* A picked option turns fully accent and everything inside adapts (same as the old checkout). */
   .pick:has(input:checked), .pick.on { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }
   .pick:has(input:checked) *, .pick.on * { color: inherit; border-color: rgb(5 5 5 / 0.14); }
   .pick:has(input:checked) [class*="text-paper/"], .pick.on [class*="text-paper/"] { color: rgb(5 5 5 / 0.62); }
-  .pick:has(input:checked) .chip { background: var(--color-ink); color: var(--color-spark); }
-  .pick:has(input:checked) .dot, .pick.on .dot { background: var(--color-ink); }
-  .pick:has(input:checked) input[type="checkbox"] { accent-color: var(--color-ink); }
-  .pick.on button:hover { background: rgb(5 5 5 / 0.08); }
+  .pick:has(input:focus-visible) { outline: 2px solid var(--color-spark); outline-offset: 3px; }
+  .radio-dot { width: 16px; height: 16px; flex: none; border-radius: 999px; border: 1.5px solid rgb(243 241 234 / 0.35); }
+  .pick:has(input:checked) .radio-dot { border: 5px solid var(--color-ink); }
+
+  /* Asset rows: checkbox + drop zone that opens under it */
+  .box { -webkit-appearance: none; appearance: none; flex: none; width: 24px; height: 24px; border-radius: 7px; border: 1.5px solid rgb(243 241 234 / 0.3); background: transparent center / 14px no-repeat; transition: background-color .2s, border-color .2s; cursor: pointer; }
+  .box:checked { background-color: var(--color-spark); border-color: var(--color-spark); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2.5 7.5l3 3 6-7' fill='none' stroke='%230b0b0b' stroke-width='2'/%3E%3C/svg%3E"); }
+  .pick:has(.box:checked) .box { background-color: var(--color-ink); border-color: var(--color-ink); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2.5 7.5l3 3 6-7' fill='none' stroke='%23d8ff85' stroke-width='2'/%3E%3C/svg%3E"); }
+  .asset:has(.box:checked) { border-color: rgb(216 255 133 / 0.5); background: rgb(255 255 255 / 0.03); }
+  .asset:has(.box:checked) .asset-body { display: block; }
+  .drop.over { border-color: var(--color-spark); background: rgb(216 255 133 / 0.06); }
+
+  /* Sliders */
+  .range { -webkit-appearance: none; appearance: none; height: 28px; background: transparent; }
+  .range::-webkit-slider-runnable-track { height: 4px; border-radius: 4px; background: linear-gradient(to right, var(--color-spark) var(--v, 50%), rgb(255 255 255 / 0.12) var(--v, 50%)); }
+  .range::-moz-range-track { height: 4px; border-radius: 4px; background: rgb(255 255 255 / 0.12); }
+  .range::-moz-range-progress { height: 4px; border-radius: 4px; background: var(--color-spark); }
+  .range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -11px; border-radius: 999px; background: var(--color-paper); border: 0; box-shadow: 0 0 0 6px rgb(216 255 133 / 0.18); }
+  .range::-moz-range-thumb { width: 26px; height: 26px; border-radius: 999px; background: var(--color-paper); border: 0; }
+
+  /* Stepper */
+  .step[data-state="done"] .bar { background: rgb(216 255 133 / 0.55); }
+  .step[data-state="now"] .bar { background: var(--color-spark); }
+  .step[data-state="now"] .label { color: var(--color-paper); }
+
+  /* Reference cards */
+  .ref { position: relative; display: block; overflow: hidden; border-radius: 16px; background: rgb(255 255 255 / 0.04); outline: 2px solid transparent; outline-offset: -2px; transition: outline-color .2s, transform .3s cubic-bezier(.2,.7,.2,1); }
+  .ref img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .3s; }
+  .ref:hover img { transform: scale(1.03); }
+  .ref[aria-pressed="true"] { outline-color: var(--color-spark); }
+  .ref .n { position: absolute; top: 8px; left: 8px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--color-spark); color: var(--color-ink); font: 500 13px var(--font-mono); transform: scale(0); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .ref[aria-pressed="true"] .n { transform: scale(1); }
+  .ref.dim img { opacity: .45; }
+
+  /* Live sitemap glyphs: each block draws a tiny wireframe */
+  .sitemap { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 0.18) transparent; padding-right: 6px; }
+  .sitemap .pg + .pg { margin-top: 12px; }
+  .blk { position: relative; border-radius: 6px; background: rgb(255 255 255 / 0.05); padding: 5px; animation: blk-in .45s cubic-bezier(.2,.7,.2,1) both; }
+  .blk + .blk { margin-top: 3px; }
+  .blk i { display: block; border-radius: 2px; background: rgb(243 241 234 / 0.22); }
+  .blk .row { display: flex; gap: 3px; }
+  .blk .row > i { flex: 1; }
+  .blk.over { background: rgb(255 138 101 / 0.14); }
+  @keyframes blk-in { from { opacity: 0; transform: translateY(6px) scaleY(.6); } }
+
+  /* Ring in the mobile pill */
+  .ring { width: 22px; height: 22px; border-radius: 999px; background: conic-gradient(var(--color-spark) calc(var(--p, 0) * 1%), rgb(255 255 255 / 0.12) 0); -webkit-mask: radial-gradient(circle 7px, transparent 98%, #000); mask: radial-gradient(circle 7px, transparent 98%, #000); }
+
+  /* Bottom sheet on phones */
+  @media (max-width: 1023px) {
+    .panel { position: fixed; inset: auto 0 0 0; z-index: 35; transform: translateY(105%); transition: transform .5s cubic-bezier(.2,.8,.2,1); padding-bottom: 76px; }
+    .panel.open { transform: none; }
+  }
+  @media (min-width: 1024px) {
+    .panel { position: sticky; top: 96px; align-self: start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .panel, .blk, .ref img, .ref .n { transition: none; animation: none; }
+  }
 </style>
 
 <script>
-  import { packages, addOns, buildWeeks, extraPageSections, type PackageId } from '../data/site';
-
-  const form = document.getElementById('checkout') as HTMLFormElement;
-  const $ = (id: string) => document.getElementById(id)!;
-  const money = (n: number) => '$' + n.toLocaleString('en-US');
-
-  // Preselect from URL: /start?package=landing&week=2026-10-19
-  const params = new URLSearchParams(location.search);
-  const pkgParam = params.get('package');
-  const weekParam = params.get('week');
-  if (pkgParam) form.querySelector<HTMLInputElement>(`input[name=package][value="${pkgParam}"]`)?.click();
-  const weekInput =
-    form.querySelector<HTMLInputElement>(`input[name=week][value="${weekParam}"]:not(:disabled)`) ??
-    form.querySelector<HTMLInputElement>('input[name=week]:not(:disabled)');
-  if (weekInput) weekInput.checked = true;
-
-  // Quantity steppers
-  form.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((b) =>
-    b.addEventListener('click', () => {
-      const input = b.parentElement!.querySelector('input')!;
-      input.value = String(Math.min(10, Math.max(0, Number(input.value) + Number(b.dataset.step))));
-      update();
-    }),
-  );
-
-  function addBusinessDays(iso: string, days: number) {
-    const d = new Date(iso + 'T00:00:00');
-    let left = days - 1; // day 1 is the start date
-    while (left > 0) {
-      d.setDate(d.getDate() + 1);
-      if (d.getDay() !== 0 && d.getDay() !== 6) left--;
-    }
-    return d;
-  }
-  const fmt = (d: Date) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-
-  function state() {
-    const fd = new FormData(form);
-    const pkg = packages.find((p) => p.id === (fd.get('package') as PackageId))!;
-    const chosen: { id: string; name: string; price: number; days: number; qty: number }[] = [];
-    for (const a of addOns) {
-      if (a.notFor?.includes(pkg.id)) continue;
-      const qty = a.qty ? Number(fd.get(`qty-${a.id}`) || 0) : fd.getAll('addon').includes(a.id) ? 1 : 0;
-      if (qty > 0) chosen.push({ id: a.id, name: qty > 1 ? `${a.name} × ${qty}` : a.name, price: a.price * qty, days: (a.addDays ?? 0) * qty, qty });
-    }
-    const qtyOf = (id: string) => chosen.find((c) => c.id === id)?.qty ?? 0;
-    const pages = pkg.pages + qtyOf('page');
-    const sections = pkg.sections + qtyOf('page') * extraPageSections + qtyOf('section');
-    const rush = qtyOf('rush') > 0;
-    const [lo, hi] = pkg.days.match(/\d+/g)!.map(Number);
-    const extra = Math.ceil(chosen.reduce((n, c) => n + c.days, 0));
-    let min = lo + extra;
-    let max = (hi ?? lo) + extra;
-    if (rush) { min = Math.ceil(min * 0.6); max = Math.ceil(max * 0.6); }
-    const total = pkg.price + chosen.reduce((n, c) => n + c.price, 0);
-    const week = buildWeeks.find((w) => w.start === fd.get('week'));
-    return { pkg, chosen, min, max, total, week, pages, sections };
-  }
-
-  function update() {
-    const s = state();
-    // hide add-ons already included in the package
-    form.querySelectorAll<HTMLElement>('.addon').forEach((el) => {
-      const included = (el.dataset.notFor ?? '').split(',').includes(s.pkg.id);
-      el.classList.toggle('opacity-40', included);
-      el.querySelectorAll('input,button').forEach((i) => ((i as HTMLInputElement).disabled = included));
-      el.querySelector('.included')!.classList.toggle('hidden', !included);
-      const qty = el.querySelector<HTMLInputElement>('input[type=number]');
-      if (qty) el.classList.toggle('on', !included && Number(qty.value) > 0);
-    });
-
-    form.querySelectorAll<HTMLElement>('.scope').forEach((el) => el.classList.toggle('hidden', el.dataset.scope !== s.pkg.id));
-    $('sum-name').textContent = s.pkg.name;
-    $('sum-scope').textContent = `${s.pages} page${s.pages === 1 ? '' : 's'} · ${s.sections} sections`;
-    $('sum-lines').innerHTML = [
-      `<li class="flex justify-between"><span>${s.pkg.name}</span><span>${money(s.pkg.price)}</span></li>`,
-      ...s.chosen.map((c) => `<li class="flex justify-between text-paper/70"><span>+ ${c.name}</span><span>${c.price ? money(c.price) : '<span class="text-spark">Free</span>'}</span></li>`),
-    ].join('');
-    $('sum-days').textContent = `${s.min === s.max ? s.min : `${s.min}–${s.max}`} business days`;
-    $('sum-start').textContent = s.week ? fmt(new Date(s.week.start + 'T00:00:00')) : 'Pick a week';
-    $('sum-launch').textContent = s.week ? `~${fmt(addBusinessDays(s.week.start, s.max))}` : '—';
-    $('sum-total').textContent = (s.pkg.id === 'websiteplus' ? 'from ' : '') + money(s.total);
-    const due = Math.round((s.total * s.pkg.depositPct) / 100);
-    $('sum-due').textContent = money(due);
-    $('sum-terms').textContent = s.pkg.payment + '.';
-    $('pay').textContent = `Reserve & pay ${money(due)}`;
-  }
-
-  form.addEventListener('change', update);
-  update();
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const err = $('form-error');
-    const missing = [...form.querySelectorAll<HTMLInputElement>('input[required]')].filter((i) => !i.value.trim());
-    const emailBad = !/^\S+@\S+\.\S+$/.test((form.elements.namedItem('email') as HTMLInputElement).value);
-    const s = state();
-    if (!s.week) { err.textContent = 'Pick a build week to reserve.'; }
-    else if (missing.length) { err.textContent = 'Add your name, email and company so we know who we’re building for.'; missing[0].focus(); }
-    else if (emailBad) { err.textContent = 'That email doesn’t look right.'; }
-    else err.textContent = '';
-    err.classList.toggle('hidden', !err.textContent);
-    if (err.textContent) return;
-
-    // TODO: create a Stripe Checkout Session server-side and redirect.
-    const name = (form.elements.namedItem('company') as HTMLInputElement).value.trim();
-    $('done-line').textContent = `${s.pkg.name} for ${name}. Build starts ${fmt(new Date(s.week!.start + 'T00:00:00'))}, estimated launch ${fmt(addBusinessDays(s.week!.start, s.max))}. Send your brief at least 2 business days before.`;
-    $('config').classList.add('hidden');
-    $('done').classList.remove('hidden');
-    window.scrollTo({ top: 0 });
-    $('done').focus();
-  });
+  import './../scripts/brief';
 </script>

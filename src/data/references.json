@@ -1,0 +1,650 @@
+[
+  {
+    "id": "01",
+    "slug": "coda-io",
+    "title": "Coda",
+    "url": "https://coda.io",
+    "category": "saas",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~67)",
+    "structure": "ecosystem-index",
+    "northstar": "Warm, muted terracotta and deep charcoal, clean sans-serif, spacious, technically grounded.",
+    "palette": [
+      "#f1a651",
+      "#7a4509",
+      "#fcd47c",
+      "#9f5556"
+    ]
+  },
+  {
+    "id": "02",
+    "slug": "detroit-paris",
+    "title": "Detroit | AI Production House in Paris for Luxury Brands",
+    "url": "https://detroit.paris/",
+    "category": "saas",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "cool",
+    "structure": "specimen",
+    "northstar": "Cool, spacious, stark white canvas; bold, geometric sans serif; deep indigo shadows.",
+    "palette": [
+      "#0c7db6",
+      "#89b6cc",
+      "#8c4c1c",
+      "#958c4e"
+    ]
+  },
+  {
+    "id": "03",
+    "slug": "mux-com",
+    "title": "Video API for developers | Mux",
+    "url": "https://www.mux.com",
+    "category": "saas",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "split-studio",
+    "northstar": "Cool, stark geometry - crisp sans-serif, muted greys, punctuated by vibrant, focused orange.",
+    "palette": [
+      "#f86204",
+      "#fce4d4",
+      "#482b16",
+      "#977752"
+    ]
+  },
+  {
+    "id": "04",
+    "slug": "humaan-com",
+    "title": "Humaan | Websites & Apps | Award-Winning Digital Agency",
+    "url": "https://www.humaan.com",
+    "category": "creative",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~139)",
+    "structure": "index-first",
+    "northstar": "Quiet, verdant expanse: clean, geometric forms on softly textured, pale earth.",
+    "palette": [
+      "#64ad51",
+      "#fcfcf4",
+      "#2c4c24",
+      "#54904c"
+    ]
+  },
+  {
+    "id": "05",
+    "slug": "exoape-com",
+    "title": "Exo Ape - Global Digital Design Studio",
+    "url": "https://exoape.com",
+    "category": "creative",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "cool",
+    "structure": "split-studio",
+    "northstar": "Deep twilight blue, clean geometric type, expansive open space, confident serenity.",
+    "palette": [
+      "#2c74a4",
+      "#9cbcdc",
+      "#146494",
+      "#6197ba"
+    ]
+  },
+  {
+    "id": "06",
+    "slug": "phantom-land",
+    "title": "Phantom Studios - Technology Creative Agency - London and Auckland",
+    "url": "https://phantom.land/",
+    "category": "creative",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "marquee-hero",
+    "northstar": "Crisp, obsidian geometry - stark sans-serif precision in a cool, digital expanse.",
+    "palette": [
+      "#dc7a21",
+      "#f8cc4b",
+      "#631510",
+      "#64639c"
+    ]
+  },
+  {
+    "id": "07",
+    "slug": "work-co",
+    "title": "Work",
+    "url": "https://work.co",
+    "category": "services",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "specimen",
+    "northstar": "Crisp, cold geometry - stark white space, clean sans-serifs, and a muted, technical grey.",
+    "palette": [
+      "#fc342d",
+      "#820601",
+      "#fc6464",
+      "#5c5c94"
+    ]
+  },
+  {
+    "id": "08",
+    "slug": "everlaw-com",
+    "title": "Everlaw",
+    "url": "https://everlaw.com",
+    "category": "services",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~135)",
+    "structure": "feature-stack",
+    "northstar": "Cool, vast, grid-structured space - crisp sans-serif geometry on a muted, deep-sea palette.",
+    "palette": [
+      "#8cc06c",
+      "#2d1c11",
+      "#b3fb8c",
+      "#6fa362"
+    ]
+  },
+  {
+    "id": "09",
+    "slug": "campaignmonitor-com",
+    "title": "Campaign Monitor: Email Marketing Platform & Services",
+    "url": "https://campaignmonitor.com/",
+    "category": "services",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "cool",
+    "structure": "bento-grid",
+    "northstar": "Cool, geometric blues and muted purples; crisp, clean sans-serif; spacious, purposeful layout.",
+    "palette": [
+      "#7c5be9",
+      "#9c7cfc",
+      "#270f74",
+      "#a59f52"
+    ]
+  },
+  {
+    "id": "10",
+    "slug": "maharishistore-com",
+    "title": "Maharishistore",
+    "url": "https://maharishistore.com",
+    "category": "ecommerce",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "cool",
+    "structure": "split-studio",
+    "northstar": "Dusty sepia and muted charcoal, with a subtly textured, spacious serif - quiet confidence.",
+    "palette": [
+      "#3d669e",
+      "#753833",
+      "#e0c1af",
+      "#9e6353"
+    ]
+  },
+  {
+    "id": "11",
+    "slug": "fellowproducts-com",
+    "title": "Fellowproducts",
+    "url": "https://fellowproducts.com",
+    "category": "ecommerce",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "specimen",
+    "northstar": "Dusty rose ceramics and warm wood, set against a spacious, softly lit, neutral backdrop.",
+    "palette": [
+      "#82563c",
+      "#5a3c29",
+      "#d5b6a4",
+      "#996f51"
+    ]
+  },
+  {
+    "id": "12",
+    "slug": "casper-com",
+    "title": "Casper",
+    "url": "https://casper.com",
+    "category": "ecommerce",
+    "mode": "light",
+    "display": "roman-serif",
+    "temp": "warm",
+    "structure": "feature-stack",
+    "northstar": "Soft, warm, spacious; gentle sans-serifs float across a muted, calming palette.",
+    "palette": [
+      "#cc352c",
+      "#1c346c",
+      "#84bbe3",
+      "#64759d"
+    ]
+  },
+  {
+    "id": "13",
+    "slug": "lyfehotels-com",
+    "title": "Lyfehotels",
+    "url": "https://lyfehotels.com",
+    "category": "hospitality",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~106)",
+    "structure": "split-studio",
+    "northstar": "Soft, warm ochre tones and clean sans-serifs evoke serene, modern sophistication.",
+    "palette": [
+      "#c3bb3b",
+      "#5c581c",
+      "#dcc8b2",
+      "#948254"
+    ]
+  },
+  {
+    "id": "14",
+    "slug": "belmond-com",
+    "title": "Belmond",
+    "url": "https://belmond.com",
+    "category": "hospitality",
+    "mode": "dark",
+    "display": "geometric-sans",
+    "temp": "chromatic-other (~174)",
+    "structure": "marquee-hero",
+    "northstar": "Deep teal and warm sand, clean sans-serif, expansive coastal serenity.",
+    "palette": [
+      "#0d9a7f",
+      "#14345c",
+      "#dcb4ac",
+      "#5c7e9c"
+    ]
+  },
+  {
+    "id": "15",
+    "slug": "onyxcoffeelab-com",
+    "title": "Onyx Coffee Lab - Coffee Roasters • Café • Barista Training",
+    "url": "https://onyxcoffeelab.com",
+    "category": "hospitality",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "specimen",
+    "northstar": "Deep charcoal space, elegant script, and generous, airy arrangement feel quietly sophisticated.",
+    "palette": [
+      "#c0241c",
+      "#ee908b",
+      "#046104",
+      "#996e60"
+    ]
+  },
+  {
+    "id": "16",
+    "slug": "works-studio",
+    "title": "Works Studio",
+    "url": "https://works.studio",
+    "category": "architecture",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "portfolio-grid",
+    "northstar": "Quiet, structured space: muted earth tones, clean sans serif, ample breathing room.",
+    "palette": [
+      "#963025",
+      "#1e3243",
+      "#d49174",
+      "#a87a62"
+    ]
+  },
+  {
+    "id": "17",
+    "slug": "hay-com",
+    "title": "HAY.com - latest products, designer news and retailer info",
+    "url": "https://www.hay.com",
+    "category": "architecture",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~79)",
+    "structure": "split-studio",
+    "northstar": "Warm sand and soft shadows, clean san-serifs, a quiet, modern Mediterranean stillness.",
+    "palette": [
+      "#9c564a",
+      "#f4c474",
+      "#22473f",
+      "#5c9ca1"
+    ]
+  },
+  {
+    "id": "18",
+    "slug": "bynikistudio-com",
+    "title": "NIKI Studio",
+    "url": "https://bynikistudio.com/",
+    "category": "architecture",
+    "mode": "dark",
+    "display": "display-condensed-bold",
+    "temp": "chromatic-other (~68)",
+    "structure": "split-studio",
+    "northstar": "Deep charcoal expanse, precise geometric type, cool digital stillness.",
+    "palette": [
+      "#ba7924",
+      "#e9c28f",
+      "#54240c",
+      "#7c7f80"
+    ]
+  },
+  {
+    "id": "19",
+    "slug": "fitbod-me",
+    "title": "Fitbod Me",
+    "url": "https://fitbod.me",
+    "category": "health",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "feature-stack",
+    "northstar": "Deep charcoal expanse, crisp sans-serif precision, digital weight and calculated movement.",
+    "palette": [
+      "#f3345c",
+      "#471e2c",
+      "#f4a3ac",
+      "#9c6954"
+    ]
+  },
+  {
+    "id": "20",
+    "slug": "functionhealth-com",
+    "title": "Functionhealth",
+    "url": "https://functionhealth.com",
+    "category": "health",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "feature-stack",
+    "northstar": "Warm ochre and muted terracotta, clean sans-serif geometry, spacious, airy depth.",
+    "palette": [
+      "#b45c34",
+      "#5c3c0c",
+      "#cc9a81",
+      "#886f5a"
+    ]
+  },
+  {
+    "id": "21",
+    "slug": "headspace-com",
+    "title": "Headspace",
+    "url": "https://headspace.com",
+    "category": "health",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~86)",
+    "structure": "feature-stack",
+    "northstar": "Soft, glass-like warmth; gentle rounded forms, playful sans-serif float on airy, light gradients.",
+    "palette": [
+      "#fac005",
+      "#201453",
+      "#87caf6",
+      "#a18158"
+    ]
+  },
+  {
+    "id": "22",
+    "slug": "buly1803-com",
+    "title": "Buly1803",
+    "url": "https://buly1803.com",
+    "category": "fashion",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "portfolio-grid",
+    "northstar": "Dusty rose and aged gold, elegant script whispers across airy, generous white space.",
+    "palette": [
+      "#976336",
+      "#74412a",
+      "#f2bdba",
+      "#a5775f"
+    ]
+  },
+  {
+    "id": "23",
+    "slug": "chloe-com",
+    "title": "Chloe",
+    "url": "https://chloe.com",
+    "category": "fashion",
+    "mode": "dark",
+    "display": "geometric-sans",
+    "temp": "warm",
+    "structure": "photographic",
+    "northstar": "Pale sand and bone-white lace, airy serif whispers in a vast, sun-drenched stillness.",
+    "palette": [
+      "#b86a46",
+      "#341e14",
+      "#dab19f",
+      "#6e3f2a"
+    ]
+  },
+  {
+    "id": "24",
+    "slug": "cuyana-com",
+    "title": "Cuyana",
+    "url": "https://cuyana.com",
+    "category": "fashion",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "portfolio-grid",
+    "northstar": "Soft, diffused light on warm, muted tones; clean, open space, gentle serif whispers.",
+    "palette": [
+      "#dc6739",
+      "#932b21",
+      "#d9c482",
+      "#b19761"
+    ]
+  },
+  {
+    "id": "25",
+    "slug": "designmuseum-org",
+    "title": "Designmuseum",
+    "url": "https://designmuseum.org",
+    "category": "culture",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~109)",
+    "structure": "ecosystem-index",
+    "northstar": "Cool, quiet geometry: muted teal and charcoal, crisp sans-serif, expansive, airy depth.",
+    "palette": [
+      "#c8c728",
+      "#909020",
+      "#8aafe4",
+      "#697d93"
+    ]
+  },
+  {
+    "id": "26",
+    "slug": "thecreativeindependent-com",
+    "title": "Thecreativeindependent",
+    "url": "https://thecreativeindependent.com",
+    "category": "culture",
+    "mode": "light",
+    "display": "mono",
+    "temp": "warm",
+    "structure": "bento-grid",
+    "northstar": "Quiet, structured clarity: muted earthy tones, clean sans-serifs, generous horizontal space.",
+    "palette": [
+      "#d53e0f",
+      "#540c6c",
+      "#fab494",
+      "#54809d"
+    ]
+  },
+  {
+    "id": "27",
+    "slug": "daptonerecords-com",
+    "title": "Daptonerecords",
+    "url": "https://daptonerecords.com",
+    "category": "culture",
+    "mode": "light",
+    "display": "geometric-sans",
+    "temp": "warm",
+    "structure": "portfolio-grid",
+    "northstar": "Vintage folk art warmth: muted earthy tones, playful hand-drawn type, spacious, inviting.",
+    "palette": [
+      "#e75a26",
+      "#6e181a",
+      "#eed9bd",
+      "#3c7464"
+    ]
+  },
+  {
+    "id": "28",
+    "slug": "bluebottlecoffee-com",
+    "title": "Bluebottlecoffee",
+    "url": "https://bluebottlecoffee.com",
+    "category": "food",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "cool",
+    "structure": "specimen",
+    "northstar": "Soft, muted teal and warm beige - clean, generous spacing fosters tranquil, considered exploration.",
+    "palette": [
+      "#18b0e1",
+      "#0f91b4",
+      "#8fbbcf",
+      "#698398"
+    ]
+  },
+  {
+    "id": "29",
+    "slug": "atomixnyc-com",
+    "title": "Atomixnyc",
+    "url": "https://atomixnyc.com",
+    "category": "food",
+    "mode": "dark",
+    "display": "roman-serif",
+    "temp": "warm",
+    "structure": "split-studio",
+    "northstar": "Deep teal and rust hues flow across a spacious, elegant layout with subtly crisp, modern typography.",
+    "palette": [
+      "#c95535",
+      "#471e13",
+      "#e3a696",
+      "#aa7668"
+    ]
+  },
+  {
+    "id": "30",
+    "slug": "mooala-com",
+    "title": "Mooala | Organic Plant Based Milk for the Whole Family - Mooala Brands",
+    "url": "https://mooala.com/",
+    "category": "food",
+    "mode": "light",
+    "display": "roman-serif",
+    "temp": "chromatic-other (~67)",
+    "structure": "bento-grid",
+    "northstar": "Warm, softly textured ochre - clean, friendly sans serif - expansive, gentle negative space.",
+    "palette": [
+      "#a46a21",
+      "#e8c190",
+      "#64380f",
+      "#ac8464"
+    ]
+  },
+  {
+    "id": "31",
+    "slug": "moderntreasury-com",
+    "title": "Moderntreasury",
+    "url": "https://moderntreasury.com",
+    "category": "finance",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "warm",
+    "structure": "map-diagram",
+    "northstar": "Cool, clinical grids - crisp sans-serifs float on vast, softly-lit white space.",
+    "palette": [
+      "#c83636",
+      "#681c1c",
+      "#fcf4f4",
+      "#689c8c"
+    ]
+  },
+  {
+    "id": "32",
+    "slug": "arweave-org",
+    "title": "Arweave",
+    "url": "https://arweave.org",
+    "category": "finance",
+    "mode": "light",
+    "display": "mono",
+    "temp": "warm",
+    "structure": "specimen",
+    "northstar": "Cool, clinical white space, stark sans-serifs, and a muted, digital-sunrise glow.",
+    "palette": [
+      "#fc6404",
+      "#833301",
+      "#fcaa72",
+      "#777777"
+    ]
+  },
+  {
+    "id": "33",
+    "slug": "forestadmin-com",
+    "title": "Forest Admin: the Fintech Ops Orchestration Layer for AI Teams",
+    "url": "https://forestadmin.com/",
+    "category": "finance",
+    "mode": "light",
+    "display": "grotesk-sans",
+    "temp": "chromatic-other (~120)",
+    "structure": "feature-stack",
+    "northstar": "Cool, spacious digital blueprint - clean sans-serifs on a muted, verdant expanse.",
+    "palette": [
+      "#9cbc64",
+      "#d4ec8c",
+      "#545c2c",
+      "#8fa65b"
+    ]
+  },
+  {
+    "id": "34",
+    "slug": "ozgur-design",
+    "title": "Oz Gultekin - Product Experience Designer Portfolio ⊹ Montreal, Canada",
+    "url": "https://ozgur.design/",
+    "category": "personal",
+    "mode": "dark",
+    "display": "geometric-sans",
+    "temp": "cool",
+    "structure": "specimen",
+    "northstar": "Crisp, stark white expanse - clean sans-serif geometry on cool, echoing shadows.",
+    "palette": [
+      "#7858c8",
+      "#947ccc",
+      "#332063",
+      "#6c8c84"
+    ]
+  },
+  {
+    "id": "35",
+    "slug": "109ichiki-com",
+    "title": "1:09 Portfolio",
+    "url": "https://109ichiki.com/",
+    "category": "personal",
+    "mode": "light",
+    "display": "mono",
+    "temp": "cool",
+    "structure": "bento-grid",
+    "northstar": "Electric lavender and cyan, bubbly sans-serif, floating digital depth.",
+    "palette": [
+      "#109cf2",
+      "#a9a2f9",
+      "#1467bc",
+      "#98ac60"
+    ]
+  },
+  {
+    "id": "36",
+    "slug": "clayboan-com",
+    "title": "Clay Boan - Multidisciplinary Designer",
+    "url": "https://clayboan.com/",
+    "category": "personal",
+    "mode": "dark",
+    "display": "grotesk-sans",
+    "temp": "neutral",
+    "structure": "marquee-hero",
+    "northstar": "Deep charcoal expanse, stark black edges, bold gothic script - a sculpted, weighty presence.",
+    "palette": [
+      "#7e7e80",
+      "#bcbcbd",
+      "#414142",
+      "#84848c"
+    ]
+  }
+]
