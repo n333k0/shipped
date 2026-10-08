@@ -1,0 +1,79 @@
+---
+// Line art for the three packages, in the Hairline palette (--hairline-* from the .hl wrapper).
+// Landing: one long page on desktop and phone. Website: five pages. Website+: a whole sitemap.
+// They move while the card is hovered or picked (CSS in start.astro).
+interface Props { id: 'landing' | 'website' | 'websiteplus'; class?: string }
+const { id, class: cls = '' } = Astro.props;
+const uid = `pk-${id}`;
+const sheets = [4, 3, 2, 1];
+// one long landing page: [x, y, w, h, radius, class]; drawn in the desktop window and on the phone
+const page: [number, number, number, number, number, string][] = [
+  [8, 6, 14, 3, 1, 'f-edge'], [88, 6.5, 8, 2, 1, 'f-mid'], [100, 6.5, 8, 2, 1, 'f-mid'], [112, 6.5, 6, 2, 1, 'f-mid'],
+  [8, 18, 62, 6, 1.5, 'f-edge'], [8, 27, 46, 6, 1.5, 'f-edge'], [8, 38, 54, 2.5, 1, 'f-mid'], [8, 45, 22, 7, 3.5, 'f-hi'],
+  [78, 16, 40, 38, 3, 's-mid'],
+  [8, 66, 20, 2.5, 1, 'f-mid'], [8, 74, 34, 26, 3, 's-mid'], [46, 74, 34, 26, 3, 's-mid'], [84, 74, 34, 26, 3, 's-mid'],
+  [8, 110, 90, 5, 1.5, 'f-edge'], [8, 118, 70, 5, 1.5, 'f-edge'],
+  [8, 132, 110, 34, 3, 's-mid'],
+  [38, 176, 50, 5, 1.5, 'f-edge'], [50, 186, 26, 7, 3.5, 'f-hi'],
+  [8, 202, 110, 1, 0, 'f-mid'],
+];
+const row1 = [29, 77, 125, 173];
+// 1 + 4 + 7 = the 12 pages Website+ includes
+const kids = row1.map((c, i) => (i < 3 ? [c - 12, c + 12] : [c]));
+const row2 = kids.flat();
+---
+<svg class={`pkg pkg-${id} ${cls}`} viewBox="0 0 200 160" fill="none" aria-hidden="true">
+  {id === 'landing' && (
+    <>
+      <defs>
+        <clipPath id={`${uid}-desk`}><rect x="15" y="39" width="126" height="82" /></clipPath>
+        <clipPath id={`${uid}-phone`}><rect x="152.5" y="62" width="31" height="58" /></clipPath>
+      </defs>
+      <rect x="14" y="26" width="128" height="96" rx="7" class="plate s-edge" />
+      <line x1="14" y1="38.5" x2="142" y2="38.5" class="s-mid" />
+      <circle cx="22" cy="32" r="1.6" class="f-mid" /><circle cx="28" cy="32" r="1.6" class="f-mid" /><circle cx="34" cy="32" r="1.6" class="f-mid" />
+      <g clip-path={`url(#${uid}-desk)`}><g transform="translate(15 39)"><g class="scroll">{page.map(([x, y, w, h, r, c]) => <rect x={x} y={y} width={w} height={h} rx={r} class={c} />)}<circle cx="98" cy="35" r="9" class="s-mid" /></g></g></g>
+      <rect x="150" y="54" width="36" height="70" rx="7" class="plate s-edge" />
+      <rect x="163" y="57.5" width="10" height="2" rx="1" class="f-mid" />
+      <g clip-path={`url(#${uid}-phone)`}><g transform="translate(152.5 62) scale(0.246)"><g class="scroll">{page.map(([x, y, w, h, r, c]) => <rect x={x} y={y} width={w} height={h} rx={r} class={c} />)}</g></g></g>
+    </>
+  )}
+
+  {id === 'website' && (
+    <>
+      {sheets.map((i) => (
+        <g class="sheet" style={`--i:${i}`}>
+          <rect x="22" y="46" width="118" height="86" rx="6" class="plate s-edge" />
+          <line x1="22" y1="56.5" x2="140" y2="56.5" class="s-mid" />
+          <rect x="32" y="66" width={30 + i * 9} height="4" rx="1.5" class="f-mid" />
+          <rect x="32" y="76" width="44" height="2.5" rx="1" class="f-mid" />
+        </g>
+      ))}
+      <g class="front">
+        <rect x="22" y="46" width="118" height="86" rx="6" class="plate s-edge" />
+        <line x1="22" y1="56.5" x2="140" y2="56.5" class="s-mid" />
+        <circle cx="29" cy="51.3" r="1.5" class="f-mid" /><circle cx="34.5" cy="51.3" r="1.5" class="f-mid" /><circle cx="40" cy="51.3" r="1.5" class="f-mid" />
+        <rect x="32" y="63" width="10" height="3" rx="1" class="f-edge" />
+        {[0, 1, 2, 3, 4].map((n) => <rect x={78 + n * 11} y="63.5" width="8" height="2" rx="1" class="navdot" style={`--n:${n}`} />)}
+        <rect x="32" y="76" width="56" height="6" rx="1.5" class="f-edge" />
+        <rect x="32" y="85" width="40" height="6" rx="1.5" class="f-edge" />
+        <rect x="32" y="97" width="18" height="6" rx="3" class="f-hi" />
+        <rect x="96" y="74" width="34" height="30" rx="3" class="s-mid" />
+        <rect x="32" y="112" width="30" height="12" rx="2" class="s-mid" /><rect x="66" y="112" width="30" height="12" rx="2" class="s-mid" /><rect x="100" y="112" width="30" height="12" rx="2" class="s-mid" />
+      </g>
+    </>
+  )}
+
+  {id === 'websiteplus' && (
+    <>
+      <path class="wire" d={`M100 36V46M29 46H173${row1.map((c) => `M${c} 46V56`).join('')}${kids.map((k, i) => (k.length === 2 ? `M${row1[i]} 78V88M${k[0]} 88H${k[1]}M${k[0]} 88V100M${k[1]} 88V100` : `M${k[0]} 78V100`)).join('')}`} />
+      <g class="node" style="--d:0"><rect x="84" y="14" width="32" height="22" rx="3" class="plate s-edge" /><line x1="84" y1="19.5" x2="116" y2="19.5" class="s-mid" /><rect x="89" y="24" width="16" height="3" rx="1" class="f-edge" /><rect x="89" y="29.5" width="9" height="3" rx="1.5" class="f-hi" /></g>
+      {row1.map((c, i) => (
+        <g class="node" style={`--d:${1 + i}`}><rect x={c - 15} y="56" width="30" height="22" rx="3" class="plate s-edge" /><line x1={c - 15} y1="61.5" x2={c + 15} y2="61.5" class="s-mid" /><rect x={c - 10} y="66" width="14" height="2.5" rx="1" class="f-edge" /><rect x={c - 10} y="71" width="20" height="2" rx="1" class="f-mid" /></g>
+      ))}
+      {row2.map((c, i) => (
+        <g class="node" style={`--d:${5 + i}`}><rect x={c - 10} y="100" width="20" height="15" rx="2.5" class="plate s-edge" /><line x1={c - 10} y1="104" x2={c + 10} y2="104" class="s-mid" /><rect x={c - 6} y="107.5" width="10" height="2" rx="1" class="f-mid" /></g>
+      ))}
+    </>
+  )}
+</svg>

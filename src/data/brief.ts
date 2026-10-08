@@ -18,7 +18,7 @@ export interface Stage {
 
 export const stages: Stage[] = [
   { id: 'basics', name: 'Basics', title: 'Start with', accent: 'the business.', intro: 'What you’re building, who it’s for, and what a visitor should do next.', figure: 'query' },
-  { id: 'direction', name: 'Direction', title: 'Show us', accent: 'your taste.', intro: 'Show, don’t describe. Tap the sites that feel right, then tune the dials.', figure: 'loupe' },
+  { id: 'direction', name: 'Direction', title: 'Show us', accent: 'your taste.', intro: 'All optional. The more you show us, the closer our first design lands to what you have in mind.', figure: 'loupe' },
   { id: 'content', name: 'Content', title: 'What’s already', accent: 'in the drawer?', intro: 'Logo, fonts, photos, copy. Bring what you have, skip what you don’t.', figure: 'drawer' },
   { id: 'pages', name: 'Pages', title: 'Build it', accent: 'block by block.', intro: 'Map every page yourself, or drop everything on us and we’ll propose the structure.', figure: 'exploded' },
   { id: 'features', name: 'Features', title: 'Plug in', accent: 'the moving parts.', intro: 'Forms, bookings, languages, domain. Tick what you need and we’ll ask only about those.', figure: 'patch' },
@@ -62,12 +62,12 @@ export const neighbours: Record<string, string[]> = {
 };
 
 export const goals = [
-  { id: 'book_call', name: 'People book a call' },
-  { id: 'buy', name: 'People buy' },
-  { id: 'understand', name: 'People understand what we do' },
-  { id: 'contact', name: 'People contact us' },
-  { id: 'sign_up', name: 'People sign up' },
-  { id: 'visit', name: 'People visit a location' },
+  { id: 'buy', name: 'Sell online' },
+  { id: 'book_call', name: 'Get calls and bookings' },
+  { id: 'contact', name: 'Get messages and leads' },
+  { id: 'understand', name: 'Explain what we do' },
+  { id: 'sign_up', name: 'Get sign-ups' },
+  { id: 'visit', name: 'Bring people to our place' },
   { id: 'other', name: 'Something else' },
 ];
 
@@ -105,10 +105,21 @@ export const refFilters: { id: string; name: string; test: (r: Reference) => boo
   { id: 'warm', name: 'Warm', test: (r) => has(r.vibes, 'warm') },
   { id: 'technical', name: 'Technical', test: (r) => has(r.vibes, 'technical') },
   { id: 'experimental', name: 'Experimental', test: (r) => has(r.styles, 'futurist', 'brutalism', 'maximalism') },
+  { id: 'formal', name: 'Formal', test: (r) => r.cats.some((c) => c === 'finance' || c === 'services') || (has(r.vibes, 'serious') && has(r.vibes, 'technical', 'cold') && !has(r.styles, 'playful')) },
   { id: 'dark', name: 'Dark', test: (r) => r.mode === 'dark' },
   { id: 'light', name: 'Light', test: (r) => r.mode === 'light' },
 ];
 export const maxRefs = 3;
+
+// Type feel. Each card renders its specimen in the face named here (loaded on /start/ only).
+export const typefaces = [
+  { id: 'serif', name: 'Classic serif', detail: 'Warm, established, editorial', font: "'Fraunces Variable', Georgia, serif", sample: 'Aa' },
+  { id: 'sans', name: 'Clean sans', detail: 'Neutral, modern, easy to read', font: "'Inter Tight', system-ui, sans-serif", sample: 'Aa' },
+  { id: 'mix', name: 'Serif + sans', detail: 'Magazine feel, like this page', font: "'Instrument Serif', serif", sample: 'Aa', italic: true },
+  { id: 'geometric', name: 'Geometric', detail: 'Friendly, round, approachable', font: "'Outfit Variable', system-ui, sans-serif", sample: 'Aa' },
+  { id: 'mono', name: 'Technical', detail: 'Precise, data, product', font: "'JetBrains Mono', monospace", sample: 'Aa' },
+  { id: 'display', name: 'Expressive', detail: 'Loud, bold, unforgettable', font: "'Syne Variable', system-ui, sans-serif", sample: 'Aa', weight: 800 },
+];
 
 export const traits = ['Typography', 'Layout', 'Colours', 'Motion', 'Photography', 'Simplicity', 'Density', 'Navigation', 'Overall feeling'];
 
@@ -121,13 +132,21 @@ export const sliders = [
   { id: 'classic_experimental', left: 'Classic', right: 'Experimental' },
 ];
 // Asked on its own, after the sliders: the brutalism-panic guard.
-export const pushSlider = { id: 'safe_experimental', left: 'Keep it safe', right: 'Push it' };
+export const pushSlider = { id: 'safe_experimental', left: 'Play it safe', right: 'Surprise me' };
+// What the creativity slider means, in plain words, at each end of the range.
+export const pushCopy = [
+  [20, 'Clean and proven. Layouts your customers already know how to use.'],
+  [40, 'Familiar, with a few touches that make it yours.'],
+  [60, 'A balance: easy to use, with one or two ideas that stand out.'],
+  [80, 'We’ll try ideas people remember. Some of it will surprise you.'],
+  [101, 'Go all in. Expect things you haven’t seen on other sites.'],
+] as const;
 
 export const motionLevels = [
-  { id: 'still', n: '01', name: 'Still', detail: 'Mostly static. Content first.', intensity: 0, play: false },
-  { id: 'subtle', n: '02', name: 'Subtle', detail: 'Transitions and micro-interactions.', intensity: 0.25, play: true },
-  { id: 'dynamic', n: '03', name: 'Dynamic', detail: 'Scroll animation and movement.', intensity: 0.6, play: true },
-  { id: 'wild', n: '04', name: 'Wild', detail: 'Interactive. Experimental.', intensity: 1, play: true },
+  { id: 'still', n: '01', name: 'Still', detail: 'Almost no animation. Content does the work.', intensity: 0, play: false },
+  { id: 'subtle', n: '02', name: 'Subtle', detail: 'Soft fades between pages and on hover.', intensity: 0.25, play: true },
+  { id: 'dynamic', n: '03', name: 'Dynamic', detail: 'Things move and appear as you scroll.', intensity: 0.6, play: true },
+  { id: 'wild', n: '04', name: 'Wild', detail: 'Interactive pieces that react to the mouse.', intensity: 1, play: true },
 ];
 
 // ---------------------------------------------------------------------------
@@ -135,15 +154,14 @@ export const motionLevels = [
 // ---------------------------------------------------------------------------
 
 export const assets = [
-  { id: 'logo', name: 'Logo', accept: '.svg,.ai,.eps,.pdf,.png', hint: 'SVG, AI, EPS or PNG' },
+  { id: 'logo', name: 'Logo', accept: '.svg,.ai,.eps,.pdf,.png,.jpg,.jpeg,.webp', hint: 'SVG, PNG, JPG, AI or EPS' },
   { id: 'guidelines', name: 'Brand guidelines', accept: '.pdf', hint: 'PDF' },
-  { id: 'fonts', name: 'Fonts', accept: '.otf,.ttf,.woff,.woff2,.zip', hint: 'OTF, TTF, WOFF or a zip' },
-  { id: 'palette', name: 'Colour palette', accept: 'image/*,.pdf,.ase', hint: 'Hex codes below, or a file' },
+  { id: 'fonts', name: 'Fonts', accept: '.otf,.ttf,.woff,.woff2,.zip', hint: 'Only if they aren’t on Google Fonts' },
+  { id: 'palette', name: 'Colour palette', accept: 'image/*,.pdf,.ase', hint: 'Or a file: brand sheet, screenshot' },
   { id: 'photography', name: 'Photography', accept: 'image/*', hint: 'JPG, PNG, WebP' },
   { id: 'product', name: 'Product images', accept: 'image/*', hint: 'JPG, PNG, WebP' },
   { id: 'illustrations', name: 'Illustrations', accept: 'image/*,.svg,.ai', hint: 'SVG, AI, PNG' },
   { id: 'videos', name: 'Videos', accept: 'video/*', hint: 'MP4, MOV' },
-  { id: 'copy', name: 'Copy', accept: '.pdf,.doc,.docx,.txt,.md', hint: 'Docs, PDF, text' },
 ];
 
 export const locked = ['Logo', 'Colours', 'Typography', 'Messaging', 'Other'];
@@ -222,6 +240,17 @@ export const dumpKinds = ['PDFs', 'Notion exports', 'Old decks', 'Word docs', 'B
 // ---------------------------------------------------------------------------
 
 type Field = { id: string; label: string; type?: 'text' | 'url' | 'chips'; options?: string[]; placeholder?: string };
+
+// Features we tick for them up front, from what they already told us.
+export const suggestFeatures = (goal: string, industry: string): string[] => {
+  const f = new Set(['forms', 'analytics']);
+  if (goal === 'buy' || industry === 'ecommerce') f.add('ecommerce');
+  if (goal === 'book_call') f.add('booking');
+  if (goal === 'sign_up') f.add('newsletter');
+  if (goal === 'visit') f.add('maps');
+  if (industry === 'hospitality' || industry === 'food') f.add('maps');
+  return [...f];
+};
 
 export const features: { id: string; name: string; fields: Field[] }[] = [
   { id: 'forms', name: 'Contact forms', fields: [{ id: 'fields', label: 'What should the form ask?', placeholder: 'Name, email, budget, message…' }, { id: 'to', label: 'Send submissions to', placeholder: 'hello@yourcompany.com' }] },

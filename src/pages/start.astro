@@ -1,10 +1,15 @@
 ---
 import { url } from '../lib/url';
 import Layout from '../layouts/Layout.astro';
+import PackageArt from '../components/PackageArt.astro';
+// type specimens for the typography question (this page only)
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/outfit';
+import '@fontsource-variable/syne';
 import { packages, brand } from '../data/site';
 import {
   stages, industries, goals, traits, sliders, pushSlider, motionLevels,
-  assets, locked, copyStatus, dumpKinds, features, maxRefs, refFilters,
+  assets, locked, copyStatus, dumpKinds, features, maxRefs, refFilters, typefaces,
 } from '../data/brief';
 
 // shared field styles (16px text so iOS doesn't zoom on focus)
@@ -12,7 +17,6 @@ const fld = 'mt-2 h-12 w-full rounded-xl border border-transparent bg-white/[0.0
 const area = 'mt-2 w-full resize-y rounded-xl border border-transparent bg-white/[0.04] px-4 py-3 text-[16px] leading-relaxed outline-none transition placeholder:text-paper/30 focus:border-spark';
 const chip = 'pick inline-flex min-h-11 cursor-pointer items-center rounded-full border border-white/15 px-4 text-[15px] transition hover:border-white/40';
 const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] lg:text-[40px] lg:leading-[1.1] lg:tracking-[-0.025em] xl:text-[44px]';
-const productFigure: Record<string, string> = { landing: 'phone', website: 'laptop', websiteplus: 'elevator' };
 ---
 
 <Layout title="Build your site — Shipped" minimal>
@@ -55,7 +59,7 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                         {packages.map((p) => (
                           <label class="pick relative flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:block sm:p-5">
                             <input type="radio" name="product" value={p.id} data-k="product" class="sr-only" />
-                            <div class="hl-card figure w-[104px] shrink-0 sm:mb-3 sm:w-[150px]" data-figure={productFigure[p.id]} data-live aria-hidden="true"></div>
+                            <PackageArt id={p.id} class="hl-card figure block w-[104px] shrink-0 sm:mb-3 sm:w-[150px]" />
                             <span class="block min-w-0 flex-1">
                               <span class="flex items-baseline justify-between gap-3">
                                 <span class="text-[19px] font-semibold sm:text-[20px]">{p.name}</span>
@@ -103,8 +107,8 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                     </fieldset>
 
                     <fieldset>
-                      <legend class={qh}>When this website works, what happens?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">The one thing a visitor should do. Everything else is ranked around it.</p>
+                      <legend class={qh}>What do you expect the site to do for you?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Pick the main one. It decides what every page leads people to.</p>
                       <div class="mt-4 grid gap-2 sm:grid-cols-2">
                         {goals.map((g) => (
                           <label class="pick flex min-h-12 cursor-pointer items-center gap-3 rounded-2xl border border-white/15 px-4 py-3 text-[15px] transition hover:border-white/40">
@@ -116,14 +120,6 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                       <input data-k="goal_other" data-show="goal=other" hidden class={fld} placeholder="What should happen?" />
                     </fieldset>
 
-                    <fieldset>
-                      <legend class={qh}>Who should we talk to?</legend>
-                      <div class="mt-4 grid gap-4 sm:grid-cols-2">
-                        <label class="block"><span class="label text-paper/50">Your name</span><input data-k="name" autocomplete="name" class={fld} /></label>
-                        <label class="block"><span class="label text-paper/50">Work email</span><input data-k="email" type="email" inputmode="email" autocomplete="email" class={fld} /></label>
-                      </div>
-                      <p class="mt-3 text-[13px] text-paper/40">Your answers save on this device as you go. Come back any time.</p>
-                    </fieldset>
                   </>
                 )}
 
@@ -157,9 +153,31 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                     </fieldset>
 
                     <fieldset>
-                      <legend class={qh}>Now tune it</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Drag each one to where your site should sit.</p>
-                      <div class="mt-5 space-y-6">
+                      <legend class={qh}>What kind of type feels right?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Typography sets the tone before anyone reads a word. Pick one, or let us choose.</p>
+                      <div class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
+                        {typefaces.map((t) => (
+                          <label class="pick block cursor-pointer rounded-[20px] border border-white/15 p-4 transition hover:border-white/40">
+                            <input type="radio" name="typeface" value={t.id} data-k="typeface" class="sr-only" />
+                            <span class="block text-[56px] leading-none tracking-[-0.02em] sm:text-[64px]" style={`font-family:${t.font};${t.italic ? 'font-style:italic;' : ''}font-weight:${t.weight ?? 400}`}>{t.sample}</span>
+                            <span class="mt-3 block text-[15px] font-semibold">{t.name}</span>
+                            <span class="mt-0.5 block text-[13px] leading-snug text-paper/55">{t.detail}</span>
+                          </label>
+                        ))}
+                      </div>
+                      <label class="pick mt-2.5 flex min-h-12 cursor-pointer items-center justify-between gap-3 rounded-2xl border border-dashed border-white/20 px-4 text-[15px] transition hover:border-white/40">
+                        <input type="radio" name="typeface" value="you_pick" data-k="typeface" class="sr-only" />
+                        <span>Not sure. You pick.</span><span aria-hidden="true">→</span>
+                      </label>
+                    </fieldset>
+
+                    <details class="tune rounded-[24px] border border-white/10">
+                      <summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:p-6">
+                        <span><span class={qh}>Fine-tune</span> <span class="label ml-2 text-paper/40">Optional</span>
+                          <span class="mt-1 block text-[14px] text-paper/45">We set these from the sites you picked. Open it only if something feels off.</span></span>
+                        <span class="tune-plus grid size-10 shrink-0 place-items-center rounded-full border border-white/15 text-[20px]" aria-hidden="true">+</span>
+                      </summary>
+                      <div class="space-y-6 px-5 pb-6 sm:px-6">
                         {sliders.map((sl) => (
                           <label class="block">
                             <span class="flex justify-between text-[14px] text-paper/70"><span>{sl.left}</span><span>{sl.right}</span></span>
@@ -167,21 +185,22 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                           </label>
                         ))}
                       </div>
-                    </fieldset>
+                    </details>
 
                     <fieldset class="rounded-[24px] bg-white/[0.03] p-5 sm:p-6">
-                      <legend class="sr-only">How far can we push it?</legend>
-                      <p class={qh}>How far can we <span class="accent text-spark">push it?</span></p>
-                      <p class="mt-1 text-[14px] text-paper/50">Liking a wild reference and wanting a wild site aren’t the same thing. Be honest.</p>
+                      <legend class="sr-only">How creative should we get?</legend>
+                      <p class={qh}>How creative <span class="accent text-spark">should we get?</span></p>
+                      <p class="mt-1 text-[14px] text-paper/50">About the design, not your brand. Safe means layouts people already know how to use. Surprise me means ideas people remember, with a bit more risk. No wrong answer.</p>
                       <label class="mt-5 block">
                         <span class="flex justify-between text-[14px] text-paper/70"><span>{pushSlider.left}</span><span>{pushSlider.right}</span></span>
-                        <input type="range" min="0" max="100" value="50" data-k={`slider_${pushSlider.id}`} class="range mt-2 w-full" aria-label="Safe to experimental" />
+                        <input type="range" min="0" max="100" value="50" data-k={`slider_${pushSlider.id}`} class="range mt-2 w-full" aria-label="Play it safe to surprise me" />
                       </label>
+                      <p id="push-copy" class="mt-3 min-h-[2.8em] text-[15px] text-paper/80" aria-live="polite"></p>
                     </fieldset>
 
                     <fieldset>
-                      <legend class={qh}>How alive should it feel?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Each card moves the way your site would. Touch them.</p>
+                      <legend class={qh}>How much animation?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Movement on the page: transitions, things appearing as you scroll, effects when you hover. Each card moves as much as your site would.</p>
                       <div class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
                         {motionLevels.map((m) => (
                           <label class="pick block cursor-pointer rounded-[20px] border border-white/15 p-3 transition hover:border-white/40 sm:p-4">
@@ -196,23 +215,17 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                     </fieldset>
 
                     <fieldset>
-                      <legend class={qh}>Who are you up against?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Competitors’ sites.</p>
+                      <legend class={qh}>Who are your competitors?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Up to 3. We look at them so you stand out next to them, not to copy them.</p>
                       <div class="url-list mt-3" data-list="competitors"></div>
                     </fieldset>
 
                     <fieldset>
-                      <legend class={qh}>Who isn’t a competitor, but feels the way you want to feel?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Any brand, any industry. Often the most useful answer in the brief.</p>
+                      <legend class={qh}>Your aesthetic ideal</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Not a competitor: any brand, from any industry, whose look you’d love to have. It shows us the level and the mood to aim for.</p>
                       <div class="url-list mt-3" data-list="aspirational"></div>
                     </fieldset>
 
-                    <fieldset>
-                      <legend class={qh}>What should this <span class="accent text-spark">not</span> look like?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Most people know what they hate better than what they want.</p>
-                      <div class="url-list mt-3" data-list="anti"></div>
-                      <label class="mt-4 block"><span class="label text-paper/50">What do you hate about these?</span><textarea data-k="anti_why" rows="3" class={area} placeholder="Stock photos, too corporate, everything in boxes…"></textarea></label>
-                    </fieldset>
                   </>
                 )}
 
@@ -229,7 +242,14 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                               <input type="checkbox" value={a.id} data-k="assets" class="box" />
                             </label>
                             <div class="asset-body hidden px-4 pb-4">
-                              {a.id === 'palette' && <input data-k="palette_hex" class={fld + ' mb-3 mt-0'} placeholder="#0B0B0B, #D8FF85, #F3F1EA" />}
+                              {a.id === 'palette' && (
+                                <div class="mb-3 space-y-3">
+                                  <label class="flex min-h-11 cursor-pointer items-center gap-3 text-[15px]"><input type="checkbox" value="yes" data-k="palette_from_site" class="box" />Take them from my current site and logo</label>
+                                  <input data-k="palette_hex" class={fld + ' mt-0'} placeholder="Or paste hex codes: #0B0B0B, #D8FF85" />
+                                  <div id="swatches" class="flex flex-wrap gap-2"></div>
+                                </div>
+                              )}
+                              {a.id === 'fonts' && <input data-k="font_names" class={fld + ' mb-3 mt-0'} placeholder="Font names, e.g. Inter, Playfair Display" />}
                               <label class="drop flex cursor-pointer flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-white/20 px-4 py-5 text-center transition hover:border-spark">
                                 <input type="file" multiple accept={a.accept} data-files={`asset:${a.id}`} class="sr-only" />
                                 <span class="text-[15px] font-medium">Upload {a.name.toLowerCase()}</span>
@@ -256,7 +276,7 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
 
                     <fieldset>
                       <legend class={qh}>What’s the situation with copy?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">So nobody says “I thought you were writing the texts” in week two.</p>
+                      <p class="mt-1 text-[14px] text-paper/45">Who writes the words on the site, so we plan time for it.</p>
                       <div class="mt-4 grid gap-2 sm:grid-cols-2">
                         {copyStatus.map((c) => (
                           <label class="pick flex cursor-pointer items-start gap-3 rounded-2xl border border-white/15 px-4 py-3.5 transition hover:border-white/40">
@@ -265,6 +285,14 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                             <span><span class="block text-[16px] font-medium">{c.name}</span><span class="block text-[14px] text-paper/55">{c.detail}</span></span>
                           </label>
                         ))}
+                      </div>
+                      <div class="mt-4" data-show="copy=final|rough|info" hidden>
+                        <label class="drop flex cursor-pointer flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-white/20 px-4 py-5 text-center transition hover:border-spark">
+                          <input type="file" multiple accept=".pdf,.doc,.docx,.txt,.md,.pages,.key,.ppt,.pptx" data-files="copy" class="sr-only" />
+                          <span class="text-[15px] font-medium">Attach your copy</span>
+                          <span class="text-[13px] text-paper/45">Docs, PDF, decks · or paste a Google Docs link in Notes later</span>
+                        </label>
+                        <ul class="files mt-2 space-y-1" data-files-list="copy"></ul>
                       </div>
                       <label class="mt-4 block" data-show="copy=nothing" hidden>
                         <span class="label text-paper/50">Tell us everything you know about your company. We’ll take it from there.</span>
@@ -277,8 +305,8 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                 {s.id === 'pages' && (
                   <>
                     <fieldset>
-                      <legend class={qh}>How do you want to do this?</legend>
-                      <div class="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+                      <legend class="sr-only">How do you want to plan the pages?</legend>
+                      <div class="grid gap-2.5 sm:grid-cols-2 sm:gap-3">
                         <label class="pick flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:gap-5 sm:p-4 sm:pr-5">
                           <input type="radio" name="pages_mode" value="builder" data-k="pages_mode" class="sr-only" />
                           <div class="hl-card figure w-[120px] shrink-0 sm:w-[150px]" data-figure="stack" data-live aria-hidden="true"></div>
@@ -324,8 +352,8 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                         </label>
                         <ul class="files mt-2 space-y-1" data-files-list="dump"></ul>
                       </div>
-                      <label class="block"><span class="label text-paper/50">Links · Notion, Drive, competitor sites, anything</span><textarea data-k="dump_links" rows="3" class={area} placeholder="One per line"></textarea></label>
-                      <label class="block"><span class="label text-paper/50">Tell us anything we should know</span><textarea data-k="dump_notes" rows="7" class={area} placeholder="Brain-dump it. Half sentences welcome."></textarea></label>
+                      
+                      <label class="block"><span class="label text-paper/50">Tell us anything we should know</span><textarea data-k="dump_notes" rows="7" class={area} placeholder="Brain-dump it. Half sentences and links welcome."></textarea></label>
 
                       <div class="rounded-[24px] bg-white/[0.03] p-5 sm:p-6">
                         <p class="label text-spark">We’d start here</p>
@@ -345,9 +373,9 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                   <>
                     <fieldset>
                       <legend class={qh}>What does the site need to do?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Tick what applies. Each one asks a question or two, nothing more.</p>
+                      <p class="mt-1 text-[14px] text-paper/45">We ticked what your answers suggest. Change anything; each one asks a question or two at most.</p>
                       <div class="mt-4 flex flex-wrap gap-2">
-                        {features.map((f) => <label class={chip}><input type="checkbox" value={f.id} data-k="features" class="sr-only" />{f.name}</label>)}
+                        {features.map((f) => <label class={chip}><input type="checkbox" value={f.id} data-k="features" class="sr-only" />{f.name}<span class="sug ml-2 hidden font-mono text-[10px] uppercase tracking-[0.12em] opacity-60" data-sug={f.id}>Suggested</span></label>)}
                         <label class={chip}><input type="checkbox" value="none" data-k="features" class="sr-only" />None of these</label>
                       </div>
                       <div class="mt-5 space-y-3">
@@ -399,7 +427,17 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                 )}
 
                 {s.id === 'review' && (
-                  <div id="review"></div>
+                  <div class="space-y-10">
+                    <fieldset>
+                      <legend class={qh}>Where should we send your build plan?</legend>
+                      <p class="mt-1 text-[14px] text-paper/45">Final scope, fixed price and open build weeks. No spam.</p>
+                      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                        <label class="block"><span class="label text-paper/50">Your name</span><input data-k="name" autocomplete="name" class={fld} /></label>
+                        <label class="block"><span class="label text-paper/50">Email</span><input data-k="email" type="email" inputmode="email" autocomplete="email" class={fld} /></label>
+                      </div>
+                    </fieldset>
+                    <div id="review"></div>
+                  </div>
                 )}
               </div>
             </div>
@@ -500,6 +538,24 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
   .figure { aspect-ratio: 5 / 4; }
   /* fieldsets default to min-content width, which lets the side-scrolling filter row stretch the page */
   #brief fieldset { min-width: 0; }
+  /* package line art */
+  .pkg .plate { fill: var(--hairline-plate); }
+  .pkg .s-edge { stroke: var(--hairline-edge); stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+  .pkg .s-mid, .pkg .wire { stroke: var(--hairline-mid); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
+  .pkg .f-edge { fill: var(--hairline-edge); } .pkg .f-mid { fill: var(--hairline-mid); } .pkg .f-hi, .pkg .navdot:first-of-type { fill: var(--hairline-hi); }
+  .pkg .navdot { fill: var(--hairline-mid); }
+  .pkg .sheet { transform: translate(calc(var(--i) * 6px), calc(var(--i) * -6px)); transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .pick:hover .pkg .sheet, .pick:has(input:checked) .pkg .sheet { transform: translate(calc(var(--i) * 11px), calc(var(--i) * -9px)); }
+  .pick:hover .pkg .scroll, .pick:has(input:checked) .pkg .scroll { animation: pkg-scroll 6s cubic-bezier(.45,0,.4,1) infinite alternate; }
+  .pick:hover .pkg .navdot, .pick:has(input:checked) .pkg .navdot { animation: pkg-nav 4s steps(1) infinite; animation-delay: calc(var(--n) * .8s - 4s); }
+  .pick:hover .pkg .node rect.plate, .pick:has(input:checked) .pkg .node rect.plate { animation: pkg-node 3.2s ease-in-out infinite; animation-delay: calc(var(--d) * .16s); }
+  .pick:hover .pkg .wire, .pick:has(input:checked) .pkg .wire { stroke-dasharray: 3 3; animation: pkg-wire 1.2s linear infinite; }
+  @keyframes pkg-scroll { 0%, 12% { transform: translateY(0); } 88%, 100% { transform: translateY(-122px); } }
+  @keyframes pkg-nav { 0% { fill: var(--hairline-hi); } 20%, 100% { fill: var(--hairline-mid); } }
+  @keyframes pkg-node { 0%, 30%, 100% { fill: var(--hairline-plate); } 12% { fill: var(--hairline-hi); } }
+  @keyframes pkg-wire { to { stroke-dashoffset: -6; } }
+  .tune summary { list-style: none; } .tune summary::-webkit-details-marker { display: none; }
+  .tune[open] .tune-plus { transform: rotate(45deg); } .tune-plus { transition: transform .3s; }
   /* "Still" barely moves: it ignores the pointer and only lifts a touch with the card */
   [data-still] { pointer-events: none; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
   .pick:hover [data-still] { transform: translateY(-3px); }
@@ -591,7 +647,7 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
     .panel { position: sticky; top: 96px; align-self: start; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .panel, .blk, .ref .n, .mini .n { transition: none; animation: none; }
+    .panel, .blk, .ref .n, .mini .n, .pkg * { transition: none !important; animation: none !important; }
   }
 </style>
 

@@ -27,13 +27,15 @@ project      product (landing|website|websiteplus|unsure), product_note, industr
              socials, describe, selling, audience, goal, preferred_week
 visual       references [{id, slug, url}], closest, reference_traits[], sliders {dark_light, minimal_expressive,
              editorial_digital, serious_playful, quiet_bold, classic_experimental, safe_experimental} (0–100),
-             motion (still|subtle|dynamic|wild), competitors[], aspirational[], anti_references[], anti_why
-brand        has[], palette_hex, locked[], locked_note, files {logo: [...], ...}
-copy         status (final|rough|info|nothing), permission_to_rewrite, story
+             motion (still|subtle|dynamic|wild), typeface (serif|sans|mix|geometric|mono|display|you_pick),
+             competitors[] (max 3), aspirational[], reference_filters[]
+             Sliders start from the picked references until the visitor moves one (slidersTouched).
+brand        has[], palette_hex, palette_from_site, font_names, locked[], locked_note, files {logo: [...], ...}
+copy         status (final|rough|info|nothing), permission_to_rewrite, story, files[]
 sitemap      mode (builder|dump), approved, pages [{name, path, blocks [{n, type, headline, copy, cta, cta_url,
              notes, assets[]}]}]
-dump         files[], links[], notes            (only when mode = dump)
-functional   {forms: {...}, booking: {url}, multilingual: {primary, more[]}, ...}
+dump         files[], notes                     (only when mode = dump)
+functional   {forms: {...}, booking: {url}, multilingual: {primary, more[]}, ...}  (pre-ticked from goal + industry)
 technical    domain_own, domain, hosting, current_cms, seo_keep, seo_urls
 completeness 0–100, missing[]
 ```

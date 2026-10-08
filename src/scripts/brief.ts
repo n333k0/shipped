@@ -2,7 +2,8 @@
 import { basket, elevator, exploded, laptop, loupe, patch, phone, query, settle, sieve, slow, stack, terrain, drawer } from '@lucasmarkes/hairline';
 import { packages, addOns, extraPageSections, type PackageId } from '../data/site';
 import {
-  stages, refs, maxRefs, refsPerPage, refFilters, neighbours, goals, sliders, pushSlider, motionLevels, assets,
+  stages, refs, maxRefs, refsPerPage, refFilters, neighbours, goals, sliders, pushSlider, pushCopy, motionLevels, assets,
+  typefaces, suggestFeatures,
   copyStatus, blockTypes, templates, goalBlock, features, briefEndpoint, type BlockType, type Reference,
 } from '../data/brief';
 import { url } from '../lib/url';
@@ -22,9 +23,11 @@ interface State {
   refs: string[];
   refFilters?: string[];
   closest: string;
-  lists: Record<string, string[]>; // competitors, aspirational, anti
+  lists: Record<string, string[]>; // competitors, aspirational
   pages: Page[];
   pagesEdited: boolean;
+  slidersTouched?: boolean; // once they move a fine-tune slider, picks stop setting them
+  featuresSeeded?: boolean;
   recoApproved: boolean;
   files: Record<string, FileMeta[]>; // 'asset:logo', 'dump', 'block:<id>'
   week?: string;
@@ -98,7 +101,10 @@ function readField(el: HTMLInputElement | HTMLTextAreaElement) {
   } else {
     s.f[k] = el.value;
   }
-  if (el instanceof HTMLInputElement && el.type === 'range') el.style.setProperty('--v', el.value + '%');
+  if (el instanceof HTMLInputElement && el.type === 'range') {
+    el.style.setProperty('--v', el.value + '%');
+    if (k !== `slider_${pushSlider.id}`) s.slidersTouched = true;
+  }
 }
 
 function writeFields() {
@@ -116,7 +122,7 @@ function applyShows() {
   $$('[data-show]').forEach((el) => {
     const rule = el.dataset.show!;
     const [k, v] = rule.split(/[=~]/);
-    const on = rule.includes('~') ? arr(k).includes(v) : s.f[k] === v;
+    const on = rule.includes('~') ? arr(k).includes(v) : v.split('|').includes(s.f[k] as string);
     el.hidden = !on;
   });
 }
@@ -139,6 +145,8 @@ function onChange(k: string) {
   if (k === 'product' || k === 'goal') { s.recoApproved = false; renderReco(); }
   if (k === 'pages_mode' && str('pages_mode') === 'builder' && !s.pages.length) { seedPages(); renderPages(); }
   if (k === 'assets') renderFiles();
+  if (k === `slider_${pushSlider.id}`) renderPush();
+  if (k === 'palette_hex') renderSwatches();
   applyShows();
   renderPanel();
   save();
@@ -260,6 +268,7 @@ function togglePick(id: string) {
     c.animate([{ opacity: 1 }, { opacity: 0.2 }, { opacity: 1 }], { duration: 500, iterations: 2 });
     return false;
   }
+  seedSliders();
   renderPicks(); renderPanel(); save();
   return true;
 }
@@ -388,13 +397,58 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') stepViewer(-1);
 });
 
+// Creativity slider: say in plain words what the number means
+function renderPush() {
+  const v = Number(str(`slider_${pushSlider.id}`) || 50);
+  const el = document.getElementById('push-copy');
+  if (el) el.textContent = pushCopy.find(([max]) => v < max)![1];
+}
+
+// Colour preview from pasted hex codes
+function renderSwatches() {
+  const el = document.getElementById('swatches');
+  if (!el) return;
+  const hex = [...str('palette_hex').matchAll(/#?([0-9a-f]{6}|[0-9a-f]{3})\b/gi)].map((m) => '#' + m[1]);
+  el.innerHTML = hex.map((h) => `<span class="flex items-center gap-2 rounded-full bg-white/[0.05] py-1 pl-1 pr-3 font-mono text-[12px] text-paper/70"><i class="block size-6 rounded-full border border-white/15" style="background:${h}"></i>${h.toUpperCase()}</span>`).join('');
+}
+
+// Fine-tune sliders start from what their picks have in common, until they move one themselves.
+function seedSliders() {
+  if (s.slidersTouched || !s.refs.length) return;
+  const picks = s.refs.map(byId);
+  const share = (test: (r: Reference) => boolean) => picks.filter(test).length / picks.length;
+  const has = (r: Reference, ...v: string[]) => v.some((x) => r.styles.includes(x) || r.vibes.includes(x));
+  const at = (x: number) => String(Math.round(Math.min(90, Math.max(10, x))));
+  s.f.slider_dark_light = at(15 + 70 * share((r) => r.mode === 'dark'));
+  s.f.slider_minimal_expressive = at(25 + 55 * share((r) => has(r, 'maximalism', 'playful', 'loud')));
+  s.f.slider_editorial_digital = at(30 + 50 * share((r) => has(r, 'technical', 'futurist')) - 20 * share((r) => has(r, 'editorial')));
+  s.f.slider_serious_playful = at(30 + 55 * share((r) => has(r, 'playful')) - 15 * share((r) => has(r, 'serious')));
+  s.f.slider_quiet_bold = at(25 + 55 * share((r) => has(r, 'loud', 'raw', 'maximalism')) + 10 * share((r) => r.mode === 'dark'));
+  // inspo tags almost every Swiss minimal site 'brutalism', so it doesn't count as expressive here
+  s.f.slider_classic_experimental = at(30 + 55 * share((r) => has(r, 'futurist', 'maximalism')));
+  writeFields();
+}
+
+// Features: tick what earlier answers already tell us, once, and say so
+function seedFeatures() {
+  const suggested = suggestFeatures(str('goal'), str('industry'));
+  if (!s.featuresSeeded && !arr('features').length) {
+    s.f.features = suggested;
+    s.featuresSeeded = true;
+    writeFields(); applyShows(); save();
+  }
+  $$('[data-sug]').forEach((el) => el.classList.toggle('hidden', !suggested.includes(el.dataset.sug!)));
+}
+
 // ---------------------------------------------------------------------------
 // URL lists (competitors, aspirational, anti-references): always one empty row at the end
 // ---------------------------------------------------------------------------
 
 function renderList(el: HTMLElement) {
   const key = el.dataset.list!;
-  const rows = [...(s.lists[key] ?? []).filter(Boolean), ''];
+  const cap = key === 'competitors' ? 3 : 6;
+  const filled = (s.lists[key] ?? []).filter(Boolean).slice(0, cap);
+  const rows = filled.length < cap ? [...filled, ''] : filled;
   el.innerHTML = rows
     .map((v, i) => `<input data-li="${key}" data-i="${i}" type="url" inputmode="url" value="${esc(v)}" placeholder="${i ? 'Another one' : 'https://'}" class="mt-2 h-12 w-full rounded-xl border border-transparent bg-white/[0.04] px-4 text-[16px] outline-none transition placeholder:text-paper/30 focus:border-spark" />`)
     .join('');
@@ -406,7 +460,8 @@ function editList(el: HTMLInputElement) {
   s.lists[key] = list;
   const wrap = el.parentElement!;
   // grow a fresh empty row once the last one gets typed into
-  if (Number(el.dataset.i) === wrap.children.length - 1 && el.value) {
+  const cap = key === 'competitors' ? 3 : 6;
+  if (Number(el.dataset.i) === wrap.children.length - 1 && el.value && wrap.children.length < cap) {
     wrap.insertAdjacentHTML('beforeend', el.outerHTML.replace(/data-i="\d+"/, `data-i="${wrap.children.length}"`).replace(/value="[^"]*"/, 'value=""').replace(/placeholder="[^"]*"/, 'placeholder="Another one"'));
   }
   save();
@@ -750,8 +805,6 @@ function completeness() {
     [!!str('describe'), 'What you do', 0],
     [!!(str('selling') && str('audience')), 'What you sell and who it’s for', 0],
     [!!str('goal'), 'What should happen on the site', 0],
-    [!!str('name'), 'Your name', 0],
-    [emailOk(), 'Contact email', 0],
     [s.refs.length > 0, 'At least one reference', 1],
     ...(s.refs.length > 1 ? [[!!s.closest, 'The reference that feels closest', 1] as [boolean, string, number]] : []),
     [!!str('motion'), 'How much motion', 1],
@@ -761,10 +814,12 @@ function completeness() {
       return [files(`asset:${a}`) || (a === 'palette' && !!str('palette_hex')), `Missing ${name}`, 2];
     }),
     [!!str('copy'), 'Copy situation', 2],
-    [str('pages_mode') === 'builder' ? blockCount() > 0 : str('pages_mode') === 'dump' ? files('dump') || !!str('dump_notes') || !!str('dump_links') : false, str('pages_mode') === 'dump' ? 'Something in the dump' : 'Pages and blocks', 3],
+    [str('pages_mode') === 'builder' ? blockCount() > 0 : str('pages_mode') === 'dump' ? files('dump') || !!str('dump_notes') : false, str('pages_mode') === 'dump' ? 'Something in the dump' : 'Pages and blocks', 3],
     ...(str('pages_mode') === 'dump' ? [[s.recoApproved, 'Approve the suggested structure', 3] as [boolean, string, number]] : []),
     [arr('features').length > 0, 'Features (or “None of these”)', 4],
     [!!str('domain_own') && (str('domain_own') === 'no' || !!str('domain')), 'Domain', 4],
+    [!!str('name'), 'Your name', 5],
+    [emailOk(), 'Email for the build plan', 5],
   ];
   const done = checks.filter((c) => c[0]).length;
   return { pct: Math.round((done / checks.length) * 100), missing: checks.filter((c) => !c[0]).map(([, label, stage]) => ({ label, stage })) };
@@ -785,6 +840,7 @@ function renderReview() {
     ['References', s.refs.length ? `${s.refs.length} selected` : '—'],
     ['Assets uploaded', String(fileCount)],
     ['Copy', label(copyStatus, str('copy'))],
+    ['Typography', typefaces.find((t) => t.id === str('typeface'))?.name ?? (str('typeface') === 'you_pick' ? 'You pick' : '—')],
     ['Features', arr('features').filter((f) => f !== 'none').map((f) => features.find((x) => x.id === f)?.name).join(', ') || (arr('features').includes('none') ? 'None' : '—')],
     ['Domain', str('domain_own') === 'yes' ? str('domain') || 'Owned' : str('domain_own') === 'no' ? 'Needs help' : '—'],
     ...(s.week ? [['Preferred week', new Date(s.week + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })] as [string, string]] : []),
@@ -824,6 +880,7 @@ function go(i: number, push = true) {
   $('#bar-hint').textContent = last ? 'Nothing is charged. You’ll get a build plan first.' : `Step ${s.stage + 1} of ${stages.length} · saved on this device`;
   $('#form-error').classList.add('hidden');
   if (last) renderReview();
+  if (stages[s.stage].id === 'features') seedFeatures();
   if (push) history.pushState({ stage: s.stage }, '', `#${stages[s.stage].id}`);
   window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   sheet(false);
@@ -878,15 +935,15 @@ function briefData() {
       motion: str('motion'),
       competitors: (s.lists.competitors ?? []).filter(Boolean),
       aspirational: (s.lists.aspirational ?? []).filter(Boolean),
-      anti_references: (s.lists.anti ?? []).filter(Boolean),
-      anti_why: str('anti_why'),
+      typeface: str('typeface') || undefined,
     },
     brand: {
-      has: arr('assets'), palette_hex: str('palette_hex') || undefined,
+      has: arr('assets'), palette_hex: str('palette_hex') || undefined, palette_from_site: arr('palette_from_site').includes('yes') || undefined,
+      font_names: str('font_names') || undefined,
       locked: arr('locked'), locked_note: str('locked_note') || undefined,
       files: Object.fromEntries(Object.entries(s.files).filter(([k]) => k.startsWith('asset:')).map(([k, v]) => [k.slice(6), v.map((f) => f.name)])),
     },
-    copy: { status: str('copy'), permission_to_rewrite: str('copy') !== 'final', story: str('copy_story') || undefined },
+    copy: { status: str('copy'), permission_to_rewrite: str('copy') !== 'final', story: str('copy_story') || undefined, files: (s.files.copy ?? []).map((f) => f.name) },
     sitemap: {
       mode: str('pages_mode'),
       approved: str('pages_mode') === 'builder' ? true : s.recoApproved,
@@ -896,7 +953,7 @@ function briefData() {
         blocks: p.blocks.map((b, i) => ({ n: i + 1, type: b.type, headline: b.headline, copy: b.copy, cta: b.cta, cta_url: b.cta_url, notes: b.notes, assets: (s.files[`block:${b.id}`] ?? []).map((f) => f.name) })),
       })),
     },
-    dump: str('pages_mode') === 'dump' ? { files: (s.files.dump ?? []).map((f) => f.name), links: str('dump_links').split('\n').map((l) => l.trim()).filter(Boolean), notes: str('dump_notes') } : undefined,
+    dump: str('pages_mode') === 'dump' ? { files: (s.files.dump ?? []).map((f) => f.name), notes: str('dump_notes') } : undefined,
     functional: Object.fromEntries(arr('features').filter((f) => f !== 'none').map((f) => [f, fieldsOf(f)])),
     technical: { domain_own: str('domain_own'), domain: str('domain'), hosting: str('hosting'), current_cms: str('current_cms'), seo_keep: str('seo_keep'), seo_urls: str('seo_urls') },
     completeness: pct,
@@ -907,10 +964,10 @@ function briefData() {
 async function send() {
   const err = $('#form-error');
   const need = !str('name') || !emailOk() || !str('company');
-  err.textContent = need ? 'We need your name, a working email and the company name to send this. They’re in Basics.' : '';
+  err.textContent = need ? 'We need your company name (Basics), plus your name and a working email (just above) to send this.' : '';
   err.classList.toggle('hidden', !need);
   if (need) {
-    err.insertAdjacentHTML('beforeend', ' <button type="button" data-goto="0" class="underline">Go to Basics</button>');
+    if (!str('company')) err.insertAdjacentHTML('beforeend', ' <button type="button" data-goto="0" class="underline">Go to Basics</button>');
     err.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
@@ -1025,6 +1082,8 @@ renderRefs();
 renderPages();
 renderReco();
 renderFiles();
+renderPush();
+renderSwatches();
 renderPanel();
 go(location.hash ? stageFromHash() : s.stage, false);
 history.replaceState({ stage: s.stage }, '', `#${stages[s.stage].id}`);
