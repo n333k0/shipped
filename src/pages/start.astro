@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { packages, brand } from '../data/site';
 import {
   stages, industries, goals, traits, sliders, pushSlider, motionLevels,
-  assets, locked, copyStatus, dumpKinds, features, maxRefs,
+  assets, locked, copyStatus, dumpKinds, features, maxRefs, refFilters,
 } from '../data/brief';
 
 // shared field styles (16px text so iOS doesn't zoom on focus)
@@ -131,14 +131,22 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                   <>
                     <fieldset>
                       <legend class={qh}>Which ones feel like you?</legend>
-                      <p class="mt-1 text-[14px] text-paper/45">Pick up to {maxRefs}. Don’t overthink it. <span id="ref-count" class="text-spark"></span></p>
-                      <div id="refs" class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4"></div>
-                      <p class="mt-3 text-[13px] text-paper/40">Screens from the <a href="https://inspomcp.dev" class="underline" target="_blank" rel="noopener">inspo</a> archive. Picked for your category, then a few neighbours.</p>
+                      <p class="mt-1 text-[14px] text-paper/45">Pick up to {maxRefs}. <span class="hidden [@media(hover:hover)]:inline">Hover one to scroll through it,</span><span class="[@media(hover:hover)]:hidden">They scroll on their own,</span> or open it full size. <span id="ref-count" class="text-spark"></span></p>
+                      <div id="ref-filters" class="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0" role="group" aria-label="Filter by style">
+                        {refFilters.map((f) => <button type="button" data-filter={f.id} aria-pressed="false" class="chip-f shrink-0">{f.name}</button>)}
+                      </div>
+                      <div id="refs" class="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-3"></div>
+                      <button type="button" id="refs-more" class="btn-ghost mt-4 h-12 w-full border-white/15">Show more</button>
+                      <div id="refs-like" class="mt-10" hidden>
+                        <p class="label text-spark">More like your picks</p>
+                        <div id="refs-like-row" class="-mx-4 mt-3 flex snap-x gap-2.5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:px-0"></div>
+                      </div>
+                      <p class="mt-4 text-[13px] text-paper/40">Real sites from the <a href="https://inspomcp.dev" class="underline" target="_blank" rel="noopener">inspo</a> archive, picked by hand for your category first.</p>
                     </fieldset>
 
                     <fieldset data-need-refs hidden>
                       <legend class={qh}>Which one feels closest?</legend>
-                      <div id="closest" class="mt-4 flex gap-2.5"></div>
+                      <div id="closest" class="mt-4 grid grid-cols-3 gap-2.5 sm:max-w-[560px]"></div>
                     </fieldset>
 
                     <fieldset data-need-refs hidden>
@@ -439,6 +447,24 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
     </div>
   </section>
 
+  <!-- Full-size reference viewer -->
+  <div id="viewer" class="fixed inset-0 z-[60] hidden flex-col bg-pine-950/95 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="viewer-host">
+    <div class="flex h-14 shrink-0 items-center gap-3 border-b border-white/10 px-4">
+      <span class="flex gap-1.5" aria-hidden="true"><i class="size-2.5 rounded-full bg-white/20"></i><i class="size-2.5 rounded-full bg-white/20"></i><i class="size-2.5 rounded-full bg-white/20"></i></span>
+      <p id="viewer-host" class="min-w-0 flex-1 truncate font-mono text-[13px] text-paper/70"></p>
+      <a id="viewer-visit" href="#" target="_blank" rel="noopener" class="label hidden text-paper/50 hover:text-paper sm:inline">Visit site ↗</a>
+      <button type="button" id="viewer-close" class="grid size-10 place-items-center rounded-full text-[20px] text-paper/70 hover:bg-white/10" aria-label="Close">×</button>
+    </div>
+    <div id="viewer-scroll" class="min-h-0 flex-1 overflow-y-auto overscroll-contain border-b border-white/10">
+      <img id="viewer-img" alt="" class="mx-auto block w-full max-w-[1200px]" />
+    </div>
+    <div class="mx-auto flex w-full max-w-[640px] shrink-0 gap-2 p-3 pb-[max(12px,env(safe-area-inset-bottom))]">
+      <button type="button" id="viewer-prev" class="btn-ghost size-12 shrink-0 px-0" aria-label="Previous site">←</button>
+      <button type="button" id="viewer-pick" class="btn-primary h-12 flex-1">Pick this one</button>
+      <button type="button" id="viewer-next" class="btn-ghost size-12 shrink-0 px-0" aria-label="Next site">→</button>
+    </div>
+  </div>
+
   <!-- Thumb bar -->
   <div id="thumbbar" class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-pine-900/90 backdrop-blur-xl">
     <div class="wrap flex items-center gap-2 py-3 pb-[max(12px,env(safe-area-inset-bottom))]">
@@ -472,6 +498,8 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
     --hairline-lo: rgb(5 5 5 / 0.16);
   }
   .figure { aspect-ratio: 5 / 4; }
+  /* fieldsets default to min-content width, which lets the side-scrolling filter row stretch the page */
+  #brief fieldset { min-width: 0; }
   /* Stage figures are sized by the drawing, not the 5:4 box: --fit-h is how tall the line art
      stands, --fit-w caps how wide it may get. brief.ts scales the box and trims the empty plate. */
   .fit { --fit-h: 72px; --fit-w: 120px; height: var(--fit-h); width: var(--fit-h); }
@@ -508,14 +536,32 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
   .step[data-state="now"] .bar { background: var(--color-spark); }
   .step[data-state="now"] .label { color: var(--color-paper); }
 
-  /* Reference cards */
-  .ref { position: relative; display: block; overflow: hidden; border-radius: 16px; background: rgb(255 255 255 / 0.04); outline: 2px solid transparent; outline-offset: -2px; transition: outline-color .2s, transform .3s cubic-bezier(.2,.7,.2,1); }
-  .ref img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .3s; }
-  .ref:hover img { transform: scale(1.03); }
+  /* Reference cards: a desktop browser window. The full page scrolls inside it. */
+  .ref { position: relative; overflow: hidden; border-radius: 14px; background: rgb(255 255 255 / 0.04); outline: 2px solid transparent; outline-offset: -2px; transition: outline-color .2s; }
   .ref[aria-pressed="true"] { outline-color: var(--color-spark); }
-  .ref .n { position: absolute; top: 8px; left: 8px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--color-spark); color: var(--color-ink); font: 500 13px var(--font-mono); transform: scale(0); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .ref-bar { display: flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-bottom: 1px solid rgb(255 255 255 / 0.06); }
+  .ref-bar i { width: 6px; height: 6px; border-radius: 999px; background: rgb(255 255 255 / 0.18); }
+  .ref-bar span { margin-left: 6px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 400 10px/1 var(--font-mono); letter-spacing: .04em; color: rgb(243 241 234 / 0.45); }
+  .ref-view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: rgb(255 255 255 / 0.03); }
+  .ref-view img { position: absolute; inset: 0 0 auto 0; width: 100%; height: auto; will-change: transform; }
+  .ref-hit { position: absolute; inset: 0; z-index: 1; cursor: pointer; }
+  .ref .n { position: absolute; top: 30px; left: 8px; z-index: 2; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--color-spark); color: var(--color-ink); font: 500 12px var(--font-mono); transform: scale(0); transition: transform .3s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
   .ref[aria-pressed="true"] .n { transform: scale(1); }
-  .ref.dim img { opacity: .45; }
+  .ref-open { position: absolute; right: 6px; bottom: 6px; z-index: 2; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; background: rgb(11 11 11 / 0.72); color: var(--color-paper); backdrop-filter: blur(8px); transition: background .2s, transform .2s; }
+  .ref-open:hover { background: var(--color-paper); color: var(--color-ink); }
+  @media (hover: hover) { .ref-open { opacity: 0; } .ref:hover .ref-open, .ref-open:focus-visible { opacity: 1; } }
+  .ref.dim .ref-view { opacity: .4; }
+  .ref.dim:hover .ref-view { opacity: .7; }
+  #refs-like-row .ref { flex: none; width: 46%; scroll-snap-align: start; }
+  @media (min-width: 640px) { #refs-like-row .ref { width: 240px; } }
+  .chip-f { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.15); font-size: 14px; color: rgb(243 241 234 / 0.8); transition: background .2s, border-color .2s, color .2s; }
+  .chip-f:hover { border-color: rgb(255 255 255 / 0.4); }
+  .chip-f[aria-pressed="true"] { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }
+  .mini { position: relative; overflow: hidden; border-radius: 10px; outline: 2px solid transparent; outline-offset: -2px; }
+  .mini img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; }
+  .mini[aria-pressed="true"] { outline-color: var(--color-spark); }
+  .mini .n { position: absolute; top: 6px; left: 6px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 999px; background: var(--color-spark); color: var(--color-ink); font: 500 11px var(--font-mono); transform: scale(0); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .mini[aria-pressed="true"] .n { transform: scale(1); }
 
   /* Live sitemap glyphs: each block draws a tiny wireframe */
   .sitemap { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 0.18) transparent; padding-right: 6px; }
@@ -542,7 +588,7 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
     .panel { position: sticky; top: 96px; align-self: start; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .panel, .blk, .ref img, .ref .n { transition: none; animation: none; }
+    .panel, .blk, .ref .n, .mini .n { transition: none; animation: none; }
   }
 </style>
 

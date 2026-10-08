@@ -2,8 +2,8 @@
 import { basket, elevator, exploded, laptop, loupe, patch, phone, query, settle, sieve, slow, stack, terrain, drawer } from '@lucasmarkes/hairline';
 import { packages, addOns, extraPageSections, type PackageId } from '../data/site';
 import {
-  stages, refs, maxRefs, neighbours, industries, goals, sliders, pushSlider, motionLevels, assets,
-  copyStatus, blockTypes, templates, goalBlock, features, briefEndpoint, type BlockType,
+  stages, refs, maxRefs, refsPerPage, refFilters, neighbours, goals, sliders, pushSlider, motionLevels, assets,
+  copyStatus, blockTypes, templates, goalBlock, features, briefEndpoint, type BlockType, type Reference,
 } from '../data/brief';
 import { url } from '../lib/url';
 
@@ -20,6 +20,7 @@ interface State {
   stage: number;
   f: Record<string, string | string[]>; // every [data-k] field
   refs: string[];
+  refFilters?: string[];
   closest: string;
   lists: Record<string, string[]>; // competitors, aspirational, anti
   pages: Page[];
@@ -39,6 +40,10 @@ try {
   const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
   if (saved?.v === 1 && !saved.sent) s = { ...fresh(), ...saved };
 } catch {}
+// Picks from an older reference pool don't exist any more.
+s.refs = s.refs.filter((id) => refs.some((r) => r.id === id));
+if (!s.refs.includes(s.closest)) s.closest = '';
+
 // File contents can't live in localStorage; they're kept here until the brief is sent.
 const fileStore: Record<string, File[]> = {};
 
@@ -140,69 +145,247 @@ function onChange(k: string) {
 }
 
 // ---------------------------------------------------------------------------
-// References
+// References: desktop captures that scroll through the page, ranked for the visitor
 // ---------------------------------------------------------------------------
 
-function refPool() {
+const byId = (id: string) => refs.find((r) => r.id === id)!;
+// Position inside its first category, so an unranked list deals one site per category in turn.
+const deal = new Map(refs.map((r) => [r.id, refs.filter((x) => x.cats[0] === r.cats[0]).indexOf(r)]));
+let refLimit = refsPerPage;
+const shownRefs = new Set<string>();
+
+function rankedRefs() {
   const ind = str('industry');
-  if (!ind || ind === 'other') {
-    // one per category, cycling so light/dark mix
-    const cats = industries.map((i) => i.id).filter((i) => i !== 'other');
-    return cats.map((c, i) => refs.filter((r) => r.category === c)[i % 3]).filter(Boolean);
-  }
-  const pool = refs.filter((r) => r.category === ind);
   const near = neighbours[ind] ?? [];
-  for (let round = 0; pool.length < 12 && round < 3; round++) {
-    for (const c of near) {
-      const r = refs.filter((x) => x.category === c)[round];
-      if (r && pool.length < 12 && !pool.includes(r)) pool.push(r);
+  const on = refFilters.filter((f) => (s.refFilters ?? []).includes(f.id));
+  const score = (r: Reference) => {
+    let sc = 0;
+    if (ind && ind !== 'other') {
+      const i = r.cats.indexOf(ind);
+      if (i === 0) sc += 10;
+      else if (i > 0) sc += 8;
+      else {
+        const n = near.findIndex((c) => r.cats.includes(c));
+        if (n > -1) sc += 4 - n * 0.5;
+      }
     }
-  }
-  return pool;
+    sc += 12 * on.filter((f) => f.test(r)).length; // style filters lead
+    if (r.editorial) sc += 0.5;
+    return sc;
+  };
+  return [...refs].sort((a, b) => score(b) - score(a) || deal.get(a.id)! - deal.get(b.id)!);
+}
+
+// How close a site is to what they've picked: inspo's neighbours, then shared tags.
+const overlap = (a: string[], b: string[]) => (a.length && b.length ? a.filter((x) => b.includes(x)).length / new Set([...a, ...b]).size : 0);
+function likeness(r: Reference) {
+  return s.refs.reduce((sc, id) => {
+    const p = byId(id);
+    return sc + (p.similar.includes(r.id) || r.similar.includes(p.id) ? 4 : 0) + 2 * overlap(p.styles, r.styles) + 2 * overlap(p.vibes, r.vibes)
+      + (p.mode === r.mode ? 1 : 0) + (p.structure === r.structure ? 1 : 0) + (p.cats.some((c) => r.cats.includes(c)) ? 1.5 : 0);
+  }, 0);
+}
+
+const refImg = (r: Reference, full = false) => url(`/refs/${r.slug}${full ? '.full' : ''}.webp`);
+function refCard(r: Reference) {
+  const on = s.refs.includes(r.id);
+  const h = esc(host(r.url));
+  return `<div class="ref" data-ref="${r.id}" aria-pressed="${on}">
+    <div class="ref-bar" aria-hidden="true"><i></i><i></i><i></i><span>${h}</span></div>
+    <div class="ref-view"><img src="${refImg(r)}" data-full="${refImg(r, true)}" data-h="${r.h}" alt="" loading="lazy" decoding="async" width="520" height="325" /></div>
+    <button type="button" class="ref-hit" data-pick="${r.id}" aria-pressed="${on}" aria-label="Pick ${h}"></button>
+    <span class="n">${on ? s.refs.indexOf(r.id) + 1 : ''}</span>
+    <button type="button" class="ref-open" data-open="${r.id}" aria-label="Open ${h} full size"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 1.5h4v4M5.5 12.5h-4v-4M12.5 1.5 8 6M1.5 12.5 6 8" stroke="currentColor" stroke-width="1.4"/></svg></button>
+  </div>`;
 }
 
 function renderRefs() {
-  const pool = refPool();
-  // keep earlier picks visible even if the category changed
-  const picked = s.refs.map((id) => refs.find((r) => r.id === id)!).filter(Boolean);
-  const list = [...picked.filter((r) => !pool.includes(r)), ...pool];
+  const ranked = rankedRefs();
+  const visible = ranked.slice(0, refLimit);
+  // earlier picks stay on screen even if the category or filters moved them down
+  const missing = s.refs.map(byId).filter((r) => r && !visible.includes(r));
+  const list = [...missing, ...visible];
+  shownRefs.clear();
+  list.forEach((r) => shownRefs.add(r.id));
+  $('#refs').innerHTML = list.map(refCard).join('');
+  const left = refs.length - list.length;
+  $('#refs-more').hidden = left <= 0;
+  $('#refs-more').textContent = `Show ${Math.min(refsPerPage, left)} more`;
+  $$<HTMLButtonElement>('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String((s.refFilters ?? []).includes(b.dataset.filter!))));
+  wireCards($('#refs'));
+  renderPicks();
+}
+
+// Picking only updates state in place, so a card that's mid-scroll keeps moving.
+function renderPicks() {
   const full = s.refs.length >= maxRefs;
-  $('#refs').innerHTML = list
-    .map((r) => {
-      const on = s.refs.includes(r.id);
-      return `<button type="button" class="ref${full && !on ? ' dim' : ''}" data-ref="${r.id}" aria-pressed="${on}" aria-label="${esc(host(r.url))}">
-        <img src="${url(`/refs/${r.slug}.webp`)}" alt="" loading="lazy" decoding="async" width="384" height="512" />
-        <span class="n">${on ? s.refs.indexOf(r.id) + 1 : ''}</span>
-        <span class="flex items-center justify-between gap-2 px-2.5 py-2 text-left text-[12px] text-paper/60"><span class="truncate">${esc(host(r.url))}</span><span class="label shrink-0 text-paper/30">${esc(r.mode)}</span></span>
-      </button>`;
-    })
-    .join('');
-  $('#ref-count').textContent = s.refs.length ? `${s.refs.length} of ${maxRefs}${full ? ' · tap one to swap it out' : ''}` : '';
+  $$('.ref[data-ref]').forEach((el) => {
+    const id = el.dataset.ref!;
+    const on = s.refs.includes(id);
+    el.setAttribute('aria-pressed', String(on));
+    el.classList.toggle('dim', full && !on);
+    el.querySelector('.ref-hit')!.setAttribute('aria-pressed', String(on));
+    el.querySelector('.n')!.textContent = on ? String(s.refs.indexOf(id) + 1) : '';
+  });
+  $('#ref-count').textContent = s.refs.length ? `${s.refs.length} of ${maxRefs}${full ? ' · tap a pick to swap it out' : ''}` : '';
   if (s.closest && !s.refs.includes(s.closest)) s.closest = '';
   $$('[data-need-refs]').forEach((el) => (el.hidden = !s.refs.length));
   $('#closest').innerHTML = s.refs
     .map((id) => {
-      const r = refs.find((x) => x.id === id)!;
+      const r = byId(id);
       const on = s.closest === id || s.refs.length === 1;
-      return `<button type="button" class="ref w-1/3 max-w-[140px]" data-closest="${id}" aria-pressed="${on}"><img src="${url(`/refs/${r.slug}.webp`)}" alt="${esc(host(r.url))}" /><span class="n">✓</span></button>`;
+      return `<button type="button" class="mini" data-closest="${id}" aria-pressed="${on}" aria-label="${esc(host(r.url))}"><img src="${refImg(r)}" alt="" /><span class="n">✓</span></button>`;
     })
     .join('');
+  renderLike();
 }
 
-$('#refs').addEventListener('click', (e) => {
-  const b = (e.target as HTMLElement).closest<HTMLElement>('[data-ref]');
-  if (!b) return;
-  const id = b.dataset.ref!;
+function renderLike() {
+  const row = $('#refs-like-row');
+  const like = s.refs.length ? refs.filter((r) => !s.refs.includes(r.id) && !shownRefs.has(r.id)).map((r) => [r, likeness(r)] as const).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([r]) => r) : [];
+  const key = like.map((r) => r.id).join();
+  $('#refs-like').hidden = !like.length;
+  if (row.dataset.key === key) return;
+  row.dataset.key = key;
+  row.innerHTML = like.map(refCard).join('');
+  wireCards(row);
+}
+
+function togglePick(id: string) {
+  if (!refs.some((r) => r.id === id)) return false;
   if (s.refs.includes(id)) s.refs = s.refs.filter((x) => x !== id);
   else if (s.refs.length < maxRefs) s.refs.push(id);
-  else return; // full: they need to unpick one first
-  renderRefs(); renderPanel(); save();
+  else {
+    const c = $('#ref-count');
+    c.animate([{ opacity: 1 }, { opacity: 0.2 }, { opacity: 1 }], { duration: 500, iterations: 2 });
+    return false;
+  }
+  renderPicks(); renderPanel(); save();
+  return true;
+}
+
+document.addEventListener('click', (e) => {
+  const t = e.target as HTMLElement;
+  const pick = t.closest<HTMLElement>('[data-pick]');
+  if (pick) togglePick(pick.dataset.pick!);
+  const open = t.closest<HTMLElement>('[data-open]');
+  if (open) openViewer(open.dataset.open!);
+});
+$('#ref-filters').addEventListener('click', (e) => {
+  const b = (e.target as HTMLElement).closest<HTMLElement>('[data-filter]');
+  if (!b) return;
+  const id = b.dataset.filter!;
+  const list = s.refFilters ?? [];
+  s.refFilters = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+  refLimit = refsPerPage;
+  renderRefs(); save();
+});
+$('#refs-more').addEventListener('click', () => {
+  const first = refLimit;
+  refLimit += refsPerPage;
+  renderRefs();
+  $$('#refs .ref')[first]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 $('#closest').addEventListener('click', (e) => {
   const b = (e.target as HTMLElement).closest<HTMLElement>('[data-closest]');
   if (!b) return;
   s.closest = b.dataset.closest!;
-  renderRefs(); renderPanel(); save();
+  renderPicks(); renderPanel(); save();
+});
+
+// Scrolling a card through its page: on hover with a mouse, on its own on touch screens.
+const canHover = matchMedia('(hover: hover)').matches;
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const motion = new WeakMap<HTMLElement, Animation>();
+const wanted = new WeakSet<HTMLElement>();
+
+async function playCard(card: HTMLElement) {
+  wanted.add(card);
+  const img = card.querySelector<HTMLImageElement>('.ref-view img')!;
+  if (img.dataset.full && !img.src.endsWith(img.dataset.full)) {
+    const pre = new Image();
+    pre.src = img.dataset.full;
+    await pre.decode().catch(() => {});
+    if (!wanted.has(card)) return;
+    img.src = img.dataset.full;
+  }
+  const view = img.parentElement!;
+  const dist = (view.clientWidth * Number(img.dataset.h)) / 520 - view.clientHeight;
+  if (dist <= 0) return;
+  motion.get(card)?.cancel();
+  const duration = (dist / (canHover ? 220 : 120)) * 1000;
+  const frames = [{ transform: 'translateY(0)' }, { transform: `translateY(${-dist}px)` }];
+  motion.set(card, canHover
+    ? img.animate(frames, { duration, easing: 'cubic-bezier(.45,0,.4,1)', fill: 'forwards' })
+    : img.animate(frames, { duration, easing: 'ease-in-out', direction: 'alternate', iterations: Infinity, delay: 500, endDelay: 1400 }));
+}
+function stopCard(card: HTMLElement) {
+  wanted.delete(card);
+  const a = motion.get(card);
+  if (!a) return;
+  const img = card.querySelector<HTMLImageElement>('.ref-view img')!;
+  const now = getComputedStyle(img).transform;
+  a.cancel();
+  motion.set(card, img.animate([{ transform: now === 'none' ? 'translateY(0)' : now }, { transform: 'translateY(0)' }], { duration: 700, easing: 'cubic-bezier(.2,.7,.2,1)' }));
+}
+const autoplay = new IntersectionObserver((entries) => {
+  for (const e of entries) (e.isIntersecting ? playCard : stopCard)(e.target as HTMLElement);
+}, { threshold: 0.6 });
+function wireCards(root: HTMLElement) {
+  if (calm) return;
+  $$('.ref', root).forEach((card) => {
+    if (canHover) {
+      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') playCard(card); });
+      card.addEventListener('pointerleave', () => stopCard(card));
+    } else autoplay.observe(card);
+  });
+}
+
+// Full-size viewer: the 1440px capture, scrollable, with pick and next/prev
+let viewing = '';
+const viewerList = () => [...shownRefs, ...$$('#refs-like-row .ref').map((el) => el.dataset.ref!)];
+function openViewer(id: string) {
+  viewing = id;
+  const r = byId(id);
+  const img = $<HTMLImageElement>('#viewer-img');
+  img.src = refImg(r, true); // the local strip shows at once; the full capture swaps in when it lands
+  const big = new Image();
+  big.src = r.original;
+  big.decode().then(() => { if (viewing === id) img.src = r.original; }).catch(() => {});
+  $('#viewer-host').textContent = host(r.url);
+  $<HTMLAnchorElement>('#viewer-visit').href = r.url;
+  $('#viewer-pick').textContent = s.refs.includes(id) ? 'Picked ✓ · tap to remove' : 'Pick this one';
+  $('#viewer-scroll').scrollTop = 0;
+  const v = $('#viewer');
+  v.classList.remove('hidden');
+  v.classList.add('flex');
+  document.documentElement.style.overflow = 'hidden';
+  $('#viewer-close').focus();
+}
+function closeViewer() {
+  const v = $('#viewer');
+  v.classList.add('hidden');
+  v.classList.remove('flex');
+  document.documentElement.style.overflow = '';
+  document.querySelector<HTMLElement>(`[data-open="${viewing}"]`)?.focus();
+  viewing = '';
+}
+function stepViewer(d: number) {
+  const list = viewerList();
+  const i = list.indexOf(viewing);
+  openViewer(list[(i + d + list.length) % list.length]);
+}
+$('#viewer-close').addEventListener('click', closeViewer);
+$('#viewer-prev').addEventListener('click', () => stepViewer(-1));
+$('#viewer-next').addEventListener('click', () => stepViewer(1));
+$('#viewer-pick').addEventListener('click', () => {
+  if (togglePick(viewing)) $('#viewer-pick').textContent = s.refs.includes(viewing) ? 'Picked ✓ · tap to remove' : 'Pick this one';
+});
+document.addEventListener('keydown', (e) => {
+  if (!viewing) return;
+  if (e.key === 'Escape') closeViewer();
+  if (e.key === 'ArrowRight') stepViewer(1);
+  if (e.key === 'ArrowLeft') stepViewer(-1);
 });
 
 // ---------------------------------------------------------------------------
@@ -540,7 +723,7 @@ function renderPanel() {
     : '<p class="text-[14px] text-paper/40">Your pages and blocks show up here as you build.</p>';
   shownBlocks = nowShown;
 
-  const thumbs = s.refs.map((id) => refs.find((r) => r.id === id)!).map((r) => `<img src="${url(`/refs/${r.slug}.webp`)}" alt="" class="h-9 w-7 rounded-md object-cover object-top" />`).join('');
+  const thumbs = s.refs.map(byId).map((r) => `<img src="${refImg(r)}" alt="" class="h-[26px] w-[42px] rounded-md object-cover object-top" />`).join('');
   $('#pn-taste').innerHTML = thumbs + tasteWords().map((w) => `<span class="rounded-full bg-white/[0.06] px-2.5 py-1 text-[12px] text-paper/70">${esc(w)}</span>`).join('');
 
   const { pct } = completeness();
@@ -690,6 +873,7 @@ function briefData() {
       references: s.refs.map((id) => { const r = refs.find((x) => x.id === id)!; return { id, slug: r.slug, url: r.url }; }),
       closest: s.closest || (s.refs.length === 1 ? s.refs[0] : undefined),
       reference_traits: arr('traits'),
+      reference_filters: s.refFilters ?? [],
       sliders: Object.fromEntries([...sliders, pushSlider].map((x) => [x.id, Number(str(`slider_${x.id}`) || 50)])),
       motion: str('motion'),
       competitors: (s.lists.competitors ?? []).filter(Boolean),

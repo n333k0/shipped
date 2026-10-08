@@ -80,14 +80,34 @@ export interface Reference {
   slug: string;
   title: string;
   url: string;
-  category: string;
+  cats: string[]; // business categories it shows for, best first
   mode: string;
-  display?: string;
+  styles: string[];
+  vibes: string[];
   structure?: string;
   northstar?: string;
   palette: string[];
+  h: number; // height of the scroll strip (public/refs/<slug>.full.webp) at 520px wide
+  original: string; // full 1440px capture, for the expanded view
+  editorial: boolean; // in an inspo editor collection
+  similar: string[]; // inspo's nearest neighbours that are also in the pool
 }
 export const refs = references as Reference[];
+export const refsPerPage = 12;
+
+// Style filters over the pool. They move matching sites to the front rather than hide the rest.
+const has = (list: string[], ...v: string[]) => v.some((x) => list.includes(x));
+export const refFilters: { id: string; name: string; test: (r: Reference) => boolean }[] = [
+  { id: 'editorial', name: 'Editorial', test: (r) => has(r.styles, 'editorial') },
+  { id: 'bold', name: 'Bold', test: (r) => has(r.vibes, 'loud', 'raw') || has(r.styles, 'brutalism', 'maximalism') },
+  { id: 'playful', name: 'Playful', test: (r) => has(r.styles, 'playful') || has(r.vibes, 'playful') },
+  { id: 'luxe', name: 'Luxe', test: (r) => has(r.vibes, 'luxe') },
+  { id: 'warm', name: 'Warm', test: (r) => has(r.vibes, 'warm') },
+  { id: 'technical', name: 'Technical', test: (r) => has(r.vibes, 'technical') },
+  { id: 'experimental', name: 'Experimental', test: (r) => has(r.styles, 'futurist', 'brutalism', 'maximalism') },
+  { id: 'dark', name: 'Dark', test: (r) => r.mode === 'dark' },
+  { id: 'light', name: 'Light', test: (r) => r.mode === 'light' },
+];
 export const maxRefs = 3;
 
 export const traits = ['Typography', 'Layout', 'Colours', 'Motion', 'Photography', 'Simplicity', 'Density', 'Navigation', 'Overall feeling'];
