@@ -23,6 +23,7 @@ storage is the TODO in `send()`.
 ```
 id, created_at
 contact      name, email
+start        mode (pay|call); when pay: off_pct, list_total, total, today, rest, from_price
 project      product (landing|website|websiteplus|unsure), product_note, industry, company, current_site,
              socials, describe, selling, audience, goal, preferred_week
 visual       references [{id, slug, url}], closest, reference_traits[], sliders {dark_light, minimal_expressive,

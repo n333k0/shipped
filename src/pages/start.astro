@@ -487,13 +487,15 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
       <!-- Sent -->
       <div id="done" class="mx-auto hidden max-w-2xl pb-16 text-center" tabindex="-1">
         <div class="figure mx-auto w-[220px] sm:w-[300px]" data-figure="slow" data-play aria-hidden="true"></div>
-        <h1 class="display mt-6 t-h2">Brief in. <span class="accent text-spark">Build plan next.</span></h1>
+        <h1 id="done-title" class="display mt-6 t-h2">Brief in. <span class="accent text-spark">Build plan next.</span></h1>
         <p id="done-line" class="mx-auto mt-5 max-w-lg text-[17px] text-paper/65 sm:text-[18px]"></p>
+        <a href={brand.callLink} class="btn-primary mt-8 h-14 px-8 text-[16px]">Book the call →</a>
+        <p id="done-paydemo" class="mt-4 hidden"><span class="placeholder-tag">Demo: no payment taken</span></p>
         <div id="done-demo" class="mt-8 hidden">
           <span class="placeholder-tag">Demo: saved in this browser for now</span>
           <button type="button" id="download" class="btn-ghost mx-auto mt-4 flex h-12">Download brief (.json)</button>
         </div>
-        <a href={url('/')} class="btn-primary mt-8 h-14 px-8 text-[16px]">Back to the site</a>
+        <a href={url('/')} class="mt-8 block text-[14px] text-paper/50 underline-offset-4 hover:text-paper hover:underline">Back to the site</a>
       </div>
     </div>
   </section>

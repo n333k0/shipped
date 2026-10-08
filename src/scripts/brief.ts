@@ -1,6 +1,6 @@
 // /start/ — "Build your site". One brief, six stages, saved on this device as you go.
 import { basket, elevator, exploded, laptop, loupe, patch, phone, query, settle, sieve, slow, stack, terrain, drawer } from '@lucasmarkes/hairline';
-import { packages, addOns, extraPageSections, type PackageId } from '../data/site';
+import { packages, addOns, extraPageSections, checkout, brand, type PackageId } from '../data/site';
 import {
   stages, refs, maxRefs, refsPerPage, refFilters, neighbours, industries, goals, sliders, pushSlider, pushCopy, motionLevels, assets,
   typefaces, suggestFeatures, refSignals, goalSignals, productStructures,
@@ -891,6 +891,77 @@ function completeness() {
   return { pct: Math.round((done / checks.length) * 100), missing: checks.filter((c) => !c[0]).map(([, label, stage]) => ({ label, stage })) };
 }
 
+// ---------------------------------------------------------------------------
+// How they start: pay now (payNowOff % off) or send and talk first
+// ---------------------------------------------------------------------------
+
+function startPlan() {
+  const p = pkg();
+  if (!p) return null;
+  const off = checkout.payNowOff;
+  const total = p.price + extras().cost;
+  const discounted = Math.round((total * (100 - off)) / 100);
+  // Today is the package deposit; add-ons ride on the second payment, discounted the same
+  const today = Math.round((((p.price * (100 - off)) / 100) * p.depositPct) / 100);
+  return { p, off, total, discounted, today, rest: discounted - today, link: checkout.links[p.id] ?? '' };
+}
+const startMode = () => (startPlan() && str('start') !== 'call' ? 'pay' : 'call');
+
+// The questions people carry into a checkout, answered with what the FAQ already promises
+const worries: [string, string][] = [
+  ['What if I got something wrong here?', 'Nothing in this brief is final. On the kickoff call we go through it with you and change anything: pages, references, features.'],
+  ['What if I don’t like the design?', 'You approve a one-page plan (sitemap, copy, direction) before we design. Then unlimited revisions while your review window is open.'],
+  ['Will the price change?', 'No. Fixed price. Anything extra is quoted before we do it, and only if you say yes.'],
+  ['Do I pay everything before seeing anything?', 'Website and Website+ are half now, half from your review link once you’ve seen the site working. Landing is paid upfront because it’s short.'],
+  ['What if my plans change?', 'Full refund up to 7 days before your build week. After that you can move to another open week once, free.'],
+  ['Who owns the site?', 'You. The site, content, design files and domain live in accounts you control.'],
+];
+
+function startBlock() {
+  const plan = startPlan();
+  const mode = startMode();
+  const card = 'pick relative block cursor-pointer rounded-[20px] border border-white/15 p-5 transition hover:border-white/40 sm:p-6';
+  const pay = plan ? `
+    <label class="${card}">
+      <input type="radio" name="start" value="pay" data-k="start" class="sr-only" ${mode === 'pay' ? 'checked' : ''} />
+      <span class="label absolute right-4 top-4 rounded-full bg-spark px-2.5 py-1 text-ink">Save ${plan.off}%</span>
+      <span class="block pr-20 text-[20px] font-medium leading-tight tracking-tight">Pay now, lock your week</span>
+      <span class="mt-3 block text-[15px] text-paper/50"><s>${money(plan.total)}</s> <b class="text-[22px] font-medium text-paper">${plan.p.id === 'websiteplus' ? 'from ' : ''}${money(plan.discounted)}</b></span>
+      <span class="mt-3 block text-[15px] leading-snug text-paper/70">Today ${money(plan.today)}${plan.p.depositPct < 100 ? ` (${plan.p.depositPct}%)` : ''}.${plan.rest > 0 ? ` The other ${money(plan.rest)} once you’ve seen it working.` : ''}</span>
+      <span class="mt-2 block text-[14px] text-paper/50">Kickoff call included: questions and changes go there.</span>
+    </label>` : `
+    <div class="rounded-[20px] border border-dashed border-white/15 p-5 text-[15px] text-paper/55 sm:p-6">
+      <span class="block text-[20px] font-medium tracking-tight text-paper/80">Pay now, save ${checkout.payNowOff}%</span>
+      <span class="mt-2 block">Pick a format in <button type="button" data-goto="0" class="underline underline-offset-4">Basics</button> to see your price, or talk to us first and we’ll recommend one.</span>
+    </div>`;
+  return `
+  <fieldset class="mt-12">
+    <legend class="text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] lg:text-[40px] lg:leading-[1.1] lg:tracking-[-0.025em]">How do you want to start?</legend>
+    <p class="mt-1 text-[14px] text-paper/45">Either way we go over everything with you on a call. This brief is a starting point, not a contract.</p>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      ${pay}
+      <label class="${card}">
+        <input type="radio" name="start" value="call" data-k="start" class="sr-only" ${mode === 'call' ? 'checked' : ''} />
+        <span class="block text-[20px] font-medium leading-tight tracking-tight">Send it, talk first</span>
+        <span class="mt-3 block text-[15px] text-paper/50">${plan ? `${plan.p.id === 'websiteplus' ? 'from ' : ''}${money(plan.total)}` : 'Price in your build plan'}</span>
+        <span class="mt-3 block text-[15px] leading-snug text-paper/70">Book a free 15-minute call. We answer everything, then email your build plan. Pay when you’re ready.</span>
+        <span class="mt-2 block text-[14px] text-paper/50">The ${checkout.payNowOff}% is for paying as you send.</span>
+      </label>
+    </div>
+    <div class="mt-6 rounded-[24px] bg-white/[0.03] p-5 sm:p-6">
+      <p class="label text-paper/45">Before you decide</p>
+      <div class="mt-2 divide-y divide-white/[0.07]">${worries.map(([q, a]) => `<details class="group"><summary class="flex min-h-12 cursor-pointer items-center justify-between gap-4 py-2 text-[15px] font-medium">${q}<span class="text-paper/40 transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-4 text-[14px] leading-relaxed text-paper/60">${a}</p></details>`).join('')}</div>
+    </div>
+  </fieldset>`;
+}
+
+const barHint = () => (startMode() === 'pay' ? 'Secure checkout. Refundable up to 7 days before your week.' : 'Nothing is charged. You’ll get a build plan first.');
+
+function nextLabel() {
+  const plan = startPlan();
+  return startMode() === 'pay' && plan ? `Pay ${money(plan.today)} & send brief →` : 'Send brief & book a call →';
+}
+
 function renderReview() {
   const p = pkg();
   const { pct, missing } = completeness();
@@ -922,9 +993,12 @@ function renderReview() {
     </div>
     ${missing.length ? `<div class="mt-4 rounded-[24px] border border-booked/30 p-5 sm:p-6">
       <p class="text-[17px] font-medium">Worth filling before you send</p>
-      <p class="mt-1 text-[14px] text-paper/50">You can send it as it is. We’ll just ask about these after.</p>
+      <p class="mt-1 text-[14px] text-paper/50">You can send it as it is, even pay. We’ll ask about these on the call.</p>
       <ul class="mt-4 space-y-1.5">${missing.map((m) => `<li><button type="button" data-goto="${m.stage}" class="flex min-h-11 w-full items-center gap-3 rounded-xl bg-white/[0.04] px-3.5 text-left text-[15px] transition hover:bg-white/[0.08]"><span class="text-booked" aria-hidden="true">⚠</span><span class="flex-1">${esc(m.label)}</span><span class="label text-paper/40">${stages[m.stage].name} →</span></button></li>`).join('')}</ul>
-    </div>` : `<p class="mt-4 rounded-[24px] bg-spark/10 p-5 text-[15px] text-spark">Everything’s here. Send it and we’ll take it from there.</p>`}`;
+    </div>` : `<p class="mt-4 rounded-[24px] bg-spark/10 p-5 text-[15px] text-spark">Everything’s here. Send it and we’ll take it from there.</p>`}
+    ${startBlock()}`;
+  $('#next').textContent = nextLabel();
+  $('#bar-hint').textContent = barHint();
 }
 
 // ---------------------------------------------------------------------------
@@ -943,7 +1017,7 @@ function go(i: number, push = true) {
   const last = s.stage === stages.length - 1;
   $('#next').textContent = last ? 'Send brief →' : `${stages[s.stage + 1].name} →`;
   $<HTMLButtonElement>('#back').disabled = s.stage === 0;
-  $('#bar-hint').textContent = last ? 'Nothing is charged. You’ll get a build plan first.' : `Step ${s.stage + 1} of ${stages.length} · saved on this device`;
+  $('#bar-hint').textContent = last ? barHint() : `Step ${s.stage + 1} of ${stages.length} · saved on this device`;
   $('#form-error').classList.add('hidden');
   if (last) renderReview();
   if (stages[s.stage].id === 'features') seedFeatures();
@@ -985,6 +1059,9 @@ function briefData() {
     id: s.ref,
     created_at: new Date().toISOString(),
     contact: { name: str('name'), email: str('email') },
+    start: (() => { const plan = startPlan(); return startMode() === 'pay' && plan
+      ? { mode: 'pay', off_pct: plan.off, list_total: plan.total, total: plan.discounted, today: plan.today, rest: plan.rest, from_price: plan.p.id === 'websiteplus' || undefined }
+      : { mode: 'call' }; })(),
     project: {
       product: str('product'), product_note: str('unsure_note') || undefined,
       industry: str('industry'), industry_other: str('industry_other') || undefined,
@@ -1081,8 +1158,26 @@ async function send() {
   }
   s.sent = data.created_at;
   try { localStorage.setItem(KEY + ':sent', JSON.stringify(data)); localStorage.removeItem(KEY); } catch {}
-  const p = pkg();
-  $('#done-line').textContent = `${p ? p.name : 'Your website'} for ${str('company')}. We’ll email ${str('email')} your build plan: final scope, fixed price and the open build weeks.`;
+  const plan = startPlan();
+  if (data.start.mode === 'pay' && plan?.link) {
+    // brief is saved first; the payment page returns to /start/?paid=1
+    const to = new URL(plan.link);
+    to.searchParams.set('client_reference_id', data.id);
+    location.href = to.toString();
+    return;
+  }
+  showDone(data, data.start.mode === 'pay' ? 'paydemo' : 'call');
+}
+
+type Done = 'call' | 'paid' | 'paydemo';
+function showDone(data: ReturnType<typeof briefData>, how: Done) {
+  const company = data.project.company || 'your company';
+  const name = packages.find((x) => x.id === data.project.product)?.name ?? 'Your website';
+  $('#done-title').innerHTML = how === 'call' ? 'Brief in. <span class="accent text-spark">Let’s talk.</span>' : how === 'paid' ? 'Paid. <span class="accent text-spark">Your week is held.</span>' : 'Brief in. <span class="accent text-spark">Payment next.</span>';
+  $('#done-line').textContent = how === 'call'
+    ? `${name} for ${company}. Pick a time for a free 15-minute call; we’ll bring your brief and answer everything. Your build plan follows by email to ${data.contact.email}.`
+    : `${name} for ${company}, ${checkout.payNowOff}% off. Book your kickoff call: we go through the brief together and change anything you want before we start.`;
+  $('#done-paydemo').classList.toggle('hidden', how !== 'paydemo');
   $('#done-demo').classList.toggle('hidden', !!briefEndpoint);
   $('#download').onclick = () => {
     const a = document.createElement('a');
@@ -1178,3 +1273,8 @@ renderSwatches();
 renderPanel();
 go(location.hash ? stageFromHash() : s.stage, false);
 history.replaceState({ stage: s.stage }, '', `#${stages[s.stage].id}`);
+
+// Back from the payment page (its success URL is /start/?paid=1)
+if (params.get('paid')) {
+  try { const sent = JSON.parse(localStorage.getItem(KEY + ':sent') || 'null'); if (sent) showDone(sent, 'paid'); } catch {}
+}

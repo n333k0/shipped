@@ -1,6 +1,6 @@
 // Everything the /start/ "Build your site" flow asks, in one place.
 // The answers are saved as one structured brief (see BriefData in src/scripts/brief.ts).
-import type { PackageId } from './site';
+import { checkout, type PackageId } from './site';
 import references from './references.json';
 import excluded from './ref-exclude.json'; // owner's hidden references, edited at /curate/
 
@@ -18,12 +18,12 @@ export interface Stage {
 }
 
 export const stages: Stage[] = [
-  { id: 'basics', name: 'Basics', title: 'Start with', accent: 'the business.', intro: 'What you’re building, who it’s for, and what a visitor should do next.', figure: 'query' },
+  { id: 'basics', name: 'Basics', title: 'Start with', accent: 'the business.', intro: 'What you’re building, who it’s for, and what a visitor should do next. Not sure about something? Skip it: we go over everything with you on a call.', figure: 'query' },
   { id: 'direction', name: 'Direction', title: 'Show us', accent: 'your taste.', intro: 'All optional. The more you show us, the closer our first design lands to what you have in mind.', figure: 'loupe' },
   { id: 'content', name: 'Content', title: 'What’s already', accent: 'in the drawer?', intro: 'Logo, fonts, photos, copy. Bring what you have, skip what you don’t.', figure: 'drawer' },
   { id: 'pages', name: 'Pages', title: 'Build it', accent: 'block by block.', intro: 'Map every page yourself, or drop everything on us and we’ll propose the structure.', figure: 'exploded' },
   { id: 'features', name: 'Features', title: 'Plug in', accent: 'the moving parts.', intro: 'Forms, bookings, languages, domain. Tick what you need and we’ll ask only about those.', figure: 'patch' },
-  { id: 'review', name: 'Review', title: 'One last look.', accent: 'Then it’s ours.', intro: 'Check the brief, fill any gaps, and send it in.', figure: 'settle' },
+  { id: 'review', name: 'Review', title: 'One last look.', accent: 'Then it’s ours.', intro: `Check the brief and send it. Pay now for ${checkout.payNowOff}% off, or talk to us first. Anything can still change on the call.`, figure: 'settle' },
 ];
 
 // ---------------------------------------------------------------------------

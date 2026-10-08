@@ -31,6 +31,15 @@ export const funnel = {
   },
 };
 
+// Checkout at the end of /start/. Paying as they send the brief takes `payNowOff`% off the whole
+// project. Paste one payment link per package (Stripe Payment Link, Mercado Pago, Lemon Squeezy…)
+// set to that package's "today" amount (shown on /start/: deposit of the discounted price) and to
+// return to /start/?paid=1. Empty link = demo: the brief is saved and the pay step shows, no charge.
+export const checkout = {
+  payNowOff: 10,
+  links: { landing: '', website: '', websiteplus: '' } as Record<string, string>,
+};
+
 // Show the orange "Placeholder" tags on stand-in imagery. Off = clean preview.
 export const showPlaceholderTags = false;
 
