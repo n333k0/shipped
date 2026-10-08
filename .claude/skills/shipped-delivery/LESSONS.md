@@ -8,17 +8,25 @@ One line per correction from the owner, written as what to do. Newest at the bot
 - Flow sections one after another; only the cover and back cover get their own page.
 
 ## Site
-- Use the client's typefaces (Hikari: Raleway). Shipped's serif-italic accent reads as our brand.
-- Product brands: the product photo's background fills the hero, product large, interaction on top (Hikari's light switch: loved, keep this kind of moment).
-- "Serif and modern, not rounded" (Bonkers): light-weight modern serif, square corners everywhere, 1px rules.
-- Bonkers' current logo URL is broken on their own site: check `source/` for a working logo and ask for it in the build plan.
+- Use the client's typefaces (a lighting brand on Raleway got serif-italic and hated it). Shipped's serif-italic accent reads as our brand.
+- Product brands: the product photo's background fills the hero, product large, interaction on top (a light switch on a lamp brand: loved).
+- "Serif and modern, not rounded": light-weight modern serif, square corners everywhere, 1px rules.
+- Find the real logo before building: when the main site's is broken, their app or another subdomain often has it.
+- Hero headlines stay within three lines on desktop; set the breaks by hand.
+- Pages felt too simple: ship three variations, more imagery, more motion and transitions, top quality by default.
 
 ## References
-- Basics text, goal and format rank the reference grid, not only the industry (`refSignals` in `src/data/brief.ts`).
+- Once a category is picked, every reference comes from it, filters and "more like" included. Basics text reorders inside it.
 - inspo tags most Swiss-minimal sites "brutalism"; read expressiveness from maximalism, playful, loud.
 - Lighting and furniture brands (Louis Poulsen, Flos, HAY, Knoll) count as e-commerce references too.
+- The owner hides references at `/curate/`; `src/data/ref-exclude.json` is theirs.
+
+## Brief UI
+- The "Your site" panel is a small symbolic object (isometric page stack), not a detailed wireframe list.
 
 ## Gotchas
 - Tiendanube's CDN throttles non-browser downloads (~200 B/s): fetch images through the browser and post them to a local receiver.
 - Lovable and other SPA sites render client-side: read them with `chrome --headless=new --dump-dom`.
 - A Vercel project's first deploy is production and public on `<project>.vercel.app`: remove that alias.
+- Headless Chrome windows can't go below ~500px wide; review phones through the DevTools protocol (`review-site.mjs`) or a 390px iframe.
+- The shipped repo is public: client prototypes, photos and briefs stay in `../_tests/`, never in the repo.

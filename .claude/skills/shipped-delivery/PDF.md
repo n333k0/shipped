@@ -15,7 +15,7 @@ A story in five beats, then a back cover:
 ## story.json
 
 ```json
-{ "coverTitle": "Hikari Studio,", "coverAccent": "en su mejor luz.",
+{ "coverTitle": "Estudio Norte,", "coverAccent": "en su mejor luz.",
   "coverLine": "...", "heardTitle": "...", "feelTitle": "...", "feelAccent": "...",
   "feelLine": "...", "mapLine": "...", "closing": "..." }
 ```

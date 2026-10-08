@@ -1023,8 +1023,29 @@ function briefData() {
     dump: str('pages_mode') === 'dump' ? { files: (s.files.dump ?? []).map((f) => f.name), notes: str('dump_notes') } : undefined,
     functional: Object.fromEntries(arr('features').filter((f) => f !== 'none').map((f) => [f, fieldsOf(f)])),
     technical: { domain_own: str('domain_own'), domain: str('domain'), hosting: str('hosting'), current_cms: str('current_cms'), seo_keep: str('seo_keep'), seo_urls: str('seo_urls') },
+    inferred: inferBrief(),
     completeness: pct,
     missing: missing.map((m) => m.label),
+  };
+}
+
+// What the answers imply without asking: read by the build (see shipped-delivery/SITE.md).
+function inferBrief() {
+  const { hits } = basicsSignals();
+  const labels = hits.map((h) => h.label);
+  const ind = str('industry');
+  const slider = (k: string) => Number(str(`slider_${k}`) || 50);
+  const picks = s.refs.map(byId);
+  const techy = ['saas', 'finance'].includes(ind) || labels.includes('Tech & AI');
+  const bold = slider('safe_experimental') >= 65 || ['dynamic', 'wild'].includes(str('motion'));
+  const experimental = slider('classic_experimental') >= 55 || picks.some((r) => r.styles.includes('futurist'));
+  const photos = arr('assets').some((a) => a === 'photography' || a === 'product') || Object.keys(s.files).some((k) => k === 'asset:photography' || k === 'asset:product');
+  return {
+    signals: labels,
+    three_d: { suggested: (techy || ind === 'creative') && bold && experimental, why: [techy && 'tech', bold && 'bold creativity or motion', experimental && 'experimental taste'].filter(Boolean) },
+    imagery: photos ? 'photo-led' : 'type-led',
+    line_art: techy || slider('editorial_digital') >= 60,
+    variations: 3,
   };
 }
 

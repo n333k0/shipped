@@ -37,6 +37,8 @@ sitemap      mode (builder|dump), approved, pages [{name, path, blocks [{n, type
 dump         files[], notes                     (only when mode = dump)
 functional   {forms: {...}, booking: {url}, multilingual: {primary, more[]}, ...}  (pre-ticked from goal + industry)
 technical    domain_own, domain, hosting, current_cms, seo_keep, seo_urls
+inferred     signals[] (from Basics text), three_d {suggested, why[]}, imagery (photo-led|type-led),
+             line_art, variations
 completeness 0–100, missing[]
 ```
 

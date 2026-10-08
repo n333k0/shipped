@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pattern · Numbers that count and lines that draw</title>
+<!-- For real numbers the client gave us (never invented): count up once when seen, and draw a trend line
+     with stroke-dashoffset. Both run once, both respect reduced motion. -->
+<style>*{margin:0}body{background:#fcfaf8;color:#0b0b0b;font:17px system-ui;padding:20vh 6vw 40vh}
+.stats{display:flex;gap:48px;flex-wrap:wrap} b{font:300 clamp(64px,9vw,128px)/.9 Georgia,serif;letter-spacing:-.04em}
+svg{width:100%;max-width:640px;height:140px;margin-top:64px;overflow:visible}
+polyline{fill:none;stroke:#e05555;stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 2.4s cubic-bezier(.2,.7,.2,1)}
+.in polyline{stroke-dashoffset:0} @media (prefers-reduced-motion:reduce){polyline{stroke-dashoffset:0;transition:none}}</style></head><body>
+<section id="s"><div class="stats"><div><b data-count="72">72</b> hs</div><div><b data-count="100">100</b>%</div></div>
+<svg viewBox="0 0 320 120" aria-hidden="true"><polyline points="0,100 40,92 80,96 120,74 160,78 200,52 240,48 280,30 320,22"/></svg></section>
+<script>
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+new IntersectionObserver((es, io) => es.forEach((e) => { if (!e.isIntersecting) return; io.disconnect(); e.target.classList.add('in');
+  if (calm) return; e.target.querySelectorAll('[data-count]').forEach((el) => { const to = +el.dataset.count, t0 = performance.now();
+    (function step(t) { const k = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0); }); }), { threshold: .35 }).observe(document.getElementById('s'));
+</script></body></html>

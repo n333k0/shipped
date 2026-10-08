@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pattern · Headline that rises line by line</title>
+<!-- Default entrance for big hero type. Each line sits in an overflow:hidden span and rises in, staggered.
+     Write the lines yourself (3 max on desktop) instead of letting the browser wrap one long string. -->
+<style>*{margin:0}body{background:#0a0a0a;color:#fff;font:17px system-ui;padding:12vh 6vw}
+h1{font-size:clamp(52px,8vw,128px);font-weight:900;letter-spacing:-.04em;line-height:.88}
+h1 span{display:block;overflow:hidden} h1 span>i{display:block;font-style:normal;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.12s)}
+h1 .c{color:#e05555} @keyframes rise{to{transform:none}}
+@media (prefers-reduced-motion:reduce){h1 span>i{animation:none;transform:none}}</style></head><body>
+<h1><span><i style="--i:0">Performance where</i></span><span><i style="--i:1">your customer looks.</i></span><span><i class="c" style="--i:2">Seen where AI answers.</i></span></h1>
+</body></html>

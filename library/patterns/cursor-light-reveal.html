@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pattern · Cursor light reveal</title>
+<!-- The page is a dark room and the cursor is the light: a fixed veil with a warm hole at the pointer.
+     On touch screens the light goes where you tap and drifts with scroll. Always ship the "lights on"
+     toggle (accessibility, and people who just want to browse). Good for lighting, nightlife, galleries. -->
+<style>
+:root{--x:50vw;--y:40vh;--r:300px;--night:#0c0a07;--glow:#f2b65a}
+*{box-sizing:border-box;margin:0}body{background:var(--night);color:#f4efe6;font:17px/1.6 system-ui,sans-serif}
+.veil{position:fixed;inset:0;z-index:20;pointer-events:none;transition:opacity 1.2s;background:radial-gradient(circle var(--r) at var(--x) var(--y),rgba(242,182,90,.10) 0%,rgba(12,10,7,0) 35%,rgba(12,10,7,.55) 62%,rgba(12,10,7,.94) 100%)}
+.halo{position:fixed;z-index:21;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--glow);box-shadow:0 0 40px 12px rgba(242,182,90,.55);pointer-events:none;transform:translate(var(--x),var(--y))}
+.room-on .veil,.room-on .halo,.touch .halo{opacity:0}
+.lights{position:fixed;top:16px;right:16px;z-index:30;white-space:nowrap;padding:10px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:inherit;font:600 14px system-ui;cursor:pointer}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:40px 20px;padding:120px 24px}
+main div{aspect-ratio:4/5;background:linear-gradient(160deg,#3a2a14,#0b0907);border-radius:6px}
+@media (prefers-reduced-motion:reduce){.veil,.halo{display:none}}
+</style></head><body>
+<div class="veil" aria-hidden="true"></div><div class="halo" aria-hidden="true"></div>
+<button class="lights" aria-pressed="false">Lights on</button>
+<main></main>
+<script>
+document.querySelector('main').innerHTML = '<div></div>'.repeat(12);
+const root = document.documentElement, touch = matchMedia('(hover: none)').matches;
+let tx = innerWidth / 2, ty = innerHeight * .4, x = tx, y = ty;
+if (touch) document.body.classList.add('touch');
+addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; });
+addEventListener('pointerdown', (e) => { tx = e.clientX; ty = e.clientY; });
+if (touch) addEventListener('scroll', () => { tx = innerWidth / 2 + Math.sin(scrollY / 300) * innerWidth * .25; ty = innerHeight * .45; }, { passive: true });
+(function loop() { x += (tx - x) * .12; y += (ty - y) * .12; root.style.setProperty('--x', x + 'px'); root.style.setProperty('--y', y + 'px'); requestAnimationFrame(loop); })();
+const b = document.querySelector('.lights');
+b.addEventListener('click', () => { const on = document.body.classList.toggle('room-on'); b.setAttribute('aria-pressed', on); b.textContent = on ? 'Lights off' : 'Lights on'; });
+</script></body></html>

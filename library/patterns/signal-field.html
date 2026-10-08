@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pattern · Signal field</title>
+<!-- Tech, data, AI, networks: a full-bleed canvas of drifting dots that link up nearby and light up in the
+     accent where the pointer pushes them. Cheap (2D canvas, links only to the next 18 dots), pauses under
+     reduced motion. Put the headline over it with a bottom gradient for legibility. -->
+<style>*{margin:0}body{background:#0a0a0a;color:#fff;font:17px system-ui}
+.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,#0a0a0a 4%,transparent 45%);pointer-events:none}
+h1{position:relative;z-index:1;padding:48px;font-size:clamp(48px,8vw,120px);line-height:.9;letter-spacing:-.04em}</style></head><body>
+<section class="hero"><canvas id="field" aria-hidden="true"></canvas><h1>Signal over noise.</h1></section>
+<script>
+(() => { const ACCENT = [224, 85, 85];
+  const c = document.getElementById('field'), x = c.getContext('2d'), calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, dots = [], mx = -999, my = -999; const dpr = Math.min(2, devicePixelRatio || 1);
+  const size = () => { W = c.clientWidth; H = c.clientHeight; c.width = W * dpr; c.height = H * dpr; x.setTransform(dpr, 0, 0, dpr, 0, 0);
+    dots = Array.from({ length: Math.round((W * H) / 5200) }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25, h: 0 })); };
+  size(); addEventListener('resize', size);
+  addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+  (function frame() { x.clearRect(0, 0, W, H);
+    for (const d of dots) { const dx = d.x - mx, dy = d.y - my, dist = Math.hypot(dx, dy);
+      if (dist < 140) { d.vx += dx / dist * .35; d.vy += dy / dist * .35; d.h = 1; }
+      d.vx *= .96; d.vy *= .96; d.x = (d.x + d.vx + W) % W; d.y = (d.y + d.vy + H) % H; d.h *= .97; }
+    for (let i = 0; i < dots.length; i++) for (let j = i + 1; j < Math.min(dots.length, i + 18); j++) { const a = dots[i], b = dots[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (d < 90) { x.strokeStyle = `rgba(${ACCENT},${(1 - d / 90) * (.08 + .5 * Math.max(a.h, b.h))})`; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke(); } }
+    for (const d of dots) { x.fillStyle = d.h > .05 ? `rgba(${ACCENT},${.5 + d.h * .5})` : 'rgba(252,250,248,.5)'; x.fillRect(d.x, d.y, 2, 2); }
+    if (!calm) requestAnimationFrame(frame); })(); })();
+</script></body></html>

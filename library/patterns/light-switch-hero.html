@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pattern · Light-switch hero</title>
+<!-- Product brands with an on/off state (lamps, screens, signage). The product photo's own background
+     fills the hero; a switch turns the whole room on: background, text colour, buttons and a glow all follow.
+     Needs two photos shot the same way: off (light background) and on (dark background).
+     Sample colours from each photo's corner (see shipped-delivery/SITE.md) and use them as the two backgrounds. -->
+<style>
+:root{--off-bg:#f4f1f2;--on-bg:#212121;--ink:#16120d;--glow:#f2b65a;--accent:#b8141c;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0}body{font:17px/1.6 system-ui,sans-serif;color:var(--ink)}
+.hero{position:relative;overflow:hidden;min-height:min(100svh,900px);background:var(--off-bg);transition:background-color 1.3s var(--ease),color 1.3s var(--ease);display:flex;flex-direction:column}
+.img{position:relative;height:56svh}
+.img img{position:absolute;left:50%;top:0;height:100%;width:auto;transform:translateX(-50%);transition:opacity 1.2s var(--ease);-webkit-mask-image:linear-gradient(to bottom,#000 75%,transparent);mask-image:linear-gradient(to bottom,#000 75%,transparent)}
+.img .on{opacity:0}
+.copy{position:relative;z-index:1;padding:8px 24px 112px;max-width:640px}
+h1{font-size:clamp(46px,8vw,110px);font-weight:300;letter-spacing:-.04em;line-height:.98}
+h1 b{font-weight:800;color:var(--accent);transition:color 1.3s}
+.switch{position:absolute;right:24px;bottom:24px;display:inline-flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:99px;border:0;background:rgba(255,255,255,.9);font:600 14px system-ui;cursor:pointer;transition:background .6s,color .6s}
+.knob{position:relative;width:46px;height:26px;border-radius:99px;background:#e9e3d8;transition:background .5s}
+.knob::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .5s var(--ease)}
+@media (min-width:900px){.hero{display:block}.img{position:absolute;inset:0 0 0 auto;width:62%;height:100%}.img img{left:auto;right:4%;transform:none;-webkit-mask-image:linear-gradient(to right,transparent,#000 22%);mask-image:linear-gradient(to right,transparent,#000 22%)}.copy{min-height:min(100svh,900px);display:flex;flex-direction:column;justify-content:center;padding:64px 48px}}
+.hero.on{background:var(--on-bg);color:#f4ead9}.hero.on .img .on{opacity:1}.hero.on .img .off{opacity:0}.hero.on h1 b{color:var(--glow)}
+.hero.on .switch{background:rgba(21,17,12,.85);color:#fff}.hero.on .knob{background:var(--glow)}.hero.on .knob::after{transform:translateX(20px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<section class="hero">
+  <div class="img"><img class="off" src="product-off.jpg" alt="Product, off"><img class="on" src="product-on.jpg" alt="Product, on"></div>
+  <div class="copy"><h1>Warm light,<br><b>made by hand.</b></h1><p style="margin-top:20px">One line about the product.</p></div>
+  <button class="switch" aria-pressed="false"><span class="knob" aria-hidden="true"></span><span class="label">Turn it on</span></button>
+</section>
+<script>
+(() => { const room = document.querySelector('.hero'), sw = room.querySelector('.switch');
+  const set = (on) => { room.classList.toggle('on', on); sw.setAttribute('aria-pressed', on); sw.querySelector('.label').textContent = on ? 'Turn it off' : 'Turn it on'; };
+  sw.addEventListener('click', () => { room.dataset.touched = 1; set(!room.classList.contains('on')); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setTimeout(() => !room.dataset.touched && set(true), 1300); })();
+</script></body></html>
