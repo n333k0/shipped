@@ -186,7 +186,7 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                         {motionLevels.map((m) => (
                           <label class="pick block cursor-pointer rounded-[20px] border border-white/15 p-3 transition hover:border-white/40 sm:p-4">
                             <input type="radio" name="motion" value={m.id} data-k="motion" class="sr-only" />
-                            <div class="hl-card figure" data-figure="terrain" data-intensity={m.intensity} {...(m.play ? { 'data-play': '' } : {})} aria-hidden="true"></div>
+                            <div class="hl-card figure" data-figure="terrain" data-intensity={m.intensity} {...(m.play ? { 'data-play': '' } : { 'data-still': '' })} aria-hidden="true"></div>
                             <span class="label mt-3 block text-paper/45">{m.n}</span>
                             <span class="mt-1 block text-[17px] font-semibold">{m.name}</span>
                             <span class="mt-0.5 block text-[13px] leading-snug text-paper/55">{m.detail}</span>
@@ -500,6 +500,9 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
   .figure { aspect-ratio: 5 / 4; }
   /* fieldsets default to min-content width, which lets the side-scrolling filter row stretch the page */
   #brief fieldset { min-width: 0; }
+  /* "Still" barely moves: it ignores the pointer and only lifts a touch with the card */
+  [data-still] { pointer-events: none; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .pick:hover [data-still] { transform: translateY(-3px); }
   /* Stage figures are sized by the drawing, not the 5:4 box: --fit-h is how tall the line art
      stands, --fit-w caps how wide it may get. brief.ts scales the box and trims the empty plate. */
   .fit { --fit-h: 72px; --fit-w: 120px; height: var(--fit-h); width: var(--fit-h); }
