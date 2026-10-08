@@ -90,6 +90,7 @@ export interface Reference {
   palette: string[];
   h: number; // height of the scroll strip (public/refs/<slug>.full.webp) at 520px wide
   original: string; // full 1440px capture, for the expanded view
+  manual?: boolean; // captured by us (scripts/refs-add.mjs), not from inspo
   editorial: boolean; // in an inspo editor collection
   similar: string[]; // inspo's nearest neighbours that are also in the pool
 }

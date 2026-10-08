@@ -404,8 +404,9 @@ function openViewer(id: string) {
   const img = $<HTMLImageElement>('#viewer-img');
   img.src = refImg(r, true); // the local strip shows at once; the full capture swaps in when it lands
   const big = new Image();
-  big.src = r.original;
-  big.decode().then(() => { if (viewing === id) img.src = r.original; }).catch(() => {});
+  const orig = /^https?:/.test(r.original) ? r.original : url('/' + r.original); // our own captures live in public/refs
+  big.src = orig;
+  big.decode().then(() => { if (viewing === id) img.src = orig; }).catch(() => {});
   $('#viewer-host').textContent = host(r.url);
   $<HTMLAnchorElement>('#viewer-visit').href = r.url;
   $('#viewer-pick').textContent = s.refs.includes(id) ? 'Picked ✓ · tap to remove' : 'Pick this one';

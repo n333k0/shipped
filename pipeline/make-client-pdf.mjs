@@ -1,7 +1,9 @@
 // The brief as the client receives it (PDF), plus the internal notes we keep (internal.md).
 //   node pipeline/make-client-pdf.mjs <client-folder>   (folder has brief.json and story.json)
 // Client PDF: their brief told back as a story. No build spec, no flags, no internals.
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import sharp from 'sharp';
 import { execFileSync } from 'node:child_process';
 import { resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -51,6 +53,36 @@ const es = {
   copy: { final: 'Los textos los traen ustedes, finales.', rough: 'Ustedes traen borradores; nosotros los pulimos.', info: 'Ustedes traen la información; nosotros la escribimos.', nothing: 'Escribimos todo desde cero, a partir de una charla.' },
 };
 
+// nth business day from a Monday (1 = that Monday)
+const bday = (from, n) => { const d = new Date(from); for (let left = n - 1; left > 0; ) { d.setUTCDate(d.getUTCDate() + 1); if (d.getUTCDay() % 6) left--; } return d; };
+const short = (d) => d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', timeZone: 'UTC' }).replace('.', '');
+const D = pkg.days, planEnd = Math.max(1, Math.round(D * 0.2)), buildEnd = Math.floor(D * 0.7);
+const span = (a, z) => (a === z ? `Día ${a} · ${short(bday(start, a))}` : `Días ${a}–${z} · ${short(bday(start, a))} → ${short(bday(start, z))}`);
+const paidNow = b.start?.mode === 'pay';
+const today = paidNow ? b.start.today : Math.round((pkg.price * pkg.deposit) / 100);
+const finalPrice = paidNow ? b.start.total : pkg.price;
+
+// Line art, drawn for this client: their pages as a stack of sheets, and the launch as a box
+const iso = 'matrix(0.866 0.5 -0.866 0.5 0 0)';
+function siteStack(list, { ink, hi, w = 600, h = 480 }) {
+  const n = list.length, gap = n > 1 ? Math.min(44, 260 / (n - 1)) : 0, W = 270, H = 202, x = 215, base = h / 2 + ((n - 1) * gap) / 2;
+  const sheet = (p, i) => {
+    const top = i === 0, y = base - (n - 1 - i) * gap;
+    const marks = p.blocks.slice(0, top ? 9 : 4).map((blk, k) => `<line x1="${-W / 2 + 22}" y1="${-H / 2 + 30 + k * 13}" x2="${-W / 2 + 22 + (blk.type === 'hero' ? 128 : blk.type === 'cta' ? 64 : 88 + ((k * 23) % 56))}" y2="${-H / 2 + 30 + k * 13}" stroke="${blk.type === 'cta' || top && k === 0 ? hi : ink}" stroke-width="${top && k === 0 ? 4 : 2}" stroke-linecap="round" opacity="${top ? 1 : .55}"/>`).join('');
+    return `<g transform="translate(${x} ${y}) ${iso}"><rect x="${-W / 2}" y="${-H / 2}" width="${W}" height="${H}" rx="9" fill="${top ? hi : 'none'}" fill-opacity="${top ? .18 : 0}" stroke="${top ? ink : ink}" stroke-width="${top ? 2.4 : 1.4}"/><line x1="${-W / 2}" y1="${-H / 2 + 16}" x2="${W / 2}" y2="${-H / 2 + 16}" stroke="${ink}" stroke-width="1.2" opacity=".6"/>${marks}</g>`;
+  };
+  const labels = list.slice(0, 12).map((p, i) => `<text x="${w - 128}" y="${40 + i * 24}" font-family="JetBrains Mono" font-size="11" fill="${ink}" opacity="${i ? .7 : 1}">${String(i + 1).padStart(2, '0')} ${esc(p.name.length > 11 ? p.name.slice(0, 10) + '…' : p.name)}<tspan x="${w - 4}" text-anchor="end">${p.blocks.length}</tspan></text>`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%">${list.map(sheet).reverse().join('')}${labels}</svg>`;
+}
+function box(stroke, hi, s = 60) {
+  const c = s * 0.866, pts = (a) => a.map(([x, y]) => `${x},${y}`).join(' ');
+  return `<svg viewBox="${-c - 6} ${-s / 2 - 22} ${2 * c + 12} ${2 * s + 30}" width="100%"><g fill="none" stroke="${stroke}" stroke-width="2" stroke-linejoin="round">
+    <polygon points="${pts([[-c, 0], [0, s / 2], [0, s * 1.5], [-c, s]])}"/><polygon points="${pts([[c, 0], [0, s / 2], [0, s * 1.5], [c, s]])}"/>
+    <polygon points="${pts([[-c, 0], [-c - 4, -16], [-4, s / 2 - 16], [0, s / 2]])}"/><polygon points="${pts([[c, 0], [c + 4, -16], [4, s / 2 - 16], [0, s / 2]])}"/>
+    <line x1="${-c / 2}" y1="${s / 4}" x2="${-c / 2}" y2="${s * 1.25}" stroke="${hi}" stroke-width="5"/></g>
+    <circle cx="0" cy="${-s / 2 - 6}" r="7" fill="${hi}"/></svg>`;
+}
+
 const v = b.visual;
 const picked = v.references.map((r) => refs.find((x) => x.id === r.id)).filter(Boolean);
 const closest = picked.find((r) => r.id === v.closest) ?? picked[0];
@@ -85,12 +117,17 @@ const pending = (b.missing ?? []).map((m) => (/logo/i.test(m) ? 'el archivo del 
 const swatches = (b.brand.palette_hex ?? '').match(/#[0-9a-f]{6}/gi) ?? [];
 const refFig = (r) => `<figure class="ref${r === closest ? ' closest' : ''}"><div class="bar"><i></i><i></i><i></i><span>${esc(host(r.url))}</span></div><img src="file://${SHIPPED}/public/refs/${r.slug}.webp"><figcaption>${r === closest ? '<b>La más cercana.</b> ' : ''}${esc(r.northstar ?? '')}</figcaption></figure>`;
 
+const pageCard = (p) => `<div class="page-card"><header><h3>${esc(p.name)}</h3><span class="label">${esc(p.path)} · ${p.blocks.length} bloque${p.blocks.length === 1 ? '' : 's'}</span></header>
+    ${p.blocks.map((x) => `<div class="blk"><span class="n">${String(x.n).padStart(2, '0')}</span><span class="t">${es.block[x.type] ?? x.type}</span><span class="h">${esc(x.headline ?? (x.notes ? x.notes : 'Lo escribimos nosotros.'))}</span></div>`).join('')}
+  </div>`;
+
 const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>${esc(C)} · Brief del sitio · ${b.id}</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 18mm 17mm 18mm; }
   @page :first { margin: 0; }
   @page closing { margin: 0; }
+  @page bleed { margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --ink: #0b0b0b; --paper: #f3f1ea; --line: #dcd8cc; --mute: #6b685f; --spark: #d8ff85; }
   html { background: #fff; }
@@ -134,9 +171,10 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
   .card p { font-size: 9pt; color: #3a3833; }
   .meter { position: relative; height: 1.4mm; border-radius: 2mm; background: var(--line); margin: 2mm 0 3mm; } .meter i { position: absolute; top: 50%; width: 3.6mm; height: 3.6mm; border-radius: 50%; background: var(--ink); transform: translate(-50%,-50%); box-shadow: 0 0 0 1.3mm var(--spark); }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
-  .page-card { border: 1px solid var(--line); border-radius: 3.5mm; background: #fff; padding: 4.5mm 5mm; margin-bottom: 3.5mm; }
+  .page-card { border: 1px solid var(--line); border-radius: 3.5mm; background: #fff; padding: 3.8mm 5mm; margin-bottom: 3mm; }
   .page-card header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2mm; } .page-card h3 { font-size: 13pt; }
-  .blk { display: grid; grid-template-columns: 6mm 28mm 1fr; gap: 3mm; padding: 2.1mm 0; border-top: 1px solid var(--line); font-size: 9pt; }
+  .blk { display: grid; grid-template-columns: 6mm 28mm 1fr; gap: 3mm; padding: 1.55mm 0; border-top: 1px solid var(--line); font-size: 8.8pt; }
+  .opener { break-inside: avoid; }
   .blk .n { font: 500 7.5pt 'JetBrains Mono'; color: var(--mute); padding-top: .6mm; } .blk .t { font-weight: 600; } .blk .h { color: #3a3833; }
   ul.check { list-style: none; } ul.check li { padding: 2.2mm 0 2.2mm 6mm; border-top: 1px solid var(--line); position: relative; } ul.check li::before { content: ''; position: absolute; left: 0; top: 3.6mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--spark); box-shadow: inset 0 0 0 .5mm var(--ink); }
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-top: 5mm; }
@@ -146,12 +184,49 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
   .price p { font-size: 9pt; color: rgba(243,241,234,.7); max-width: 80mm; }
   .swatches { display: flex; gap: 2mm; margin-top: 2mm; } .swatches i { width: 7mm; height: 7mm; border-radius: 50%; border: 1px solid var(--line); }
   .note { margin-top: 4mm; font-size: 9pt; color: var(--mute); }
-  .thanks { page: closing; break-before: page; height: 297mm; padding: 20mm 18mm 16mm; background: var(--ink); color: var(--paper); display: flex; flex-direction: column; justify-content: flex-end; }
-  .thanks h2 { font-size: 46pt; line-height: .98; } .thanks h2 .accent { color: var(--spark); display: block; }
-  .thanks p { max-width: 130mm; font-size: 12.5pt; color: rgba(243,241,234,.75); } .thanks .label { color: rgba(243,241,234,.5); }
+  .bleed { page: bleed; break-before: page; break-after: page; height: 297mm; padding: 18mm 17mm 16mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .cover { position: relative; overflow: hidden; }
+  .cover .dot { position: absolute; right: -24mm; top: 134mm; width: 106mm; height: 106mm; border-radius: 50%; background: var(--spark); }
+  .cover .dot + * { position: relative; }
+  .cover > * { position: relative; }
+  section { position: relative; }
+  section > h2 { max-width: 138mm; }
+  .who-list ul.check li { padding: 1.5mm 0 1.5mm 6mm; font-size: 9.6pt; } .who-list ul.check li::before { top: 2.7mm; }
+  .num { position: absolute; right: 0; top: -4mm; font: 600 58pt/1 'Inter Tight'; letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1px var(--ink); opacity: .9; }
+  .manifesto { background: var(--spark); color: var(--ink); }
+  .manifesto .big { font: 500 50pt/.93 'Inter Tight'; letter-spacing: -.045em; margin-top: 8mm; }
+  .manifesto .big .accent { font-size: 1.08em; }
+  .manifesto .art { margin: auto -6mm 0; }
+  .manifesto .foot { display: flex; justify-content: space-between; border-top: 1.5px solid var(--ink); padding-top: 3mm; margin-top: 4mm; }
+  .manifesto .label { color: var(--ink); }
+  .road { background: var(--ink); color: var(--paper); }
+  .road .label { color: rgba(243,241,234,.5); }
+  .road h2 { font-size: 34pt; color: var(--paper); margin-bottom: 2mm; } .road h2 .accent { color: var(--spark); }
+  .road .intro { font-size: 10.5pt; color: rgba(243,241,234,.7); max-width: 150mm; }
+  .track { position: relative; margin-top: 7mm; padding-left: 9mm; }
+  .track::before { content: ''; position: absolute; left: 2.2mm; top: 2mm; bottom: 8mm; width: 1.2mm; border-radius: 1mm; background: linear-gradient(var(--spark), var(--spark) 70%, rgba(216,255,133,.25)); }
+  .stop { position: relative; display: grid; grid-template-columns: 34mm 1fr 1fr; gap: 0 5mm; padding: 0 0 5.2mm; break-inside: avoid; }
+  .stop::before { content: ''; position: absolute; left: -9mm; top: .6mm; width: 5.6mm; height: 5.6mm; border-radius: 50%; background: var(--ink); border: 1.3mm solid var(--spark); }
+  .stop.now::before { background: var(--spark); }
+  .stop .when { font: 500 7.4pt/1.35 'JetBrains Mono'; text-transform: uppercase; letter-spacing: .08em; color: var(--spark); padding-top: 1.2mm; }
+  .stop h3 { grid-column: 2 / 4; font: 500 15pt/1.15 'Inter Tight'; letter-spacing: -.02em; color: var(--paper); margin-bottom: 1.4mm; }
+  .stop .who { margin-top: 0 !important; font-size: 8.6pt; line-height: 1.45; color: rgba(243,241,234,.72); } .stop .who b { display: block; font: 500 6.6pt 'JetBrains Mono'; letter-spacing: .14em; text-transform: uppercase; color: rgba(243,241,234,.42); margin-bottom: .6mm; }
+  .stop .who:nth-of-type(1) { grid-column: 2; } .stop .who:nth-of-type(2) { grid-column: 3; }
+  .pay { grid-column: 2 / 4; justify-self: start; margin-top: 1.8mm; font: 500 7.2pt 'JetBrains Mono'; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: var(--spark); border-radius: 9mm; padding: 1.1mm 2.6mm; }
+  .road .end { display: grid; grid-template-columns: 30mm 1fr auto; gap: 6mm; align-items: center; margin-top: auto; border-top: 1px solid rgba(243,241,234,.16); padding-top: 5mm; }
+  .road .end b { font: 500 21pt/1 'Inter Tight'; letter-spacing: -.02em; white-space: nowrap; } .road .end .accent { color: var(--spark); }
+  .road .end p { margin: 0; font-size: 8.6pt; color: rgba(243,241,234,.68); max-width: 64mm; }
+  .thanks { page: closing; break-before: page; height: 297mm; padding: 20mm 18mm 16mm; background: var(--spark); color: var(--ink); display: flex; flex-direction: column; justify-content: flex-end; }
+  .thanks h2 { font-size: 52pt; line-height: .96; } .thanks h2 .accent { display: block; }
+  .thanks p { max-width: 130mm; font-size: 12.5pt; color: rgba(11,11,11,.75); } .thanks .label { color: rgba(11,11,11,.6); }
+  .thanks .logo i { background: var(--ink); }
+  /* tighter densities, used when the last white page would be nearly empty */
+  .d1 section { margin-top: 11mm; } .d1 .blk { padding: 1.1mm 0; font-size: 8.4pt; } .d1 .page-card { padding: 3mm 4.5mm; margin-bottom: 2.4mm; } .d1 .who-list ul.check li { padding: 1.1mm 0 1.1mm 6mm; }
+  .d2 section { margin-top: 8mm; } .d2 .blk { padding: .7mm 0; font-size: 8.2pt; } .d2 .page-card { padding: 2.6mm 4mm; margin-bottom: 2mm; } .d2 .quote { font-size: 16pt; margin: 4mm 0; } .d2 .card { padding: 3.5mm; } .d2 .who-list ul.check li { padding: .9mm 0 .9mm 6mm; font-size: 9pt; }
 </style></head><body>
 
 <div class="cover">
+  <i class="dot"></i>
   <div style="display:flex;justify-content:space-between;align-items:center"><span class="logo">shipped<i></i></span><span class="label">Brief del sitio · ${b.id}</span></div>
   <h1>${esc(story.coverTitle ?? C + ',')}<span class="accent">${esc(story.coverAccent ?? 'empieza acá.')}</span></h1>
   <p class="sub">${esc(story.coverLine ?? `Esto es lo que escuchamos de ${C}. Revisalo con calma: es la base de cada decisión de diseño que vamos a tomar.`)}</p>
@@ -164,7 +239,15 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
   <p class="label" style="margin-top:8mm">Preparado para ${esc(b.contact.name)} · ${fmtDate(new Date(b.created_at))}</p>
 </div>
 
+<div class="bleed manifesto">
+  <div style="display:flex;justify-content:space-between"><span class="label">Su sitio, en piezas</span><span class="label">${b.id}</span></div>
+  <p class="big">${esc(C)}.<br>${pages.length} página${pages.length === 1 ? '' : 's'}, ${blocks} bloques.<br>${D} días hábiles.<br><span class="accent">Un solo precio.</span></p>
+  <div class="art">${siteStack(pages, { ink: '#0b0b0b', hi: '#0b0b0b' })}</div>
+  <div class="foot"><span class="label">${pkg.name} · ${esc(words.slice(0, 3).join(' · ') || 'Equilibrado')}</span><span class="label">Hecho a medida, no de plantilla</span></div>
+</div>
+
 <section style="margin-top:0">
+  <span class="num" aria-hidden="true">01</span>
   <span class="label">01 — Lo que escuchamos</span>
   <h2>${esc(story.heardTitle ?? `${C}, en sus palabras.`)}</h2>
   <p class="quote">“${esc(b.project.describe)}”</p>
@@ -176,6 +259,7 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
 </section>
 
 <section>
+  <span class="num" aria-hidden="true">02</span>
   <span class="label">02 — Cómo se va a sentir</span>
   <h2>${esc(story.feelTitle ?? 'La dirección,')} <span class="accent">${esc(story.feelAccent ?? 'en una línea.')}</span></h2>
   <p class="words">${words.map((w, i) => (i ? `<span> · </span>${w}` : w)).join('') || 'Equilibrado'}</p>
@@ -192,19 +276,11 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
   </div>` : ''}
 </section>
 
-<section>
-  <span class="label">03 — El recorrido</span>
-  <h2>${pages.length} páginas, <span class="accent">${blocks} bloques.</span></h2>
-  <p style="margin-bottom:5mm">${esc(story.mapLine ?? `Así se recorre el sitio de ${C}, de la portada al contacto. Todo dentro de lo que incluye ${pkg.name}.`)}</p>
-  ${pages.map((p) => `<div class="page-card"><header><h3>${esc(p.name)}</h3><span class="label">${esc(p.path)} · ${p.blocks.length} bloque${p.blocks.length === 1 ? '' : 's'}</span></header>
-    ${p.blocks.map((x) => `<div class="blk"><span class="n">${String(x.n).padStart(2, '0')}</span><span class="t">${es.block[x.type] ?? x.type}</span><span class="h">${esc(x.headline ?? (x.notes ? x.notes : 'Lo escribimos nosotros.'))}</span></div>`).join('')}
-  </div>`).join('')}
-</section>
-
-<section>
-  <span class="label">04 — Quién trae qué</span>
+<section class="avoid">
+  <span class="num" aria-hidden="true">03</span>
+  <span class="label">03 — Quién trae qué</span>
   <h2>Ustedes traen la marca. <span class="accent">Nosotros, el resto.</span></h2>
-  <div class="two">
+  <div class="two who-list avoid">
     <div><h3>Lo que traen${fileCount ? ` · ${fileCount} archivos` : ''}</h3><ul class="check">${theyBring.map((t) => `<li>${esc(t)}</li>`).join('')}${b.brand.locked?.length ? `<li>No se toca: ${esc(b.brand.locked.join(', ').toLowerCase())}</li>` : ''}</ul></div>
     <div><h3>De lo que nos ocupamos</h3><ul class="check">${weHandle.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div>
   </div>
@@ -212,16 +288,40 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
 </section>
 
 <section>
-  <span class="label">05 — Lo que sigue</span>
-  <h2>Del brief al lanzamiento, <span class="accent">sin vueltas.</span></h2>
-  <div class="steps">
-    <div class="step"><span class="label">Hoy</span><b>Brief recibido</b><p>Lo leímos completo. Este documento es la prueba.</p></div>
-    <div class="step"><span class="label">Próximo</span><b>Plan de construcción</b><p>Alcance final, precio fijo y semanas disponibles, en un solo email.</p></div>
-    <div class="step"><span class="label">Desde el ${week}</span><b>Semana de build</b><p>Diseñamos y construimos. Ven el avance, opinan, ajustamos.</p></div>
-    <div class="step"><span class="label">~${fmtDate(launch)}</span><b>Lanzamiento</b><p>Sitio publicado en su dominio, medido desde el día uno.</p></div>
+  <div class="opener">
+  <span class="num" aria-hidden="true">04</span>
+  <span class="label">04 — El recorrido</span>
+  <h2>${pages.length} páginas, <span class="accent">${blocks} bloques.</span></h2>
+  <p style="margin-bottom:5mm">${esc(story.mapLine ?? `Así se recorre el sitio de ${C}, de la portada al contacto. Todo dentro de lo que incluye ${pkg.name}.`)}</p>
+  ${pageCard(pages[0])}
   </div>
-  <div class="price avoid"><div><span class="label" style="color:rgba(243,241,234,.5)">${pkg.name} · precio fijo</span><br><b>${usd(pkg.price)} <span class="accent">y nada más.</span></b></div><p>${pkg.deposit}% para reservar la semana, ${100 - pkg.deposit ? `${100 - pkg.deposit}% antes de publicar` : 'y listo'}. Sin horas facturadas, sin propuestas eternas, sin sorpresas.</p></div>
+  ${pages.slice(1).map(pageCard).join('')}
 </section>
+
+<div class="bleed road">
+  <span class="label">05 — El camino</span>
+  <h2 style="margin-top:3mm">Del brief a online, <span class="accent">paso a paso.</span></h2>
+  <p class="intro">Su parte ya está casi hecha. De acá en adelante trabajamos nosotros y ustedes deciden: cada etapa tiene una fecha, un responsable y un momento para opinar. Nada queda fijo hasta que lo aprueban.</p>
+  <div class="track">
+    <div class="stop now"><span class="when">Hoy<br>${short(new Date(b.created_at))}</span><h3>Brief recibido</h3>
+      <p class="who"><b>Nosotros</b>Lo leímos completo y armamos este documento.</p><p class="who"><b>Ustedes</b>Lo revisan. Si algo no los representa, nos lo dicen.</p></div>
+    <div class="stop"><span class="when">Antes del<br>${short(start)}</span><h3>Charla de arranque</h3>
+      <p class="who"><b>Nosotros</b>Repasamos el brief juntos y respondemos todo. Cualquier cosa se puede cambiar acá.</p><p class="who"><b>Ustedes</b>Traen sus dudas${pending.length ? ` y ${esc(list(pending))}` : ''}.</p>
+      <span class="pay">${paidNow ? `Reserva pagada · ${b.start.off_pct}% off` : `Reserva · ${pkg.deposit}% · ${usd(today)}`}</span></div>
+    <div class="stop"><span class="when">${span(1, planEnd)}</span><h3>Plan del sitio</h3>
+      <p class="who"><b>Nosotros</b>Una página con el posicionamiento, el mapa, los textos y la dirección visual.</p><p class="who"><b>Ustedes</b>La aprueban con un click, o piden cambios.</p></div>
+    <div class="stop"><span class="when">${span(planEnd + 1, buildEnd)}</span><h3>Construcción</h3>
+      <p class="who"><b>Nosotros</b>Diseño y desarrollo a la vez, sobre el sitio real${v.motion && v.motion !== 'still' ? ', con el movimiento que eligieron' : ''}.</p><p class="who"><b>Ustedes</b>Miran el avance cuando quieran.</p></div>
+    <div class="stop"><span class="when">${span(buildEnd + 1, D)}</span><h3>Revisión</h3>
+      <p class="who"><b>Nosotros</b>Les damos el link en vivo y resolvemos los cambios en un día.</p><p class="who"><b>Ustedes</b>Comentan sobre la página misma, en celular y escritorio. Revisiones ilimitadas en esta ventana.</p></div>
+    <div class="stop"><span class="when">~${short(launch)}</span><h3>Lanzamiento</h3>
+      <p class="who"><b>Nosotros</b>Control final, dominio${b.technical.domain ? ` ${esc(b.technical.domain)}` : ''}, analítica y un video corto para manejarlo.</p><p class="who"><b>Ustedes</b>Le dan el ok. Es suyo: sitio, textos, diseño y dominio.</p>
+      ${pkg.deposit < 100 ? `<span class="pay">Segunda mitad · ${usd(finalPrice - today)} · cuando ya lo vieron funcionando</span>` : ''}</div>
+  </div>
+  <div class="end"><div style="width:26mm">${box('#f3f1ea', '#d8ff85')}</div>
+    <div><span class="label">${pkg.name} · precio fijo</span><br><b>${usd(finalPrice)} <span class="accent">y nada más.</span></b></div>
+    <p>${paidNow ? `Incluye el ${b.start.off_pct}% por pagar al enviar el brief.` : `${pkg.deposit}% para reservar la semana${pkg.deposit < 100 ? `, ${100 - pkg.deposit}% antes de publicar` : ''}.`} Sin horas facturadas ni sorpresas. Reembolso completo hasta 7 días antes de su semana.</p></div>
+</div>
 
 <div class="thanks">
   <h2>Gracias, ${esc(C)}. <span class="accent">${esc(story.closing ?? 'Ahora nos toca a nosotros.')}</span></h2>
@@ -251,8 +351,29 @@ const internal = `# ${b.id} · ${C} · internal\n\nNever sent to the client.\n\n
 
 mkdirSync(join(dir, 'report'), { recursive: true });
 const out = join(dir, 'report', `${b.id}.html`);
-writeFileSync(out, html);
 writeFileSync(join(dir, 'report', 'internal.md'), internal);
 const pdf = join(dir, 'report', `${C.replace(/\W+/g, '-')}-brief-${b.id}.pdf`);
-execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--virtual-time-budget=10000', `--print-to-pdf=${pdf}`, `file://${out}`], { stdio: 'ignore' });
-console.log(pdf);
+const print = (density) => {
+  writeFileSync(out, html.replace('<body>', `<body class="d${density}">`));
+  execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--virtual-time-budget=10000', `--print-to-pdf=${pdf}`, `file://${out}`], { stdio: 'ignore' });
+};
+// How full the last white page is (the one before the roadmap), and the page count
+async function measure() {
+  const tmp = mkdtempSync(join(tmpdir(), 'pdf-'));
+  const n = Number(execFileSync('swift', [join(SHIPPED, 'pipeline/render-pdf.swift'), pdf, join(tmp, 'p')]).toString().match(/pages: (\d+)/)[1]);
+  const { data, info } = await sharp(join(tmp, `p-${n - 2}.jpg`)).greyscale().raw().toBuffer({ resolveWithObject: true });
+  let last = 0;
+  for (let y = 0; y < info.height; y++) for (let x = 0; x < info.width; x++) if (data[y * info.width + x] < 236) { last = y; break; }
+  rmSync(tmp, { recursive: true, force: true });
+  return { n, fill: last / info.height };
+}
+// Print, and tighten when a few rows spill onto an otherwise empty page
+let best;
+for (let density = 0; density < 3; density++) {
+  print(density);
+  const m = { ...(await measure()), density };
+  if (!best || m.n < best.n || (m.n === best.n && m.fill > best.fill + 0.05)) best = m;
+  if (m.fill > 0.35) break;
+}
+if (best.density !== 2 || best.fill <= 0.35) print(best.density);
+console.log(`${pdf}  (${best.n} pages, density ${best.density}, last white page ${Math.round(best.fill * 100)}% full)`);

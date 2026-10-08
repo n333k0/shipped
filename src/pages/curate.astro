@@ -20,14 +20,15 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
       <div id="tabs" class="-mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0">
         <button class="chip-f" data-tab="all" aria-pressed="true">Todas · {allRefs.length}</button>
         {cats.map((c) => <button class="chip-f" data-tab={c.id} aria-pressed="false">{c.name} · {allRefs.filter((r) => r.cats.includes(c.id)).length}</button>)}
+        <button class="chip-f" data-tab="manual" aria-pressed="false">Capturadas por nosotros · {allRefs.filter((r) => r.manual).length}</button>
         <button class="chip-f" data-tab="hidden" aria-pressed="false">Ocultas · <span id="n-hidden">0</span></button>
       </div>
 
       <div id="grid" class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {allRefs.map((r) => (
-          <article class="cur" data-slug={r.slug} data-cats={r.cats.join(' ')}>
-            <a href={r.url} target="_blank" rel="noopener" class="block overflow-hidden rounded-[12px] bg-white/[0.04]">
-              <img src={url(`/refs/${r.slug}.webp`)} alt="" loading="lazy" width="520" height="325" class="aspect-[16/10] w-full object-cover object-top" />
+          <article class="cur" data-slug={r.slug} data-cats={`${r.cats.join(' ')}${r.manual ? ' manual' : ''}`}>
+            <a href={r.url} target="_blank" rel="noopener" class="strip block aspect-[16/10] overflow-hidden rounded-[12px] bg-white/[0.04]" style={`--shift:${Math.max(0, ((r.h - 325) / r.h) * 100).toFixed(1)}%`}>
+              <img src={url(`/refs/${r.slug}.full.webp`)} alt="" loading="lazy" width="520" height={r.h} class="w-full" />
             </a>
             <div class="mt-2 flex items-start justify-between gap-2">
               <div class="min-w-0">
@@ -55,6 +56,9 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
   .chip-f { display: inline-flex; flex: none; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.15); font-size: 14px; color: rgb(243 241 234 / 0.8); }
   .chip-f[aria-pressed="true"] { background: var(--color-spark); border-color: var(--color-spark); color: var(--color-ink); }
   .cur.off img { opacity: .25; filter: grayscale(1); }
+  /* hover runs down the whole page, so a site is judged by more than its fold */
+  .strip img { transition: transform 0.6s ease; }
+  .strip:hover img { transform: translateY(calc(var(--shift) * -1)); transition: transform 7s linear; }
   .cur.off .tog { background: var(--color-booked); border-color: var(--color-booked); color: var(--color-ink); }
   .cur[hidden] { display: none; }
 </style>

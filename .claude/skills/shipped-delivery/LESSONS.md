@@ -5,7 +5,8 @@ One line per correction from the owner, written as what to do. Newest at the bot
 ## PDF
 - The PDF is client-facing: build spec, flags, "template" and add-on maths live in `internal.md`.
 - Tell the brief back as a story that makes the client feel understood and makes Shipped look valuable.
-- Flow sections one after another; only the cover and back cover get their own page.
+- Flow sections one after another; only the brand pages (cover, "en piezas", roadmap, back cover) get their own page.
+- The PDF also sells: it carries the roadmap (dates, who does what, when they pay) and branded pages with "más locura" than a plain report.
 
 ## Site
 - Use the client's typefaces (a lighting brand on Raleway got serif-italic and hated it). Shipped's serif-italic accent reads as our brand.
@@ -22,6 +23,7 @@ One line per correction from the owner, written as what to do. Newest at the bot
 - inspo tags most Swiss-minimal sites "brutalism"; read expressiveness from maximalism, playful, loud.
 - Lighting and furniture brands (Louis Poulsen, Flos, HAY, Knoll) count as e-commerce references too.
 - The owner hides references at `/curate/`; `src/data/ref-exclude.json` is theirs.
+- Every category needs a wide pool (about 60 shown). `scripts/refs-discover.mjs` sweeps inspo by industry tag only; where inspo is thin (services, hospitality, food, health) add hand-picked URLs to `scripts/refs-manual-urls.json` and run `scripts/refs-add.mjs`, then `scripts/refs.mjs`.
 
 - The aesthetic ideal and competitors drive the direction, not only the picked references: capture them (`capture-brief.mjs`) and name the bar and the field in `direction.md`.
 

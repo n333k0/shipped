@@ -5,6 +5,7 @@
 //   node scripts/refs.mjs
 import { mkdir, writeFile, readFile, access } from 'node:fs/promises';
 import sharp from 'sharp';
+import { catsFor } from './inspo-cats.mjs';
 
 const ENDPOINT = 'https://inspomcp.dev/api/mcp';
 const W = 520; // stored width; cards render at ~160–330px, so this stays sharp on 2× screens
@@ -27,7 +28,9 @@ const curated = {
 };
 
 async function call(name, args) {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  // inspo drops requests under load: retry with growing pauses, and treat an empty answer as a failure
+  for (let attempt = 0; attempt < 6; attempt++) {
+    if (attempt) await new Promise((r) => setTimeout(r, 700 * attempt));
     try {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
@@ -36,7 +39,7 @@ async function call(name, args) {
       });
       const json = await res.json();
       const text = json.result?.content?.find((c) => c.type === 'text')?.text;
-      return text ? JSON.parse(text) : null;
+      if (text) return JSON.parse(text);
     } catch {}
   }
   return null;
@@ -62,11 +65,28 @@ for (const issue of (await call('list_collections', {}))?.issues ?? []) for (con
 
 await mkdir('public/refs', { recursive: true });
 
+const previous = new Map(JSON.parse(await readFile('src/data/references.json', 'utf8').catch(() => '[]')).filter((r) => !r.manual).map(({ id, similar, ...r }) => [r.slug, r]));
 const refs = [];
 const skipped = [];
+const offCategory = [];
+const curatedCats = new Map();
+for (const [cat, list] of Object.entries(curated)) for (const s of list) curatedCats.set(s, [...(curatedCats.get(s) ?? []), cat]);
 async function build(slug) {
   const s = await call('get_screen', { slug });
-  if (!s?.fullPage) return skipped.push(slug);
+  if (!s?.fullPage) {
+    // inspo didn't answer: keep the entry from the last validated build rather than losing the site
+    const old = previous.get(slug);
+    if (old && (await exists(`public/refs/${slug}.full.webp`))) {
+      const keep = old.cats.filter((c) => cats.get(slug).includes(c));
+      if (keep.length) return refs.push({ ...old, cats: keep, _near: [] });
+    }
+    return skipped.push(slug);
+  }
+  // discovered sites keep only the categories their inspo industry tag supports; hand-picked ones keep theirs
+  const tagged = catsFor(s.tags?.industry);
+  const keep = cats.get(slug).filter((c) => curatedCats.get(slug)?.includes(c) || tagged.includes(c));
+  if (!keep.length) return offCategory.push(`${slug} (${(s.tags?.industry ?? []).join('/') || 'untagged'})`);
+  cats.set(slug, keep);
   let h;
   if (await exists(`public/refs/${slug}.full.webp`)) {
     h = (await sharp(`public/refs/${slug}.full.webp`).metadata()).height; // already captured
@@ -98,19 +118,30 @@ async function build(slug) {
 }
 
 // a few at a time
-for (let i = 0; i < slugs.length; i += 6) {
-  await Promise.all(slugs.slice(i, i + 6).map((slug) => build(slug).catch((e) => skipped.push(`${slug} (${e.message})`))));
-  process.stdout.write(`\r${Math.min(i + 6, slugs.length)}/${slugs.length}`);
+for (let i = 0; i < slugs.length; i += 4) {
+  await Promise.all(slugs.slice(i, i + 4).map((slug) => build(slug).catch((e) => skipped.push(`${slug} (${e.message})`))));
+  process.stdout.write(`\r${Math.min(i + 4, slugs.length)}/${slugs.length}`);
 }
 
-// stable order, ids, and neighbours limited to the pool
-refs.sort((a, b) => slugs.indexOf(a.slug) - slugs.indexOf(b.slug));
+// Sites we captured ourselves (scripts/refs-add.mjs) for categories inspo covers thinly
+const manual = JSON.parse(await readFile('scripts/refs-manual.json', 'utf8').catch(() => '[]'));
+for (const m of manual) if (!refs.some((r) => r.slug === m.slug)) refs.push({ ...m, _near: [] });
+
+// stable order; ids stay with their slug across rebuilds (saved briefs refer to them)
+// hand-picked first, then hand-captured, then discovered
+const curatedSlugs = new Set(Object.values(curated).flat());
+const order = [...slugs.filter((x) => curatedSlugs.has(x)), ...manual.map((m) => m.slug), ...slugs.filter((x) => !curatedSlugs.has(x))];
+refs.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 const inPool = new Set(refs.map((r) => r.slug));
-refs.forEach((r, i) => (r.id = String(i + 1).padStart(3, '0')));
+const oldIds = Object.fromEntries(JSON.parse(await readFile('src/data/references.json', 'utf8').catch(() => '[]')).map((r) => [r.slug, r.id]));
+let nextId = Math.max(0, ...Object.values(oldIds).map(Number));
+for (const r of refs) r.id = oldIds[r.slug] ?? String(++nextId).padStart(3, '0');
 const idOf = Object.fromEntries(refs.map((r) => [r.slug, r.id]));
 for (const r of refs) {
   r.similar = r._near.filter((s) => inPool.has(s) && s !== r.slug).map((s) => idOf[s]);
   delete r._near;
 }
 await writeFile('src/data/references.json', JSON.stringify(refs.map(({ id, ...r }) => ({ id, ...r })), null, 2) + '\n');
-console.log(`\n${refs.length} references → src/data/references.json${skipped.length ? `\nskipped (no capture): ${skipped.join(', ')}` : ''}`);
+const per = {};
+for (const r of refs) for (const c of r.cats) per[c] = (per[c] ?? 0) + (excluded.has(r.slug) ? 0 : 1);
+console.log(`\n${refs.length} references → src/data/references.json${skipped.length ? `\nskipped (no capture): ${skipped.join(', ')}` : ''}${offCategory.length ? `\ndropped (industry tag outside its category): ${offCategory.join(', ')}` : ''}\nshown per category: ${JSON.stringify(per)}`);
