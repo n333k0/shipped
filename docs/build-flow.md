@@ -28,7 +28,7 @@ project      product (landing|website|websiteplus|unsure), product_note, industr
 visual       references [{id, slug, url}], closest, reference_traits[], sliders {dark_light, minimal_expressive,
              editorial_digital, serious_playful, quiet_bold, classic_experimental, safe_experimental} (0–100),
              motion (still|subtle|dynamic|wild), typeface (serif|sans|mix|geometric|mono|display|you_pick),
-             competitors[] (max 3), aspirational[], reference_filters[]
+             competitors[] (max 3), competitors_diff, aspirational[], ideal_why, reference_filters[]
              Sliders start from the picked references until the visitor moves one (slidersTouched).
 brand        has[], palette_hex, palette_from_site, font_names, locked[], locked_note, files {logo: [...], ...}
 copy         status (final|rough|info|nothing), permission_to_rewrite, story, files[]

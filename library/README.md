@@ -33,3 +33,12 @@ row that matches the brief, open the file, adapt it. When a new pattern lands we
 - `inspo-components/`: 68 canonical archetypes (hero, nav, CTA, footer, pricing, FAQ, features, stats, testimonials, logo clouds) from inspo, React + Tailwind, each with when to use it. Refresh: `node pipeline/pull-inspo-components.mjs`.
 - `design-md/`: DESIGN.md files of 74 well-known brands (Stripe, Linear, Apple, Nike, Airbnb, Vercel…). Use when a client's references or ideal name one of them. From awesome-design-md, MIT.
 - Per brief: `node pipeline/ref-systems.mjs <client>` writes the design systems of the references the client picked.
+
+## Our own effects
+
+Shaders, particle logos, scroll films, 3D and cursor work from RemotoLabs' past sites, with repo and live links:
+`../remoto-studio/library/effects/INDEX.md` (private repo). Reach for it when the brief asks for motion dynamic or wild, or v2/v3 needs a signature moment.
+
+## Measuring a live site
+
+`node pipeline/capture-site.mjs <url> <out>` saves a site's rendered HTML (opens with its own assets), desktop and phone screenshots, and its measured type, colours, radii and heading outline. `node pipeline/capture-brief.mjs <client>` runs it for every site a brief names.

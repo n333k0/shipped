@@ -219,12 +219,14 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
                       <legend class={qh}>Who are your competitors?</legend>
                       <p class="mt-1 text-[14px] text-paper/45">Up to 3. We look at them so you stand out next to them, not to copy them.</p>
                       <div class="url-list mt-3" data-list="competitors"></div>
+                      <label class="mt-3 block"><span class="label text-paper/50">What do they all do that you don’t want? <span class="text-paper/30">optional</span></span><textarea data-k="competitors_diff" rows="2" class={area} placeholder="Discount banners everywhere, the same stock photos, it all looks like a catalogue…"></textarea></label>
                     </fieldset>
 
                     <fieldset>
                       <legend class={qh}>Your aesthetic ideal</legend>
                       <p class="mt-1 text-[14px] text-paper/45">Not a competitor: any brand, from any industry, whose look you’d love to have. It shows us the level and the mood to aim for.</p>
                       <div class="url-list mt-3" data-list="aspirational"></div>
+                      <label class="mt-3 block"><span class="label text-paper/50">What do you love about it? <span class="text-paper/30">optional</span></span><textarea data-k="ideal_why" rows="2" class={area} placeholder="How calm it feels, the huge photos, the way the products are shown one at a time…"></textarea></label>
                     </fieldset>
 
                   </>
@@ -237,6 +239,7 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
                       <p class="mt-1 text-[14px] text-paper/45">Tick it, then drop the files right under it.</p>
                       <div class="mt-4 space-y-2">
                         {assets.map((a) => (
+                          <>
                           <div class="asset rounded-[18px] border border-white/10 transition" data-asset={a.id}>
                             <label class="flex min-h-14 cursor-pointer items-center justify-between gap-3 px-4">
                               <span class="text-[16px] font-medium">{a.name}</span>
@@ -259,6 +262,15 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
                               <ul class="files mt-2 space-y-1" data-files-list={`asset:${a.id}`}></ul>
                             </div>
                           </div>
+                          {a.id === 'logo' && (
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 px-1 pb-1 text-[13px] text-paper/50">
+                              <span>No logo yet, or want a better one?</span>
+                              <label class="pick inline-flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full border border-white/15 px-3 text-[13px] text-paper/80 transition hover:border-spark">
+                                <input type="checkbox" value="yes" data-k="logo_upgrade" class="sr-only" />✦ Make my logo better
+                              </label>
+                            </div>
+                          )}
+                          </>
                         ))}
                         <label class="pick flex min-h-14 cursor-pointer items-center justify-between gap-3 rounded-[18px] border border-dashed border-white/20 px-4 transition">
                           <span class="text-[16px] font-medium">Nothing yet</span>

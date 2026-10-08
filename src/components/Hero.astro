@@ -22,12 +22,15 @@ const from = packages[0].priceLabel;
       </a>
     )}
 
-    <h1 class="display mx-auto mt-6 max-w-[14ch] t-hero">
+    <h1 class="display mx-auto mt-6 max-w-[14ch] t-hero max-sm:text-[48px]">
       High-end sites. <span class="accent text-spark">Friendly budgets.</span>
     </h1>
 
-    <p class="mx-auto mt-5 max-w-[680px] text-[16px] leading-relaxed text-paper/75 sm:text-[17px]">
-      Strategy, copy, design and build for one fixed price. Choose it online, brief us in 20 minutes, launch in 5–20 business days.
+    <!-- on phones the three clauses stack into a triangle under the title -->
+    <p class="mx-auto mt-5 max-w-[680px] text-[15px] leading-relaxed text-paper/75 sm:text-[17px]">
+      <span class="max-sm:hidden">Strategy, copy, design and build for one fixed price.</span><span class="block sm:hidden">Strategy, copy, design, build. One fixed price.</span>
+      <span class="max-sm:block">Choose it online, brief us in 20 minutes,</span>
+      <span class="max-sm:block">launch in 5–20 business days.</span>
     </p>
 
     <div class="mx-auto mt-7 flex max-w-sm flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row">

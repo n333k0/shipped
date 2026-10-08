@@ -994,7 +994,7 @@ function briefData() {
       preferred_week: s.week,
     },
     visual: {
-      references: s.refs.map((id) => { const r = refs.find((x) => x.id === id)!; return { id, slug: r.slug, url: r.url }; }),
+      references: s.refs.map((id) => { const r = byId(id); return { id, slug: r.slug, url: r.url, title: r.title, cats: r.cats, mode: r.mode, styles: r.styles, vibes: r.vibes, structure: r.structure, northstar: r.northstar, palette: r.palette, closest: id === s.closest }; }),
       closest: s.closest || (s.refs.length === 1 ? s.refs[0] : undefined),
       reference_traits: arr('traits'),
       reference_filters: s.refFilters ?? [],
@@ -1002,11 +1002,14 @@ function briefData() {
       motion: str('motion'),
       competitors: (s.lists.competitors ?? []).filter(Boolean),
       aspirational: (s.lists.aspirational ?? []).filter(Boolean),
+      ideal_why: str('ideal_why') || undefined,
+      competitors_diff: str('competitors_diff') || undefined,
       typeface: str('typeface') || undefined,
     },
     brand: {
       has: arr('assets'), palette_hex: str('palette_hex') || undefined, palette_from_site: arr('palette_from_site').includes('yes') || undefined,
       font_names: str('font_names') || undefined,
+      logo_upgrade: arr('logo_upgrade').includes('yes') || undefined, // upsell: brand / logo work
       locked: arr('locked'), locked_note: str('locked_note') || undefined,
       files: Object.fromEntries(Object.entries(s.files).filter(([k]) => k.startsWith('asset:')).map(([k, v]) => [k.slice(6), v.map((f) => f.name)])),
     },

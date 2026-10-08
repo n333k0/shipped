@@ -4,6 +4,8 @@ The client already told us what they want; the job is to read it precisely and t
 
 | Brief | Decides | How |
 |---|---|---|
+| Aesthetic ideal (`aspirational`) | The bar: level of craft, image size, pacing, type scale | Measured in `captures/ideal-*`; `ideal_why` says which part of it to match first; outranks the references when they disagree |
+| Competitors | The field to stand apart from | What they share (`captures/competitor-*`) plus `competitors_diff` in their words: v1 avoids it in at least one visible way |
 | Closest reference | Type scale, weight, radius, density, layout rhythm | Measured from `refs/<slug>.md`, adapted: their system, not their brand |
 | Other references + traits | What else to borrow | Only the traits they ticked (typography, photography…) |
 | Sliders | Mode, contrast, colour and type contrast | ≤40 leans left, ≥60 leans right, between is balanced |
@@ -15,6 +17,15 @@ The client already told us what they want; the job is to read it precisely and t
 | `inferred.imagery` | Photo-led or type-led | Photo-led: their photos full-bleed, large. Type-led: big type, line art, generative canvas |
 | `inferred.line_art` | Hairline figures | Techie briefs get Hairline in at least one version |
 | `inferred.three_d` | One 3D object | Through `img2threejs`, in v2 or v3 only |
+
+## Ideal and competitors
+
+The client named the ideal because it is where they want to stand; the competitors are where they stand today. Both weigh more than any single reference.
+
+- **The bar.** Open the ideal's `desktop.png` and `tokens.md` beside v1 while building. Its scale (h1 size, body size, section height in the outline), image-to-text ratio and amount of white are the floor v1 meets. Their brand, not the ideal's: type genre, colours and logo come from the client.
+- **Seeding.** When the ideal's layout fits the sitemap, v1 may start from its `page.html` (opens with its own assets): keep the section order and rhythm, rebuild clean in our own code, swap in the client's type, colour, copy and imagery. It leaves the ideal's look within the first pass: no copied text, images, logos or signature illustrations.
+- **The field.** List what the competitors share (marketplace grids, stock photos, rounded cards, a discount banner…) in `direction.md`. v1 differs from that in at least one thing a visitor sees in the first screen.
+- **Choosing the template.** Ideal photo-led and spacious → large imagery, few blocks per screen. Ideal type-led → typographic hero, line art or generative visual. Ideal on one long scroll scene → v2 takes that structure. With no ideal, the closest reference is the bar.
 
 ## Typography
 
@@ -28,6 +39,10 @@ Start from the client's own typefaces (`source/`, `font_names`). When upgrading,
 - Imagery large: at least one full-bleed image or generative visual above the fold in v1 or v2.
 - Logos and images keep their ratio: when CSS sets only height on an `<img>` with width/height attributes, add `width: auto`.
 - Real content only: their copy (polished), products, prices, photos. Numbers and claims come only from the client; illustrative widgets say "ejemplo" and carry no invented figures.
+
+## Selling sites (e-commerce, goal "buy")
+
+v1 is the safe store: products, prices, payment terms and the buy button visible and calm on every screen, effects only where they make a product look better (on/off, hover, a settle on load). Anything that hides or moves products away from the eye (cursor-reveal darkness, full-page canvases, heavy scroll scenes) lives only in v2 or v3, and even there the products, prices and cart stay one tap away. Every effect has an off switch.
 
 ## Variations
 

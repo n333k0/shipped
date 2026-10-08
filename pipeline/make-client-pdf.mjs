@@ -69,6 +69,7 @@ const weHandle = [
   'Desarrollo, pruebas y publicación',
   ...feats.map((f) => es.feature[f]).filter(Boolean),
   b.technical.domain ? `Conexión del dominio ${b.technical.domain}` : 'Ayuda con el dominio',
+  ...(b.brand.logo_upgrade ? ['Una propuesta para mejorar su logo (opcional, aparte)'] : []),
   ...(b.technical.seo_keep === 'Yes' ? ['Redirecciones para no perder lo ganado en Google'] : []),
 ];
 const theyBring = [
@@ -237,11 +238,13 @@ if (b.technical.seo_keep === 'Yes') flags.push('SEO: keep ranking URLs, plan 301
 if (b.brand.locked?.length) flags.push(`Locked: ${b.brand.locked.join(', ')}.`);
 if ((v.sliders.safe_experimental ?? 50) >= 60 && picked.every((r) => r.vibes?.includes('calm') || r.vibes?.includes('serious'))) flags.push(`Taste: push ${v.sliders.safe_experimental}/100 with calm references. One signature moment, the rest quiet.`);
 for (const m of b.missing ?? []) flags.push(`Missing: ${m}.`);
+if (b.brand.logo_upgrade || !(b.brand.has ?? []).includes('logo')) flags.push(`Upsell: ${b.brand.logo_upgrade ? 'asked to improve their logo' : 'no logo on file'}. Offer the brand identity sprint (+$2,500) in the build plan.`);
 if (b.functional.multilingual) flags.push('Multilingual: confirm languages and who translates.');
 const spec = [
   `Build ${b.id} for ${C} (${pkg.name}, industry ${b.project.industry}). Goal: ${b.project.goal}.`,
   `${pages.length} pages / ${blocks} blocks as approved. Direction: ${words.join(', ') || 'balanced'}; motion ${v.motion}; type ${v.typeface ?? 'tbd'}.`,
   `References: ${picked.map((r) => host(r.url)).join(', ')} (closest ${closest ? host(closest.url) : '—'}) for ${v.reference_traits.join(', ')}, not branding.`,
+  `Ideal (sets the level, can seed v1's layout): ${v.aspirational?.map(host).join(', ') || `none given, closest reference sets it`}${v.ideal_why ? ` — they love: "${v.ideal_why}"` : ''}. Competitors (stand apart from what they share): ${v.competitors?.map(host).join(', ') || 'none given'}${v.competitors_diff ? ` — they reject: "${v.competitors_diff}"` : ''}.${existsSync(join(dir, 'captures', 'summary.md')) ? ' Measured: captures/summary.md.' : ' Run pipeline/capture-brief.mjs.'}`,
   `Preserve: ${b.brand.locked?.join(', ') || 'nothing'}. Copy ${b.copy.status}. Integrations: ${feats.join(', ')}. Domain ${b.technical.domain} on ${b.technical.hosting}.`,
 ].join('\n');
 const internal = `# ${b.id} · ${C} · internal\n\nNever sent to the client.\n\n## Check before the build plan\n${flags.map((f) => `- ${f}`).join('\n') || '- Nothing flagged.'}\n\n## Build spec\n\n\`\`\`\n${spec}\n\`\`\`\n\n## Commercial\n- ${pkg.name} ${usd(pkg.price)}, ${pkg.deposit}% deposit. Next open week ${week}.\n`;

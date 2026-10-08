@@ -1,5 +1,5 @@
-// Reviews a prototype the way the owner does, before anyone sees it: every page at 1440px and on a
-// real 390px phone (touch, device pixel ratio 3). Writes <folder>/review.md; exits 1 on any failure.
+// Reviews a prototype the way the owner does, before anyone sees it: every page at 1440px, 768px and on a
+// real 390px phone (touch, device pixel ratio 3). The check is the truth: a red line here beats any 'looks fine'. Writes <folder>/review.md; exits 1 on any failure.
 //   node pipeline/review-site.mjs <site-folder> [page.html …]     (default: every .html in the folder, and v*/index.html)
 import { createServer } from 'node:http';
 import { readFileSync, readdirSync, existsSync, writeFileSync, statSync } from 'node:fs';
@@ -14,6 +14,7 @@ const pages = process.argv.slice(3).length ? process.argv.slice(3) : [
 ];
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 900, mobile: false, dpr: 1, maxH1: 3 },
+  { name: 'tablet', width: 768, height: 1024, mobile: true, dpr: 2, maxH1: 4 },
   { name: 'phone', width: 390, height: 844, mobile: true, dpr: 3, maxH1: 5 },
 ];
 
@@ -93,6 +94,9 @@ for (const vp of VIEWPORTS) {
     await send('Page.navigate', { url: base + page });
     await new Promise((r) => setTimeout(r, 3200)); // let entrance animations finish
     const res = await send('Runtime.evaluate', { expression: check(vp.maxH1), returnByValue: true });
+    // sticky bars and late content can overflow only after scrolling: check again at the bottom
+    const bottom = await send('Runtime.evaluate', { expression: `(async () => { scrollTo(0, document.body.scrollHeight); await new Promise((r) => setTimeout(r, 600)); return document.documentElement.scrollWidth > innerWidth + 1 ? document.documentElement.scrollWidth : 0; })()`, awaitPromise: true, returnByValue: true });
+    if (bottom?.result?.value) (res.result.value ??= []).push(['fail', 'Horizontal overflow after scrolling to the bottom: ' + bottom.result.value + 'px wide']);
     const items = [...(res?.result?.value ?? []), ...[...new Set(errors)].map((e) => ['fail', 'Console error: ' + e])];
     failed += items.filter(([k]) => k === 'fail').length;
     report.push(`### ${page} · ${vp.name}\n` + (items.length ? items.map(([k, t]) => `- ${k === 'fail' ? '✗' : '⚠'} ${t}`).join('\n') : '- ✓ clean'));
