@@ -778,15 +778,31 @@ const io = new IntersectionObserver((entries) => {
     io.unobserve(el);
     const make = figures[el.dataset.figure as keyof typeof figures];
     if (!make) continue;
-    make(el, {
+    const live = el.hasAttribute('data-live');
+    const fig = make(el, {
       play: el.hasAttribute('data-play'),
-      intensity: el.dataset.intensity ? Number(el.dataset.intensity) : 0.5,
+      intensity: el.dataset.intensity ? Number(el.dataset.intensity) : live ? 0.85 : 0.5,
       theme: 'dark',
       label: '',
     });
+    if (live) liveFigure(el, fig);
   }
 }, { rootMargin: '120px' });
 $$('[data-figure]').forEach((el) => io.observe(el));
+
+// Option cards: the figure acts out its move (the laptop opens and closes…) while the card
+// is hovered or picked. On phones there's no hover, so picking it is what sets it going.
+function liveFigure(el: HTMLElement, fig: { update: (o: { play?: boolean }) => void }) {
+  const card = el.closest<HTMLElement>('.pick');
+  const input = card?.querySelector<HTMLInputElement>('input');
+  if (!card || !input) return;
+  let hover = false;
+  const sync = () => fig.update({ play: hover || input.checked });
+  card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { hover = true; sync(); } });
+  card.addEventListener('pointerleave', () => { hover = false; sync(); });
+  form.addEventListener('change', sync);
+  sync();
+}
 
 // ---------------------------------------------------------------------------
 // Boot

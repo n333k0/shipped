@@ -51,18 +51,19 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                   <>
                     <fieldset>
                       <legend class={qh}>What are we building?</legend>
-                      <div class="mt-4 grid gap-2.5 sm:gap-3">
+                      <div class="mt-4 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
                         {packages.map((p) => (
-                          <label class="pick relative flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:gap-6 sm:p-4 sm:pr-6">
+                          <label class="pick relative flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:block sm:p-5">
                             <input type="radio" name="product" value={p.id} data-k="product" class="sr-only" />
-                            <div class="hl-card figure w-[104px] shrink-0 sm:w-[150px]" data-figure={productFigure[p.id]} aria-hidden="true"></div>
+                            <div class="hl-card figure w-[104px] shrink-0 sm:mb-3 sm:w-[150px]" data-figure={productFigure[p.id]} data-live aria-hidden="true"></div>
                             <span class="block min-w-0 flex-1">
                               <span class="flex items-baseline justify-between gap-3">
-                                <span class="text-[19px] font-semibold sm:text-[22px]">{p.name}</span>
-                                <span class="shrink-0 text-[17px] font-medium tracking-tight sm:text-[24px]">{p.id === 'websiteplus' && <span class="text-[12px] font-normal text-paper/50 sm:text-[14px]">from </span>}{p.priceLabel}</span>
+                                <span class="text-[19px] font-semibold sm:text-[20px]">{p.name}</span>
+                                <span class="shrink-0 text-[17px] font-medium tracking-tight sm:hidden">{p.id === 'websiteplus' && <span class="text-[12px] font-normal text-paper/50">from </span>}{p.priceLabel}</span>
                               </span>
-                              <span class="mt-1 hidden text-[15px] text-paper/65 sm:block">{p.pitch}</span>
-                              <span class="mt-0.5 block text-[14px] text-paper/50">{p.pages === 1 ? 'One page' : `Up to ${p.pages} pages`} · {p.sections} blocks · {p.days}</span>
+                              <span class="mt-1 hidden text-[14px] text-paper/65 sm:block">{p.pitch}</span>
+                              <span class="mt-0.5 block text-[14px] text-paper/50 sm:text-[13px]">{p.pages === 1 ? 'One page' : `Up to ${p.pages} pages`} · {p.sections} blocks · {p.days}</span>
+                              <span class="mt-4 hidden text-[24px] font-medium tracking-tight sm:block">{p.id === 'websiteplus' && <span class="text-[14px] font-normal text-paper/50">from </span>}{p.priceLabel}</span>
                             </span>
                           </label>
                         ))}
@@ -272,12 +273,12 @@ const productFigure: Record<string, string> = { landing: 'phone', website: 'lapt
                       <div class="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
                         <label class="pick flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:gap-5 sm:p-4 sm:pr-5">
                           <input type="radio" name="pages_mode" value="builder" data-k="pages_mode" class="sr-only" />
-                          <div class="hl-card figure w-[120px] shrink-0 sm:w-[150px]" data-figure="stack" aria-hidden="true"></div>
+                          <div class="hl-card figure w-[120px] shrink-0 sm:w-[150px]" data-figure="stack" data-live aria-hidden="true"></div>
                           <span class="min-w-0 flex-1"><span class="block text-[19px] font-semibold">I know what I want</span><span class="block text-[14px] text-paper/55">Lay out every page and fill each block.</span></span>
                         </label>
                         <label class="pick flex cursor-pointer items-center gap-4 rounded-[20px] border border-white/15 p-3 pr-4 transition hover:border-white/40 sm:gap-5 sm:p-4 sm:pr-5">
                           <input type="radio" name="pages_mode" value="dump" data-k="pages_mode" class="sr-only" />
-                          <div class="hl-card figure w-[120px] shrink-0 sm:w-[150px]" data-figure="sieve" aria-hidden="true"></div>
+                          <div class="hl-card figure w-[120px] shrink-0 sm:w-[150px]" data-figure="sieve" data-live aria-hidden="true"></div>
                           <span class="min-w-0 flex-1"><span class="block text-[19px] font-semibold">I have no idea</span><span class="block text-[14px] text-paper/55">Perfect. Drop everything, we’ll propose the structure. No extra cost.</span></span>
                         </label>
                       </div>
