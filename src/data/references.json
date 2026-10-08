@@ -2032,7 +2032,8 @@
     "title": "Knoll",
     "url": "https://knoll.com",
     "cats": [
-      "architecture"
+      "architecture",
+      "ecommerce"
     ],
     "mode": "light",
     "styles": [
@@ -2067,7 +2068,8 @@
     "title": "Louispoulsen",
     "url": "https://louispoulsen.com",
     "cats": [
-      "architecture"
+      "architecture",
+      "ecommerce"
     ],
     "mode": "dark",
     "styles": [
@@ -2102,7 +2104,8 @@
     "title": "Flos",
     "url": "https://flos.com",
     "cats": [
-      "architecture"
+      "architecture",
+      "ecommerce"
     ],
     "mode": "dark",
     "styles": [
@@ -2137,7 +2140,8 @@
     "title": "HAY.com - latest products, designer news and retailer info",
     "url": "https://www.hay.com",
     "cats": [
-      "architecture"
+      "architecture",
+      "ecommerce"
     ],
     "mode": "light",
     "styles": [

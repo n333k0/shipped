@@ -15,7 +15,7 @@ const curated = {
   saas: ['linear-app', 'framer-com', 'raycast-com', 'arc-net', 'vercel-com', 'figma-com', 'superhuman-com', 'pitch-com', 'cron-com', 'amie-so', 'mintlify-com', 'warp-net', 'modal-com'],
   creative: ['pentagram-com', 'locomotive-ca', 'lusion-co', 'instrument-com', 'basement-studio', 'area17-com', 'exoape-com', 'humaan-com', 'buck-co', 'generalcondition-com', 'madebyanalogue-co-uk'],
   services: ['work-co', 'everlaw-com', 'deel-com', 'idyllic-co-nz', 'designstudio-com', 'synapserstudio-com', 'handhold-io', 'letude-group'],
-  ecommerce: ['glossier-com', 'everlane-com', 'warbyparker-com', 'nike-com', 'bellroy-com', 'casper-com', 'fellowproducts-com', 'parachutehome-com', 'snowpeak-com', 'rapha-cc'],
+  ecommerce: ['glossier-com', 'everlane-com', 'warbyparker-com', 'nike-com', 'bellroy-com', 'casper-com', 'fellowproducts-com', 'parachutehome-com', 'snowpeak-com', 'rapha-cc', 'louispoulsen-com', 'flos-com', 'hay-com', 'knoll-com'],
   hospitality: ['belmond-com', 'standardhotels-com', 'lyfehotels-com', 'explorajourneys-com', 'atomixnyc-com', 'mirazur-fr', 'dinnerbyheston-com', 'deathandcompany-com', 'finethought-com-au'],
   architecture: ['herzogdemeuron-com', 'snohetta-com', 'big-dk', 'normarchitects-com', 'works-studio', 'kkaa-co-jp', 'nbstudio-co-uk', 'houseofhoney-com', 'knoll-com', 'louispoulsen-com', 'flos-com', 'hay-com'],
   health: ['ritual-com', 'functionhealth-com', 'headspace-com', 'menkind-co', 'bevel-health', 'frequencybreathwork-com', 'peloton-com', 'fitbod-me', 'psyche-co'],

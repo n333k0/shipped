@@ -892,7 +892,7 @@ function briefData() {
       approved: str('pages_mode') === 'builder' ? true : s.recoApproved,
       pages: pages.map((p) => ({
         name: p.name,
-        path: '/' + (p === pages[0] ? '' : p.name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')),
+        path: '/' + (p === pages[0] ? '' : p.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')),
         blocks: p.blocks.map((b, i) => ({ n: i + 1, type: b.type, headline: b.headline, copy: b.copy, cta: b.cta, cta_url: b.cta_url, notes: b.notes, assets: (s.files[`block:${b.id}`] ?? []).map((f) => f.name) })),
       })),
     },
