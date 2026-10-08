@@ -111,6 +111,39 @@ export const refFilters: { id: string; name: string; test: (r: Reference) => boo
 ];
 export const maxRefs = 3;
 
+// What they write in Basics, read as signals for the reference grid (Spanish and English).
+// Each signal boosts categories, tags or structures, and shows up as a chip saying why.
+export const refSignals: { label: string; words: string[]; cats?: string[]; tags?: string[]; slugs?: string[] }[] = [
+  { label: 'Lighting & interiors', words: ['lámpara', 'lampara', 'luz', 'ilumin', 'lamp', 'lighting', 'mueble', 'furniture', 'deco', 'interior', 'hogar', 'home', 'casa'], cats: ['architecture'], slugs: ['louispoulsen-com', 'flos-com', 'hay-com', 'knoll-com', 'parachutehome-com'] },
+  { label: 'Handmade', words: ['a mano', 'artesan', 'handmade', 'craft', 'oficio'], tags: ['warm', 'soft', 'editorial'] },
+  { label: 'Products', words: ['producto', 'tienda', 'shop', 'store', 'catálogo', 'catalogo', 'colección', 'coleccion', 'collection', 'envío', 'envio'], cats: ['ecommerce'] },
+  { label: 'Agency & services', words: ['agencia', 'agency', 'consult', 'servicio', 'service', 'partner'] /* not 'studio': too many brands are called that */, cats: ['services', 'creative'] },
+  { label: 'Growth & marketing', words: ['marketing', 'ads', 'campaña', 'campaign', 'meta', 'google', 'growth', 'crecimiento', 'performance', 'seo', 'aeo'], cats: ['services', 'saas'], tags: ['technical', 'serious'] },
+  { label: 'Tech & AI', words: ['ia', 'ai', 'software', 'plataforma', 'platform', 'app', 'saas', 'tecnolog', 'tech', 'datos', 'data'], cats: ['saas'], tags: ['technical'] },
+  { label: 'Finance', words: ['finanz', 'finance', 'fintech', 'inversi', 'invest', 'banco', 'bank', 'crypto', 'cripto', 'billetera', 'wallet'] /* not 'pago': 'medios pagos' is advertising */, cats: ['finance'], tags: ['serious'] },
+  { label: 'Premium', words: ['lujo', 'luxury', 'premium', 'exclusiv', 'alta gama', 'high-end', 'boutique'], tags: ['luxe'] },
+  { label: 'Hospitality', words: ['hotel', 'hostel', 'restaur', 'bar', 'café', 'cafe', 'coffee', 'resto', 'cocina', 'chef', 'vino', 'wine'], cats: ['hospitality', 'food'] },
+  { label: 'Wellness', words: ['salud', 'health', 'bienestar', 'wellness', 'clínica', 'clinica', 'yoga', 'fitness', 'spa'], cats: ['health'] },
+  { label: 'Fashion & beauty', words: ['moda', 'fashion', 'ropa', 'indumentaria', 'beauty', 'belleza', 'cosmét', 'skincare', 'joya', 'jewel'], cats: ['fashion'] },
+  { label: 'Architecture', words: ['arquitect', 'architect', 'construc', 'inmobili', 'real estate', 'desarroll'], cats: ['architecture'] },
+  { label: 'Art & culture', words: ['arte', 'art ', 'galería', 'galeria', 'museo', 'museum', 'música', 'musica', 'music', 'editorial', 'revista', 'magazine'], cats: ['culture'] },
+  { label: 'Personal brand', words: ['portfolio', 'fotógraf', 'fotograf', 'photograph', 'freelance', 'diseñador', 'designer', 'mi trabajo'], cats: ['personal'] },
+  { label: 'Families & homes', words: ['familia', 'family', 'familias'], tags: ['warm', 'soft'] },
+];
+// The goal and the format nudge the grid too: what the site must do shapes which sites are useful.
+export const goalSignals: Record<string, { label: string; cats?: string[]; structures?: string[] }> = {
+  buy: { label: 'Sell online', cats: ['ecommerce', 'fashion', 'food'], structures: ['portfolio-grid', 'catalogue', 'photographic'] },
+  book_call: { label: 'Get calls', cats: ['services', 'saas', 'finance'], structures: ['feature-stack', 'split-studio'] },
+  contact: { label: 'Get leads', cats: ['services', 'creative'], structures: ['split-studio', 'index-first'] },
+  understand: { label: 'Explain', structures: ['long-document', 'narrative-workflow', 'feature-stack'] },
+  sign_up: { label: 'Sign-ups', cats: ['saas', 'personal'], structures: ['marquee-hero', 'feature-stack'] },
+  visit: { label: 'Visits', cats: ['hospitality', 'food', 'culture'], structures: ['photographic', 'marquee-hero'] },
+};
+export const productStructures: Record<string, string[]> = {
+  landing: ['marquee-hero', 'feature-stack', 'specimen'],
+  websiteplus: ['ecosystem-index', 'portfolio-grid', 'index-first', 'catalogue'],
+};
+
 // Type feel. Each card renders its specimen in the face named here (loaded on /start/ only).
 export const typefaces = [
   { id: 'serif', name: 'Classic serif', detail: 'Warm, established, editorial', font: "'Fraunces Variable', Georgia, serif", sample: 'Aa' },

@@ -2,8 +2,8 @@
 import { basket, elevator, exploded, laptop, loupe, patch, phone, query, settle, sieve, slow, stack, terrain, drawer } from '@lucasmarkes/hairline';
 import { packages, addOns, extraPageSections, type PackageId } from '../data/site';
 import {
-  stages, refs, maxRefs, refsPerPage, refFilters, neighbours, goals, sliders, pushSlider, pushCopy, motionLevels, assets,
-  typefaces, suggestFeatures,
+  stages, refs, maxRefs, refsPerPage, refFilters, neighbours, industries, goals, sliders, pushSlider, pushCopy, motionLevels, assets,
+  typefaces, suggestFeatures, refSignals, goalSignals, productStructures,
   copyStatus, blockTypes, templates, goalBlock, features, briefEndpoint, type BlockType, type Reference,
 } from '../data/brief';
 import { url } from '../lib/url';
@@ -140,7 +140,7 @@ form.addEventListener('change', (e) => {
 });
 
 function onChange(k: string) {
-  if (k === 'industry') renderRefs();
+  if (k === 'industry' || k === 'goal' || k === 'product') renderRefs();
   if (k === 'product') { reseedIfUntouched(); renderPages(); }
   if (k === 'product' || k === 'goal') { s.recoApproved = false; renderReco(); }
   if (k === 'pages_mode' && str('pages_mode') === 'builder' && !s.pages.length) { seedPages(); renderPages(); }
@@ -162,10 +162,21 @@ const deal = new Map(refs.map((r) => [r.id, refs.filter((x) => x.cats[0] === r.c
 let refLimit = refsPerPage;
 const shownRefs = new Set<string>();
 
+// What Basics tells us, turned into boosts for the reference grid (and the chips that explain it)
+function basicsSignals() {
+  const text = ' ' + ['describe', 'selling', 'audience', 'industry_other', 'unsure_note', 'company'].map(str).join(' ').toLowerCase() + ' ';
+  // short words (ia, ai, bar, app) must match whole words, or 'familia' reads as AI
+  const has = (w: string) => (w.trim().length <= 3 ? new RegExp(`(^|[^a-záéíóúñ])${w.trim()}([^a-záéíóúñ]|$)`).test(text) : text.includes(w));
+  const hits = refSignals.filter((sig) => sig.words.some(has));
+  const goal = goalSignals[str('goal')];
+  return { hits, goal, structures: productStructures[str('product')] ?? [] };
+}
+
 function rankedRefs() {
   const ind = str('industry');
   const near = neighbours[ind] ?? [];
   const on = refFilters.filter((f) => (s.refFilters ?? []).includes(f.id));
+  const { hits, goal, structures } = basicsSignals();
   const score = (r: Reference) => {
     let sc = 0;
     if (ind && ind !== 'other') {
@@ -177,11 +188,30 @@ function rankedRefs() {
         if (n > -1) sc += 4 - n * 0.5;
       }
     }
+    for (const h of hits) {
+      if (h.slugs?.includes(r.slug)) sc += 9;
+      if (h.cats?.some((c) => r.cats.includes(c))) sc += 5;
+      if (h.tags?.some((t) => r.vibes.includes(t) || r.styles.includes(t))) sc += 2;
+    }
+    if (goal?.cats?.some((c) => r.cats.includes(c))) sc += 3;
+    if (r.structure && goal?.structures?.includes(r.structure)) sc += 2;
+    if (r.structure && structures.includes(r.structure)) sc += 1.5;
     sc += 12 * on.filter((f) => f.test(r)).length; // style filters lead
     if (r.editorial) sc += 0.5;
     return sc;
   };
   return [...refs].sort((a, b) => score(b) - score(a) || deal.get(a.id)! - deal.get(b.id)!);
+}
+
+function renderWhy() {
+  const el = document.getElementById('ref-why');
+  if (!el) return;
+  const { hits, goal } = basicsSignals();
+  const ind = industries.find((i) => i.id === str('industry'));
+  const chips = [ind && ind.id !== 'other' ? ind.name : '', ...hits.map((h) => h.label), goal?.label ?? ''].filter(Boolean);
+  el.innerHTML = chips.length
+    ? `<span class="text-paper/45">Picked for what you told us:</span> ${chips.map((c) => `<span class="rounded-full border border-white/12 px-2.5 py-0.5 text-paper/70">${esc(c)}</span>`).join(' ')}`
+    : '<span class="text-paper/45">Tell us about the business in Basics and these get more specific.</span>';
 }
 
 // How close a site is to what they've picked: inspo's neighbours, then shared tags.
@@ -221,6 +251,7 @@ function renderRefs() {
   $('#refs-more').textContent = `Show ${Math.min(refsPerPage, left)} more`;
   $$<HTMLButtonElement>('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String((s.refFilters ?? []).includes(b.dataset.filter!))));
   wireCards($('#refs'));
+  renderWhy();
   renderPicks();
 }
 
@@ -708,24 +739,26 @@ $('#edit-reco').addEventListener('click', () => {
 // Live "Your site" panel
 // ---------------------------------------------------------------------------
 
+// Each block drawn as a fine line wireframe: text as single strokes, media as outlined boxes,
+// the call to action in the accent.
 function glyph(g: string, small = false) {
-  const h = (px: number) => `height:${px}px`;
-  const box = (n: number, px: number) => `<span class="row">${`<i style="${h(px)}"></i>`.repeat(n)}</span>`;
-  const sp = 'background:var(--color-spark)';
+  const ln = (w: number, extra = '') => `<i class="ln" style="width:${w}%;${extra}"></i>`;
+  const bx = (n: number, px: number) => `<span class="row">${`<i class="bx" style="height:${px}px"></i>`.repeat(n)}</span>`;
+  const pill = (w: number, extra = '') => `<i class="pill" style="width:${w}%;${extra}"></i>`;
   const inner: Record<string, string> = {
-    hero: `<i style="${h(5)};width:62%"></i><i style="${h(3)};width:40%;margin-top:3px"></i><i style="${h(4)};width:20%;margin-top:4px;${sp}"></i>`,
-    logos: box(5, 3),
-    text: `<i style="${h(3)};width:85%"></i><i style="${h(3)};width:60%;margin-top:3px"></i>`,
-    grid2: box(2, 13),
-    grid3: box(3, 11),
-    grid4: box(4, 9),
-    steps: `<span class="row"><i style="${h(9)}"></i><i style="${h(9)};opacity:.6"></i><i style="${h(9)};opacity:.35"></i></span>`,
-    quote: `<i style="${h(3)};width:80%;margin:0 auto"></i><i style="${h(3)};width:30%;margin:3px auto 0"></i>`,
-    gallery: box(3, 15),
-    rows: `<i style="${h(2)}"></i><i style="${h(2)};margin-top:3px"></i><i style="${h(2)};margin-top:3px"></i>`,
-    cta: `<i style="${h(4)};width:50%;margin:0 auto"></i><i style="${h(4)};width:18%;margin:4px auto 0;${sp}"></i>`,
-    form: `<i style="${h(4)}"></i><i style="${h(4)};margin-top:3px"></i><i style="${h(4)};width:24%;margin-top:3px;${sp}"></i>`,
-    footer: box(4, 2),
+    hero: ln(62) + ln(40, 'margin-top:4px') + pill(20, 'margin-top:5px'),
+    logos: `<span class="row">${'<i class="ln"></i>'.repeat(5)}</span>`,
+    text: ln(85) + ln(60, 'margin-top:4px'),
+    grid2: bx(2, 13),
+    grid3: bx(3, 11),
+    grid4: bx(4, 9),
+    steps: `<span class="row"><i class="bx" style="height:9px"></i><i class="bx dim" style="height:9px"></i><i class="bx dimmer" style="height:9px"></i></span>`,
+    quote: ln(80, 'margin:0 auto') + ln(30, 'margin:4px auto 0'),
+    gallery: bx(3, 15),
+    rows: ln(100) + ln(100, 'margin-top:4px') + ln(100, 'margin-top:4px'),
+    cta: ln(50, 'margin:0 auto') + pill(18, 'margin:5px auto 0'),
+    form: `<i class="bx" style="height:5px"></i><i class="bx" style="height:5px;margin-top:3px"></i>` + pill(24, 'margin-top:4px'),
+    footer: `<span class="row">${'<i class="ln"></i>'.repeat(4)}</span>`,
   };
   return small
     ? `<span class="blk block w-9 shrink-0 !animate-none" aria-hidden="true">${inner[g] ?? inner.text}</span>`
@@ -881,6 +914,7 @@ function go(i: number, push = true) {
   $('#form-error').classList.add('hidden');
   if (last) renderReview();
   if (stages[s.stage].id === 'features') seedFeatures();
+  if (stages[s.stage].id === 'direction') { refLimit = refsPerPage; renderRefs(); }
   if (push) history.pushState({ stage: s.stage }, '', `#${stages[s.stage].id}`);
   window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   sheet(false);
