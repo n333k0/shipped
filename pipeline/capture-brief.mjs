@@ -26,12 +26,13 @@ const rows = [];
 for (const t of targets) {
   const dir = join(capDir, `${t.role}-${host(t.url)}`);
   const wall = /just a moment|attention required|access denied|verify you are human/i;
-  if (!existsSync(join(dir, 'tokens.json')) || wall.test(JSON.parse(readFileSync(join(dir, 'tokens.json'), 'utf8')).title)) {
+  const prev = existsSync(join(dir, 'tokens.json')) ? JSON.parse(readFileSync(join(dir, 'tokens.json'), 'utf8')) : null;
+  if (!prev || prev.error || wall.test(prev.title)) {
     try { execFileSync('node', [join(here, 'capture-site.mjs'), t.url, dir], { stdio: 'inherit', timeout: 150000 }); }
     catch { console.warn(`could not capture ${t.url}`); continue; }
   }
   const k = JSON.parse(readFileSync(join(dir, 'tokens.json'), 'utf8'));
-  const blocked = wall.test(k.title);
+  const blocked = wall.test(k.title) ? 'bot wall' : k.error ? `unreachable (${k.error})` : null;
   const bg = k.backgrounds.find(([c]) => !/rgba\(.*, 0\.\d+\)/.test(c))?.[0] ?? 'rgb(255, 255, 255)';
   const lum = (bg.match(/\d+/g) ?? [255, 255, 255]).slice(0, 3).reduce((a, n) => a + Number(n), 0) / 3;
   rows.push({ ...t, dir: `${t.role}-${host(t.url)}`, k, blocked, mode: lum < 90 ? 'dark' : 'light' });
@@ -39,7 +40,7 @@ for (const t of targets) {
 
 const type = (r, weight) => (r ? `${r.family.split(',')[0].replace(/"/g, '')} ${r.size}${weight ? ` w${r.weight}` : ''}` : '—');
 const line = ({ role, url, dir, k, blocked, mode }) => blocked
-  ? `| ${role} | ${host(url)} | bot wall: use inspo get_screen or client screenshots | | | | |`
+  ? `| ${role} | ${host(url)} | NOT CAPTURED (${blocked}): use inspo get_screen or client screenshots | | | | |`
   : `| ${role} | [${host(url)}](${dir}/desktop.png) | ${type(k.roles.h1 ?? k.roles.h2, true)} | ${type(k.roles.body)} | ${mode} | ${k.radii.slice(0, 2).map(([r]) => r).join(' ') || '0'} | ${Object.entries(k.motion).filter(([, v]) => v).map(([m]) => m).join(' ') || '—'} |`;
 
 writeFileSync(join(capDir, 'summary.md'), `# Captured sites: ${brief.project?.company ?? ''}
@@ -48,11 +49,11 @@ writeFileSync(join(capDir, 'summary.md'), `# Captured sites: ${brief.project?.co
 |---|---|---|---|---|---|---|
 ${rows.map(line).join('\n')}
 
-How these weigh in \`direction.md\` (rules: SITE.md "Ideal and competitors"):
+How these weigh in \`direction/strategy.md\` (rules: .claude/shipped-knowledge/creative-standards.md, "Ideal and competitors"):
 - **ideal** sets the level: its type scale, density, image size and pacing are the bar. Its \`page.html\` opens with its own assets and can seed v1's layout, then diverge into the client's brand.
 - **competitor** is the field to stand out from: name what they all share and make at least one deliberate difference in v1.
 - **current** is the brand to keep or upgrade: their fonts, colours, logo, copy.
 
 Each folder: desktop.png, phone.png, page.html, tokens.md (type roles, colours, radii, gaps, heading outline).
 `);
-console.log(`captured ${rows.length}/${targets.length} → ${join(capDir, 'summary.md')}`);
+console.log(`captured ${rows.filter((r) => !r.blocked).length}/${targets.length} → ${join(capDir, 'summary.md')}`);

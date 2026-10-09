@@ -50,6 +50,8 @@ const tokens = (await send('Runtime.evaluate', { returnByValue: true, expression
   const role = (sel) => { const e = document.querySelector(sel); if (!e) return null; const c = getComputedStyle(e); return { family: c.fontFamily, size: c.fontSize, weight: c.fontWeight, lineHeight: c.lineHeight, letterSpacing: c.letterSpacing, transform: c.textTransform }; };
   return {
     url: location.href, title: document.title,
+    // Chrome's own error pages (certificate, DNS, offline) render instead of the site
+    error: location.protocol === 'chrome-error:' || !!document.querySelector('#main-frame-error, .neterror') || /privacy error|can.t be reached|isn.t working/i.test(document.title) ? document.title : null,
     roles: { h1: role('h1'), h2: role('h2'), h3: role('h3'), body: role('p'), button: role('button, a[class*=btn], a[class*=button]'), nav: role('nav a') },
     families: count((e) => getComputedStyle(e).fontFamily.split(',')[0].replace(/["']/g, '')).slice(0, 6),
     sizes: count((e) => getComputedStyle(e).fontSize).slice(0, 10),
@@ -70,8 +72,11 @@ ws.close();
 chrome.kill();
 
 writeFileSync(join(out, 'tokens.json'), JSON.stringify(tokens, null, 2));
+const failed = tokens.error || /just a moment|attention required|access denied|verify you are human/i.test(tokens.title);
+if (failed) { writeFileSync(join(out, 'tokens.md'), `# NOT CAPTURED\n\n${url} showed "${tokens.error ?? tokens.title}" instead of the site. These files are not the site's tokens; use another source.\n`); console.warn(`not captured: ${url}`); process.exit(0); }
 const row = (r) => (r ? `${r.family.split(',')[0]} ${r.size} w${r.weight} lh ${r.lineHeight} ls ${r.letterSpacing}${r.transform !== 'none' ? ' ' + r.transform : ''}` : '—');
 writeFileSync(join(out, 'tokens.md'), `# ${tokens.title}\n\n${url}\n\n| Role | Type |\n|---|---|\n${Object.entries(tokens.roles).map(([k, v]) => `| ${k} | ${row(v)} |`).join('\n')}\n\nFamilies: ${tokens.families.map(([f, n]) => `${f} (${n})`).join(', ')}\nColours: ${tokens.colors.map(([c]) => c).join(', ')}\nBackgrounds: ${tokens.backgrounds.map(([c]) => c).join(', ')}\nRadii: ${tokens.radii.map(([r]) => r).join(', ') || '0'}\nGaps: ${tokens.gaps.map(([g]) => g).join(', ')}\nMotion: ${Object.entries(tokens.motion).filter(([, v]) => v).map(([k, v]) => (v === true ? k : `${k} ${v}`)).join(', ') || 'none detected'}\n\n## Outline (page ${tokens.height}px)\n${tokens.outline.map((h) => `- ${h.tag} @${h.y}px · ${h.text}`).join('\n')}\n`);
 // bot walls answer with their own page; say so instead of handing over its tokens
-if (/just a moment|attention required|access denied|verify you are human/i.test(tokens.title)) console.warn(`blocked by a bot wall ("${tokens.title}"): use the inspo capture (get_screen) or screenshots the client sends`);
+if (tokens.error) console.warn(`not captured: Chrome showed an error page ("${tokens.error}"); use the inspo capture (get_screen) or screenshots the client sends`);
+else if (/just a moment|attention required|access denied|verify you are human/i.test(tokens.title)) console.warn(`blocked by a bot wall ("${tokens.title}"): use the inspo capture (get_screen) or screenshots the client sends`);
 console.log(`captured ${url} → ${out}`);

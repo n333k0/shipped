@@ -1,0 +1,59 @@
+{
+  "id": "SHP-EX0001",
+  "created_at": "2026-10-09T12:00:00.000Z",
+  "contact": { "name": "Lucía Ferraro", "email": "lucia@example.test" },
+  "start": { "mode": "pay", "off_pct": 10, "list_total": 1750, "total": 1575, "today": 1575, "rest": 0 },
+  "project": {
+    "product": "landing",
+    "industry": "food",
+    "company": "Brasa Norte",
+    "current_site": "",
+    "socials": "@brasanorte (fictional)",
+    "describe": "Parrilla de barrio en Villa Crespo. Cocinamos todo a la leña: cortes de productores chicos, verduras de quinta y un vermú de la casa. Doce mesas y una barra frente al fuego.",
+    "selling": "Cenas de jueves a domingo, almuerzos de sábado y domingo. Menú de pasos los jueves. Ticket medio $35.000.",
+    "audience": "Gente de 28 a 50 del barrio y de Palermo que sale a comer bien sin ceremonia; parejas y grupos chicos.",
+    "goal": "book_call",
+    "goal_other": "",
+    "preferred_week": "2026-10-19"
+  },
+  "visual": {
+    "references": [],
+    "closest": null,
+    "reference_traits": ["Photography", "Typography", "Overall feeling"],
+    "reference_filters": [],
+    "sliders": { "dark_light": 25, "minimal_expressive": 60, "editorial_digital": 30, "serious_playful": 55, "quiet_bold": 65, "classic_experimental": 45, "safe_experimental": 55 },
+    "motion": "subtle",
+    "competitors": ["https://www.donjulio.com.ar"],
+    "competitors_diff": "Todas las parrillas usan fotos oscuras de carne y letra cursiva de bodegón.",
+    "aspirational": ["https://www.st-john.co.uk"],
+    "ideal_why": "Lo simple y seguro que es, el fuego y el oficio sin decoración.",
+    "typeface": "mix"
+  },
+  "brand": { "has": ["logo", "photography"], "locked": ["Logo"], "palette_hex": "#1c1a17 #e8e1d4 #c2502e", "files": { "logo": ["brasa-logo.svg"], "photography": ["fuego.jpg", "barra.jpg", "plato-1.jpg"] } },
+  "copy": { "status": "info", "permission_to_rewrite": true, "story": "Abrimos en 2023. Martín (cocinero) y Lucía (sala) venían de cocinas grandes y querían algo chico.", "files": [] },
+  "sitemap": {
+    "mode": "builder",
+    "approved": true,
+    "pages": [
+      {
+        "name": "Inicio",
+        "path": "/",
+        "blocks": [
+          { "n": 1, "type": "hero", "headline": "Todo a la leña.", "cta": "Reservar mesa", "assets": ["fuego.jpg"] },
+          { "n": 2, "type": "intro", "notes": "Quiénes somos, el fuego, los productores" },
+          { "n": 3, "type": "features", "headline": "La carta", "notes": "Cortes, verduras, vermú; sin precios" },
+          { "n": 4, "type": "gallery", "assets": ["barra.jpg", "plato-1.jpg"] },
+          { "n": 5, "type": "how_it_works", "headline": "Jueves de pasos", "notes": "Menú de pasos los jueves" },
+          { "n": 6, "type": "faq", "notes": "Reservas, grupos, celíacos" },
+          { "n": 7, "type": "contact", "headline": "Dónde estamos", "notes": "Dirección ficticia, horarios" },
+          { "n": 8, "type": "cta", "headline": "Reservá tu mesa", "cta": "Reservar" }
+        ]
+      }
+    ]
+  },
+  "functional": { "booking": { "url": "https://example.test/reservas" }, "whatsapp": {}, "maps": {}, "analytics": {} },
+  "technical": { "domain_own": "yes", "domain": "brasanorte.example", "hosting": "not sure", "current_cms": "none", "seo_keep": "No" },
+  "inferred": { "signals": [], "three_d": { "suggested": false, "why": [] }, "imagery": "photo-led", "line_art": false, "variations": 3 },
+  "completeness": 82,
+  "missing": []
+}

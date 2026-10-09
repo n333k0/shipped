@@ -1,6 +1,6 @@
-# Lessons
+# Project learnings
 
-One line per correction from the owner, written as what to do. Newest at the bottom. When a lesson is fully absorbed into a script or rule, delete it here.
+One line per correction from the owner, written as what to do, newest at the bottom of its group. Evidence only: when the cause is unknown, write what was ruled out. When a learning is fully absorbed into a standard, agent or script, move it there and delete it here. Agents propose new lines (see SHIPPED_KNOWLEDGE.md, "Changing the system"); the owner accepts them.
 
 ## PDF
 - The PDF is client-facing: build spec, flags, "template" and add-on maths live in `internal.md`.
@@ -26,8 +26,7 @@ One line per correction from the owner, written as what to do. Newest at the bot
 - Internal tools run locally, never as pages of the public site.
 - Only the best show, and the best of the chosen category lead: inspo's homepage and editorial collections are the bar (`scripts/ref-quality.json`); inspo sites join the pool only on the bar or near it (`refs-universe` → `refs-quality` → `refs-discover` → `refs.mjs`), each ref carries `q`, and the brief ranks by it inside the category.
 - Thin categories (services, hospitality, food, health) get hand-picked sites: `scripts/refs-manual-urls.json` → `scripts/refs-add.mjs`.
-
-- The aesthetic ideal and competitors drive the direction, not only the picked references: capture them (`capture-brief.mjs`) and name the bar and the field in `direction.md`.
+- The aesthetic ideal and competitors drive the direction, not only the picked references: capture them (`capture-brief.mjs`) and name the bar and the field in `direction/strategy.md`.
 
 ## Brief UI
 - The "Your site" panel is a small symbolic object (isometric page stack), not a detailed wireframe list.
