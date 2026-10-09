@@ -4380,21 +4380,22 @@
    1600
   ]
  },
- "/work/social-club-wide.webp": {
-  "w": 1600,
+ "/work/studio-dado-wide.webp": {
+  "w": 1080,
   "sizes": [
    480,
    640,
    800,
-   960,
-   1200
+   960
   ]
  },
- "/work/social-club.webp": {
-  "w": 736,
+ "/work/studio-dado.webp": {
+  "w": 1080,
   "sizes": [
    480,
-   640
+   640,
+   800,
+   960
   ]
  },
  "/work/tokni.webp": {
