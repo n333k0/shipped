@@ -141,6 +141,28 @@
    640
   ]
  },
+ "/placeholder/queued/lane-0.webp": {
+  "w": 3448,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
+ "/placeholder/queued/lane-1.webp": {
+  "w": 3310,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200,
+   1600
+  ]
+ },
  "/placeholder/tablet-founder.webp": {
   "w": 600,
   "sizes": [
@@ -167,6 +189,4153 @@
    960,
    1200
   ]
+ },
+ "/refs/1hotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/1hotels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/1hotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/25hours-hotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/25hours-hotels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/25hours-hotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aave-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aave-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/accenture-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/accenture-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/accenture-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/acehotel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/acehotel-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/acehotel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/agentcard-sh.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/agentcard-sh.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/alloy-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/alloy-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/alma-food.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/alma-food.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/amie-so.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/amie-so.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/analogue-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/analogue-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/antimetal-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/antimetal-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/apartamentomagazine-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/apartamentomagazine-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arc-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arc-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/archigreendesigns-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/archigreendesigns-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arcway-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arcway-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/are-na.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/are-na.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/area17-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/area17-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aristidebenoist-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aristidebenoist-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/artforum-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/artforum-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arts-ac-uk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/arts-ac-uk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aspensearch-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/aspensearch-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/athleticbrewing-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/athleticbrewing-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/athleticbrewing-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/atomixnyc-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/atomixnyc-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/audius-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/audius-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/augustinusbader-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/augustinusbader-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/augustinusbader-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/barbican-org-uk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/barbican-org-uk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/barrys-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/barrys-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/barrys-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/basement-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/basement-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bcg-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bcg-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/bcg-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/behaviorai-eu.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/behaviorai-eu.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bellroy-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bellroy-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/belmond-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/belmond-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/benvenusa-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/benvenusa-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/betterup-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/betterup-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/betterup-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bevel-health.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bevel-health.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/big-dk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/big-dk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bittersoutherner-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bittersoutherner-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/blackforestlabs-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/blackforestlabs-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bluebottlecoffee-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bluebottlecoffee-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bose-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bose-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brevo-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brevo-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brex-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brex-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brightland-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/brightland-co.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/brightland-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buck-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buck-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bugatti-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bugatti-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buly1803-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buly1803-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/burb-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/burb-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buttondown-email.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/buttondown-email.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bychudy-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bychudy-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bymonolog-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/bymonolog-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/callbaba-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/callbaba-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/campaignmonitor-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/campaignmonitor-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/canvasapp-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/canvasapp-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/casacook-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/casacook-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/casacook-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/casper-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/casper-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cdbaby-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cdbaby-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/centralrestaurante-com-pe.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/centralrestaurante-com-pe.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/centralrestaurante-com-pe.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/chablehotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/chablehotels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/chablehotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/chloe-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/chloe-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/citizenm-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/citizenm-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/citizenm-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/classcreator-io.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/classcreator-io.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cliffordchance-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cliffordchance-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/cliffordchance-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/columbia-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/columbia-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/commercialtype-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/commercialtype-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/compass-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/compass-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/compass-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/constructiondesourdy-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/constructiondesourdy-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/convertkit-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/convertkit-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cooley-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cooley-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/cooley-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/craft-wild-as.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/craft-wild-as.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/craigmod-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/craigmod-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cron-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cron-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/csswizardry-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/csswizardry-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cuyana-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/cuyana-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/danielsun-space.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/danielsun-space.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/davidchipperfield-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/davidchipperfield-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/davidchipperfield-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/daybridge-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/daybridge-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deadwater-fr.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deadwater-fr.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deathandcompany-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deathandcompany-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/deel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/designstudio-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/designstudio-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/diasporaco-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/diasporaco-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/diasporaco-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/dinnerbyheston-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/dinnerbyheston-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/diptyqueparis-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/diptyqueparis-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/diptyqueparis-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/disfrutarbarcelona-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/disfrutarbarcelona-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/disfrutarbarcelona-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/dishoom-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/dishoom-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/dishoom-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/displaay-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/displaay-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/domestika-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/domestika-org.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/domestika-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/doubleplay-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/doubleplay-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/drinkag1-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/drinkag1-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/drinkag1-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/drinkghia-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/drinkghia-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/drinkghia-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/duabyab-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/duabyab-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/eatfishwife-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/eatfishwife-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/eatfishwife-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ecal-ch.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ecal-ch.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/editionhotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/editionhotels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/editionhotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/eightsleep-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/eightsleep-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/eightsleep-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/elastic-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/elastic-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/emilkowal-ski.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/emilkowal-ski.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/epidemicsound-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/epidemicsound-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/equinox-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/equinox-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/equinox-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ethereum-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ethereum-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/everlane-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/everlane-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/everlaw-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/everlaw-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/exoape-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/exoape-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/explorajourneys-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/explorajourneys-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ey-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ey-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ey-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/factory-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/factory-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fal-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fal-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/family-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/family-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/featurebase-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/featurebase-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fellowproducts-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fellowproducts-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/figma-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/figma-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/finach-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/finach-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/finethought-com-au.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/finethought-com-au.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/firsty-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/firsty-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fitbod-me.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fitbod-me.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/flos-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/flos-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/flybyjing-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/flybyjing-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/flybyjing-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fontshare-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fontshare-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fontsinuse-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fontsinuse-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fosterandpartners-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fosterandpartners-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/framer-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/framer-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frankchimero-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frankchimero-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/freitag-ch.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/freitag-ch.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frequencybreathwork-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frequencybreathwork-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frerejones-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frerejones-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/freshfields-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/freshfields-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/freshfields-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frill-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/frill-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fromanother-love.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/fromanother-love.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/functionhealth-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/functionhealth-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generalcondition-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generalcondition-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generative-fm.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generative-fm.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generatorhostels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/generatorhostels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/generatorhostels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ghost-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ghost-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/glossier-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/glossier-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/glyphsapp-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/glyphsapp-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goclockout-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goclockout-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goodeggs-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goodeggs-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goodside-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/goodside-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gosteli-archiv-ch.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gosteli-archiv-ch.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grafana-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grafana-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grailed-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grailed-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/graza-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/graza-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grillitype-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/grillitype-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/guggenheim-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/guggenheim-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gumloop-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gumloop-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gusto-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/gusto-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/handhold-io.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/handhold-io.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hardwareoperations-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hardwareoperations-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hay-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hay-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hbo-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hbo-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/headspace-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/headspace-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/heidrick-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/heidrick-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/heidrick-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hellomonday-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hellomonday-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/henninglarsen-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/henninglarsen-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/henninglarsen-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hermanmiller-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hermanmiller-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/herzogdemeuron-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/herzogdemeuron-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hex-tech.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hex-tech.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/heyclicky-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/heyclicky-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hiartem-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hiartem-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hingehealth-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hingehealth-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hingehealth-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/honeymamas-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/honeymamas-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/honeymamas-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelesencia-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelesencia-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hotelesencia-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelilpellicano-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelilpellicano-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hotelilpellicano-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelkinsley-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelkinsley-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hotelkinsley-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelmarcel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hotelmarcel-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hotelmarcel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/houseindustries-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/houseindustries-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/houseofhoney-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/houseofhoney-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/huckmag-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/huckmag-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/huel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/huel-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/huel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/humaan-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/humaan-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hydrow-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hydrow-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hydrow-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hypereffekt-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hypereffekt-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hyperice-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/hyperice-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/hyperice-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ideo-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ideo-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ideo-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/idyllic-co-nz.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/idyllic-co-nz.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/immersive-g-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/immersive-g-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/increase-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/increase-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/instrument-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/instrument-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/interaction-hnine-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/interaction-hnine-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/jhey-dev.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/jhey-dev.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/jilsander-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/jilsander-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/jilsander-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/joinzoe-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/joinzoe-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/joinzoe-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/julian-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/julian-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/karenwalker-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/karenwalker-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/khaite-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/khaite-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/khaite-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kidzfrmnowhere-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kidzfrmnowhere-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kith-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kith-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/kith-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kkaa-co-jp.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kkaa-co-jp.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/knoll-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/knoll-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kornferry-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/kornferry-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/kornferry-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lacabra-dk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lacabra-dk.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/lacabra-dk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lacma-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lacma-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lafamigliamysteryunfolds-gucci-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lafamigliamysteryunfolds-gucci-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lemaire-fr.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lemaire-fr.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/lemaire-fr.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/leonardo-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/leonardo-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lessestudio-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lessestudio-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/letude-group.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/letude-group.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/levels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/levels-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/levels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/linear-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/linear-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lineto-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lineto-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/linklaters-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/linklaters-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/linklaters-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/liquiddeath-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/liquiddeath-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/liquiddeath-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lissongallery-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lissongallery-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lithic-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lithic-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/locomotive-ca.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/locomotive-ca.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/loewe-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/loewe-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/loewe-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/loopearplugs-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/loopearplugs-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/loopearplugs-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lotuscars-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lotuscars-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/louispoulsen-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/louispoulsen-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lumen-me.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lumen-me.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/lumen-me.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lusion-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lusion-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lyfehotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/lyfehotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/madebyanalogue-co-uk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/madebyanalogue-co-uk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/madeinuxstudio-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/madeinuxstudio-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mage-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mage-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maggieappleton-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maggieappleton-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/magicspoon-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/magicspoon-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maisonmargiela-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maisonmargiela-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mamashelter-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mamashelter-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/mamashelter-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/marni-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/marni-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/materra-tech.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/materra-tech.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/matveyan-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/matveyan-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maven-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maven-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/maven-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mavenclinic-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mavenclinic-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/mavenclinic-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maxsiedentopf-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/maxsiedentopf-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mckp-live.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mckp-live.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/medium-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/medium-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mem-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mem-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/menkind-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/menkind-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mercury-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mercury-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/microdot-vision.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/microdot-vision.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/middle-finance.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/middle-finance.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mikkisindhunata-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mikkisindhunata-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/milanote-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/milanote-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mintlify-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mintlify-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mirazur-fr.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mirazur-fr.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/modal-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/modal-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mollie-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mollie-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/moma-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/moma-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/momofuku-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/momofuku-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/momofuku-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mooala-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/mooala-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/n26-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/n26-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/namespace-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/namespace-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nbstudio-co-uk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nbstudio-co-uk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nekohealth-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nekohealth-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/nekohealth-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/newmuseum-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/newmuseum-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nglm-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nglm-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nike-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nike-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ninjatune-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ninjatune-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nngroup-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nngroup-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/nngroup-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/noma-dk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/noma-dk.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/noma-dk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nopan-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nopan-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/normarchitects-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/normarchitects-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/northkingdom-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/northkingdom-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/northmail-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/northmail-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/novu-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/novu-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nurx-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/nurx-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/nurx-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oatly-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oatly-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/olsonkundig-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/olsonkundig-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/olsonkundig-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oma-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oma-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/oma-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/omsom-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/omsom-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oneskin-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oneskin-co.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/oneskin-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/onyxcoffeelab-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/onyxcoffeelab-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/opal-so.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/opal-so.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/openai-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/openai-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ottolenghi-co-uk.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ottolenghi-co-uk.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ottolenghi-co-uk.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ouraring-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ouraring-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ouraring-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ourhabitas-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ourhabitas-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ourhabitas-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ourlegacy-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ourlegacy-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ourlegacy-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/overmindlab-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/overmindlab-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oysterhr-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/oysterhr-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ozgur-design.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ozgur-design.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pacegallery-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pacegallery-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/palisociety-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/palisociety-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/palisociety-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/parachutehome-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/parachutehome-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/parsleyhealth-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/parsleyhealth-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/parsleyhealth-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/peakdesign-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/peakdesign-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/peloton-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/peloton-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pentagram-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pentagram-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/phantom-land.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/phantom-land.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/photoyoshi-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/photoyoshi-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/piccalil-li.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/piccalil-li.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pilot-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pilot-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/pilot-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pitch-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pitch-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/plaid-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/plaid-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ploy-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ploy-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/poilane-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/poilane-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/poilane-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/poly-app.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/poly-app.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/prenuvo-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/prenuvo-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/prenuvo-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/primer-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/primer-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/prisma-io.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/prisma-io.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/propublica-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/propublica-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/psyche-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/psyche-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pusher-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/pusher-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rapha-cc.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rapha-cc.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rauno-me.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rauno-me.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/raycast-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/raycast-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/razorpay-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/razorpay-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/recraft-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/recraft-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/reforge-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/reforge-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/reforge-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/related-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/related-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/related-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/resend-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/resend-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/riesendesign-fi.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/riesendesign-fi.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ritual-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ritual-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rivian-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rivian-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rolandberger-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/rolandberger-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/rolandberger-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/runwayml-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/runwayml-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sanity-io.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sanity-io.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sardine-ai.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sardine-ai.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/savills-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/savills-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/savills-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/scale-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/scale-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/serpentinegalleries-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/serpentinegalleries-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/seycoffee-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/seycoffee-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/seycoffee-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sharptype-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sharptype-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/shelby-xyz.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/shelby-xyz.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/siegelgale-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/siegelgale-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/siegelgale-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/singita-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/singita-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/singita-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/skadden-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/skadden-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/skadden-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/slaughterandmay-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/slaughterandmay-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/slaughterandmay-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/smashingmagazine-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/smashingmagazine-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/smithsonianmag-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/smithsonianmag-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snap-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snap-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snohetta-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snohetta-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snowpeak-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/snowpeak-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sohohouse-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sohohouse-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/sohohouse-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sou-fujimoto-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sou-fujimoto-net.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/sou-fujimoto-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/spencerstuart-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/spencerstuart-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/spencerstuart-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ssense-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ssense-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/standardhotels-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/standardhotels-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/standardvision-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/standardvision-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stash-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stash-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stateofaidesign-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stateofaidesign-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stripe-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/stripe-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/studiomk27-com-br.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/studiomk27-com-br.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/studiomk27-com-br.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/studiomuseum-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/studiomuseum-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sullcrom-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/sullcrom-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/sullcrom-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/summerfridays-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/summerfridays-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/summerfridays-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/supaste-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/supaste-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/supercommon-systems.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/supercommon-systems.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/superhuman-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/superhuman-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/svix-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/svix-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/swisstypefaces-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/swisstypefaces-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/synapserstudio-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/synapserstudio-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/synthesis-partners.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/synthesis-partners.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/takearecess-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/takearecess-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/takearecess-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/talkspace-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/talkspace-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/talkspace-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tartinebakery-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tartinebakery-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/tartinebakery-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tatcha-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tatcha-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/tatcha-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tavus-io.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tavus-io.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/theagencyre-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/theagencyre-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/theagencyre-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thecreativeindependent-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thecreativeindependent-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thedesignersfoundry-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thedesignersfoundry-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thefutur-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thefutur-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thehoxton-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thehoxton-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/thehoxton-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thelinehotel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thelinehotel-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/thelinehotel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thened-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thened-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/thened-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/therabody-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/therabody-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/therabody-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thirdmanrecords-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thirdmanrecords-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thrilljockey-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thrilljockey-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thumbtack-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/thumbtack-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/thumbtack-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tigerbeetle-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tigerbeetle-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/timwendelboe-no.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/timwendelboe-no.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/timwendelboe-no.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tokens-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tokens-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/toryburch-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/toryburch-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/toteme-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/toteme-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/toteme-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tracebit-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tracebit-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/trychroma-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/trychroma-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/turnoev-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/turnoev-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tv-youtube-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tv-youtube-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tympanus-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/tympanus-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/typotheque-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/typotheque-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ultrahuman-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/ultrahuman-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/ultrahuman-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/unfold-no.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/unfold-no.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/uniswap-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/uniswap-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/upperquad-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/upperquad-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/useorigin-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/useorigin-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vanschneider-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vanschneider-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vasa-works.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vasa-works.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/velorahome-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/velorahome-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/velvetyne-fr.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/velvetyne-fr.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vercel-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/vercel-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wallpaper-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wallpaper-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/warbyparker-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/warbyparker-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/warp-net.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/warp-net.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wattenberger-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wattenberger-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wealthsimple-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wealthsimple-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wellcomecollection-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wellcomecollection-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/werkplaatstypografie-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/werkplaatstypografie-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wesbos-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wesbos-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/whitney-org.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/whitney-org.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wilmerhale-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wilmerhale-com.orig.webp": {
+  "w": 1200,
+  "sizes": [
+   480,
+   640,
+   800,
+   960
+  ]
+ },
+ "/refs/wilmerhale-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wise-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/wise-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/work-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/work-co.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/workos-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/workos-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/works-studio.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/works-studio.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/xlrecordings-com.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/xlrecordings-com.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/yuanchuan-dev.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/yuanchuan-dev.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/zora-co.full.webp": {
+  "w": 520,
+  "sizes": []
+ },
+ "/refs/zora-co.webp": {
+  "w": 520,
+  "sizes": []
  },
  "/work/1red-wide.webp": {
   "w": 1798,
@@ -209,6 +4378,23 @@
    960,
    1200,
    1600
+  ]
+ },
+ "/work/social-club-wide.webp": {
+  "w": 1600,
+  "sizes": [
+   480,
+   640,
+   800,
+   960,
+   1200
+  ]
+ },
+ "/work/social-club.webp": {
+  "w": 736,
+  "sizes": [
+   480,
+   640
   ]
  },
  "/work/tokni.webp": {
