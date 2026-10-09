@@ -1,0 +1,7926 @@
+{
+ "home": [
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "northmail-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "goclockout-app",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "overmindlab-ai",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "tracebit-com",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "sanity-io",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "shelby-xyz",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "supaste-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "aspensearch-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "glyphsapp-com",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "craft-wild-as",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "daybridge-com",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "mckp-live",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "vercel-com",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "linear-app",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "tokens-studio",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "synthesis-partners",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "aave-com",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "hex-tech",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "bevel-health",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "workos-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "raycast-com",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "ghost-org",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "nopan-com",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food",
+  "alma-food"
+ ],
+ "editorial": [
+  "gosteli-archiv-ch",
+  "herzogdemeuron-com",
+  "velorahome-com",
+  "constructiondesourdy-com",
+  "apartamentomagazine-com",
+  "stateofaidesign-com",
+  "novu-co",
+  "milanote-com",
+  "mintlify-com",
+  "campaignmonitor-com",
+  "featurebase-app",
+  "bellroy-com",
+  "casper-com",
+  "thrilljockey-com",
+  "bellroy-com--products-bio-phone-case"
+ ],
+ "rows": [
+  {
+   "slug": "anthropic-com",
+   "url": "https://anthropic.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/anthropic-com/thumb.384.webp?v=1777662301",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "e2b-dev",
+   "url": "https://e2b.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/e2b-dev/thumb.384.webp?v=1777662244",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "lumalabs-ai",
+   "url": "https://lumalabs.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lumalabs-ai/thumb.384.webp?v=1777898883",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "captions-ai",
+   "url": "https://captions.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/captions-ai/thumb.384.webp?v=1777898851",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "copilot-microsoft-com",
+   "url": "https://copilot.microsoft.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/copilot-microsoft-com/thumb.384.webp?v=1779109518",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "claude-ai",
+   "url": "https://claude.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/claude-ai/thumb.384.webp?v=1779109439",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "cursor-com",
+   "url": "https://cursor.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cursor-com/thumb.384.webp?v=1777663096",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "dust-tt",
+   "url": "https://dust.tt",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dust-tt/thumb.384.webp?v=1779109702",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "fal-ai",
+   "url": "https://fal.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fal-ai/thumb.384.webp?v=1777898651",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "leonardo-ai",
+   "url": "https://leonardo.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/leonardo-ai/thumb.384.webp?v=1777918559",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "ollama-com",
+   "url": "https://ollama.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ollama-com/thumb.384.webp?v=1777898784",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "pi-ai",
+   "url": "https://pi.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pi-ai/thumb.384.webp?v=1777662408",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "blackforestlabs-ai",
+   "url": "https://blackforestlabs.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/blackforestlabs-ai/thumb.384.webp?v=1779109289",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "bolt-new",
+   "url": "https://bolt.new",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bolt-new/thumb.384.webp?v=1777662440",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "descript-com",
+   "url": "https://descript.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/descript-com/thumb.384.webp?v=1779109612",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "contralabs-com",
+   "url": "https://contralabs.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/contralabs-com/thumb.384.webp?v=1779917766",
+   "industries": [
+    "ai",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "personal"
+   ]
+  },
+  {
+   "slug": "weaviate-io",
+   "url": "https://weaviate.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/weaviate-io/thumb.384.webp?v=1777898749",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "ploy-ai",
+   "url": "https://ploy.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ploy-ai/thumb.384.webp?v=1789043311",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "buzz-xyz",
+   "url": "https://buzz.xyz",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buzz-xyz/thumb.384.webp?v=1789050193",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "mage-ai",
+   "url": "https://mage.ai/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mage-ai/thumb.384.webp?v=1779977746",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "heyclicky-com",
+   "url": "https://www.heyclicky.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/heyclicky-com/thumb.384.webp?v=1789050081",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "detroit-paris",
+   "url": "https://detroit.paris/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/detroit-paris/thumb.384.webp?v=1779917850",
+   "industries": [
+    "ai",
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "creative"
+   ]
+  },
+  {
+   "slug": "generalintelligencecompany-com",
+   "url": "https://www.generalintelligencecompany.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/generalintelligencecompany-com/thumb.384.webp?v=1789043389",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "useorigin-com",
+   "url": "https://useorigin.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/useorigin-com/thumb.384.webp?v=1789050264",
+   "industries": [
+    "ai",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "suno-com",
+   "url": "https://suno.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/suno-com/thumb.384.webp?v=1777662381",
+   "industries": [
+    "ai",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "cofounder-co",
+   "url": "https://cofounder.co/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cofounder-co/thumb.384.webp?v=1779917725",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "joindawn-com",
+   "url": "https://joindawn.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/joindawn-com/thumb.384.webp?v=1779977240",
+   "industries": [
+    "ai",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "health"
+   ]
+  },
+  {
+   "slug": "oryzo-ai",
+   "url": "https://oryzo.ai/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/oryzo-ai/thumb.384.webp?v=1780049760",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "sierra-ai",
+   "url": "https://sierra.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sierra-ai/thumb.384.webp?v=1780313962",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "alma-food",
+   "url": "https://www.alma.food",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alma-food/thumb.384.webp?v=1789044317",
+   "industries": [
+    "health",
+    "ai"
+   ],
+   "seed": true,
+   "cats": [
+    "health",
+    "saas"
+   ]
+  },
+  {
+   "slug": "replit-com",
+   "url": "https://replit.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/replit-com/thumb.384.webp?v=1777902189",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "modal-com",
+   "url": "https://modal.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/modal-com/thumb.384.webp?v=1777662088",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "flexion-ai",
+   "url": "https://flexion.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flexion-ai/thumb.384.webp?v=1789043287",
+   "industries": [
+    "ai",
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "elevenlabs-io",
+   "url": "https://elevenlabs.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/elevenlabs-io/thumb.384.webp?v=1777662360",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "factory-ai",
+   "url": "https://factory.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/factory-ai/thumb.384.webp?v=1777898695",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "cluely-com",
+   "url": "https://cluely.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cluely-com/thumb.384.webp?v=1777916760",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tana-inc",
+   "url": "https://tana.inc",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tana-inc/thumb.384.webp?v=1777901518",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "flim-ai",
+   "url": "https://flim.ai/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flim-ai/thumb.384.webp?v=1779918091",
+   "industries": [
+    "ai",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "recraft-ai",
+   "url": "https://recraft.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/recraft-ai/thumb.384.webp?v=1777918559",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "poly-app",
+   "url": "https://poly.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/poly-app/thumb.384.webp?v=1778749352",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "canvasapp-com",
+   "url": "https://canvasapp.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/canvasapp-com/thumb.384.webp?v=1779917557",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "fourmula-ai",
+   "url": "https://fourmula.ai/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fourmula-ai/thumb.384.webp?v=1779918147",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "mem-ai",
+   "url": "https://mem.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mem-ai/thumb.384.webp?v=1780314308",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "sardine-ai",
+   "url": "https://sardine.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sardine-ai/thumb.384.webp?v=1780313865",
+   "industries": [
+    "ai",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "chat-openai-com",
+   "url": "https://chat.openai.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chat-openai-com/thumb.384.webp?v=1777918469",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "cohere-com",
+   "url": "https://cohere.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cohere-com/thumb.384.webp?v=1779109471",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "perplexity-ai",
+   "url": "https://perplexity.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/perplexity-ai/thumb.384.webp?v=1779110683",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "devin-ai",
+   "url": "https://devin.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/devin-ai/thumb.384.webp?v=1777898699",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "algolia-com",
+   "url": "https://algolia.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/algolia-com/thumb.384.webp?v=1778749308",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "amie-so",
+   "url": "https://amie.so",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/amie-so/thumb.384.webp?v=1777901504",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "blog-figma-com",
+   "url": "https://blog.figma.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/blog-figma-com/thumb.384.webp?v=1779109283",
+   "industries": [
+    "saas",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "ecologi-com",
+   "url": "https://ecologi.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ecologi-com/thumb.384.webp?v=1777918942",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "hey-com",
+   "url": "https://hey.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hey-com/thumb.384.webp?v=1779110043",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "alloy-com",
+   "url": "https://alloy.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alloy-com/thumb.384.webp?v=1779109078",
+   "industries": [
+    "saas",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "anytype-io",
+   "url": "https://anytype.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/anytype-io/thumb.384.webp?v=1777901433",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "arc-net",
+   "url": "https://arc.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arc-net/thumb.384.webp?v=1777661858",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "basecamp-com",
+   "url": "https://basecamp.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/basecamp-com/thumb.384.webp?v=1777916866",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "buttondown-email",
+   "url": "https://buttondown.email",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buttondown-email/thumb.384.webp?v=1779109384",
+   "industries": [
+    "saas",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "personal"
+   ]
+  },
+  {
+   "slug": "canva-com",
+   "url": "https://canva.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/canva-com/thumb.384.webp?v=1779109396",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "gusto-com",
+   "url": "https://gusto.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gusto-com/thumb.384.webp?v=1777916604",
+   "industries": [
+    "saas",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "lookback-com",
+   "url": "https://lookback.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lookback-com/thumb.384.webp?v=1779110297",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "azure-microsoft-com",
+   "url": "https://azure.microsoft.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/azure-microsoft-com/thumb.384.webp?v=1777918344",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "beehiiv-com",
+   "url": "https://beehiiv.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beehiiv-com/thumb.384.webp?v=1777901253",
+   "industries": [
+    "saas",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "personal"
+   ]
+  },
+  {
+   "slug": "bauhausclock-com",
+   "url": "https://bauhausclock.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bauhausclock-com/thumb.384.webp?v=1779917245",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "lottiefiles-com",
+   "url": "https://lottiefiles.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lottiefiles-com/thumb.384.webp?v=1779110303",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "brightful-me",
+   "url": "https://brightful.me/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brightful-me/thumb.384.webp?v=1779917448",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "arcway-ai",
+   "url": "https://arcway.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arcway-ai/thumb.384.webp?v=1789043648",
+   "industries": [
+    "saas",
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "mckp-live",
+   "url": "https://mckp.live",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mckp-live/thumb.384.webp?v=1789047834",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "bear-app",
+   "url": "https://bear.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bear-app/thumb.384.webp?v=1779109199",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "output-com",
+   "url": "https://output.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/output-com/thumb.384.webp?v=1779110646",
+   "industries": [
+    "saas",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "shopify-com",
+   "url": "https://shopify.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/shopify-com/thumb.384.webp?v=1777916589",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "n8n-io",
+   "url": "https://n8n.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/n8n-io/thumb.384.webp?v=1779110515",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "craft-do",
+   "url": "https://craft.do",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/craft-do/thumb.384.webp?v=1777898466",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "motherduck-com",
+   "url": "https://motherduck.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/motherduck-com/thumb.384.webp?v=1780312747",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "deel-com",
+   "url": "https://deel.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deel-com/thumb.384.webp?v=1779109584",
+   "industries": [
+    "saas",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "savvycal-com",
+   "url": "https://savvycal.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/savvycal-com/thumb.384.webp?v=1779110882",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "elastic-co",
+   "url": "https://elastic.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/elastic-co/thumb.384.webp?v=1779109731",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "spline-design",
+   "url": "https://spline.design",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/spline-design/thumb.384.webp?v=1777898698",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "loops-so",
+   "url": "https://loops.so",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/loops-so/thumb.384.webp?v=1777898443",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "builder-io",
+   "url": "https://builder.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/builder-io/thumb.384.webp?v=1777898499",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "minimal-so",
+   "url": "https://minimal.so",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/minimal-so/thumb.384.webp?v=1777916368",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "cron-com",
+   "url": "https://cron.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cron-com/thumb.384.webp?v=1777901500",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "figma-com",
+   "url": "https://figma.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/figma-com/thumb.384.webp?v=1779109794",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "framer-com",
+   "url": "https://framer.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/framer-com/thumb.384.webp?v=1779109826",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "atlassian-design",
+   "url": "https://atlassian.design",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/atlassian-design/thumb.384.webp?v=1777901733",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "deno-com",
+   "url": "https://deno.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deno-com/thumb.384.webp?v=1777663035",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "design-google",
+   "url": "https://design.google",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/design-google/thumb.384.webp?v=1777917522",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "expressjs-com",
+   "url": "https://expressjs.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/expressjs-com/thumb.384.webp?v=1779109765",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "pusher-com",
+   "url": "https://pusher.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pusher-com/thumb.384.webp?v=1780314143",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "arweave-org",
+   "url": "https://arweave.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arweave-org/thumb.384.webp?v=1777904147",
+   "industries": [
+    "developer-tools",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "astro-build",
+   "url": "https://astro.build",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/astro-build/thumb.384.webp?v=1777903843",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "biomejs-dev",
+   "url": "https://biomejs.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/biomejs-dev/thumb.384.webp?v=1777662131",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "fly-io",
+   "url": "https://fly.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fly-io/thumb.384.webp?v=1777898537",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "bunny-net",
+   "url": "https://bunny.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bunny-net/thumb.384.webp?v=1779109367",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "codepen-io",
+   "url": "https://codepen.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/codepen-io/thumb.384.webp?v=1777902170",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tigerbeetle-com",
+   "url": "https://tigerbeetle.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tigerbeetle-com/thumb.384.webp?v=1780406454",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "agentcard-sh",
+   "url": "https://www.agentcard.sh",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/agentcard-sh/thumb.384.webp?v=1789050064",
+   "industries": [
+    "developer-tools",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "remix-run",
+   "url": "https://remix.run",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/remix-run/thumb.384.webp?v=1777903813",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "inkandswitch-com",
+   "url": "https://www.inkandswitch.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/inkandswitch-com/thumb.384.webp?v=1780406696",
+   "industries": [
+    "developer-tools",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "glitch-com",
+   "url": "https://glitch.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/glitch-com/thumb.384.webp?v=1777902164",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tanstack-com",
+   "url": "https://tanstack.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tanstack-com/thumb.384.webp?v=1777917091",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "docs-astro-build",
+   "url": "https://docs.astro.build",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/docs-astro-build/thumb.384.webp?v=1777903815",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "elysiajs-com",
+   "url": "https://elysiajs.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/elysiajs-com/thumb.384.webp?v=1777917058",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "ethereum-org",
+   "url": "https://ethereum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ethereum-org/thumb.384.webp?v=1777904084",
+   "industries": [
+    "developer-tools",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "finance"
+   ]
+  },
+  {
+   "slug": "excalidraw-com",
+   "url": "https://excalidraw.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/excalidraw-com/thumb.384.webp?v=1777663247",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "cloudflare-com",
+   "url": "https://cloudflare.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cloudflare-com/thumb.384.webp?v=1779109462",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "railway-com",
+   "url": "https://railway.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/railway-com/thumb.384.webp?v=1777661231",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "prisma-io",
+   "url": "https://prisma.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/prisma-io/thumb.384.webp?v=1777916993",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "svix-com",
+   "url": "https://svix.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/svix-com/thumb.384.webp?v=1777898429",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "nextjs-org",
+   "url": "https://nextjs.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nextjs-org/thumb.384.webp?v=1779110531",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "sourcetreeapp-com",
+   "url": "https://sourcetreeapp.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sourcetreeapp-com/thumb.384.webp?v=1777918692",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "digitalocean-com",
+   "url": "https://digitalocean.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/digitalocean-com/thumb.384.webp?v=1777918306",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "reactsummit-com",
+   "url": "https://reactsummit.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/reactsummit-com/thumb.384.webp?v=1777901946",
+   "industries": [
+    "developer-tools",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "tinybird-co",
+   "url": "https://tinybird.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tinybird-co/thumb.384.webp?v=1779111256",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "design-facebook-com",
+   "url": "https://design.facebook.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/design-facebook-com/thumb.384.webp?v=1777901717",
+   "industries": [
+    "developer-tools",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "developer-apple-com",
+   "url": "https://developer.apple.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/developer-apple-com/thumb.384.webp?v=1777917488",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "domains-google",
+   "url": "https://domains.google",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/domains-google/thumb.384.webp?v=1777918271",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "grafana-com",
+   "url": "https://grafana.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grafana-com/thumb.384.webp?v=1779109935",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "chakra-ui-com",
+   "url": "https://chakra.ui.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chakra-ui-com/thumb.384.webp?v=1777903909",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "config-figma-com",
+   "url": "https://config.figma.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/config-figma-com/thumb.384.webp?v=1779109500",
+   "industries": [
+    "developer-tools",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "saas",
+    "culture"
+   ]
+  },
+  {
+   "slug": "buildkite-com",
+   "url": "https://buildkite.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buildkite-com/thumb.384.webp?v=1778750353",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "area17-com",
+   "url": "https://area17.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/area17-com/thumb.384.webp?v=1777662645",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "basicagency-com",
+   "url": "https://basicagency.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/basicagency-com/thumb.384.webp?v=1779109211",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "instrument-com",
+   "url": "https://instrument.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/instrument-com/thumb.384.webp?v=1779110129",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "lusion-co",
+   "url": "https://lusion.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lusion-co/thumb.384.webp?v=1777899114",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "hardwareoperations-com",
+   "url": "https://hardwareoperations.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hardwareoperations-com/thumb.384.webp?v=1779976797",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "buck-co",
+   "url": "https://buck.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buck-co/thumb.384.webp?v=1778749479",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "stinkstudios-com",
+   "url": "https://stinkstudios.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stinkstudios-com/thumb.384.webp?v=1777899028",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "alternativeaesthetics-co-uk",
+   "url": "https://alternativeaesthetics.co.uk/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alternativeaesthetics-co-uk/thumb.384.webp?v=1779916988",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "generalcondition-com",
+   "url": "https://generalcondition.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/generalcondition-com/thumb.384.webp?v=1779918216",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "gm-meme-com",
+   "url": "https://gm-meme.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gm-meme-com/thumb.384.webp?v=1779918288",
+   "industries": [
+    "agency",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "finance"
+   ]
+  },
+  {
+   "slug": "grit-pictures",
+   "url": "https://grit.pictures/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grit-pictures/thumb.384.webp?v=1779976738",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "idyllic-co-nz",
+   "url": "https://idyllic.co.nz/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/idyllic-co-nz/thumb.384.webp?v=1779976979",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "laugh-mind-co-jp",
+   "url": "https://laugh-mind.co.jp/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/laugh-mind-co-jp/thumb.384.webp?v=1779977590",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "madebyanalogue-co-uk",
+   "url": "https://madebyanalogue.co.uk/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/madebyanalogue-co-uk/thumb.384.webp?v=1779977713",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "locomotive-ca",
+   "url": "https://locomotive.ca",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/locomotive-ca/thumb.384.webp?v=1777662575",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "brethrendesignco-com",
+   "url": "https://www.brethrendesignco.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brethrendesignco-com/thumb.384.webp?v=1789049899",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "northkingdom-com",
+   "url": "https://northkingdom.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/northkingdom-com/thumb.384.webp?v=1777899082",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "dnco-com",
+   "url": "https://dnco.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dnco-com/thumb.384.webp?v=1789049875",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "synthesis-partners",
+   "url": "https://www.synthesis.partners",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/synthesis-partners/thumb.384.webp?v=1789041869",
+   "industries": [
+    "agency"
+   ],
+   "seed": true,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "standardvision-com",
+   "url": "https://standardvision.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/standardvision-com/thumb.384.webp?v=1777899242",
+   "industries": [
+    "agency",
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "synapserstudio-com",
+   "url": "https://synapserstudio.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/synapserstudio-com/thumb.384.webp?v=1779916632",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "kidzfrmnowhere-com",
+   "url": "https://kidzfrmnowhere.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kidzfrmnowhere-com/thumb.384.webp?v=1779977375",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "vasa-works",
+   "url": "https://www.vasa.works",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/vasa-works/thumb.384.webp?v=1789041842",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "nglm-com",
+   "url": "https://www.nglm.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nglm-com/thumb.384.webp?v=1789043079",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "adcker-com",
+   "url": "https://adcker.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/adcker-com/thumb.384.webp?v=1779916327",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "bennettandclive-com",
+   "url": "https://bennettandclive.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bennettandclive-com/thumb.384.webp?v=1779917318",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "basement-studio",
+   "url": "https://basement.studio/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/basement-studio/thumb.384.webp?v=1779976700",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "inkfishnyc-com",
+   "url": "https://inkfishnyc.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/inkfishnyc-com/thumb.384.webp?v=1779977036",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "posterco-tv",
+   "url": "https://posterco.tv/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/posterco-tv/thumb.384.webp?v=1780050078",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "designstudio-com",
+   "url": "https://designstudio.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/designstudio-com/thumb.384.webp?v=1779109622",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "hypereffekt-com",
+   "url": "https://hypereffekt.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hypereffekt-com/thumb.384.webp?v=1779976922",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "madeinuxstudio-com",
+   "url": "https://madeinuxstudio.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/madeinuxstudio-com/thumb.384.webp?v=1779977726",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "riesendesign-fi",
+   "url": "https://www.riesendesign.fi/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/riesendesign-fi/thumb.384.webp?v=1789042272",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "etienne-studio",
+   "url": "https://etienne.studio",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/etienne-studio/thumb.384.webp?v=1777899494",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "pentagram-com",
+   "url": "https://pentagram.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pentagram-com/thumb.384.webp?v=1777662165",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "craft-wild-as",
+   "url": "https://craft.wild.as",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/craft-wild-as/thumb.384.webp?v=1789042039",
+   "industries": [
+    "agency"
+   ],
+   "seed": true,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "furoweb-eu",
+   "url": "https://furoweb.eu/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/furoweb-eu/thumb.384.webp?v=1779918185",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "geex-arts-com",
+   "url": "https://geex-arts.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/geex-arts-com/thumb.384.webp?v=1779918215",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "immersive-g-com",
+   "url": "https://immersive-g.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/immersive-g-com/thumb.384.webp?v=1779916477",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "hellomonday-com",
+   "url": "https://hellomonday.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hellomonday-com/thumb.384.webp?v=1777662563",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "finethought-com-au",
+   "url": "https://finethought.com.au/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/finethought-com-au/thumb.384.webp?v=1779918068",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "kvs-services",
+   "url": "https://kvs.services/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kvs-services/thumb.384.webp?v=1779977540",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "bynikistudio-com",
+   "url": "https://bynikistudio.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bynikistudio-com/thumb.384.webp?v=1779917526",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "cyphr-studio",
+   "url": "https://cyphr.studio/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cyphr-studio/thumb.384.webp?v=1779917813",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "mprez-fr",
+   "url": "https://mprez.fr/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mprez-fr/thumb.384.webp?v=1779978062",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "interaction-hnine-com",
+   "url": "https://interaction.hnine.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/interaction-hnine-com/thumb.384.webp?v=1779977070",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "fromanother-love",
+   "url": "https://fromanother.love/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fromanother-love/thumb.384.webp?v=1779916428",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "lessestudio-com",
+   "url": "https://lessestudio.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lessestudio-com/thumb.384.webp?v=1779977677",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "phantom-land",
+   "url": "https://phantom.land/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/phantom-land/thumb.384.webp?v=1780049939",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "humaan-com",
+   "url": "https://www.humaan.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/humaan-com/thumb.384.webp?v=1780406517",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "nbstudio-co-uk",
+   "url": "https://nbstudio.co.uk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nbstudio-co-uk/thumb.384.webp?v=1777899229",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "unfold-no",
+   "url": "https://unfold.no",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/unfold-no/thumb.384.webp?v=1778749479",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "burocratik-com",
+   "url": "https://burocratik.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/burocratik-com/thumb.384.webp?v=1779917511",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "thoughtbot-com",
+   "url": "https://thoughtbot.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thoughtbot-com/thumb.384.webp?v=1777916873",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "upperquad-com",
+   "url": "https://upperquad.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/upperquad-com/thumb.384.webp?v=1777899124",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "works-studio",
+   "url": "https://works.studio",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/works-studio/thumb.384.webp?v=1777662931",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "dversostudio-io",
+   "url": "https://dversostudio.io/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dversostudio-io/thumb.384.webp?v=1779917969",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "boldmonday-com",
+   "url": "https://boldmonday.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/boldmonday-com/thumb.384.webp?v=1777899582",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "commercialtype-com",
+   "url": "https://commercialtype.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/commercialtype-com/thumb.384.webp?v=1779109486",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "displaay-net",
+   "url": "https://displaay.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/displaay-net/thumb.384.webp?v=1777662864",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "emigre-com",
+   "url": "https://emigre.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/emigre-com/thumb.384.webp?v=1777899723",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "fontwerk-com",
+   "url": "https://fontwerk.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fontwerk-com/thumb.384.webp?v=1777899649",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "ohnotype-co",
+   "url": "https://ohnotype.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ohnotype-co/thumb.384.webp?v=1777662798",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "lift-type-fr",
+   "url": "https://www.lift-type.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lift-type-fr/thumb.384.webp?v=1789049467",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "typearture-com",
+   "url": "https://typearture.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/typearture-com/thumb.384.webp?v=1777915675",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "newglyph-com",
+   "url": "https://newglyph.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/newglyph-com/thumb.384.webp?v=1778750112",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "fontshare-com",
+   "url": "https://fontshare.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fontshare-com/thumb.384.webp?v=1777662826",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "lettersfromsweden-se",
+   "url": "https://lettersfromsweden.se",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lettersfromsweden-se/thumb.384.webp?v=1779110265",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "grillitype-com",
+   "url": "https://grillitype.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grillitype-com/thumb.384.webp?v=1779109945",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "velvetyne-fr",
+   "url": "https://velvetyne.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/velvetyne-fr/thumb.384.webp?v=1777899659",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "fontsinuse-com",
+   "url": "https://fontsinuse.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fontsinuse-com/thumb.384.webp?v=1777899681",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "pangrampangram-com",
+   "url": "https://pangrampangram.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pangrampangram-com/thumb.384.webp?v=1779110667",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "houseindustries-com",
+   "url": "https://houseindustries.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/houseindustries-com/thumb.384.webp?v=1777899615",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "frerejones-com",
+   "url": "https://frerejones.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frerejones-com/thumb.384.webp?v=1779109827",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "pampatype-com",
+   "url": "https://pampatype.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pampatype-com/thumb.384.webp?v=1778699217",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "counter-forms-com",
+   "url": "https://counter-forms.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/counter-forms-com/thumb.384.webp?v=1779917791",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "swisstypefaces-com",
+   "url": "https://swisstypefaces.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/swisstypefaces-com/thumb.384.webp?v=1779111119",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "arts-ac-uk",
+   "url": "https://arts.ac.uk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arts-ac-uk/thumb.384.webp?v=1779109135",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "babbel-com",
+   "url": "https://babbel.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/babbel-com/thumb.384.webp?v=1779109156",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "beauxartsparis-fr",
+   "url": "https://beauxartsparis.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beauxartsparis-fr/thumb.384.webp?v=1779109224",
+   "industries": [
+    "education",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "culture"
+   ]
+  },
+  {
+   "slug": "brilliant-org",
+   "url": "https://brilliant.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brilliant-org/thumb.384.webp?v=1777918989",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "codecademy-com",
+   "url": "https://codecademy.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/codecademy-com/thumb.384.webp?v=1779109471",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "ciid-dk",
+   "url": "https://ciid.dk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ciid-dk/thumb.384.webp?v=1777901701",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "curiositystream-com",
+   "url": "https://curiositystream.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/curiositystream-com/thumb.384.webp?v=1779109568",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "harvard-edu",
+   "url": "https://harvard.edu",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/harvard-edu/thumb.384.webp?v=1779109991",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "duolingo-com",
+   "url": "https://duolingo.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/duolingo-com/thumb.384.webp?v=1777918957",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "masterclass-com",
+   "url": "https://masterclass.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/masterclass-com/thumb.384.webp?v=1777919069",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "cornellbotanicgardens-org",
+   "url": "https://cornellbotanicgardens.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cornellbotanicgardens-org/thumb.384.webp?v=1777915876",
+   "industries": [
+    "education",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "culture"
+   ]
+  },
+  {
+   "slug": "ecal-ch",
+   "url": "https://ecal.ch",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ecal-ch/thumb.384.webp?v=1779109725",
+   "industries": [
+    "education",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "culture"
+   ]
+  },
+  {
+   "slug": "makingsoftware-com",
+   "url": "https://makingsoftware.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/makingsoftware-com/thumb.384.webp?v=1779977777",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "classcreator-io",
+   "url": "https://classcreator.io/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/classcreator-io/thumb.384.webp?v=1779917660",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "museumofmoney-com",
+   "url": "https://museumofmoney.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/museumofmoney-com/thumb.384.webp?v=1779978058",
+   "industries": [
+    "education",
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "culture"
+   ]
+  },
+  {
+   "slug": "instituteofhealth-com",
+   "url": "https://instituteofhealth.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/instituteofhealth-com/thumb.384.webp?v=1779977030",
+   "industries": [
+    "education",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "health"
+   ]
+  },
+  {
+   "slug": "stanford-edu",
+   "url": "https://stanford.edu",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stanford-edu/thumb.384.webp?v=1777903460",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "media-mit-edu",
+   "url": "https://media.mit.edu",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/media-mit-edu/thumb.384.webp?v=1777903249",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "coursera-org",
+   "url": "https://coursera.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/coursera-org/thumb.384.webp?v=1779109551",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "amazon-com",
+   "url": "https://amazon.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/amazon-com/thumb.384.webp?v=1779109101",
+   "industries": [
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "apple-com",
+   "url": "https://apple.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/apple-com/thumb.384.webp?v=1779109111",
+   "industries": [
+    "ecommerce",
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "arcteryx-com",
+   "url": "https://arcteryx.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/arcteryx-com/thumb.384.webp?v=1777900585",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "artek-fi",
+   "url": "https://artek.fi",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/artek-fi/thumb.384.webp?v=1777900463",
+   "industries": [
+    "ecommerce",
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "everlane-com",
+   "url": "https://everlane.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/everlane-com/thumb.384.webp?v=1779109756",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "gog-com",
+   "url": "https://gog.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gog-com/thumb.384.webp?v=1777918220",
+   "industries": [
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "chloe-com",
+   "url": "https://chloe.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chloe-com/thumb.384.webp?v=1778750148",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "audocph-com",
+   "url": "https://audocph.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/audocph-com/thumb.384.webp?v=1778671605",
+   "industries": [
+    "ecommerce",
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "bose-com",
+   "url": "https://bose.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bose-com/thumb.384.webp?v=1779109326",
+   "industries": [
+    "ecommerce",
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "buly1803-com",
+   "url": "https://buly1803.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/buly1803-com/thumb.384.webp?v=1777663158",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "omsom-com",
+   "url": "https://omsom.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/omsom-com/thumb.384.webp?v=1780490949",
+   "industries": [
+    "ecommerce",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "food"
+   ]
+  },
+  {
+   "slug": "mixpotion-co",
+   "url": "https://mixpotion.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mixpotion-co/thumb.384.webp?v=1789050659",
+   "industries": [
+    "ecommerce",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "food"
+   ]
+  },
+  {
+   "slug": "criterion-com",
+   "url": "https://criterion.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/criterion-com/thumb.384.webp?v=1777900167",
+   "industries": [
+    "ecommerce",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "flos-com",
+   "url": "https://flos.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flos-com/thumb.384.webp?v=1779109814",
+   "industries": [
+    "ecommerce",
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "itch-io",
+   "url": "https://itch.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/itch-io/thumb.384.webp?v=1779110130",
+   "industries": [
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "freitag-ch",
+   "url": "https://freitag.ch",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/freitag-ch/thumb.384.webp?v=1777663165",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "maharishistore-com",
+   "url": "https://maharishistore.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/maharishistore-com/thumb.384.webp?v=1777900266",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "norrona-com",
+   "url": "https://norrona.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/norrona-com/thumb.384.webp?v=1779110575",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "grailed-com",
+   "url": "https://grailed.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grailed-com/thumb.384.webp?v=1779109950",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "beatport-com",
+   "url": "https://beatport.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beatport-com/thumb.384.webp?v=1777918189",
+   "industries": [
+    "ecommerce",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "casper-com",
+   "url": "https://casper.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/casper-com/thumb.384.webp?v=1779109422",
+   "industries": [
+    "furniture",
+    "ecommerce"
+   ],
+   "seed": true,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "dia-com",
+   "url": "https://www.dia.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dia-com/thumb.384.webp?v=1780313115",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "graza-co",
+   "url": "https://graza.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/graza-co/thumb.384.webp?v=1780406630",
+   "industries": [
+    "ecommerce",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "food"
+   ]
+  },
+  {
+   "slug": "rapha-cc",
+   "url": "https://www.rapha.cc",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/rapha-cc/thumb.384.webp?v=1780406483",
+   "industries": [
+    "ecommerce",
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "fashion"
+   ]
+  },
+  {
+   "slug": "menkind-co",
+   "url": "https://menkind.co/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/menkind-co/thumb.384.webp?v=1789050175",
+   "industries": [
+    "ecommerce",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "health"
+   ]
+  },
+  {
+   "slug": "hermanmiller-com",
+   "url": "https://hermanmiller.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hermanmiller-com/thumb.384.webp?v=1777900493",
+   "industries": [
+    "ecommerce",
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "architecture"
+   ]
+  },
+  {
+   "slug": "thirdmanrecords-com",
+   "url": "https://thirdmanrecords.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thirdmanrecords-com/thumb.384.webp?v=1779111226",
+   "industries": [
+    "ecommerce",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "bluebottlecoffee-com",
+   "url": "https://bluebottlecoffee.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bluebottlecoffee-com/thumb.384.webp?v=1779109282",
+   "industries": [
+    "ecommerce",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "food"
+   ]
+  },
+  {
+   "slug": "fellowproducts-com",
+   "url": "https://fellowproducts.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fellowproducts-com/thumb.384.webp?v=1777901124",
+   "industries": [
+    "ecommerce",
+    "consumer-tech",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "food"
+   ]
+  },
+  {
+   "slug": "bellroy-com",
+   "url": "https://bellroy.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bellroy-com/thumb.384.webp?v=1779109226",
+   "industries": [
+    "fashion",
+    "ecommerce"
+   ],
+   "seed": true,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "bandcamp-com",
+   "url": "https://bandcamp.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bandcamp-com/thumb.384.webp?v=1779109184",
+   "industries": [
+    "ecommerce",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "bowerswilkins-com",
+   "url": "https://bowerswilkins.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bowerswilkins-com/thumb.384.webp?v=1779109326",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "genelec-com",
+   "url": "https://genelec.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/genelec-com/thumb.384.webp?v=1779109862",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "dolby-com",
+   "url": "https://dolby.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dolby-com/thumb.384.webp?v=1777900154",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "analogue-co",
+   "url": "https://www.analogue.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/analogue-co/thumb.384.webp?v=1780406335",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "teenageengineering-com",
+   "url": "https://teenageengineering.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/teenageengineering-com/thumb.384.webp?v=1777901667",
+   "industries": [
+    "consumer-tech",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "firsty-app",
+   "url": "https://www.firsty.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/firsty-app/thumb.384.webp?v=1789049396",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "shure-com",
+   "url": "https://shure.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/shure-com/thumb.384.webp?v=1779110919",
+   "industries": [
+    "consumer-tech",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "tempo-fit",
+   "url": "https://tempo.fit",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tempo-fit/thumb.384.webp?v=1779111122",
+   "industries": [
+    "consumer-tech",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "health"
+   ]
+  },
+  {
+   "slug": "tonal-com",
+   "url": "https://tonal.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tonal-com/thumb.384.webp?v=1779111283",
+   "industries": [
+    "consumer-tech",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "health"
+   ]
+  },
+  {
+   "slug": "kefdirect-com",
+   "url": "https://kefdirect.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kefdirect-com/thumb.384.webp?v=1777900433",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "peakdesign-com",
+   "url": "https://peakdesign.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/peakdesign-com/thumb.384.webp?v=1779110686",
+   "industries": [
+    "consumer-tech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "whoop-com",
+   "url": "https://whoop.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/whoop-com/thumb.384.webp?v=1777901358",
+   "industries": [
+    "consumer-tech",
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "health"
+   ]
+  },
+  {
+   "slug": "snap-com",
+   "url": "https://snap.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/snap-com/thumb.384.webp?v=1778758441",
+   "industries": [
+    "consumer-tech",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "culture"
+   ]
+  },
+  {
+   "slug": "bird-co",
+   "url": "https://bird.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bird-co/thumb.384.webp?v=1779109237",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "bugatti-com",
+   "url": "https://bugatti.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bugatti-com/thumb.384.webp?v=1779109351",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "ferrari-com",
+   "url": "https://ferrari.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ferrari-com/thumb.384.webp?v=1777900984",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "lamborghini-com",
+   "url": "https://lamborghini.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lamborghini-com/thumb.384.webp?v=1777916302",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "lexus-com",
+   "url": "https://lexus.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lexus-com/thumb.384.webp?v=1779110277",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "lotuscars-com",
+   "url": "https://lotuscars.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lotuscars-com/thumb.384.webp?v=1777901026",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "porsche-com",
+   "url": "https://porsche.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/porsche-com/thumb.384.webp?v=1779110752",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "rivian-com",
+   "url": "https://rivian.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/rivian-com/thumb.384.webp?v=1779110866",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "lucidmotors-com",
+   "url": "https://lucidmotors.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lucidmotors-com/thumb.384.webp?v=1777901016",
+   "industries": [
+    "automotive"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "turnoev-com",
+   "url": "https://turnoev.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/turnoev-com/thumb.384.webp?v=1789043901",
+   "industries": [
+    "automotive",
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "ecommerce",
+    "finance"
+   ]
+  },
+  {
+   "slug": "nanorcollection-com",
+   "url": "https://nanorcollection.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nanorcollection-com/thumb.384.webp?v=1780049449",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "fischundtisch-de",
+   "url": "https://www.fischundtisch.de/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fischundtisch-de/thumb.384.webp?v=1789040909",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "velorahome-com",
+   "url": "https://www.velorahome.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/velorahome-com/thumb.384.webp?v=1789050401",
+   "industries": [
+    "furniture",
+    "ecommerce"
+   ],
+   "seed": true,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "floema-com",
+   "url": "https://floema.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/floema-com/thumb.384.webp?v=1779918103",
+   "industries": [
+    "furniture",
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "knoll-com",
+   "url": "https://knoll.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/knoll-com/thumb.384.webp?v=1777900492",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "branchfurniture-ca",
+   "url": "https://branchfurniture.ca/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/branchfurniture-ca/thumb.384.webp?v=1779917396",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "louispoulsen-com",
+   "url": "https://louispoulsen.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/louispoulsen-com/thumb.384.webp?v=1779110327",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "kvadrat-dk",
+   "url": "https://kvadrat.dk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kvadrat-dk/thumb.384.webp?v=1777900548",
+   "industries": [
+    "furniture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "archdaily-com",
+   "url": "https://archdaily.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/archdaily-com/thumb.384.webp?v=1778749615",
+   "industries": [
+    "architecture",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "culture"
+   ]
+  },
+  {
+   "slug": "big-dk",
+   "url": "https://big.dk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/big-dk/thumb.384.webp?v=1777900839",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "enerblock-net",
+   "url": "https://enerblock.net/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/enerblock-net/thumb.384.webp?v=1779918004",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "gehry-getty-edu",
+   "url": "https://gehry.getty.edu/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gehry-getty-edu/thumb.384.webp?v=1779918245",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "zudo-amsterdam",
+   "url": "https://www.zudo.amsterdam",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/zudo-amsterdam/thumb.384.webp?v=1789049225",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "climeworks-com",
+   "url": "https://climeworks.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/climeworks-com/thumb.384.webp?v=1779109450",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "fosterandpartners-com",
+   "url": "https://fosterandpartners.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fosterandpartners-com/thumb.384.webp?v=1777900818",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "heatherwick-com",
+   "url": "https://heatherwick.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/heatherwick-com/thumb.384.webp?v=1777900850",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "archigreendesigns-com",
+   "url": "https://archigreendesigns.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/archigreendesigns-com/thumb.384.webp?v=1779917053",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "kononenkogroup-com",
+   "url": "https://kononenkogroup.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kononenkogroup-com/thumb.384.webp?v=1789049158",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "price-pierce-co-uk",
+   "url": "https://price-pierce.co.uk/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/price-pierce-co-uk/thumb.384.webp?v=1780050081",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "houseofhoney-com",
+   "url": "https://houseofhoney.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/houseofhoney-com/thumb.384.webp?v=1779976839",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "humahome-com",
+   "url": "https://humahome.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/humahome-com/thumb.384.webp?v=1789049204",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "oma-com",
+   "url": "https://oma.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/oma-com/thumb.384.webp?v=1777900825",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "constructiondesourdy-com",
+   "url": "https://www.constructiondesourdy.com/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/constructiondesourdy-com/thumb.384.webp?v=1789050480",
+   "industries": [
+    "architecture"
+   ],
+   "seed": true,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "herzogdemeuron-com",
+   "url": "https://herzogdemeuron.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/herzogdemeuron-com/thumb.384.webp?v=1777900875",
+   "industries": [
+    "architecture"
+   ],
+   "seed": true,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "fitbod-me",
+   "url": "https://fitbod.me",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fitbod-me/thumb.384.webp?v=1777901382",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "functionhealth-com",
+   "url": "https://functionhealth.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/functionhealth-com/thumb.384.webp?v=1779109893",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "headspace-com",
+   "url": "https://headspace.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/headspace-com/thumb.384.webp?v=1779110007",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "psyche-co",
+   "url": "https://psyche.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/psyche-co/thumb.384.webp?v=1778749629",
+   "industries": [
+    "health",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "health",
+    "culture"
+   ]
+  },
+  {
+   "slug": "alliahealth-co",
+   "url": "https://alliahealth.co/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alliahealth-co/thumb.384.webp?v=1779916956",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "bariatriceating-com",
+   "url": "https://bariatriceating.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bariatriceating-com/thumb.384.webp?v=1779917227",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "modernhealth-com",
+   "url": "https://modernhealth.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/modernhealth-com/thumb.384.webp?v=1779110418",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "peloton-com",
+   "url": "https://peloton.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/peloton-com/thumb.384.webp?v=1777901370",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "opal-so",
+   "url": "https://opal.so",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/opal-so/thumb.384.webp?v=1777918573",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "hx-clinic",
+   "url": "https://hx.clinic/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hx-clinic/thumb.384.webp?v=1779976881",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "realfood-gov",
+   "url": "https://realfood.gov",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/realfood-gov/thumb.384.webp?v=1789049670",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "callbaba-com",
+   "url": "https://www.callbaba.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/callbaba-com/thumb.384.webp?v=1789050244",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "persephone-bio",
+   "url": "https://persephone.bio",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/persephone-bio/thumb.384.webp?v=1789044265",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "swimclub-co",
+   "url": "https://swimclub.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/swimclub-co/thumb.384.webp?v=1789050192",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "wenatal-com",
+   "url": "https://wenatal.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wenatal-com/thumb.384.webp?v=1789044173",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "bevel-health",
+   "url": "https://www.bevel.health",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bevel-health/thumb.384.webp?v=1789044258",
+   "industries": [
+    "health",
+    "ai"
+   ],
+   "seed": true,
+   "cats": [
+    "health",
+    "saas"
+   ]
+  },
+  {
+   "slug": "ritual-com",
+   "url": "https://www.ritual.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ritual-com/thumb.384.webp?v=1780314379",
+   "industries": [
+    "health",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "health",
+    "food"
+   ]
+  },
+  {
+   "slug": "frequencybreathwork-com",
+   "url": "https://frequencybreathwork.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frequencybreathwork-com/thumb.384.webp?v=1779918161",
+   "industries": [
+    "health"
+   ],
+   "seed": false,
+   "cats": [
+    "health"
+   ]
+  },
+  {
+   "slug": "cartier-waw-0225-dev-60fps-fr",
+   "url": "https://cartier-waw-0225.dev.60fps.fr/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cartier-waw-0225-dev-60fps-fr/thumb.384.webp?v=1779917658",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "lafamigliamysteryunfolds-gucci-com",
+   "url": "https://lafamigliamysteryunfolds.gucci.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lafamigliamysteryunfolds-gucci-com/thumb.384.webp?v=1779977471",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "highsnobiety-com",
+   "url": "https://highsnobiety.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/highsnobiety-com/thumb.384.webp?v=1777899794",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "hodinkee-com",
+   "url": "https://hodinkee.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hodinkee-com/thumb.384.webp?v=1777900267",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "columbia-com",
+   "url": "https://columbia.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/columbia-com/thumb.384.webp?v=1779109534",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "farfetch-com",
+   "url": "https://farfetch.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/farfetch-com/thumb.384.webp?v=1777918007",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "underarmour-com",
+   "url": "https://underarmour.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/underarmour-com/thumb.384.webp?v=1777917908",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "materra-tech",
+   "url": "https://www.materra.tech",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/materra-tech/thumb.384.webp?v=1789049303",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "hypebeast-com",
+   "url": "https://hypebeast.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hypebeast-com/thumb.384.webp?v=1779110104",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "gymshark-com",
+   "url": "https://gymshark.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gymshark-com/thumb.384.webp?v=1779109984",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "snowpeak-com",
+   "url": "https://snowpeak.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/snowpeak-com/thumb.384.webp?v=1777663168",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "ssense-com",
+   "url": "https://ssense.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ssense-com/thumb.384.webp?v=1779110977",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "gq-com",
+   "url": "https://gq.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gq-com/thumb.384.webp?v=1779918327",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "mk-gd",
+   "url": "https://mk.gd/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mk-gd/thumb.384.webp?v=1779977981",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "uniqlo-com",
+   "url": "https://uniqlo.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/uniqlo-com/thumb.384.webp?v=1779111355",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "belledonne-com",
+   "url": "https://belledonne.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/belledonne-com/thumb.384.webp?v=1779917296",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "outfit-hellohello-is",
+   "url": "https://outfit.hellohello.is/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/outfit-hellohello-is/thumb.384.webp?v=1780049742",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "cuyana-com",
+   "url": "https://cuyana.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cuyana-com/thumb.384.webp?v=1777900232",
+   "industries": [
+    "fashion"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "artforum-com",
+   "url": "https://artforum.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/artforum-com/thumb.384.webp?v=1777899747",
+   "industries": [
+    "culture",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "davidzwirner-com",
+   "url": "https://davidzwirner.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/davidzwirner-com/thumb.384.webp?v=1777902994",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "palaisdetokyo-com",
+   "url": "https://palaisdetokyo.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/palaisdetokyo-com/thumb.384.webp?v=1778749978",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "francouvertes-com",
+   "url": "https://francouvertes.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/francouvertes-com/thumb.384.webp?v=1779918159",
+   "industries": [
+    "culture",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "routedenoel-com",
+   "url": "https://www.routedenoel.com/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/routedenoel-com/thumb.384.webp?v=1789048858",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "centrepompidou-fr",
+   "url": "https://centrepompidou.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/centrepompidou-fr/thumb.384.webp?v=1777902776",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "guggenheim-org",
+   "url": "https://guggenheim.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/guggenheim-org/thumb.384.webp?v=1779109972",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "louvre-fr",
+   "url": "https://louvre.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/louvre-fr/thumb.384.webp?v=1779110319",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "barbican-org-uk",
+   "url": "https://barbican.org.uk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/barbican-org-uk/thumb.384.webp?v=1779109185",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "brooklynmuseum-org",
+   "url": "https://brooklynmuseum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brooklynmuseum-org/thumb.384.webp?v=1779109353",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "cooperhewitt-org",
+   "url": "https://cooperhewitt.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cooperhewitt-org/thumb.384.webp?v=1779109540",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "offf-barcelona",
+   "url": "https://offf.barcelona",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/offf-barcelona/thumb.384.webp?v=1778750051",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "smithsonianmag-com",
+   "url": "https://smithsonianmag.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/smithsonianmag-com/thumb.384.webp?v=1779110948",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "stedelijk-nl",
+   "url": "https://stedelijk.nl",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stedelijk-nl/thumb.384.webp?v=1779110990",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "museum-wales",
+   "url": "https://museum.wales",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/museum-wales/thumb.384.webp?v=1777915828",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "gagosian-com",
+   "url": "https://gagosian.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gagosian-com/thumb.384.webp?v=1777902976",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "designmuseum-org",
+   "url": "https://designmuseum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/designmuseum-org/thumb.384.webp?v=1777915775",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "mplus-org-hk",
+   "url": "https://mplus.org.hk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mplus-org-hk/thumb.384.webp?v=1779110483",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "newmuseum-org",
+   "url": "https://newmuseum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/newmuseum-org/thumb.384.webp?v=1779110541",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "frieze-com",
+   "url": "https://frieze.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frieze-com/thumb.384.webp?v=1777662968",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "madmuseum-org",
+   "url": "https://madmuseum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/madmuseum-org/thumb.384.webp?v=1779110339",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "nordiskamuseet-se",
+   "url": "https://www.nordiskamuseet.se/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nordiskamuseet-se/thumb.384.webp?v=1789048866",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "magnumphotos-com",
+   "url": "https://magnumphotos.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/magnumphotos-com/thumb.384.webp?v=1777901754",
+   "industries": [
+    "culture",
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "studiomuseum-org",
+   "url": "https://studiomuseum.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/studiomuseum-org/thumb.384.webp?v=1777902942",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "whitecube-com",
+   "url": "https://whitecube.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/whitecube-com/thumb.384.webp?v=1779111518",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "lacma-org",
+   "url": "https://lacma.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lacma-org/thumb.384.webp?v=1779110221",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "moma-org",
+   "url": "https://moma.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/moma-org/thumb.384.webp?v=1779110439",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "apartamentomagazine-com",
+   "url": "https://apartamentomagazine.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/apartamentomagazine-com/thumb.384.webp?v=1779109105",
+   "industries": [
+    "media"
+   ],
+   "seed": true,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "are-na",
+   "url": "https://are.na",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/are-na/thumb.384.webp?v=1777662879",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "deezer-com",
+   "url": "https://deezer.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deezer-com/thumb.384.webp?v=1779109589",
+   "industries": [
+    "media",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "last-fm",
+   "url": "https://last.fm",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/last-fm/thumb.384.webp?v=1779110236",
+   "industries": [
+    "media",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "orpetron-com",
+   "url": "https://orpetron.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/orpetron-com/thumb.384.webp?v=1777915610",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "crackmagazine-net",
+   "url": "https://crackmagazine.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/crackmagazine-net/thumb.384.webp?v=1777900059",
+   "industries": [
+    "media",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "dropout-tv",
+   "url": "https://dropout.tv",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dropout-tv/thumb.384.webp?v=1779109694",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "doodles-app",
+   "url": "https://doodles.app/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/doodles-app/thumb.384.webp?v=1779917906",
+   "industries": [
+    "media",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "finance"
+   ]
+  },
+  {
+   "slug": "ponpon-mania-com",
+   "url": "https://ponpon-mania.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ponpon-mania-com/thumb.384.webp?v=1780050056",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "discord-com",
+   "url": "https://discord.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/discord-com/thumb.384.webp?v=1779109639",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "huckmag-com",
+   "url": "https://huckmag.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/huckmag-com/thumb.384.webp?v=1779110094",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "caffe-design",
+   "url": "https://caffe.design/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/caffe-design/thumb.384.webp?v=1779917541",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "bsky-app",
+   "url": "https://bsky.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bsky-app/thumb.384.webp?v=1779109374",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "creators-spotify-com",
+   "url": "https://creators.spotify.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/creators-spotify-com/thumb.384.webp?v=1777917647",
+   "industries": [
+    "media",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "personal"
+   ]
+  },
+  {
+   "slug": "twitch-tv",
+   "url": "https://twitch.tv",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/twitch-tv/thumb.384.webp?v=1777918247",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "bittersoutherner-com",
+   "url": "https://bittersoutherner.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bittersoutherner-com/thumb.384.webp?v=1779109244",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "factmag-com",
+   "url": "https://factmag.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/factmag-com/thumb.384.webp?v=1777900096",
+   "industries": [
+    "media",
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "dazeddigital-com",
+   "url": "https://www.dazeddigital.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dazeddigital-com/thumb.384.webp?v=1780406584",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "cooking-nytimes-com",
+   "url": "https://cooking.nytimes.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cooking-nytimes-com/thumb.384.webp?v=1779109523",
+   "industries": [
+    "media",
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "food"
+   ]
+  },
+  {
+   "slug": "bbc-com",
+   "url": "https://bbc.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bbc-com/thumb.384.webp?v=1779109211",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "bbcearth-com",
+   "url": "https://bbcearth.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bbcearth-com/thumb.384.webp?v=1777916476",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "gatesnotes-com",
+   "url": "https://gatesnotes.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gatesnotes-com/thumb.384.webp?v=1777901335",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "stateofaidesign-com",
+   "url": "https://stateofaidesign.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stateofaidesign-com/thumb.384.webp?v=1789044639",
+   "industries": [
+    "media"
+   ],
+   "seed": true,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "thecreativeindependent-com",
+   "url": "https://thecreativeindependent.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thecreativeindependent-com/thumb.384.webp?v=1779111320",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "flipboard-com",
+   "url": "https://flipboard.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flipboard-com/thumb.384.webp?v=1779109800",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "pudding-cool",
+   "url": "https://pudding.cool",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pudding-cool/thumb.384.webp?v=1779110789",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "gwern-net",
+   "url": "https://gwern.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gwern-net/thumb.384.webp?v=1779109977",
+   "industries": [
+    "media",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "nytimes-com",
+   "url": "https://nytimes.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nytimes-com/thumb.384.webp?v=1779110616",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "creativereview-co-uk",
+   "url": "https://creativereview.co.uk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/creativereview-co-uk/thumb.384.webp?v=1779109563",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "flickr-com",
+   "url": "https://flickr.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/flickr-com/thumb.384.webp?v=1779109793",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "smashingmagazine-com",
+   "url": "https://smashingmagazine.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/smashingmagazine-com/thumb.384.webp?v=1779110944",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "audius-co",
+   "url": "https://audius.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/audius-co/thumb.384.webp?v=1777918171",
+   "industries": [
+    "music",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "finance"
+   ]
+  },
+  {
+   "slug": "daptonerecords-com",
+   "url": "https://daptonerecords.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/daptonerecords-com/thumb.384.webp?v=1777916399",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "moshimoshimusic-com",
+   "url": "https://moshimoshimusic.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/moshimoshimusic-com/thumb.384.webp?v=1779110458",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "generative-fm",
+   "url": "https://generative.fm",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/generative-fm/thumb.384.webp?v=1777901662",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "dragcity-com",
+   "url": "https://dragcity.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dragcity-com/thumb.384.webp?v=1779109664",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "music-youtube-com",
+   "url": "https://music.youtube.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/music-youtube-com/thumb.384.webp?v=1779110475",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "splice-com",
+   "url": "https://splice.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/splice-com/thumb.384.webp?v=1779110973",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "stonesthrow-com",
+   "url": "https://stonesthrow.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stonesthrow-com/thumb.384.webp?v=1779110991",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "warp-net",
+   "url": "https://warp.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/warp-net/thumb.384.webp?v=1779111460",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "ninjatune-net",
+   "url": "https://ninjatune.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ninjatune-net/thumb.384.webp?v=1779110607",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "soundcloud-com",
+   "url": "https://soundcloud.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/soundcloud-com/thumb.384.webp?v=1779110958",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "cdbaby-com",
+   "url": "https://cdbaby.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/cdbaby-com/thumb.384.webp?v=1779917580",
+   "industries": [
+    "music",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "personal"
+   ]
+  },
+  {
+   "slug": "yannnovak-com",
+   "url": "https://yannnovak.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/yannnovak-com/thumb.384.webp?v=1779916668",
+   "industries": [
+    "music"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "atomixnyc-com",
+   "url": "https://atomixnyc.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/atomixnyc-com/thumb.384.webp?v=1777901034",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "chickfila-com",
+   "url": "https://chickfila.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chickfila-com/thumb.384.webp?v=1779109431",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "chipotle-com",
+   "url": "https://chipotle.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/chipotle-com/thumb.384.webp?v=1779109439",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "beardmeatsfood-co-uk",
+   "url": "https://www.beardmeatsfood.co.uk",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/beardmeatsfood-co-uk/thumb.384.webp?v=1789049400",
+   "industries": [
+    "food-beverage",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "food",
+    "personal"
+   ]
+  },
+  {
+   "slug": "drinkolipop-com",
+   "url": "https://www.drinkolipop.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/drinkolipop-com/thumb.384.webp?v=1780490925",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "magicspoon-com",
+   "url": "https://magicspoon.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/magicspoon-com/thumb.384.webp?v=1780490953",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "oatly-com",
+   "url": "https://www.oatly.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/oatly-com/thumb.384.webp?v=1780490884",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "deathandcompany-com",
+   "url": "https://deathandcompany.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deathandcompany-com/thumb.384.webp?v=1777916157",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "dinnerbyheston-com",
+   "url": "https://dinnerbyheston.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dinnerbyheston-com/thumb.384.webp?v=1778750131",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "benvenusa-com",
+   "url": "https://benvenusa.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/benvenusa-com/thumb.384.webp?v=1779917321",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "dirtyvine-com",
+   "url": "https://dirtyvine.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dirtyvine-com/thumb.384.webp?v=1789049151",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "eater-com",
+   "url": "https://eater.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eater-com/thumb.384.webp?v=1779109714",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "mirazur-fr",
+   "url": "https://mirazur.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mirazur-fr/thumb.384.webp?v=1777916082",
+   "industries": [
+    "food-beverage"
+   ],
+   "seed": false,
+   "cats": [
+    "food"
+   ]
+  },
+  {
+   "slug": "blockstream-com",
+   "url": "https://blockstream.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/blockstream-com/thumb.384.webp?v=1777898999",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "brex-com",
+   "url": "https://brex.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brex-com/thumb.384.webp?v=1779109335",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "wagmi-com",
+   "url": "https://wagmi.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wagmi-com/thumb.384.webp?v=1777898978",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "everswap-com",
+   "url": "https://everswap.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/everswap-com/thumb.384.webp?v=1779918022",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "pipe-com",
+   "url": "https://pipe.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/pipe-com/thumb.384.webp?v=1780049993",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "mercury-com",
+   "url": "https://mercury.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mercury-com/thumb.384.webp?v=1777662487",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "n26-com",
+   "url": "https://n26.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/n26-com/thumb.384.webp?v=1779110493",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "lemonsqueezy-com",
+   "url": "https://lemonsqueezy.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lemonsqueezy-com/thumb.384.webp?v=1777903683",
+   "industries": [
+    "fintech",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "finance",
+    "personal"
+   ]
+  },
+  {
+   "slug": "rainbow-me",
+   "url": "https://rainbow.me",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/rainbow-me/thumb.384.webp?v=1779110825",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "family-co",
+   "url": "https://family.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/family-co/thumb.384.webp?v=1780312753",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "copilot-money",
+   "url": "https://copilot.money",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/copilot-money/thumb.384.webp?v=1779109530",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "middle-finance",
+   "url": "https://middle.finance/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/middle-finance/thumb.384.webp?v=1779977919",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "owo-app",
+   "url": "https://owo.app/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/owo-app/thumb.384.webp?v=1780049788",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "coinbase-com",
+   "url": "https://coinbase.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/coinbase-com/thumb.384.webp?v=1777898998",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "moderntreasury-com",
+   "url": "https://moderntreasury.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/moderntreasury-com/thumb.384.webp?v=1779110419",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "lithic-com",
+   "url": "https://lithic.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lithic-com/thumb.384.webp?v=1780313808",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "nopan-com",
+   "url": "https://www.nopan.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/nopan-com/thumb.384.webp?v=1789043938",
+   "industries": [
+    "fintech"
+   ],
+   "seed": true,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "stripe-com",
+   "url": "https://stripe.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stripe-com/thumb.384.webp?v=1779111022",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "uniswap-org",
+   "url": "https://uniswap.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/uniswap-org/thumb.384.webp?v=1777904104",
+   "industries": [
+    "fintech",
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "wealthsimple-com",
+   "url": "https://www.wealthsimple.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wealthsimple-com/thumb.384.webp?v=1780406384",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "razorpay-com",
+   "url": "https://razorpay.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/razorpay-com/thumb.384.webp?v=1779916534",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "increase-com",
+   "url": "https://increase.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/increase-com/thumb.384.webp?v=1780313806",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "robinhood-com",
+   "url": "https://robinhood.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/robinhood-com/thumb.384.webp?v=1780312857",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "mollie-com",
+   "url": "https://www.mollie.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mollie-com/thumb.384.webp?v=1789040825",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "public-com",
+   "url": "https://public.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/public-com/thumb.384.webp?v=1779110804",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "becomeautonomous-com",
+   "url": "https://becomeautonomous.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/becomeautonomous-com/thumb.384.webp?v=1779917264",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "zora-co",
+   "url": "https://zora.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/zora-co/thumb.384.webp?v=1777904218",
+   "industries": [
+    "crypto",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "finance",
+    "personal"
+   ]
+  },
+  {
+   "slug": "highlight-xyz",
+   "url": "https://highlight.xyz",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/highlight-xyz/thumb.384.webp?v=1777904222",
+   "industries": [
+    "crypto",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "finance",
+    "personal"
+   ]
+  },
+  {
+   "slug": "shelby-xyz",
+   "url": "https://shelby.xyz",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/shelby-xyz/thumb.384.webp?v=1789050248",
+   "industries": [
+    "crypto"
+   ],
+   "seed": true,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "slush-app",
+   "url": "https://slush.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/slush-app/thumb.384.webp?v=1789044353",
+   "industries": [
+    "crypto"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "aave-com",
+   "url": "https://aave.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/aave-com/thumb.384.webp?v=1789044471",
+   "industries": [
+    "crypto",
+    "fintech"
+   ],
+   "seed": true,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "aristidebenoist-com",
+   "url": "https://aristidebenoist.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/aristidebenoist-com/thumb.384.webp?v=1777899343",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "csswizardry-com",
+   "url": "https://csswizardry.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/csswizardry-com/thumb.384.webp?v=1777899289",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "jordan-delcros-com",
+   "url": "https://jordan-delcros.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/jordan-delcros-com/thumb.384.webp?v=1779977251",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "hiartem-com",
+   "url": "https://hiartem.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hiartem-com/thumb.384.webp?v=1789043212",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "kelseydake-com",
+   "url": "https://kelseydake.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kelseydake-com/thumb.384.webp?v=1779110178",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "platonphoto-com",
+   "url": "https://platonphoto.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/platonphoto-com/thumb.384.webp?v=1777915987",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "109ichiki-com",
+   "url": "https://109ichiki.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/109ichiki-com/thumb.384.webp?v=1779916304",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "kentcdodds-com",
+   "url": "https://kentcdodds.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kentcdodds-com/thumb.384.webp?v=1779110163",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "oliverjeffers-com",
+   "url": "https://oliverjeffers.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/oliverjeffers-com/thumb.384.webp?v=1777915970",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "frankchimero-com",
+   "url": "https://frankchimero.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frankchimero-com/thumb.384.webp?v=1777899522",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "alinapapazova-framer-ai",
+   "url": "https://alinapapazova.framer.ai/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/alinapapazova-framer-ai/thumb.384.webp?v=1779916927",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "craigmod-com",
+   "url": "https://craigmod.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/craigmod-com/thumb.384.webp?v=1777662782",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "daniel-do",
+   "url": "https://daniel.do",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/daniel-do/thumb.384.webp?v=1777662689",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "wesbos-com",
+   "url": "https://wesbos.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wesbos-com/thumb.384.webp?v=1777899260",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "julian-com",
+   "url": "https://julian.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/julian-com/thumb.384.webp?v=1777901994",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "christophrauscher-de",
+   "url": "https://christophrauscher.de",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/christophrauscher-de/thumb.384.webp?v=1789043130",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "emilkowal-ski",
+   "url": "https://emilkowal.ski",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/emilkowal-ski/thumb.384.webp?v=1777662713",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "eduardbodak-com",
+   "url": "https://eduardbodak.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eduardbodak-com/thumb.384.webp?v=1779917988",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "isadeburgh-com",
+   "url": "https://isadeburgh.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/isadeburgh-com/thumb.384.webp?v=1779977123",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "olhalazarieva-com",
+   "url": "https://olhalazarieva.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/olhalazarieva-com/thumb.384.webp?v=1780049611",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "markclennon-com",
+   "url": "https://markclennon.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/markclennon-com/thumb.384.webp?v=1779977841",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "bychudy-com",
+   "url": "https://bychudy.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bychudy-com/thumb.384.webp?v=1779917514",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "matveyan-com",
+   "url": "https://matveyan.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/matveyan-com/thumb.384.webp?v=1779977855",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "photoyoshi-com",
+   "url": "https://photoyoshi.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/photoyoshi-com/thumb.384.webp?v=1780049976",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "clayboan-com",
+   "url": "https://clayboan.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/clayboan-com/thumb.384.webp?v=1779917702",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "jensbosman-nl",
+   "url": "https://jensbosman.nl/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/jensbosman-nl/thumb.384.webp?v=1779977204",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "danielsun-space",
+   "url": "https://danielsun.space",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/danielsun-space/thumb.384.webp?v=1789043080",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "anchor-fm",
+   "url": "https://anchor.fm",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/anchor-fm/thumb.384.webp?v=1777900124",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "medium-com",
+   "url": "https://medium.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/medium-com/thumb.384.webp?v=1777918061",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "substack-com",
+   "url": "https://substack.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/substack-com/thumb.384.webp?v=1777901239",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "burb-co",
+   "url": "https://burb.co/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/burb-co/thumb.384.webp?v=1779917494",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "later-com",
+   "url": "https://later.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/later-com/thumb.384.webp?v=1779977555",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "convertkit-com",
+   "url": "https://convertkit.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/convertkit-com/thumb.384.webp?v=1779109508",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "ghost-org",
+   "url": "https://ghost.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ghost-org/thumb.384.webp?v=1777901259",
+   "industries": [
+    "creator",
+    "saas",
+    "non-profit"
+   ],
+   "seed": true,
+   "cats": [
+    "personal",
+    "saas"
+   ]
+  },
+  {
+   "slug": "gumroad-com",
+   "url": "https://gumroad.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gumroad-com/thumb.384.webp?v=1777903645",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "linktr-ee",
+   "url": "https://linktr.ee",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/linktr-ee/thumb.384.webp?v=1789049416",
+   "industries": [
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "personal"
+   ]
+  },
+  {
+   "slug": "northmail-app",
+   "url": "https://www.northmail.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/northmail-app/thumb.384.webp?v=1789050094",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "goclockout-app",
+   "url": "https://goclockout.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/goclockout-app/thumb.384.webp?v=1789043688",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "overmindlab-ai",
+   "url": "https://www.overmindlab.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/overmindlab-ai/thumb.384.webp?v=1789043433",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tracebit-com",
+   "url": "https://tracebit.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tracebit-com/thumb.384.webp?v=1789044039",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "sanity-io",
+   "url": "https://www.sanity.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sanity-io/thumb.384.webp?v=1789050148",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "supaste-com",
+   "url": "https://supaste.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/supaste-com/thumb.384.webp?v=1789043743",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "aspensearch-com",
+   "url": "https://www.aspensearch.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/aspensearch-com/thumb.384.webp?v=1789041771",
+   "industries": [
+    "agency"
+   ],
+   "seed": true,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "glyphsapp-com",
+   "url": "https://glyphsapp.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/glyphsapp-com/thumb.384.webp?v=1789043827",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "daybridge-com",
+   "url": "https://daybridge.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/daybridge-com/thumb.384.webp?v=1789043657",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "vercel-com",
+   "url": "https://vercel.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/vercel-com/thumb.384.webp?v=1777661658",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "linear-app",
+   "url": "https://linear.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/linear-app/thumb.384.webp?v=1777897828",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tokens-studio",
+   "url": "https://tokens.studio",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tokens-studio/thumb.384.webp?v=1789043999",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "hex-tech",
+   "url": "https://www.hex.tech",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hex-tech/thumb.384.webp?v=1780313156",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "workos-com",
+   "url": "https://workos.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/workos-com/thumb.384.webp?v=1777898400",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "raycast-com",
+   "url": "https://raycast.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/raycast-com/thumb.384.webp?v=1777662025",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "gosteli-archiv-ch",
+   "url": "https://www.gosteli-archiv.ch/en",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gosteli-archiv-ch/thumb.384.webp?v=1789050369",
+   "industries": [
+    "culture"
+   ],
+   "seed": true,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "novu-co",
+   "url": "https://novu.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/novu-co/thumb.384.webp?v=1780314206",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "milanote-com",
+   "url": "https://milanote.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/milanote-com/thumb.384.webp?v=1779977988",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "mintlify-com",
+   "url": "https://mintlify.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mintlify-com/thumb.384.webp?v=1780313989",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "campaignmonitor-com",
+   "url": "https://campaignmonitor.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/campaignmonitor-com/thumb.384.webp?v=1779917555",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "featurebase-app",
+   "url": "https://featurebase.app/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/featurebase-app/thumb.384.webp?v=1779918037",
+   "industries": [
+    "saas"
+   ],
+   "seed": true,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "thrilljockey-com",
+   "url": "https://thrilljockey.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thrilljockey-com/thumb.384.webp?v=1779111228",
+   "industries": [
+    "music",
+    "ecommerce"
+   ],
+   "seed": true,
+   "cats": [
+    "culture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "epidemicsound-com",
+   "url": "https://www.epidemicsound.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/epidemicsound-com/thumb.384.webp?v=1789049702",
+   "industries": [
+    "music",
+    "creator"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "personal"
+   ]
+  },
+  {
+   "slug": "gumloop-com",
+   "url": "https://www.gumloop.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gumloop-com/thumb.384.webp?v=1789043315",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "scale-com",
+   "url": "https://scale.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/scale-com/thumb.384.webp?v=1777898820",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "runwayml-com",
+   "url": "https://runwayml.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/runwayml-com/thumb.384.webp?v=1777662348",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "deadwater-fr",
+   "url": "https://www.deadwater.fr",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/deadwater-fr/thumb.384.webp?v=1789042645",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "supercommon-systems",
+   "url": "https://supercommon.systems",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/supercommon-systems/thumb.384.webp?v=1789050130",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tavus-io",
+   "url": "https://www.tavus.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tavus-io/thumb.384.webp?v=1780313952",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "primer-com",
+   "url": "https://primer.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/primer-com/thumb.384.webp?v=1789049557",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "bymonolog-com",
+   "url": "https://bymonolog.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/bymonolog-com/thumb.384.webp?v=1789049791",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "resend-com",
+   "url": "https://resend.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/resend-com/thumb.384.webp?v=1777662064",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tv-youtube-com",
+   "url": "https://tv.youtube.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tv-youtube-com/thumb.384.webp?v=1779111345",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "openai-com",
+   "url": "https://openai.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/openai-com/thumb.384.webp?v=1777662313",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "handhold-io",
+   "url": "https://handhold.io/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/handhold-io/thumb.384.webp?v=1779976798",
+   "industries": [
+    "saas",
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "behaviorai-eu",
+   "url": "https://behaviorai.eu/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/behaviorai-eu/thumb.384.webp?v=1779917291",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "exoape-com",
+   "url": "https://exoape.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/exoape-com/thumb.384.webp?v=1780406507",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "parachutehome-com",
+   "url": "https://www.parachutehome.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/parachutehome-com/thumb.384.webp?v=1780314408",
+   "industries": [
+    "furniture",
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "antimetal-com",
+   "url": "https://antimetal.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/antimetal-com/thumb.384.webp?v=1779976560",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "sharptype-co",
+   "url": "https://sharptype.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/sharptype-co/thumb.384.webp?v=1780491020",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "thedesignersfoundry-com",
+   "url": "https://thedesignersfoundry.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thedesignersfoundry-com/thumb.384.webp?v=1779111155",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "namespace-studio",
+   "url": "https://namespace.studio/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/namespace-studio/thumb.384.webp?v=1780049421",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "yuanchuan-dev",
+   "url": "https://yuanchuan.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/yuanchuan-dev/thumb.384.webp?v=1777899396",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "eng-dipsy-team",
+   "url": "https://eng.dipsy.team/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eng-dipsy-team/thumb.384.webp?v=1779918005",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "typeform-com",
+   "url": "https://typeform.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/typeform-com/thumb.384.webp?v=1777902359",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "doubleplay-studio",
+   "url": "https://doubleplay.studio/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/doubleplay-studio/thumb.384.webp?v=1779917935",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "patch-io",
+   "url": "https://patch.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/patch-io/thumb.384.webp?v=1777901287",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "vite-dev",
+   "url": "https://vite.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/vite-dev/thumb.384.webp?v=1777916903",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "gitbutler-com",
+   "url": "https://gitbutler.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/gitbutler-com/thumb.384.webp?v=1779109874",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "render-com",
+   "url": "https://render.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/render-com/thumb.384.webp?v=1778749275",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "finach-com",
+   "url": "https://finach.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/finach-com/thumb.384.webp?v=1779918064",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "microdot-vision",
+   "url": "https://microdot.vision/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/microdot-vision/thumb.384.webp?v=1779977924",
+   "industries": [
+    "agency",
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "creative",
+    "personal"
+   ]
+  },
+  {
+   "slug": "vanschneider-com",
+   "url": "https://vanschneider.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/vanschneider-com/thumb.384.webp?v=1777662707",
+   "industries": [
+    "portfolio",
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "hbo-com",
+   "url": "https://hbo.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/hbo-com/thumb.384.webp?v=1777900177",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "wallpaper-com",
+   "url": "https://wallpaper.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wallpaper-com/thumb.384.webp?v=1779111460",
+   "industries": [
+    "media"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "brevo-com",
+   "url": "https://brevo.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brevo-com/thumb.384.webp?v=1779917426",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "duckdb-org",
+   "url": "https://duckdb.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/duckdb-org/thumb.384.webp?v=1780406428",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "together-ai",
+   "url": "https://together.ai",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/together-ai/thumb.384.webp?v=1777662286",
+   "industries": [
+    "ai",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "oysterhr-com",
+   "url": "https://www.oysterhr.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/oysterhr-com/thumb.384.webp?v=1780313050",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "frill-co",
+   "url": "https://frill.co/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frill-co/thumb.384.webp?v=1779918185",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "grok-com",
+   "url": "https://grok.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/grok-com/thumb.384.webp?v=1779109960",
+   "industries": [
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "wix-com",
+   "url": "https://wix.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wix-com/thumb.384.webp?v=1777903623",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "phosphoricons-com",
+   "url": "https://phosphoricons.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/phosphoricons-com/thumb.384.webp?v=1779110708",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "stash-com",
+   "url": "https://stash.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/stash-com/thumb.384.webp?v=1777898946",
+   "industries": [
+    "fintech"
+   ],
+   "seed": false,
+   "cats": [
+    "finance"
+   ]
+  },
+  {
+   "slug": "workspace-google-com",
+   "url": "https://workspace.google.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/workspace-google-com/thumb.384.webp?v=1777917547",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "plaid-com",
+   "url": "https://plaid.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/plaid-com/thumb.384.webp?v=1779110730",
+   "industries": [
+    "fintech",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "finance",
+    "saas"
+   ]
+  },
+  {
+   "slug": "temporal-io",
+   "url": "https://temporal.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/temporal-io/thumb.384.webp?v=1779111141",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "11x-com",
+   "url": "https://www.11x.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/11x-com/thumb.384.webp?v=1780314054",
+   "industries": [
+    "ai",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "statsig-com",
+   "url": "https://statsig.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/statsig-com/thumb.384.webp?v=1778749911",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "posthog-com",
+   "url": "https://posthog.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/posthog-com/thumb.384.webp?v=1778749125",
+   "industries": [
+    "developer-tools",
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "trychroma-com",
+   "url": "https://trychroma.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/trychroma-com/thumb.384.webp?v=1777898760",
+   "industries": [
+    "developer-tools",
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "supabase-com",
+   "url": "https://supabase.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/supabase-com/thumb.384.webp?v=1779111096",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "dub-co",
+   "url": "https://dub.co",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/dub-co/thumb.384.webp?v=1777898430",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "smartsheet-com",
+   "url": "https://smartsheet.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/smartsheet-com/thumb.384.webp?v=1777918441",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "todoist-com",
+   "url": "https://todoist.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/todoist-com/thumb.384.webp?v=1779111249",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "zendesk-com",
+   "url": "https://zendesk.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/zendesk-com/thumb.384.webp?v=1779111573",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "workable-com",
+   "url": "https://workable.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/workable-com/thumb.384.webp?v=1779111540",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "superhuman-com",
+   "url": "https://superhuman.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/superhuman-com/thumb.384.webp?v=1777901276",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "whitney-org",
+   "url": "https://whitney.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/whitney-org/thumb.384.webp?v=1779111506",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "piccalil-li",
+   "url": "https://piccalil.li",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/piccalil-li/thumb.384.webp?v=1779110704",
+   "industries": [
+    "education",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "services",
+    "saas"
+   ]
+  },
+  {
+   "slug": "wellcomecollection-org",
+   "url": "https://wellcomecollection.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wellcomecollection-org/thumb.384.webp?v=1779111496",
+   "industries": [
+    "culture"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "maxsiedentopf-com",
+   "url": "https://maxsiedentopf.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/maxsiedentopf-com/thumb.384.webp?v=1779110381",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "snohetta-com",
+   "url": "https://snohetta.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/snohetta-com/thumb.384.webp?v=1777900793",
+   "industries": [
+    "architecture"
+   ],
+   "seed": false,
+   "cats": [
+    "architecture"
+   ]
+  },
+  {
+   "slug": "typotheque-com",
+   "url": "https://typotheque.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/typotheque-com/thumb.384.webp?v=1777662808",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "loewe-com",
+   "url": "https://loewe.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/loewe-com/thumb.384.webp?v=1777900651",
+   "industries": [
+    "fashion",
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "mikkisindhunata-com",
+   "url": "https://mikkisindhunata.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/mikkisindhunata-com/thumb.384.webp?v=1779977951",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "duabyab-com",
+   "url": "https://duabyab.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/duabyab-com/thumb.384.webp?v=1789049333",
+   "industries": [
+    "fashion",
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "toryburch-com",
+   "url": "https://toryburch.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/toryburch-com/thumb.384.webp?v=1779111291",
+   "industries": [
+    "fashion",
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "goodside-studio",
+   "url": "https://www.goodside.studio",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/goodside-studio/thumb.384.webp?v=1789049756",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "lineto-com",
+   "url": "https://lineto.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/lineto-com/thumb.384.webp?v=1777899566",
+   "industries": [
+    "type-foundry"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "propublica-org",
+   "url": "https://propublica.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/propublica-org/thumb.384.webp?v=1779110775",
+   "industries": [
+    "media",
+    "non-profit"
+   ],
+   "seed": false,
+   "cats": [
+    "culture"
+   ]
+  },
+  {
+   "slug": "brandappart-com",
+   "url": "https://brandappart.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/brandappart-com/thumb.384.webp?v=1779917423",
+   "industries": [
+    "agency"
+   ],
+   "seed": false,
+   "cats": [
+    "creative"
+   ]
+  },
+  {
+   "slug": "maggieappleton-com",
+   "url": "https://maggieappleton.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/maggieappleton-com/thumb.384.webp?v=1777899312",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "wattenberger-com",
+   "url": "https://wattenberger.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/wattenberger-com/thumb.384.webp?v=1777915474",
+   "industries": [
+    "portfolio"
+   ],
+   "seed": false,
+   "cats": [
+    "personal",
+    "creative"
+   ]
+  },
+  {
+   "slug": "werkplaatstypografie-org",
+   "url": "https://werkplaatstypografie.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/werkplaatstypografie-org/thumb.384.webp?v=1777903303",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "commentguard-io",
+   "url": "https://commentguard.io/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/commentguard-io/thumb.384.webp?v=1779917763",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "localcan-com",
+   "url": "https://www.localcan.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/localcan-com/thumb.384.webp?v=1789043975",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "abyssale-com",
+   "url": "https://abyssale.com/",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/abyssale-com/thumb.384.webp?v=1779916752",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "vimcal-com",
+   "url": "https://www.vimcal.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/vimcal-com/thumb.384.webp?v=1780314277",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "tympanus-net",
+   "url": "https://tympanus.net",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/tympanus-net/thumb.384.webp?v=1780406718",
+   "industries": [
+    "media",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "culture",
+    "saas"
+   ]
+  },
+  {
+   "slug": "frame-io",
+   "url": "https://frame.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/frame-io/thumb.384.webp?v=1777899180",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "fullstory-com",
+   "url": "https://fullstory.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/fullstory-com/thumb.384.webp?v=1779109846",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "liveblocks-io",
+   "url": "https://liveblocks.io",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/liveblocks-io/thumb.384.webp?v=1777662242",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "trigger-dev",
+   "url": "https://trigger.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/trigger-dev/thumb.384.webp?v=1779111327",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "desktop-github-com",
+   "url": "https://desktop.github.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/desktop-github-com/thumb.384.webp?v=1777918680",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "warp-dev",
+   "url": "https://warp.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/warp-dev/thumb.384.webp?v=1777662183",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "shortwave-com",
+   "url": "https://shortwave.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/shortwave-com/thumb.384.webp?v=1779110908",
+   "industries": [
+    "saas",
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "polypane-app",
+   "url": "https://polypane.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/polypane-app/thumb.384.webp?v=1779110758",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "workday-com",
+   "url": "https://workday.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/workday-com/thumb.384.webp?v=1779111537",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "circleci-com",
+   "url": "https://circleci.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/circleci-com/thumb.384.webp?v=1777918621",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "warbyparker-com",
+   "url": "https://warbyparker.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/warbyparker-com/thumb.384.webp?v=1779111484",
+   "industries": [
+    "fashion",
+    "ecommerce"
+   ],
+   "seed": false,
+   "cats": [
+    "fashion",
+    "ecommerce"
+   ]
+  },
+  {
+   "slug": "thefutur-com",
+   "url": "https://thefutur.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/thefutur-com/thumb.384.webp?v=1777902677",
+   "industries": [
+    "education"
+   ],
+   "seed": false,
+   "cats": [
+    "services"
+   ]
+  },
+  {
+   "slug": "svelte-dev",
+   "url": "https://svelte.dev",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/svelte-dev/thumb.384.webp?v=1777903734",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "google-com",
+   "url": "https://google.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/google-com/thumb.384.webp?v=1777917513",
+   "industries": [
+    "saas",
+    "ai"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "calendly-com",
+   "url": "https://calendly.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/calendly-com/thumb.384.webp?v=1777902393",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "trello-com",
+   "url": "https://trello.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/trello-com/thumb.384.webp?v=1779111306",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "kagi-com",
+   "url": "https://kagi.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/kagi-com/thumb.384.webp?v=1778750322",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "eslint-org",
+   "url": "https://eslint.org",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/eslint-org/thumb.384.webp?v=1777916959",
+   "industries": [
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "webflow-com",
+   "url": "https://webflow.com",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/webflow-com/thumb.384.webp?v=1779111482",
+   "industries": [
+    "saas",
+    "developer-tools"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  },
+  {
+   "slug": "ulysses-app",
+   "url": "https://ulysses.app",
+   "thumb": "https://0nme3pk5am3urwa9.public.blob.vercel-storage.com/captures/ulysses-app/thumb.384.webp?v=1777901471",
+   "industries": [
+    "saas"
+   ],
+   "seed": false,
+   "cats": [
+    "saas"
+   ]
+  }
+ ]
+}

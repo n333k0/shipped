@@ -211,6 +211,7 @@ function rankedRefs() {
     if (r.structure && goal?.structures?.includes(r.structure)) sc += 2;
     if (r.structure && structures.includes(r.structure)) sc += 1.5;
     sc += 12 * on.filter((f) => f.test(r)).length; // style filters lead
+    sc += 4 * (r.q ?? 0); // the best of the category lead (never above the category itself)
     if (r.editorial) sc += 0.5;
     return sc;
   };

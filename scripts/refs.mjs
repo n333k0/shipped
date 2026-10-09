@@ -66,6 +66,10 @@ for (const issue of (await call('list_collections', {}))?.issues ?? []) for (con
 await mkdir('public/refs', { recursive: true });
 
 const previous = new Map(JSON.parse(await readFile('src/data/references.json', 'utf8').catch(() => '[]')).filter((r) => !r.manual).map(({ id, similar, ...r }) => [r.slug, r]));
+// quality: on inspo's homepage 3, in its editorial collections 2.6, near several bar sites 2, near one 1.2, hand-picked 1.5, hand-captured 1
+const { home = [], bar = [], near = {} } = JSON.parse(await readFile('scripts/ref-quality.json', 'utf8').catch(() => '{}'));
+const handPicked = new Set(Object.values(curated).flat());
+const quality = (slug, manual) => Math.max(home.includes(slug) ? 3 : bar.includes(slug) ? 2.6 : near[slug] > 1 ? 2 : near[slug] ? 1.2 : 0, handPicked.has(slug) ? 1.5 : 0, manual ? 1 : 0);
 const refs = [];
 const skipped = [];
 const offCategory = [];
@@ -126,6 +130,7 @@ for (let i = 0; i < slugs.length; i += 4) {
 // Sites we captured ourselves (scripts/refs-add.mjs) for categories inspo covers thinly
 const manual = JSON.parse(await readFile('scripts/refs-manual.json', 'utf8').catch(() => '[]'));
 for (const m of manual) if (!refs.some((r) => r.slug === m.slug)) refs.push({ ...m, _near: [] });
+for (const r of refs) r.q = quality(r.slug, r.manual);
 
 // stable order; ids stay with their slug across rebuilds (saved briefs refer to them)
 // hand-picked first, then hand-captured, then discovered

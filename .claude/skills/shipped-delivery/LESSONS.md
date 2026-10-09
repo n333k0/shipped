@@ -24,7 +24,8 @@ One line per correction from the owner, written as what to do. Newest at the bot
 - Lighting and furniture brands (Louis Poulsen, Flos, HAY, Knoll) count as e-commerce references too.
 - The owner hides references with `npm run curate` (local, 127.0.0.1); `src/data/ref-exclude.json` is theirs.
 - Internal tools run locally, never as pages of the public site.
-- Every category needs a wide pool (about 60 shown). `scripts/refs-discover.mjs` sweeps inspo by industry tag only; where inspo is thin (services, hospitality, food, health) add hand-picked URLs to `scripts/refs-manual-urls.json` and run `scripts/refs-add.mjs`, then `scripts/refs.mjs`.
+- Only the best show, and the best of the chosen category lead: inspo's homepage and editorial collections are the bar (`scripts/ref-quality.json`); inspo sites join the pool only on the bar or near it (`refs-universe` → `refs-quality` → `refs-discover` → `refs.mjs`), each ref carries `q`, and the brief ranks by it inside the category.
+- Thin categories (services, hospitality, food, health) get hand-picked sites: `scripts/refs-manual-urls.json` → `scripts/refs-add.mjs`.
 
 - The aesthetic ideal and competitors drive the direction, not only the picked references: capture them (`capture-brief.mjs`) and name the bar and the field in `direction.md`.
 

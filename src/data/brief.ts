@@ -91,6 +91,7 @@ export interface Reference {
   h: number; // height of the scroll strip (public/refs/<slug>.full.webp) at 520px wide
   original: string; // full 1440px capture, for the expanded view
   manual?: boolean; // captured by us (scripts/refs-add.mjs), not from inspo
+  q?: number; // quality: 3 on inspo's homepage, 2.6 in its editorial collections, 2 near several bar sites, 1.2 near one, 1.5 hand-picked, 1 hand-captured
   editorial: boolean; // in an inspo editor collection
   similar: string[]; // inspo's nearest neighbours that are also in the pool
 }
