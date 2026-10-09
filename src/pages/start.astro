@@ -609,6 +609,17 @@ const qh = 'text-[20px] font-medium leading-snug tracking-tight sm:text-[22px] l
   .step[data-state="done"] .bar { background: rgb(216 255 133 / 0.55); }
   .step[data-state="now"] .bar { background: var(--color-spark); }
   .step[data-state="now"] .label { color: var(--color-paper); }
+  /* hover lights a step up like a press would, and lets it fade back out */
+  .step .bar { transform-origin: bottom; transition: background-color .35s ease, transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+  .step .label, .step .label span { transition: color .35s ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .step:hover .bar { background: rgb(216 255 133 / 0.85); transform: scaleY(1.8); box-shadow: 0 0 14px rgb(216 255 133 / 0.45); }
+    .step:hover .label { color: var(--color-paper); }
+    .step:hover .label span { color: var(--color-spark); }
+  }
+  .step:focus-visible { outline: none; }
+  .step:focus-visible .bar { background: rgb(216 255 133 / 0.85); transform: scaleY(1.8); box-shadow: 0 0 14px rgb(216 255 133 / 0.45); }
+  .step:focus-visible .label { color: var(--color-paper); }
 
   /* Reference cards: a desktop browser window. The full page scrolls inside it. */
   .ref { position: relative; overflow: hidden; border-radius: 14px; background: rgb(255 255 255 / 0.04); outline: 2px solid transparent; outline-offset: -2px; transition: outline-color .2s; }
